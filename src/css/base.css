@@ -1,0 +1,42 @@
+:root {
+    /* Cycle Colors */
+    --cycle-blue: rgb(42, 167, 255);
+    --cycle-white: rgb(255, 255, 255);
+    --cycle-black: rgb(31, 31, 40);
+    --cycle-black-accent: rgb(24, 24, 32);
+    --cycle-gray: rgb(115, 115, 127);
+    --cycle-gray-light: rgb(243, 243, 245);
+
+    /* Infima Base Colors */
+    --ifm-color-primary: #2aa7ff;
+    --ifm-color-primary-dark: #0c9bff;
+    --ifm-color-primary-darker: #0094fc;
+    --ifm-color-primary-darkest: #007ad0;
+    --ifm-color-primary-light: #48b3ff;
+    --ifm-color-primary-lighter: #57b9ff;
+    --ifm-color-primary-lightest: #83ccff;
+    --ifm-code-font-size: 95%;
+
+    /* Infima Nav and Footer */
+    --ifm-navbar-background-color: var(--cycle-black);
+    --ifm-navbar-link-color: var(--cycle-white);
+    --ifm-footer-background-color: var(--cycle-black);
+    --ifm-footer-link-color: var(--cycle-white);
+    --ifm-footer-color: var(--cycle-blue);
+
+    /* Infima HR */
+    --ifm-hr-border-color: var(--cycle-gray-light);
+}
+
+/* Dark Mode Colors */
+html[data-theme='dark'] .docusaurus-highlight-code-line {
+    background-color: var(--cycle-black);
+}
+
+html[data-theme='dark'] {
+    background-color: var(--cycle-black);
+}
+
+.clean-btn {
+    color: var(--cycle-white);
+}

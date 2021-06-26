@@ -1,0 +1,28 @@
+ol {
+    counter-reset: list-count;
+    list-style: none;
+    padding-left: 40px;
+}
+
+ol li {
+    margin: 0 0 0.5rem 0;
+    counter-increment: list-count;
+    position: relative;
+}
+
+ol li::before {
+    --size: 24px;
+    content: counter(list-count);
+    color: white;
+    font-size: 0.85rem;
+    font-weight: bold;
+    position: absolute;
+    left: calc(-1 * var(--size) - 10px);
+    line-height: var(--size);
+    width: var(--size);
+    height: var(--size);
+    top: 0;
+    background: var(--cycle-blue);
+    border-radius: 50%;
+    text-align: center;
+}
