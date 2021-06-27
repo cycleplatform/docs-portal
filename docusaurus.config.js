@@ -60,7 +60,7 @@ module.exports = {
             },
             {
               label: 'API',
-              href: "google.com"
+              href: "https://google.com"
             },
           ],
         },
