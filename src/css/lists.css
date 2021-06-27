@@ -1,16 +1,16 @@
-ol {
+.markdown ol {
     counter-reset: list-count;
     list-style: none;
     padding-left: 40px;
 }
 
-ol li {
+.markdown ol > li {
     margin: 0 0 0.5rem 0;
     counter-increment: list-count;
     position: relative;
 }
 
-ol li::before {
+.markdown ol > li::before {
     --size: 24px;
     content: counter(list-count);
     color: white;
@@ -21,8 +21,27 @@ ol li::before {
     line-height: var(--size);
     width: var(--size);
     height: var(--size);
-    top: 0;
+    top: 2px;
     background: var(--cycle-blue);
     border-radius: 50%;
     text-align: center;
+}
+
+.markdown ul {
+    list-style: none;
+}
+
+.markdown ul > li {
+    position: relative;
+}
+.markdown ul > li::before {
+    --size: 8px;
+    background-color: var(--cycle-blue);
+    content: "";
+    top: 10px;
+    left: calc(-1 * var(--size) - 8px);
+    height: var(--size);
+    width: var(--size);
+    border-radius: 50%;
+    position: absolute;
 }

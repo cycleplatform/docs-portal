@@ -13,6 +13,7 @@ module.exports = {
   organizationName: 'cycleplatform', // Usually your GitHub org/user name.
   projectName: 'docs-portal', // Usually your repo name.
   themeConfig: {
+    hideableSidebar: true,
     algolia: {
       // TODO replace with our api key
       apiKey: '47ecd3b21be71c5822571b9f59e52544',
@@ -23,7 +24,7 @@ module.exports = {
     navbar: {
       title: 'Portal Docs',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'Cycle Logo',
         src: 'img/logo.svg',
       },
       items: [
@@ -119,9 +120,10 @@ module.exports = {
         // },
         theme: {
           customCss: [
-              require.resolve('./src/css/custom.css'),
               require.resolve('./src/css/base.css'),
               require.resolve('./src/css/lists.css'),
+              require.resolve('./src/css/code.css'),
+              require.resolve('./src/css/fonts.css'),
           ],
         },
       },

@@ -26,6 +26,12 @@
 
     /* Infima HR */
     --ifm-hr-border-color: var(--cycle-gray-light);
+
+    /* Infima Admonition */
+    --ifm-color-info: var(--ifm-color-primary-light);
+
+    /* Infima Fonts */
+    --ifm-font-family-base: "Source Sans Pro";
 }
 
 /* Dark Mode Colors */

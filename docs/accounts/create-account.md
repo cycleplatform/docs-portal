@@ -1,5 +1,6 @@
 ---
-title: Create Account
+sidebar_label: Create Account
+sidebar_position: 2
 ---
 
 # Creating An Account
