@@ -47,8 +47,7 @@ This is the file which dictates the name and position of the folder in the sideb
 :::note
 
 The decision to use `yaml` over `json` was very purposeful. Yaml syntax
-matches what is used inside markdown sidebar for labeling, positioning, etc
-much closer than json does.
+matches metadata inside markdown files for the sidebar much closer than json does.
 
 :::
 An example `_category_.yml` file will look as so.
@@ -74,4 +73,43 @@ a bad UX pattern if not used correctly. When in doubt just leave it out, for now
 
 ### section-doc-name.md
 
-Now we get to the fun part 😛.
+This will be a brief overview 
+
+#### Metadata
+
+There is a section at the top of every markdown file which looks as follows.
+
+```markdown
+---
+sidebar_label: Brown Boat Shoes
+sidebar_position: 1
+---
+```
+
+:::caution
+
+The metadata section **MUST** be the very first thing in all .md and .mdx files.
+We will go over mdx files later, however **DO NOT** place imports above metadata.
+Remember `.mdx` files do not mean "oh I am a javascript file", it simply means
+"oh I can have some JSX inside me".
+
+:::
+
+This is the metadata Docusaurus uses to for sidebar positioning and labeling.
+The keys should be self exclamatory.
+
+:::info `sidebar_position`
+
+Floats can be used for the sidebar position.
+
+If sections are being properly structured and broken apart, float positions shouldn't
+be needed. Even if a document or folder needs to be moved in-between an existing section
+it should only take  matter of a minute or less to bump the sidebar position of
+underlying folders or documents.
+
+:::
+
+### sub-section-name
+
+Sections can be nested and docusaurus will automatically pick up on this and create
+a sub menu. The structure within a nested section is no different from what is described above.
