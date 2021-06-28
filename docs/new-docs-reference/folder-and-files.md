@@ -15,12 +15,12 @@ The sidebar will automatically be generated if the folder structure is set up co
 ```text
 docs
 ├── <section-name>
-│   └── _category_.yml
-│   └── section-doc-name.md
-│   └── section-doc-name.md
+│   ├── _category_.yml
+│   ├── section-doc-name.md
+│   ├── section-doc-name.md
 │   └── <sub-section-name>
-│       └── _category_.yml
-│       └── section-doc-name.md
+│       ├── _category_.yml
+│       ├── section-doc-name.md
 │       └── section-doc-name.md
 ```
 
