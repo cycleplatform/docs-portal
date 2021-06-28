@@ -46,3 +46,7 @@ html[data-theme='dark'] {
 .clean-btn {
     color: var(--cycle-white);
 }
+
+.markdown hr {
+    margin: 50px 0;
+}
