@@ -11,15 +11,15 @@ Additional frequently asked billing questions not covered directly by the main d
 
 ## Frequently Asked Questions
 
-1. Do all tiers include all features?
-2. What is the billing cycle?
-3. When am I charged?
-4. If I downgrade do I get a refund?
-5. Do you offer discounts to nonprofits?
-6. Do I pay Cycle for my infrastructure?
-7. Can I use a prepaid card?
-8. What is a tier and what are the differences between them?
-9. Is RAM licensing hard capped?
+1. [Do all tiers include all features?](#do-all-tiers-include-all-features)
+2. [What is the billing cycle?](#what-is-the-billing-cycle)
+3. [When am I charged?](#when-am-i-charged)
+4. [If I downgrade do I get a refund?](#if-i-downgrade-do-i-get-a-refund)
+5. [Do you offer discounts to nonprofits?](#do-you-offer-discounts-to-nonprofits)
+6. [Do I pay Cycle for my infrastructure?](#do-i-pay-cycle-for-my-infrastructure)
+7. [Can I use a prepaid card?](#can-i-use-a-prepaid-card)
+8. [What is a tier and what are the differences between them?](#what-is-a-tier-and-what-are-the-differences-between-them)
+9. [Is RAM licensing hard capped?](#is-ram-licensing-hard-capped)
 
 ---
 
