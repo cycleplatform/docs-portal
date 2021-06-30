@@ -15,7 +15,7 @@ Use the [Account Wizard](https://portal.cycle.io/signup) to begin the signup pro
 2. You will receive an email with a verification code. Enter the code into the box and select **Verify Email**.
 3. You've successfully created an account, click the **Login** button to be automatically logged in.
 
-```json
+<!-- ```json
 {
   "version": "1.0",
   "containers": {
@@ -68,4 +68,4 @@ Use the [Account Wizard](https://portal.cycle.io/signup) to begin the signup pro
     }
   }
 }
-```
+``` -->

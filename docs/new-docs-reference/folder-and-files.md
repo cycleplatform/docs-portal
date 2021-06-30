@@ -2,14 +2,17 @@
 sidebar_label: Folder and File Basics
 sidebar_position: 1
 ---
+
 # Welcome to the new docs
-It *should* be a bit nicer to work in. 83.71% guarantee...
+
+It _should_ be a bit nicer to work in. 83.71% guarantee...
 
 ---
 
 ## Setting Up A Section
 
 ### Folder Structure
+
 The sidebar will automatically be generated if the folder structure is set up correctly.
 
 ```text
@@ -35,13 +38,14 @@ This has a much higher potential for merge conflicts and future issues.
 :::
 
 ### section-name
+
 This needs to be the name of the main section on the sidebar.
 This naming schema should be a max of 2 words if necessary.
 The name of the folder does not correctly directly to the name of
 the sidebar item itself. Display names will be set inside `_category_.yml`.
 
+### \_category\_.yml
 
-### \_category_.yml
 This is the file which dictates the name and position of the folder in the sidebar.
 
 :::note
@@ -73,7 +77,7 @@ a bad UX pattern if not used correctly. When in doubt just leave it out, for now
 
 ### section-doc-name.md
 
-This will be a brief overview 
+This will be a brief overview
 
 #### Metadata
 
@@ -104,7 +108,7 @@ Floats can be used for the sidebar position.
 
 If sections are being properly structured and broken apart, float positions shouldn't
 be needed. Even if a document or folder needs to be moved in-between an existing section
-it should only take  matter of a minute or less to bump the sidebar position of
+it should only take matter of a minute or less to bump the sidebar position of
 underlying folders or documents.
 
 :::

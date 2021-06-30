@@ -29,11 +29,11 @@ Cycle is SaaS based, so that means you'll be signing into your account through a
 
 ### Quick Start Shortcuts
 
-- [Creating an Account](http://www.google.com)
-- [Creating a Hub](http://www.google.com)
-- [Deploying Infrastructure](http://www.google.com)
-- [Create an Environment](http://www.google.com)
-- [Deploying a Container to your Environment](http://www.google.com)
+- [Creating an Account](#creating-an-account)
+- [Creating a Hub](#creating-a-hub)
+- [Deploying Infrastructure](#deploying-infrastructure)
+- [Create an Environment](#create-an-environment)
+- [Deploying a Container to your Environment](#deploy-a-container-to-your-environment)
 
 ---
 
@@ -53,17 +53,17 @@ Use the intuitive [Create Hub Wizard](http://www.google.com) to get started.
 
 If this is your first time creating a hub, simply log in to the portal and click **Create Hub** in the navigation menu. If you would like to add another hub, click the hub toggle in the nav menu on the left side and select **Add Hub**.
 
-1. [Name your hub](http://www.google.com) which will usually be the name of your organization or an organization you manage
-2. [Choose your provider](http://www.google.com) and enter the associated API key
-3. [Select your hub tier](http://www.google.com)
-4. [Enter billing information](http://www.google.com)
-5. [Add collaborators and finalize](http://www.google.com)
+1. [Name your hub](#step-1-name-your-hub), which will usually be the name of your organization or an organization you manage
+2. [Choose your provider](#step-2-choose-your-provider) and enter the associated API key
+3. [Select your hub tier](#step-3-choose-a-tier)
+4. [Enter billing information](#step-4-enter-billing-information)
+5. [Add collaborators and finalize](#step-5-add-collaborators-and-finalize)
 
 ### Step 1: Name Your Hub
 
 Give your hub a name that will remind you what you plan to use the space for.
 
-![Name your hub](/imgs/getting-started/hub-name.png)
+![Name your hub](/imgs/getting-started/quick-start/hub-name.png)
 
 ---
 
@@ -71,9 +71,13 @@ Give your hub a name that will remind you what you plan to use the space for.
 
 Enable the providers of your choice and enter your API keys in the box.
 
-![Choose your provider](/imgs/getting-started/choose-your-provider.png)
+![Choose your provider](/imgs/getting-started/quick-start/choose-your-provider.png)
 
-<!-- todo - Need to add info warning. -->
+:::caution
+
+There will be a short infopanel that talks about how Cycle interacts with your infrastructure. This is just here to remind you that all infrastructure actions (provisioning, deprovisioning) should happen through the platform. Not using the platform to take these actions can lead to unintended consequences.
+
+:::
 
 #### Where do I get API Keys to connect providers?
 
@@ -101,9 +105,11 @@ _Skipped if you selected free tier._
 
 Enter the credit card information you want to use for this hub. Your card will be charged at the end of your billing cycle, every 28 days.
 
-<!-- todo - Info panel -->
+![Payment Method](/imgs/getting-started/quick-start/payment-method.png)
 
-![Payment Method](/imgs/getting-started/payment-method.png)
+:::info
+If you need to arrange alternate payment methods, please reach out to our support team.
+:::
 
 ---
 
@@ -115,7 +121,7 @@ Congratulations, your hub has been created! You'll be able to start deploying co
 
 Before you finalize your order you will have a chance to add collaborators to the hub. Cycle makes it easy to add collaborators and describe the type of access you want those users to have in one step. Type in the email address of the person you wish to add and then select their access level from the Role dropdown menu.
 
-![members](/imgs/getting-started/members.png)
+![members](/imgs/getting-started/quick-start/members.png)
 
 ---
 
@@ -127,7 +133,7 @@ If you opted to skip adding provider(s) during hub create, you'll need to add th
 
 ---
 
-## Infrastructure
+## Deploying Infrastructure
 
 After successfully creating a hub you'll need to add infrastructure. To add infrastructure to your hub:
 
@@ -161,10 +167,10 @@ To create an environment, follow these steps:
 
 Cycle provides a completely UI based form to deploy individual containers. It provides a quick and easy way to get a container online without much configuration. Once the container is created, you will be able to modify any part of it's configuration to a fine degree. We've created a great container to go along with this guide **cycleplatform/getting-started** that can be used during the image import step. To get started, follow these steps:
 
-1. [Describe the container,](http://www.google.com) and provide initial information about the deployment.
-2. [Select or import a new image.](http://www.google.com)
-3. [Configure Public Access including hostname.](http://www.google.com)
-4. [Verify everything is correct and deploy.](http://www.google.com)
+1. [Describe the container,](#step-1-describe-the-container-and-its-state-settings) and provide initial information about the deployment.
+2. [Select or import a new image.](#step-2-select-an-image)
+3. [Configure Public Access including hostname.](#step-3-configure-the-network)
+4. [Verify everything is correct and deploy.](#step-4-finalize)
 
 ### Step 1: Describe The Container And It's State Settings
 
@@ -178,13 +184,13 @@ Choose **Stateful** or **Stateless** for your container. A Stateful container is
 
 A full description of Stateful and Stateless can be found [here](http://www.google.com).
 
-![state](/imgs/getting-started/state.png)
+![state](/imgs/getting-started/quick-start/state.png)
 
 #### Initial Instances
 
 The instance slider tells Cycle exactly how many copies of the container you want to run when it starts. Based on the deployment strategy you set, Cycle will automatically balance the instances across your cloud.
 
-![instances](/imgs/getting-started/instances.png)
+![instances](/imgs/getting-started/quick-start/instances.png)
 
 ### Deployment Strategy
 
@@ -210,7 +216,7 @@ The manual deployment strategy give you full control over where your instances a
 
 The First Available deployment strategy will deploy the instances to the server that is available first.
 
-![First Available](/imgs/getting-started/first-available.png)
+![First Available](/imgs/getting-started/quick-start/first-available.png)
 
 ---
 
@@ -222,7 +228,7 @@ If you want to be descriptive about which servers this container will be deploye
 
 **All Tags**- Instances will only be deployed to a server that has every tag listed here.
 
-![set tags](/imgs/getting-started/set-tags.png)
+![set tags](/imgs/getting-started/quick-start/set-tags.png)
 
 ---
 
@@ -235,7 +241,7 @@ In this step you'll choose to select an image that has already been imported to 
 
 1. Choose how you want to select your image, either an existing image, or import a new one. If you choose existing, skip to step 4.
 
-![Select an Image](/imgs/getting-started/images-step2.png)
+![Select an Image](/imgs/getting-started/quick-start/images-step2.png)
 
 2. Using the tabs on the left, select the source you wish to import from. At this time, you can import from either Docker Hub, or a private Docker Registry.
 
@@ -251,7 +257,7 @@ Typing in the "Image Name" box will automatically search [hub.docker.com](https:
 
 If you choose to import from a Docker Registry, the process is the same, except in the URL field you will need to enter the custom url the registry is hosted on. For example, if your image name is `images.website.com/myimage:latest`, you would enter `images.example.com` into the URL field. It's recommended to host your own Docker Registry on Cycle for extra security instead of using the public Docker Hub option.
 
-![Select Image Registry](/imgs/getting-started/images-step2.1.png)
+![Select Image Registry](/imgs/getting-started/quick-start/images-step2.1.png)
 
 3. Wait for the image to import. When complete, a dropdown menu will become clickable that says "Select Image".
 
@@ -271,7 +277,7 @@ Some container images may specify volumes (persistent data storage). Cycle will 
 
 **Max Size** - Containers will grow to the max size set. Since this is a limit and not an allocation, it is possible that the volume won't have enough data to grow to the max size.
 
-![volumes](/imgs/getting-started/volumes.png)
+![volumes](/imgs/getting-started/quick-start/volumes.png)
 
 ---
 
