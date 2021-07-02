@@ -25,7 +25,7 @@ Not every team has the resources to hire a group of engineers to manage that gro
 
 ## Main Concepts
 
-Cycle is SaaS based, so that means you'll be signing into your account through a web portal. To gain access to the suite of tools available on Cycle, deploy a [hub](http://www.google.com). A hub is where users can add [infrastructure](http://www.google.com) (to power their applications) and [environments](http://www.google.com) (to network everything together). The rest of the tools on the platform either provide support to your running applications (ex: [two-way console](http://www.google.com)), or output that can be used to observe usage and status (ex: [container dashboard](http://www.google.com)). Of course there's much more here than meets the eye, and throughout this documentation we'll provide technical reference to these concepts in as straightforward a way as possible.
+Cycle is SaaS based, so that means you'll be signing into your account through a web portal. To gain access to the suite of tools available on Cycle, deploy a [hub](https://www.cycle.io). A hub is where users can add [infrastructure](https://www.cycle.io) (to power their applications) and [environments](https://www.cycle.io) (to network everything together). The rest of the tools on the platform either provide support to your running applications (ex: [two-way console](https://www.cycle.io)), or output that can be used to observe usage and status (ex: [container dashboard](https://www.cycle.io)). Of course there's much more here than meets the eye, and throughout this documentation we'll provide technical reference to these concepts in as straightforward a way as possible.
 
 ### Quick Start Shortcuts
 
@@ -39,7 +39,7 @@ Cycle is SaaS based, so that means you'll be signing into your account through a
 
 ## Creating an Account
 
-Use the [Cycle Account Wizard](http://www.google.com) to begin the sign-up process.
+Use the [Cycle Account Wizard](https://www.cycle.io) to begin the sign-up process.
 
 1. Enter your name, email address, and password.
 2. You will receive an email with a verification code. Enter the code into the box and select "Verify Email".
@@ -49,7 +49,7 @@ Use the [Cycle Account Wizard](http://www.google.com) to begin the sign-up proce
 
 ## Creating a Hub
 
-Use the intuitive [Create Hub Wizard](http://www.google.com) to get started.
+Use the intuitive [Create Hub Wizard](https://www.cycle.io) to get started.
 
 If this is your first time creating a hub, simply log in to the portal and click **Create Hub** in the navigation menu. If you would like to add another hub, click the hub toggle in the nav menu on the left side and select **Add Hub**.
 
@@ -81,9 +81,9 @@ There will be a short infopanel that talks about how Cycle interacts with your i
 
 #### Where do I get API Keys to connect providers?
 
-- For Vultr: [Text](http://www.google.com) | [Video](https://www.youtube.com/watch?v=SNEp3rlTluQ)
-- For Equinix: [Text](http://www.google.com) | [Video](https://www.youtube.com/watch?v=SNEp3rlTluQ)
-- For AWS: [Text](http://www.google.com) | [Video](https://www.youtube.com/watch?v=Pr_7IjPagic)
+- For Vultr: [Text](https://www.cycle.io) | [Video](https://www.youtube.com/watch?v=SNEp3rlTluQ)
+- For Equinix: [Text](https://www.cycle.io) | [Video](https://www.youtube.com/watch?v=SNEp3rlTluQ)
+- For AWS: [Text](https://www.cycle.io) | [Video](https://www.youtube.com/watch?v=Pr_7IjPagic)
 
 ---
 
@@ -91,7 +91,7 @@ There will be a short infopanel that talks about how Cycle interacts with your i
 
 #### Hub Tier
 
-Hub tiers are how you define how much storage and RAM your hub will need. Each tier is tailored towards a hub size. If you choose a tier with too many resources Cycle will automatically scale your billing to a lower tier at the end of the month. [Click here](http://www.google.com) to find out more about tiers.
+Hub tiers are how you define how much storage and RAM your hub will need. Each tier is tailored towards a hub size. If you choose a tier with too many resources Cycle will automatically scale your billing to a lower tier at the end of the month. [Click here](https://www.cycle.io) to find out more about tiers.
 
 #### Support
 
@@ -182,7 +182,7 @@ The name of a container is for user purposes only, and doesn't affect any other 
 
 Choose **Stateful** or **Stateless** for your container. A Stateful container is a container that has a persistent volume, or the volume will hold state between restarts. A Stateless container can have a volume, but that volume will be cleared between starts.
 
-A full description of Stateful and Stateless can be found [here](http://www.google.com).
+A full description of Stateful and Stateless can be found [here](https://www.cycle.io).
 
 ![state](/imgs/getting-started/quick-start/state.png)
 
