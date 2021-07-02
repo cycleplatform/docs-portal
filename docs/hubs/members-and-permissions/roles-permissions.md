@@ -2,3 +2,27 @@
 sidebar_label: Roles And Permissions
 sidebar_position: 2
 ---
+# Roles And Permissions
+Master Cycle's granular permissions system, and leverage roles to maximize your hub security.
+
+Cycle's permissions are built on a system of individual capabilities. A capability is some small task, such as creating an environment. By composing different capabilities together, you can fine-tune exactly what a member of your hub is allowed to do. Account roles are built off of this, and are simply pre-composed capabilities with a name.
+
+:::info
+At this time, only the role, not the individual capabilities of a member, can be set. However, API keys can be fully configured.
+:::
+
+Capabilities List
+Below are the individual capabilities making up Cycle's permission system. Use the tabs to sort capabilities by each role.
+
+
+
+
+
+
+
+
+
+
+
+
+<!--- TODO this will have to be mdx Im guessing --->
