@@ -1,0 +1,20 @@
+import A57 from './apple-touch-icon-57x57.png';
+import A60 from './apple-touch-icon-60x60.png';
+import A72 from './apple-touch-icon-72x72.png';
+import A76 from './apple-touch-icon-76x76.png';
+import A114 from './apple-touch-icon-114x114.png';
+import A120 from './apple-touch-icon-120x120.png';
+import A144 from './apple-touch-icon-144x144.png';
+import A152 from './apple-touch-icon-152x152.png';
+import F16 from './favicon-16x16.png';
+import F32 from './favicon-32x32.png';
+import F96 from './favicon-96x96.png';
+import F128 from './favicon-128.png';
+import F196 from './favicon-196x196.png';
+import M70 from './mstile-70x70.png';
+import M144 from './mstile-144x144.png';
+import M150 from './mstile-150x150.png';
+import M310150 from './mstile-310x150.png';
+import M310 from './mstile-310x310.png';
+
+export { A57, A60, A72, A76, A114, A120, A144, A152, F16, F32, F96, F128, F196, M70, M144, M150, M310150, M310 };
