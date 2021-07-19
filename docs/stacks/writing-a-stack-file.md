@@ -28,8 +28,8 @@ An Example Stack
         "origin": {
           "type": "docker-file",
           "details": {
-            "dir": "/",
-            "path": "/Dockerfile"
+            "context_dir": "/",
+            "build_file": "/Dockerfile"
           }
         }
       },
@@ -51,10 +51,10 @@ An Example Stack
         "origin": {
           "type": "docker-file",
           "details": {
-            "url": "https://github.com/demouser/demofile.git",
-            "dir": "/",
-            "path": "/Dockerfile"
-          }
+            "url": "https://github.com/demouser/demofile.git"
+          },
+          "context_dir": "/",
+          "build_file": "/Dockerfile"
         }
       },
       "config": {

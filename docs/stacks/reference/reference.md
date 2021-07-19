@@ -1,9 +1,11 @@
 ---
-sidebar_label: Overview
+sidebar_label: Introduction
 sidebar_position: 0
 ---
 
-# Stacks Reference
+# Stack Reference Introduction
+The Cycle stack file is an intuitive take on orchestrating services together in a single configuration file.  The file itself is meant to be standardized, while letting the user maintain granular control over important container and service level settings.
+
 
 ## Top Level
 
@@ -20,10 +22,10 @@ sidebar_position: 0
 ```json
 {
   "version": "1.0.0",
-  "about": { ... },
-  "services": { ... },
-  "containers": { ... },
-  "annotations": { ... },
-  "tests": [ ... ],
+  "about": {},
+  "services": {},
+  "containers": {},
+  "annotations": {},
+  "tests": []
 }
 ```

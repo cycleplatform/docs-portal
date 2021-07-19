@@ -4,6 +4,7 @@ sidebar_position: 1
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import CodeBlock from "@theme/CodeBlock"
 
 # Container Image
 
@@ -41,13 +42,13 @@ import TabItem from '@theme/TabItem';
 >
 <TabItem value="docker-hub">
 
-```json title="containers[identifier].image.origin"
+<CodeBlock >
 {
     "type": "docker-hub",
     "details": { ...dockerhub_details },
 }
-```
 
+</CodeBlock>
 </TabItem>
 <TabItem value="docker-registry">
 
