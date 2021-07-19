@@ -1,0 +1,220 @@
+---
+sidebar_label: Image
+sidebar_position: 1
+---
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Container Image
+
+## `image`
+| Field    | Type                                  | Required | Nullable | Description      |
+|----------|---------------------------------------|----------|----------|------------------|
+| `name`   | String                                | ❌        | ✅        | some description |
+| `origin` | Object — [Image Origin Reference]("") | ✅        | ❌        | some description |
+
+```json
+{
+  "name": "Image Name",
+  "origin": { ... image_origin }
+}
+```
+
+---
+
+## `image.origin`
+| Field     | Type                                                    | Required | Nullable | Description      |
+|-----------|---------------------------------------------------------|----------|----------|------------------|
+| `type`    | String — `docker-hub`, `docker-registry`, `docker-file` | ❌        | ✅        | some description |
+| `details` | Object — [Image Origin Details Reference]("")           | ✅        | ❌        | some description |
+
+
+### `type`
+<Tabs
+    defaultValue="docker-hub"
+    groupId={"container-image-type"}
+    values={[
+        { label: 'docker-hub', value: 'docker-hub', },
+        { label: 'docker-registry', value: 'docker-registry', },
+        { label: 'docker-file', value: 'docker-file', },
+    ]}
+>
+<TabItem value="docker-hub">
+
+```json title="containers[identifier].image.origin"
+{
+    "type": "docker-hub",
+    "details": { ...dockerhub_details },
+}
+```
+
+</TabItem>
+<TabItem value="docker-registry">
+
+```json title="containers[identifier].image.origin"
+{
+    "type": "docker-registry",
+    "details": { ...docker_registry },
+}
+```
+
+</TabItem>
+<TabItem value="docker-file">
+
+```json title="containers[identifier].image.origin"
+{
+    "type": "docker-file",
+    "details": { ...dockerhub_file },
+}
+```
+
+</TabItem>
+</Tabs>
+
+
+### `details`
+
+The details object describes the image details for the container. The object shape changes depending on what the specified
+type for the image is.
+
+<Tabs
+    defaultValue="docker-hub"
+    groupId={"container-image-type"}
+    values={[
+    { label: 'Docker Hub (docker-hub)', value: 'docker-hub', },
+    { label: 'Docker Registry (docker-registry)', value: 'docker-registry', },
+    { label: 'Docker File (docker-file)', value: 'docker-file', },
+    ]}
+>
+<TabItem value="docker-hub">
+
+| Field      | Type   | Required | Nullable | Description      |
+|------------|--------|----------|----------|------------------|
+| `target`   | String | ✅        | ❌        | some description |
+| `username` | String | ❌        | ❌        | some description |
+| `token`    | String | ❌        | ❌        | some description |
+
+```json title="containers[identifier].image.origin.details"
+{
+    "target": "someurl",
+    "username": "docker_hub_username",
+    "token": "DockerHub Token",
+}
+```
+
+</TabItem>
+<TabItem value="docker-registry">
+
+|    Field   | Type   | Required | Nullable | Description      |
+|------------|--------|----------|----------|------------------|
+| `url`      | String | ✅        | ❌        | some description |
+| `username` | String | ❌        | ❌        | some description |
+| `password` | String | ❌        | ❌        | some description |
+| `token`    | String | ❌        | ❌        | some description |
+| `target`   | String | ✅        | ❌        | some description |
+
+```json title="containers[identifier].image.origin.details"
+{
+    "url": "registry_url.com",
+    "username": "registry_username",
+    "password": "registry_password",
+    "token": "registry_token",
+    "target": "image_target",
+}
+```
+</TabItem>
+<TabItem value="docker-file">
+
+| Field         | Type                                | Required | Nullable | Description      |
+|---------------|-------------------------------------|----------|----------|------------------|
+| `repo`        | Object — [Repo Reference]("")       | ✅        | ✅        | some description |
+| `targz_url`   | String                              | ✅        | ✅        | some description |
+| `context_dir` | String                              | ❌        | ✅        | some description |
+| `build_dir`   | String                              | ❌        | ✅        | some description |
+| `credentials` | Array — [Credentials Reference]("") | ❌        | ❌        | some description |
+
+<Tabs
+defaultValue="repo"
+values={[
+    { label: 'Repo', value: 'repo', },
+    { label: 'TarGz', value: 'tar', },
+]}
+>
+<TabItem value={"repo"}>
+
+```json title="containers[identifier].image.origin.details"
+{
+    "repo": { ...repo },
+    "targz_url": null,
+    "context_dir": "registry_password",
+    "build_dir": "registry_token",
+    "credentials": "image_target",
+}
+```
+
+#### `repo`
+
+| Field         | Type                                | Required | Nullable | Description      |
+|---------------|-------------------------------------|----------|----------|------------------|
+| `url`        | Object — [Repo Reference]("")       | ✅        | ✅        | some description |
+| `auth`   | String                              | ✅        | ✅        | some description |
+| `branch` | String                              | ❌        | ✅        | some description |
+| `reference`   | String                              | ❌        | ✅        | some description |
+
+```json title="containers[identifier].image.origin.details.repo"
+{
+    "url": "repo.com/url",
+    "auth": { ...auth },
+    "branch": "branch",
+    "reference": { ...reference },
+}
+```
+
+#### `repo.auth`
+
+| Field         | Type                                | Required | Nullable | Description      |
+|---------------|-------------------------------------|----------|----------|------------------|
+| `url`        | Object — [Repo Reference]("")       | ✅        | ✅        | some description |
+| `auth`   | String                              | ✅        | ✅        | some description |
+| `branch` | String                              | ❌        | ✅        | some description |
+| `reference`   | String                              | ❌        | ✅        | some description |
+
+```json title="containers[identifier].image.origin.details.repo.auth"
+{
+    "url": "repo.com/url",
+    "auth": { ...auth },
+    "branch": "branch",
+    "build_dir": "registry_token",
+    "credentials": "image_target",
+}
+```
+</TabItem>
+
+<TabItem value={"tar"}>
+
+```json title="containers[identifier].image.origin.details"
+{
+    "repo": null,
+    "targz_url": "location.com/of/tar",
+    "context_dir": "registry_password",
+    "build_dir": "registry_token",
+    "credentials": "image_target",
+}
+```
+</TabItem>
+</Tabs>
+
+#### `credentials`
+
+```json title="containers[identifier].image.origin.details.credentials"
+{
+    "url": "repo.com/url",
+    "auth": { ...auth },
+    "branch": "branch",
+    "build_dir": "registry_token",
+    "credentials": "image_target",
+}
+```
+
+</TabItem>
+</Tabs>

@@ -4,13 +4,13 @@
     padding-left: 40px;
 }
 
-.markdown ol > li {
+.markdown ol > li:not([role="tabs"]) {
     margin: 0 0 0.5rem 0;
     counter-increment: list-count;
     position: relative;
 }
 
-.markdown ol > li::before {
+.markdown ol > li::before:not([role="tabs"]) {
     --size: 24px;
     content: counter(list-count);
     color: white;
@@ -27,14 +27,14 @@
     text-align: center;
 }
 
-.markdown ul {
+.markdown ul:not([role="tablist"]) {
     list-style: none;
 }
 
-.markdown ul > li {
+.markdown ul > li:not([role="tablist"]) {
     position: relative;
 }
-.markdown ul > li::before {
+.markdown ul > li::before:not([role="tablist"]) {
     --size: 8px;
     background-color: var(--cycle-blue);
     content: "";
