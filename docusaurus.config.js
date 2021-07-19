@@ -124,6 +124,7 @@ module.exports = {
               require.resolve('./src/css/lists.css'),
               require.resolve('./src/css/code.css'),
               require.resolve('./src/css/fonts.css'),
+              require.resolve("./src/css/fa-styles/all.css"),
           ],
         },
       },
