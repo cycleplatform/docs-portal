@@ -12,6 +12,9 @@ module.exports = {
   favicon: 'img/favicon.ico',
   organizationName: 'cycleplatform', // Usually your GitHub org/user name.
   projectName: 'docs-portal', // Usually your repo name.
+  themes: [
+    '@saucelabs/theme-github-codeblock'
+  ],
   themeConfig: {
     hideableSidebar: true,
     algolia: {
@@ -112,19 +115,14 @@ module.exports = {
           editUrl:
             'https://github.com/cycleplatform/docs-portal/tree/main',
         },
-        // blog: {
-        //   showReadingTime: true,
-        //   // Please change this to your repo.
-        //   editUrl:
-        //     'https://github.com/facebook/docusaurus/edit/master/website/blog/',
-        // },
+
         theme: {
           customCss: [
               require.resolve('./src/css/base.css'),
               require.resolve('./src/css/lists.css'),
               require.resolve('./src/css/code.css'),
               require.resolve('./src/css/fonts.css'),
-              require.resolve("./src/css/fa-styles/all.css"),
+              require.resolve("./src/css/fa-styles/all.css")
           ],
         },
       },

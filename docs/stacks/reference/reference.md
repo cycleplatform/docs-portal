@@ -10,13 +10,14 @@ The Cycle stack file is an intuitive take on orchestrating services together in 
 ## Top Level
 
 | Field         | Type                                 | Required | Nullable | Description      |
-|---------------|--------------------------------------|----------|----------|------------------|
-| `version`     | String                               | ✅        | ❌        | some description |
-| `about`       | Object — [About Reference]("")       | ❌        | ✅        | some description |
-| `services`    | Object — [Services Reference]("")    | ❌        | ✅        | some description |
-| `containers`  | Object — [Containers Reference]("")  | ✅        | ✅        | some description |
-| `annotations` | Object — [Annotations Reference]("") | ❌        | ✅        | some description |
-| `tests`       | Array — [Tests Reference]("")        | ❌        | ✅        | some description |
+|---------------|--------------------------------------|:------- :|:--------:|------------------|
+| `version`     | String                               | ✅        | ❌      | This is the version of the Cycle Stack Spec (currently 1.0). |
+| `about`       | Object — [About Reference]("")       | ❌        | ✅      | Extra information about this stack. Not used by the platform. |
+| `services`    | Object — [Services Reference]("")    | ❌        | ✅      | Describes service container policies for this stack. |
+| `containers`  | Object — [Containers Reference]("")  | ✅        | ✅      | An object where the key is a container identifier and the value is a container object. |
+| `annotations` | Object — [Annotations Reference]("") | ❌        | ✅      | A key value store of custom data for your stack. Not used by the platform internally. |
+
+
 
 #### Example
 ```json
@@ -25,7 +26,6 @@ The Cycle stack file is an intuitive take on orchestrating services together in 
   "about": {},
   "services": {},
   "containers": {},
-  "annotations": {},
-  "tests": []
+  "annotations": {}
 }
 ```

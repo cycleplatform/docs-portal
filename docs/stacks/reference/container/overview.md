@@ -6,7 +6,6 @@ sidebar_position: 0
 
 ```json
 {
-  ...,
   "containers": {
     "platform-api": {
       "name": "API",
@@ -16,12 +15,8 @@ sidebar_position: 0
         "access": "Talk with Bob to be given access to necessary API keys"
       },
       "stateful": false,
-      "config": {
-      },
-      "role": {
-      },
-      "volumes": {
-      },
+      "config": {},
+      "volumes": [],
       "deprecated": false
     },
     "platform-db": {
@@ -32,24 +27,17 @@ sidebar_position: 0
         "access": "No public internet. Use environment VPN to connect to db for development"
       },
       "stateful": true,
-      "config": {
-      },
-      "role": {
-      },
-      "volumes": {
-      },
+      "config": {},
+      "volumes": [],
       "deprecated": false
-    },
-    "my-app": {
     }
-  },
-  ...
+  }
 }
 ```
 
 ### Base Object
 | Field                  | Type                               | Required | Nullable | Description      |
-|------------------------|------------------------------------|----------|----------|------------------|
+|------------------------|------------------------------------|:--------:|:--------:|------------------|
 | `container_identifier` | Object — [Container Reference]("") | ✅        | ❌        | some description |
 
 #### Example
@@ -64,13 +52,12 @@ sidebar_position: 0
 ### `container`
 
 | Field         | Type                                 | Required | Nullable | Description      |
-|---------------|--------------------------------------|----------|----------|------------------|
+|---------------|--------------------------------------|:--------:|:--------:|------------------|
 | `name`        | String                               | ✅        | ❌        | some description |
 | `image`       | Object — [Image Reference]("")       | ✅        | ❌        | some description |
 | `annotations` | Object — [Annotations Reference]("") | ❌        | ✅        | some description |
 | `stateful`    | Boolean                              | ✅        | ❌        | some description |
 | `config`      | Object — [Config Reference]("")      | ❌        | ✅        | some description |
-| `role`        | Object — [Role Reference]("")        | ❌        | ✅        | some description |
 | `volumes`     | Object — [Volumes Reference]("")     | ❌        | ✅        | some description |
 | `deprecate`   | Boolean                              | ❌        | ❌        | some description |
 
@@ -84,6 +71,6 @@ sidebar_position: 0
   "config": { ...config_object },
   "role": { ...role_object },
   "volumes:": {...volumes_object },
-  "deprecated": false,
+  "deprecated": false
 }
 ```

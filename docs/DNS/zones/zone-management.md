@@ -17,7 +17,7 @@ To create a DNS zone on Cycle:
 
 1. Click DNS in the nav menu on the left-hand side.
 2. Click Create Zone in the top right corner.
-3. Enter your domain in the Origin field.
+3. Enter your domain in the Origintype field.
 4. Select Hosted or Non-Hosted for your zone type.
 
 ### Verifying a Zone

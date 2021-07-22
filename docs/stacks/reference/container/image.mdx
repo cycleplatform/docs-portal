@@ -2,17 +2,18 @@
 sidebar_label: Image
 sidebar_position: 1
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import CodeBlock from "@theme/CodeBlock"
+import ImageOriginTypes from "../components/images/origintype"
 
 # Container Image
 
 ## `image`
 | Field    | Type                                  | Required | Nullable | Description      |
-|----------|---------------------------------------|----------|----------|------------------|
-| `name`   | String                                | ❌        | ✅        | some description |
-| `origin` | Object — [Image Origin Reference]("") | ✅        | ❌        | some description |
+|----------|-------------------------------------  |:--------:|:--------:|------------------|
+| `name`   | String                                | ❌       | ✅       | The name of the image. |
+| `origin` | Object                                | ✅       | ❌       | The [image origin]("") for this image. |
 
 ```json
 {
@@ -21,62 +22,22 @@ import CodeBlock from "@theme/CodeBlock"
 }
 ```
 
----
 
+<!-- Start Image Origintype -->
 ## `image.origin`
 | Field     | Type                                                    | Required | Nullable | Description      |
-|-----------|---------------------------------------------------------|----------|----------|------------------|
-| `type`    | String — `docker-hub`, `docker-registry`, `docker-file` | ❌        | ✅        | some description |
-| `details` | Object — [Image Origin Details Reference]("")           | ✅        | ❌        | some description |
+|-----------|---------------------------------------------------------|:--------:|:--------:|------------------|
+| `type`    | String — `docker-hub`, `docker-registry`, `docker-file` | ✅        | ❌      | The type of image origin, can be docker-file, docker-registry, docker-hub, or cycle.|
+| `details` | Object                                                  | ✅        | ❌      | Location, authentication, and meta data about the origin. Object key values are different based on the type defined.  |
 
 
-### `type`
-<Tabs
-    defaultValue="docker-hub"
-    groupId={"container-image-type"}
-    values={[
-        { label: 'docker-hub', value: 'docker-hub', },
-        { label: 'docker-registry', value: 'docker-registry', },
-        { label: 'docker-file', value: 'docker-file', },
-    ]}
->
-<TabItem value="docker-hub">
 
-<CodeBlock >
-{
-    "type": "docker-hub",
-    "details": { ...dockerhub_details },
-}
 
-</CodeBlock>
-</TabItem>
-<TabItem value="docker-registry">
-
-```json title="containers[identifier].image.origin"
-{
-    "type": "docker-registry",
-    "details": { ...docker_registry },
-}
-```
-
-</TabItem>
-<TabItem value="docker-file">
-
-```json title="containers[identifier].image.origin"
-{
-    "type": "docker-file",
-    "details": { ...dockerhub_file },
-}
-```
-
-</TabItem>
-</Tabs>
-
+<ImageOriginTypes />
 
 ### `details`
 
-The details object describes the image details for the container. The object shape changes depending on what the specified
-type for the image is.
+After defining the type a user will need to provide the corresponding information in the details object.
 
 <Tabs
     defaultValue="docker-hub"
@@ -90,16 +51,16 @@ type for the image is.
 <TabItem value="docker-hub">
 
 | Field      | Type   | Required | Nullable | Description      |
-|------------|--------|----------|----------|------------------|
-| `target`   | String | ✅        | ❌        | some description |
-| `username` | String | ❌        | ❌        | some description |
-| `token`    | String | ❌        | ❌        | some description |
+|------------|--------|:--------:|:--------:|------------------|
+| `target`   | String | ✅        | ❌        | The name and tag of the image as listed on Docker Hub, separated by a colon. |
+| `username` | String | ❌        | ❌        | A private repo's username for authentication purposes. |
+| `token`    | String | ❌        | ❌        | A private repo's token for authentication purposes. |
 
 ```json title="containers[identifier].image.origin.details"
 {
     "target": "someurl",
     "username": "docker_hub_username",
-    "token": "DockerHub Token",
+    "token": "DockerHub Token"
 }
 ```
 
@@ -107,12 +68,12 @@ type for the image is.
 <TabItem value="docker-registry">
 
 |    Field   | Type   | Required | Nullable | Description      |
-|------------|--------|----------|----------|------------------|
-| `url`      | String | ✅        | ❌        | some description |
-| `username` | String | ❌        | ❌        | some description |
-| `password` | String | ❌        | ❌        | some description |
-| `token`    | String | ❌        | ❌        | some description |
-| `target`   | String | ✅        | ❌        | some description |
+|------------|--------|:--------:|:--------:|------------------|
+| `url`      | String | ✅        | ❌        | The url of the docker registry. |
+| `username` | String | ❌        | ❌        | A username used for registry authentication. |
+| `password` | String | ❌        | ❌        | A password used for registry authentication. |
+| `token`    | String | ❌        | ❌        | A token used for registry authentication. |
+| `target`   | String | ✅        | ❌        | The private registry image target, consisting of a name and tag separated by a colon. |
 
 ```json title="containers[identifier].image.origin.details"
 {
@@ -120,20 +81,21 @@ type for the image is.
     "username": "registry_username",
     "password": "registry_password",
     "token": "registry_token",
-    "target": "image_target",
+    "target": "image_target:latest",
 }
 ```
 </TabItem>
 <TabItem value="docker-file">
 
 | Field         | Type                                | Required | Nullable | Description      |
-|---------------|-------------------------------------|----------|----------|------------------|
-| `repo`        | Object — [Repo Reference]("")       | ✅        | ✅        | some description |
-| `targz_url`   | String                              | ✅        | ✅        | some description |
-| `context_dir` | String                              | ❌        | ✅        | some description |
-| `build_dir`   | String                              | ❌        | ✅        | some description |
-| `credentials` | Array — [Credentials Reference]("") | ❌        | ❌        | some description |
+|---------------|-------------------------------------|:--------:|:--------:|------------------|
+| `repo`        | Object — [Repo Reference]("")       | ❌       | ✅        | An object holding remote repository information. If an image uses repo, it cannot use targz_url. |
+| `targz_url`   | String                              | ❌        | ✅        | A url for the targz dockerfile type. If an image uses targz_url, it cannot use repo.|
+| `context_dir` | String                              | ❌        | ✅        | The full path to the directory that should be treated as the root context when copying files from source to the image. |
+| `build_file`  | String                              | ❌        | ✅        | The full path to the file that Cycle should use to build the image. |
+| `credentials` | Array — [Credentials Reference]("") | ❌        | ❌        | An array of registry credentials used to authenticate the use of private parent images. |
 
+{/* test  Start Image Origintype Details Dockerfile Repo Tabs */}
 <Tabs
 defaultValue="repo"
 values={[
@@ -146,21 +108,32 @@ values={[
 ```json title="containers[identifier].image.origin.details"
 {
     "repo": { ...repo },
-    "targz_url": null,
-    "context_dir": "registry_password",
-    "build_dir": "registry_token",
-    "credentials": "image_target",
+    "context_dir": "/",
+    "build_file": "/Dockerhub",
+    "credentials": [
+        {
+            url: "privateregistry.io",
+            username: "username",
+            token: "1231-4562-7556"
+        },
+        {
+            url: "privateregistry2.io",
+            username: "username2",
+            token: "1231-3362-7556"
+        }
+    ],
+}
 }
 ```
 
 #### `repo`
 
-| Field         | Type                                | Required | Nullable | Description      |
-|---------------|-------------------------------------|----------|----------|------------------|
-| `url`        | Object — [Repo Reference]("")       | ✅        | ✅        | some description |
-| `auth`   | String                              | ✅        | ✅        | some description |
-| `branch` | String                              | ❌        | ✅        | some description |
-| `reference`   | String                              | ❌        | ✅        | some description |
+ Field         | Type                                | Required  | Nullable | Description
+---------------|-------------------------------------|:--------:|:--------:|------------------
+ `url`         | Object — [Repo Reference]("")       | ✅        | ✅       | some description
+ `auth`        | String                              | ❌        | ✅       | some description
+ `branch`      | String                              | ❌        | ✅       | some description
+ `reference`   | String                              | ❌        | ✅       | some description
 
 ```json title="containers[identifier].image.origin.details.repo"
 {
@@ -174,38 +147,140 @@ values={[
 #### `repo.auth`
 
 | Field         | Type                                | Required | Nullable | Description      |
-|---------------|-------------------------------------|----------|----------|------------------|
-| `url`        | Object — [Repo Reference]("")       | ✅        | ✅        | some description |
-| `auth`   | String                              | ✅        | ✅        | some description |
-| `branch` | String                              | ❌        | ✅        | some description |
-| `reference`   | String                              | ❌        | ✅        | some description |
+|---------------|-------------------------------------|:--------:|:--------:|------------------|
+| `type`        | String                              | ✅       | ❌        | The type of authentication to use for this image source. |
+| `credentials` | Object                              | ✅       | ❌        | An object holding the authentication information. |
 
 ```json title="containers[identifier].image.origin.details.repo.auth"
 {
-    "url": "repo.com/url",
-    "auth": { ...auth },
-    "branch": "branch",
-    "build_dir": "registry_token",
-    "credentials": "image_target",
+   "type": "http",
+   "credentials": {...}
 }
 ```
+
+    {/* test Start Image Origintype Details Dockerfile Repo Auth Tabs */}
+<Tabs
+    defaultValue="http"
+    values={[
+        { label: 'HTTP', value: 'http', },
+        { label: 'SSH', value: 'ssh', },
+    ]}
+>
+<TabItem value={"http"}>
+
+#### `HTTP Repo Auth`
+
+| Field         | Type                                | Required | Nullable | Description      |
+|---------------|-------------------------------------|:--------:|:--------:|------------------|
+| `username`    | String                              | ✅       | ❌        | The username for the repo. |
+| `password`    | String                              | ✅       | ❌        | The password for the repo. |
+
+```json title="containers[identifier].image.origin.details.repo.auth.credentials"
+{
+    "username": "demousername",
+    "password": "userspassword"
+}
+```
+</TabItem>
+
+<TabItem value={"ssh"}>
+
+#### `SSH Repo Auth`
+
+| Field         | Type                                | Required | Nullable | Description      |
+|---------------|-------------------------------------|:--------:|:--------:|------------------|
+| `username`    | String                              | ✅       | ❌        | The username for the ssh key - usually git for github. |
+| `passphrase`  | String                              | ❌       | ❌        | The an optional passphrase used for the SSH key, which would have been set when the key was created. |
+| `private_key` | String                              | ✅       | ❌        | The SSH key. |
+
+```json title="containers[identifier].image.origin.details.repo.auth.credentials"
+{
+    "username": "git",
+    "password": "somepassphrase",
+    "private_key": "-----BEGIN OPENSSH PRIVATE KEY---\r\nb3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAABlwAAAAdzc2gtcn\r\nNhAAAAAwEAAQAAAYEA2DE0SHD8ulSFgMQKguxZi18TfbOBUm+htRSDdOttpeNiTUitPkHz\r\ninY\/ZCUEPHcSMMnoh9viFrgpsGNd7mi+3Fb+YP1dB7sSsb4EV5a9LHAfgEEF0dDQ7aKJmf\r\nFQ\/\/cPfowvGAyHjwbPZLNxtuH7LxbikhajtYXnlc72DnlILvzUbX6yCGposeugU7aYf2gj\r\n\/mZrikxAgDQXeVx5cVvz3VPh8xE\/pe1ADSKQjw0\/C+ftUuzV1wM\/XM5B5JF8kqLMbxG6N6\r\nh6rMgDbOtfV9khlFeur8w2e2CvkvrySfl6QteP1l5X+JDUxg+3+NdlFGIqxF+cuxRb30So\r\nlZDtlfS2DYsFQyzlM6liXQUfZAbqjXQ\/aPLboVMf9K0330KuUdd4RyGUcO0tlICLpeyrDb\r\npVE6e0+SJZCYub6ZLwcXqC+DGFU1IpiQFKp0j\/t8OINWHEYubYjzsfZ6PzOz6aNqsmYEkt\r\ntG1ii6KgaO5z+YEFmfKgXMw418kwVr5TQS8hhRaxAAAFiAlE6O4JROjuAAAAB3NzaC1yc2\r\nEAAAGBANgxNEhw\/LpUhYDECoLsWYtfE32zgVJvobUUg3TrbaXjYk1IrT5B84p2P2QlBDx3\r\nEjDJ6Ifb4ha4KbBjXe5ovtxW\/mD9XQe7ErG+BFeWvSxwH4BBBdHQ0O2iiZnxUP\/3D36MLx\r\ngMh48Gz2Szcbbh+y8W4pIWo7WF55XO9g55SC781G1+sghqaLHroFO2mH9oI\/5ma4pMQIA0\r\nF3lceXFb891T4fMRP6XtQA0ikI8NPwvn7VLs1dcDP1zOQeSRfJKizG8RujeoeqzIA2zrX1\r\nfZIZRXrq\/MNntgr5L68kn5ekLXj9ZeV\/iQ1MYPt\/jXZRRiKsRfnLsUW99EqJWQ7ZX0tg2L\r\nBUMs5TOpYl0FH2QG6o10P2jy26FTH\/StN99CrlHXeEchlHDtLZSAi6Xsqw26VROntPkiWQ\r\nmLm+mS8HF6gvgxhVNSKYkBSqdI\/7fDiDVhxGLm2I87H2ej8zs+mjarJmBJLbRtYouioGju\r\nc\/mBBZnyoFzMONfJMFa+U0EvIYUWsQAAAAMBAAEAAAGBAKXNpsFgFhN5OyI0N7ONPGeNNU\r\n+UWbw1bRmJcAA9hsxRBVUsReGXhwZMBfXyBbuxvju4viNj2ZN\/Dkn\/C00K\/EXUWidcaPrC\r\n2GWEy6O5McBhBWfBdosh0PpPS6TK1Epa2oE9VejlwxlIKcqbbLzLt2636HAN+OQAnEnifg\r\nc\/sMKImQqYvkWCBmVdxootYetknSZAun1IWbd5O\/+RknoEAZVe\/c0DD4Nb32GzfpaXnCCv\r\ncO3GQYIzNWchsJtxkM6NFz+nPbzja\/rD+AfvkZeRZN5XeP2LiY6CzZKjm2xmvu4dYpFKVt\r\nbR6HP\/Jmh28DzXam4B9c9hMRTl1pqGqficZaWlBjvbZW5VFlV2u\/3zduxI+ERP1yBEidFW\r\nz263V1ml\/meMuEfKMLTZuAf\/puzHGL9uCophasNNWCMYjkSP+Kl3gy2OBUWEyzmeZ7Lynd\r\nsIJbJUAyJ7al+pGElm5SDg+LiUyofcCWsL6FKGpxHIGsJGyobyPP4wPwtND\/owSqjZoQAA\r\nAMAynJD7SdLuUu\/TzPt+CYNVap19jzsfBEoK7gFmd\/zAOoIJ4+LGFD10kJM9M87ywSZnWz\r\nHnMwGVD\/PSAGJOMNpgSNZj5k0YScV27ML5nQx9a0woyJsIpyWrZVsPSq6PpY1Mm6Ib\/UFu\r\n5Xb3auklurarv8yrk4W1HiM3vRk6Cyzk5tHsek6ERRifjkByR8GRna4Flh9crML439CDHX\r\njN5CsgAknBs\/QYm\/oYpdyTLZc4Q9cOZaM\/7ATeF8FcL8UYtYoAAADBAPFXcMHwhyuiXVzb\r\nCsKzbe1JYpXKi1CudzaSMXIrxVdL8HXsno2vwNES12PN4S8J3oSmLd9Svy96OlMiNF3GQb\r\nEgH4YHZY4+1IGw6anWsqXfyKuClUIQ0WkpfloP2UlrbEBOje40\/YDIYQXDX+ba6usshXsW\r\nN1JUF4HOa6VxalHINHGg81q0dCdUWW8BjxNVod1SxM95ZdhHZqZ4lIsf94XeiGLv+hzXO0\r\nvEaw+fkAkMg3NDunqj6sLw1jhbN7TstQAAAMEA5VK5ALBRJi5Iauj9+FwlpGfUtY21bKm0\r\nJtJRIu3UG25c9N5vbRiZR6y03PfeUD6+SoUqmepBG8ZBuMOYjf3fi1\/drT8+bC9lox0c+w\r\nIzcbNtqD1a1iN7Tj0jPU7A27yXovrBDj5Fk2BAYCE7MolKCXqyW5YVUzl0nSRbk4TY6ktN\r\niPNRkJnIqg8RIo5nhvdcUXmvtCbAW\/PM5Z5ku5joDFqYn1qAh2DV\/\/bhMZlGKmx7Bxx5mC\r\nZ\/gs+UkcPirTuNAAAAEXJvb3RAZTc5Mjg0OWFkMGJmAQ==\r\n-----END OPENSSH PRIVATE KEY-----"
+}
+```
+</TabItem>
+</Tabs>
+    {/* END Image Origintype Details Dockerfile Repo Auth Tabs */}
+
+    {/* Start Image Origintype Details Dockerfile Repo Reference Tabs */}
+### `Repo References`
+This optional field has a type and value corresponding to either a commit hash or a git tag.
+
+| Field         | Type                                | Required | Nullable | Description      |
+|---------------|-------------------------------------|:--------:|:--------:|------------------|
+| `type`        | String                              | ✅       | ❌        | The type of reference. |
+| `value`       | String                              | ✅       | ❌        | Values needed for the specific type. |
+
+```json title="containers[identifier].image.origin.details.repo.reference"
+{
+    "type": "hash",
+    "value": "9172aaaa779fcb500033a831c07f5b17098d28f7"
+}
+```
+<Tabs  defaultValue="hash"
+       values={[
+           { label: 'hash', value: 'hash', },
+           { label: 'tag', value: 'tag', },
+       ]}>
+
+<TabItem value={"hash"}>
+
+#### `Hash Reference`
+
+| Field         | Type                                | Required | Nullable | Description      |
+|---------------|-------------------------------------|:--------:|:--------:|------------------|
+| `username`    | String                              | ✅       | ❌        | The username for the ssh key - usually git for github. |
+| `passphrase`  | String                              | ❌       | ❌        | The an optional passphrase used for the SSH key, which would have been set when the key was created. |
+| `private_key` | String                              | ✅       | ❌        | The SSH key. |
+
+```json title="containers[identifier].image.origin.details.repo.auth.credentials"
+{
+    "type": "hash",
+    "value": "9172aaaa779fcb500033a831c07f5b17098d28f7"
+
+}
+```
+</TabItem>
+<TabItem value={"tag"}>
+#### `Tag Reference`
+
+| Field         | Type                                | Required | Nullable | Description      |
+|---------------|-------------------------------------|:--------:|:--------:|------------------|
+| `username`    | String                              | ✅       | ❌        | The username for the ssh key - usually git for github. |
+| `passphrase`  | String                              | ❌       | ❌        | The an optional passphrase used for the SSH key, which would have been set when the key was created. |
+| `private_key` | String                              | ✅       | ❌        | The SSH key. |
+
+```json title="containers[identifier].image.origin.details.repo.auth.credentials"
+{
+    "username": "git",
+    "password": "somepassphrase",
+    "private_key": "-----BEGIN OPENSSH PRIVATE KEY---\r\nb3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAABlwAAAAdzc2gtcn\r\nNhAAAAAwEAAQAAAYEA2DE0SHD8ulSFgMQKguxZi18TfbOBUm+htRSDdOttpeNiTUitPkHz\r\ninY\/ZCUEPHcSMMnoh9viFrgpsGNd7mi+3Fb+YP1dB7sSsb4EV5a9LHAfgEEF0dDQ7aKJmf\r\nFQ\/\/cPfowvGAyHjwbPZLNxtuH7LxbikhajtYXnlc72DnlILvzUbX6yCGposeugU7aYf2gj\r\n\/mZrikxAgDQXeVx5cVvz3VPh8xE\/pe1ADSKQjw0\/C+ftUuzV1wM\/XM5B5JF8kqLMbxG6N6\r\nh6rMgDbOtfV9khlFeur8w2e2CvkvrySfl6QteP1l5X+JDUxg+3+NdlFGIqxF+cuxRb30So\r\nlZDtlfS2DYsFQyzlM6liXQUfZAbqjXQ\/aPLboVMf9K0330KuUdd4RyGUcO0tlICLpeyrDb\r\npVE6e0+SJZCYub6ZLwcXqC+DGFU1IpiQFKp0j\/t8OINWHEYubYjzsfZ6PzOz6aNqsmYEkt\r\ntG1ii6KgaO5z+YEFmfKgXMw418kwVr5TQS8hhRaxAAAFiAlE6O4JROjuAAAAB3NzaC1yc2\r\nEAAAGBANgxNEhw\/LpUhYDECoLsWYtfE32zgVJvobUUg3TrbaXjYk1IrT5B84p2P2QlBDx3\r\nEjDJ6Ifb4ha4KbBjXe5ovtxW\/mD9XQe7ErG+BFeWvSxwH4BBBdHQ0O2iiZnxUP\/3D36MLx\r\ngMh48Gz2Szcbbh+y8W4pIWo7WF55XO9g55SC781G1+sghqaLHroFO2mH9oI\/5ma4pMQIA0\r\nF3lceXFb891T4fMRP6XtQA0ikI8NPwvn7VLs1dcDP1zOQeSRfJKizG8RujeoeqzIA2zrX1\r\nfZIZRXrq\/MNntgr5L68kn5ekLXj9ZeV\/iQ1MYPt\/jXZRRiKsRfnLsUW99EqJWQ7ZX0tg2L\r\nBUMs5TOpYl0FH2QG6o10P2jy26FTH\/StN99CrlHXeEchlHDtLZSAi6Xsqw26VROntPkiWQ\r\nmLm+mS8HF6gvgxhVNSKYkBSqdI\/7fDiDVhxGLm2I87H2ej8zs+mjarJmBJLbRtYouioGju\r\nc\/mBBZnyoFzMONfJMFa+U0EvIYUWsQAAAAMBAAEAAAGBAKXNpsFgFhN5OyI0N7ONPGeNNU\r\n+UWbw1bRmJcAA9hsxRBVUsReGXhwZMBfXyBbuxvju4viNj2ZN\/Dkn\/C00K\/EXUWidcaPrC\r\n2GWEy6O5McBhBWfBdosh0PpPS6TK1Epa2oE9VejlwxlIKcqbbLzLt2636HAN+OQAnEnifg\r\nc\/sMKImQqYvkWCBmVdxootYetknSZAun1IWbd5O\/+RknoEAZVe\/c0DD4Nb32GzfpaXnCCv\r\ncO3GQYIzNWchsJtxkM6NFz+nPbzja\/rD+AfvkZeRZN5XeP2LiY6CzZKjm2xmvu4dYpFKVt\r\nbR6HP\/Jmh28DzXam4B9c9hMRTl1pqGqficZaWlBjvbZW5VFlV2u\/3zduxI+ERP1yBEidFW\r\nz263V1ml\/meMuEfKMLTZuAf\/puzHGL9uCophasNNWCMYjkSP+Kl3gy2OBUWEyzmeZ7Lynd\r\nsIJbJUAyJ7al+pGElm5SDg+LiUyofcCWsL6FKGpxHIGsJGyobyPP4wPwtND\/owSqjZoQAA\r\nAMAynJD7SdLuUu\/TzPt+CYNVap19jzsfBEoK7gFmd\/zAOoIJ4+LGFD10kJM9M87ywSZnWz\r\nHnMwGVD\/PSAGJOMNpgSNZj5k0YScV27ML5nQx9a0woyJsIpyWrZVsPSq6PpY1Mm6Ib\/UFu\r\n5Xb3auklurarv8yrk4W1HiM3vRk6Cyzk5tHsek6ERRifjkByR8GRna4Flh9crML439CDHX\r\njN5CsgAknBs\/QYm\/oYpdyTLZc4Q9cOZaM\/7ATeF8FcL8UYtYoAAADBAPFXcMHwhyuiXVzb\r\nCsKzbe1JYpXKi1CudzaSMXIrxVdL8HXsno2vwNES12PN4S8J3oSmLd9Svy96OlMiNF3GQb\r\nEgH4YHZY4+1IGw6anWsqXfyKuClUIQ0WkpfloP2UlrbEBOje40\/YDIYQXDX+ba6usshXsW\r\nN1JUF4HOa6VxalHINHGg81q0dCdUWW8BjxNVod1SxM95ZdhHZqZ4lIsf94XeiGLv+hzXO0\r\nvEaw+fkAkMg3NDunqj6sLw1jhbN7TstQAAAMEA5VK5ALBRJi5Iauj9+FwlpGfUtY21bKm0\r\nJtJRIu3UG25c9N5vbRiZR6y03PfeUD6+SoUqmepBG8ZBuMOYjf3fi1\/drT8+bC9lox0c+w\r\nIzcbNtqD1a1iN7Tj0jPU7A27yXovrBDj5Fk2BAYCE7MolKCXqyW5YVUzl0nSRbk4TY6ktN\r\niPNRkJnIqg8RIo5nhvdcUXmvtCbAW\/PM5Z5ku5joDFqYn1qAh2DV\/\/bhMZlGKmx7Bxx5mC\r\nZ\/gs+UkcPirTuNAAAAEXJvb3RAZTc5Mjg0OWFkMGJmAQ==\r\n-----END OPENSSH PRIVATE KEY-----"
+}
+```
+</TabItem>
+</Tabs>
+{/* test END Image Origintype Details Dockerfile Repo Reference Tabs -->*/}
 </TabItem>
 
 <TabItem value={"tar"}>
 
 ```json title="containers[identifier].image.origin.details"
 {
-    "repo": null,
-    "targz_url": "location.com/of/tar",
-    "context_dir": "registry_password",
-    "build_dir": "registry_token",
-    "credentials": "image_target",
+    "targz_url": "demo.com/endpoint",
+    "context_dir": "/fromendpoint/treat-this-as-context-when-building-image",
+    "build_dir": "/fromendpoint/treat-this-as-context-when-building-image/Dockerfile",
 }
 ```
 </TabItem>
 </Tabs>
+</TabItem>
+</Tabs>
 
-#### `credentials`
+
+
+### `credentials`
 
 ```json title="containers[identifier].image.origin.details.credentials"
 {
@@ -213,9 +288,19 @@ values={[
     "auth": { ...auth },
     "branch": "branch",
     "build_dir": "registry_token",
-    "credentials": "image_target",
+    "credentials": [
+        {
+            url: "privateregistry.io",
+            username: "username",
+            token: "1231-4562-7556"
+        },
+        {
+            url: "privateregistry2.io",
+            username: "username2",
+            token: "1231-3362-7556"
+        }
+    ],
 }
 ```
 
-</TabItem>
-</Tabs>
+
