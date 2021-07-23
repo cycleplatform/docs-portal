@@ -3,65 +3,36 @@ sidebar_label: Overview
 sidebar_position: 0
 ---
 # Container Object Overview
+The container record(s) define containers identifiers as keys and their corresponding objects hold information about the image source, configuration, annotations, and granular settings used to give production level control to each container in the stack.  
 
-```json
-{
-  "containers": {
-    "platform-api": {
-      "name": "API",
-      "image": {
-      },
-      "annotations": {
-        "access": "Talk with Bob to be given access to necessary API keys"
-      },
-      "stateful": false,
-      "config": {},
-      "volumes": [],
-      "deprecated": false
-    },
-    "platform-db": {
-      "name": "DB",
-      "image": {
-      },
-      "annotations": {
-        "access": "No public internet. Use environment VPN to connect to db for development"
-      },
-      "stateful": true,
-      "config": {},
-      "volumes": [],
-      "deprecated": false
-    }
-  }
-}
-```
 
-### Base Object
+### Containers Record
 | Field                  | Type                               | Required | Nullable | Description      |
 |------------------------|------------------------------------|:--------:|:--------:|------------------|
-| `container_identifier` | Object — [Container Reference]("") | ✅        | ❌        | some description |
+| `containers`           | Record                             | ✅        | ❌        | `container_identifier` records holding information about the image source, configuration, annotations, and granular settings. |
 
-#### Example
+### 3 Container Records: Example
 ```json
-{
-  "platform-api": { ...container_details },
+"containers": {
+  "container_identifier_example": { ...container_details },
   "my-app": { ...container_details },
   "my-app-admin-portal": { ...container_details },
 }
 ```
 
-### `container`
+### `Container Object`
 
 | Field         | Type                                 | Required | Nullable | Description      |
 |---------------|--------------------------------------|:--------:|:--------:|------------------|
 | `name`        | String                               | ✅        | ❌        | some description |
 | `image`       | Object — [Image Reference]("")       | ✅        | ❌        | some description |
-| `annotations` | Object — [Annotations Reference]("") | ❌        | ✅        | some description |
-| `stateful`    | Boolean                              | ✅        | ❌        | some description |
-| `config`      | Object — [Config Reference]("")      | ❌        | ✅        | some description |
-| `volumes`     | Object — [Volumes Reference]("")     | ❌        | ✅        | some description |
-| `deprecate`   | Boolean                              | ❌        | ❌        | some description |
+| `annotations` | Object — [Annotations Reference]("") | ❌        | ✅        | A key value store of custom data for your container. Not used by the platform internally. |
+| `stateful`    | Boolean                              | ✅        | ❌        | If true, this container is set to stateful. |
+| `config`      | Object — [Config Reference]("")      | ❌        | ✅        | The configuration options for the container. |
+| `volumes`     | Object — [Volumes Reference]("")     | ❌        | ✅        | The volumes, if any, for this container. |
+| `deprecate`   | Boolean                              | ❌        | ❌        | If true this container will be marked deprecated. |
 
-#### Example
+### Top Level Container Keys
 ```json
 {
   "name": "My App Front End",
@@ -71,6 +42,6 @@ sidebar_position: 0
   "config": { ...config_object },
   "role": { ...role_object },
   "volumes:": {...volumes_object },
-  "deprecated": false
+  "deprecate": false
 }
 ```

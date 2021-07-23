@@ -3,7 +3,7 @@ import CodeBlock from "@theme/CodeBlock"
 import Tabs from "@theme/Tabs"
 import TabItem from "@theme/TabItem"
 import {dockerhub, dockerfile, dockerregistry} from "./origins/origin-types.js"
-
+import TableHeaders from "../tableheaders";
 
 export default function OriginTypes() {
     return (
@@ -20,12 +20,11 @@ export default function OriginTypes() {
                 <CodeBlock className={"language-json"} title={"defining types"}>
                     {dockerhub}
                 </CodeBlock>
+                <h3>Add to contents</h3>
+                <table>
+                    <TableHeaders />
 
-                | Field | Type | Required | Nullable | Description |
-                |------------|--------|:--------:|:--------:|------------------|
-                | `target` | String | ✅ | ❌ | The name and tag of the image as listed on Docker Hub, separated by a colon. |
-                | `username` | String | ❌ | ❌ | A private repo's username for authentication purposes. |
-                | `token` | String | ❌ | ❌ | A private repo's token for authentication purposes. |
+                </table>
 
             </TabItem>
 
