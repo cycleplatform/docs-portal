@@ -20,12 +20,6 @@ export default function OriginTypes() {
                 <CodeBlock className={"language-json"} title={"defining types"}>
                     {dockerhub}
                 </CodeBlock>
-                <h3>Add to contents</h3>
-                <table>
-                    <TableHeaders />
-
-                </table>
-
             </TabItem>
 
             <TabItem value="docker-registry">

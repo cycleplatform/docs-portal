@@ -1,0 +1,40 @@
+---
+sidebar_label: Config
+sidebar_position: 2
+---
+import {DeployTable} from "../components/config/deploy/deploytable";
+
+
+# Container Config
+The container configuration allows for ultra granular access to network, deployment, runtime, resource, and itegration settings.
+
+
+
+## Network Config
+
+| Field    | Type                                  | Required | Nullable | Description      |
+|----------|-------------------------------------  |:--------:|:--------:|------------------|
+|hostname | String                                 |✅        | ❌       |The container hostname used by Cycle's discovery service for DNS queries. |
+|public   | String                                 |✅        | ❌       |the containers network setting for public internet - choices are `enable`, `disable`, `egress-only`. |
+|ports    | String                                 |❌        | ❌       |an array of port mappings for the container. |
+
+
+### Network Config Example
+```json
+{
+  "hostname": "server",
+  "public": "enable",
+  "ports": ["80:80", "443:80"]
+}
+```
+
+## Deploy Config
+
+<DeployTable />
+
+
+:::note Deployment Strategies
+For a full breakdown of the different deployment strategies available click [here](https://docs.cycle.io/docs/containers/configuration/deployment)
+.
+:::
+
