@@ -4,7 +4,7 @@ import Tabs from "@theme/Tabs"
 import TabItem from "@theme/TabItem"
 import TableHeaders from "../tableheaders";
 import {Details} from "./origins/origin-details"
-
+import {AutoTable} from "../autotable";
 
 export default function OriginDetails() {
     return (
@@ -19,48 +19,16 @@ export default function OriginDetails() {
         >
 
             <TabItem value="docker-hub">
-
-                <table>
-                    <TableHeaders />
-                    {Details.dockerhub.map(item => (
-                        <tr>
-                            {item.map(entry => (
-                                <td>{entry}</td>
-                            ))}
-                        </tr>
-                    ))}
-                </table>
-
-
+                <AutoTable tablevalues={Details.dockerhub} />
             </TabItem>
+
             <TabItem value="docker-registry">
-
-                <table>
-                    <TableHeaders />
-                    {Details.dockerregistry.map(item => (
-                        <tr>
-                            {item.map(entry => (
-                                <td>{entry}</td>
-                            ))}
-                        </tr>
-                    ))}
-                </table>
-
+                <AutoTable tablevalues={Details.dockerregistry} />
             </TabItem>
 
             <TabItem value="docker-file">
                 <p>Generally a <code>docker-file</code> image source would need to have information about a repo or a url endpoint where a tar.gz package was being served.  However, when importing a stack file on Cycle, generally a user will do so through a git repo.  For <code>docker-file</code> image source's, this repo information is used when both the repo and targz_url are not used in the details and is why neither is marked as required.</p>
-                <table>
-                    <TableHeaders />
-                    {Details.dockerfile.shared.map(item => (
-                        <tr>
-                            {item.map(entry => (
-                                <td>{entry}</td>
-                            ))}
-                        </tr>
-                    ))}
-                </table>
-
+                <AutoTable tablevalues={Details.dockerfile.shared} />
             </TabItem>
         </Tabs>
 

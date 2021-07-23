@@ -3,7 +3,7 @@ sidebar_label: Config
 sidebar_position: 2
 ---
 import {DeployTable} from "../components/config/deploy/deploytable";
-
+import {InstancesTable, MatchTable} from "../components/config/deploy/stateful";
 
 # Container Config
 The container configuration allows for ultra granular access to network, deployment, runtime, resource, and itegration settings.
@@ -38,3 +38,44 @@ For a full breakdown of the different deployment strategies available click [her
 .
 :::
 
+
+### Stateful & Instances
+The stateful object holds a single key called `instances`.
+
+`stateful table`
+
+| Field    | Type                                  | Required | Nullable | Description      |
+|----------|-------------------------------------  |:--------:|:--------:|------------------|
+|instances | Array                                 |✅        | ❌       |an array of instance objects which allow for granular control over each instance of a stateful container. |
+
+`instances table`
+<InstancesTable />
+
+#### Stateful Instance Match
+The instance object describes the instance being targeted in the `match` object.  Currently, for each instance of a stateful container created, Cycle will look at the hostname and prepend a number (starting at 1) separated by a dot.
+
+To match a stateful containers first instance, the user can simply use the hostname value `1.thecontainershostname`.
+<MatchTable />
+
+
+#### Statful Instance Start Commands
+`default`, `first`, and `auto` _start_ each have different use cases, but the object shape is consistent between them.
+
+
+
+
+
+
+
+
+
+
+```json
+{
+  "command": "mysql -d",
+  "environment_vars": {
+    "MYSQL_ROOT_PASSWORD": "lskdfj0923jf0293jf09jf",
+  },
+  "delay": 0
+}
+```
