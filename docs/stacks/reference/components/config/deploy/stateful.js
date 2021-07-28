@@ -1,6 +1,4 @@
 import React from 'react'
-import TableHeaders from "../../tableheaders";
-import {DeployObjects} from "./deploytable";
 import {AutoTable} from "../../autotable";
 
 
@@ -21,12 +19,42 @@ export const MatchFields = [
 ]
 
 export const StartFields = [
-    ["command", "String", "❌", "❌", "An optional command. "],
+    ["command", "String", "❌", "✅", "An optional command. "],
     ["environment_vars", "String", "❌", "❌", "Key value object "],
-    ["delay", "Number", "❌", "❌", "An optional delay in seconds to wait before Cycle sends the corresponding start signals. "],
+    ["delay", "Number", "❌", "✅", "An optional delay in seconds to wait before Cycle sends the corresponding start signals. "],
 ]
+
+export const StatefulExample = `{
+    "instances": [
+        {
+            "hostname": "1.db",
+            "default_start": {
+                /* omitting command here relying on the default image CMD */
+                "environment_vars": {
+                    "MYSQL_ROOT_PASSWORD": "lskdfj0923jf0293jf09jf",
+                },
+                "delay": 0
+            },
+            "first_start": {
+                "command": "/mysql_first_start_script",
+                "environment_vars": {
+                    "MYSQL_ROOT_PASSWORD": "lskdfj0923jf0293jf09jf",
+                },
+                "delay": 3
+            },
+            "auto_start": {
+                "command": "mysql -d",
+                "environment_vars": {
+                    "MYSQL_ROOT_PASSWORD": "lskdfj0923jf0293jf09jf",
+                },
+                "delay": 5
+            },
+        }    
+    ]
+}`
 
 
 
 export const InstancesTable = () => <AutoTable tablevalues={InstancesFields} />;
 export const MatchTable = () => <AutoTable tablevalues={MatchFields} />;
+export const StartsTable = () => <AutoTable tablevalues={StartFields} />;
