@@ -7,6 +7,9 @@ import {DeployTable} from "../components/config/deploy/deploytable";
 import {InstancesTable, MatchTable, StartsTable, StatefulExample} from "../components/config/deploy/stateful";
 import {ConstraintsExample, ShutdownExample, TelemetryExample, HealthCheckExample, RestartExample, StartupExample} from "../components/config/deploy/deploy";
 import { RuntimeTable, RuntimeExample} from "../components/config/runtime/runtime";
+import {IntegrationsExample} from "../components/config/integrations";
+import {ResourcesExample} from "../components/config/resources";
+
 
 # Container Config
 The container configuration allows for ultra granular access to network, deployment, runtime, resource, and itegration settings.
@@ -215,6 +218,10 @@ The word `cores` is used interchangeably with the word thread in the following d
 |ram       | Object                                |✅        | ❌       | An object holding the RAM container instance configuration settings, including swapiness and kernel fields. |
 
 
+<CodeBlock className="language-json" >
+    {ResourcesExample}
+</CodeBlock>
+
 ### CPU Shares & Core Pinning
 Trying to understand the complexities of CPU resource allocation can be an uphill battle for developers not versed in systems engineering.  On Cycle, container instances have access to `shares`. A single share represent 10% of the available resources for one CPU and 10 shares represents 100% of a given CPU's resources.
 
@@ -274,6 +281,10 @@ Integrations is an optional section of configurations that allows the user to ta
 |lets_encrypt | Object                                |❌        | ✅        | Advanced certificate integration for the container. |
 |webhooks     | Object                                |❌        | ✅        | Webhooks for container events.                      |
 |files        | Array                                 |❌        | ✅        | Files from the repository to be copied into the container. |
+
+<CodeBlock className="language-json">
+    {IntegrationsExample}
+</CodeBlock>
 
 
 
