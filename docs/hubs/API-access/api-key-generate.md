@@ -4,7 +4,7 @@ sidebar_position: 1
 ---
 # Managing API Keys
 
-### Create
+## Creating An API Key
 First, navigate to hub settings, and click API keys from the top nav. Then click Create API key.
 
 When creating an API key on Cycle, capabilities of that key, similar to capabilities of a user, must be set. See a full list of capabilities and their description here. To create the API key enter a name and select the capabilities, then press Create API key.
@@ -17,5 +17,5 @@ As a reminder, the manage checkbox gives the key access to the capabilities list
 
 After creating the API key, the key itself will be shown one time. Be sure to copy the full key by using the copy utility next to where the key is displayed. Below the key, there will be a full list of the capabilities and a reminder of the capabilities that have been enabled on this key. If changes need to be made, simply click the boxes that need to be added or removed and click Update API key.
 
-### Deleting API Keys
+## Deleting API Keys
 To delete a key simple enter the name in the form on the right hand side of the screen and press the Delete API key button.

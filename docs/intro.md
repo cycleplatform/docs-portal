@@ -21,36 +21,36 @@ Take a dive into containers and learn about the technology that's shaping the de
 
 ### Add a Provider
 
-Add a provider to your hub to deploy infrastructure. [Add a Provider](https://www.cycle.io)
+Add a provider to your hub to deploy infrastructure. [Add a Provider](/docs/infrastructure/providers/adding-providers)
 
 ### Deploy a Container
 
-Learn how to deploy a container on cycle. [Deploy a Container](https://www.cycle.io)
+Learn how to deploy a container on cycle. [Deploy a Container](/docs/environments/deployments/deploy-single-container)
 
 ### Set up DNS
 
-Set up a hosted or un-hosted DNS zone. [Set up DNS](https://www.cycle.io)
+Set up a hosted or un-hosted DNS zone. [Set up DNS](/docs/DNS/zones/zone-management#create-the-zone)
 
 ### Create an Environment
 
-A private network group with automated services. [Create an Environment](https://www.cycle.io)
+A private network group with automated services. [Create an Environment](/docs/environments/managing-environments#environment-create)
 
 ### Add a Server
 
-Deploy new infrastructure to you hub. [Add a Server](https://www.cycle.io)
+Deploy new infrastructure to you hub. [Add a Server](/docs/infrastructure/add-infrastructure)
 
-### Import an Image
+### Create An Image Source
 
-From Dockerhub to private registries. [Import an Image](https://www.cycle.io)
+ A reusable resource for creating images. [Creating A New Image Source](/docs/images/sources/sources-overview#creating-sources)
 
 ### Learn About Stacks
 
-A powerful way to manage multiple containers. [Learn about Stacks](https://www.cycle.io)
+A powerful way to manage multiple containers. [Learn about Stacks](/docs/stacks/overview)
 
 ### Import a Stack
 
-From raw files to git repositories. [Importing Stacks](https://www.cycle.io)
+From a git repository. [Importing Stacks](/docs/stacks/stacks-workflow#importing-from-a-git-repo)
 
 ### Create an API Key
 
-Use the public API for powerful programmatic control. [Create an API Key](https://www.cycle.io)
+Use the public API for powerful programmatic control. [Create an API Key](/docs/hubs/API-access/api-key-generate)
