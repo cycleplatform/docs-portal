@@ -6,16 +6,13 @@ sidebar_position: 0
 # Announcements
 
 Announcements are the notification system built into the Cycle platform that allows our team to communicate with end users on critical matters that could potentially include things such as downtime and outages or pertinent vendor information such as infrastructure model end of life.o
-
----
+ 
 
 ## Accessing Announcements
 
 New announcements will show up on your **Dashboard** the first time you log into your hub. You can view past announcements by following the **See Past Announcements** link, located on the dashboard or clicking the icon at the top of the portal.
 
 ![Announcements](/imgs/status/announcements/announcements.png)
-
----
 
 ## Announcement Types
 
