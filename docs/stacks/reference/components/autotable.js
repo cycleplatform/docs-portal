@@ -6,6 +6,7 @@ export function AutoTable({tablevalues}) {
     return (
         <table>
             <TableHeaders />
+            <tbody>
             {tablevalues.map(item => (
                 <tr>
                     {item.map(entry => (
@@ -13,6 +14,7 @@ export function AutoTable({tablevalues}) {
                     ))}
                 </tr>
             ))}
+            </tbody>
         </table>
     )
 }

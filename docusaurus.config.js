@@ -118,11 +118,11 @@ module.exports = {
 
         theme: {
           customCss: [
+              require.resolve("./src/css/fa-styles/all.css"),
               require.resolve('./src/css/base.css'),
               require.resolve('./src/css/lists.css'),
               require.resolve('./src/css/code.css'),
               require.resolve('./src/css/fonts.css'),
-              require.resolve("./src/css/fa-styles/all.css")
           ],
         },
       },

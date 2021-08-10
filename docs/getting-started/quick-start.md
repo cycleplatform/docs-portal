@@ -7,27 +7,8 @@ sidebar_position: 1
 
 Go from creating an account all the way through deploying your first container on Cycle in about 30 minutes with our Quick Start Guide.
 
----
 
-### What is the Cycle Portal?
-
-Cycle is a SaaS platform that makes running containerized applications on cloud infrastructure simple.
-
-### Why is that important?
-
-Simplicity is important as soon as you start to manage more than 1 of anything.
-
-A single server is simple to manage, as the number of servers grows, that simplicity wanes. A single application can be simple to manage, but creating several copies of that application can become complex. A small network is maintainable, but troubleshooting sprawling dynamic networks can bring even the most adept teams to a halt. With modern development, things are becoming smaller and more distributed (more instances in more locations). More resilient, yet inherently more complex.
-
-Not every team has the resources to hire a group of engineers to manage that growing complexity. Using Cycle keeps things simple for those teams.
-
----
-
-## Main Concepts
-
-Cycle is SaaS based, so that means you'll be signing into your account through a web portal. To gain access to the suite of tools available on Cycle, deploy a [hub](https://www.cycle.io). A hub is where users can add [infrastructure](https://www.cycle.io) (to power their applications) and [environments](https://www.cycle.io) (to network everything together). The rest of the tools on the platform either provide support to your running applications (ex: [two-way console](https://www.cycle.io)), or output that can be used to observe usage and status (ex: [container dashboard](https://www.cycle.io)). Of course there's much more here than meets the eye, and throughout this documentation we'll provide technical reference to these concepts in as straightforward a way as possible.
-
-### Quick Start Shortcuts
+## Quick Start Shortcuts
 
 - [Creating an Account](#creating-an-account)
 - [Creating a Hub](#creating-a-hub)
@@ -35,7 +16,7 @@ Cycle is SaaS based, so that means you'll be signing into your account through a
 - [Create an Environment](#create-an-environment)
 - [Deploying a Container to your Environment](#deploy-a-container-to-your-environment)
 
----
+
 
 ## Creating an Account
 
@@ -45,7 +26,7 @@ Use the [Cycle Account Wizard](https://www.cycle.io) to begin the sign-up proces
 2. You will receive an email with a verification code. Enter the code into the box and select "Verify Email".
 3. You've successfully created an account, click the **Login** button to be automatically logged in.
 
----
+
 
 ## Creating a Hub
 
@@ -65,7 +46,7 @@ Give your hub a name that will remind you what you plan to use the space for.
 
 ![Name your hub](/imgs/getting-started/quick-start/hub-name.png)
 
----
+
 
 ### Step 2: Choose Your Provider
 
@@ -85,7 +66,7 @@ There will be a short infopanel that talks about how Cycle interacts with your i
 - For Equinix: [Text](https://www.cycle.io) | [Video](https://www.youtube.com/watch?v=SNEp3rlTluQ)
 - For AWS: [Text](https://www.cycle.io) | [Video](https://www.youtube.com/watch?v=Pr_7IjPagic)
 
----
+
 
 ### Step 3: Choose a Tier
 
@@ -97,7 +78,7 @@ Hub tiers are how you define how much storage and RAM your hub will need. Each t
 
 Cycle offers a standard support plan that is included at no additional cost. This includes communication with our team via our portal live chat and access to the Cycle Slack channel. If your business need a Service Level Agreement, that can be selected as well.
 
----
+
 
 ### Step 4: Enter Billing Information
 
@@ -111,7 +92,7 @@ Enter the credit card information you want to use for this hub. Your card will b
 If you need to arrange alternate payment methods, please reach out to our support team.
 :::
 
----
+
 
 ### Step 5: Add Collaborators and Finalize
 
@@ -123,7 +104,7 @@ Before you finalize your order you will have a chance to add collaborators to th
 
 ![members](/imgs/getting-started/quick-start/members.png)
 
----
+
 
 ### Provider Check
 
@@ -131,7 +112,7 @@ If you opted to skip adding provider(s) during hub create, you'll need to add th
 
 <!-- todo - dropdown component -->
 
----
+
 
 ## Deploying Infrastructure
 
@@ -146,7 +127,7 @@ After successfully creating a hub you'll need to add infrastructure. To add infr
 
 <!-- todo - Infra Video that needs embeded -->
 
----
+
 
 ## Create an Environment
 
@@ -161,7 +142,7 @@ To create an environment, follow these steps:
 
 <!-- todo - Env add video embded -->
 
----
+
 
 ## Deploy a Container to Your Environment
 
@@ -218,7 +199,7 @@ The First Available deployment strategy will deploy the instances to the server 
 
 ![First Available](/imgs/getting-started/quick-start/first-available.png)
 
----
+
 
 #### Set Tags
 
@@ -230,7 +211,7 @@ If you want to be descriptive about which servers this container will be deploye
 
 ![set tags](/imgs/getting-started/quick-start/set-tags.png)
 
----
+
 
 ### Step 2: Select an Image
 
@@ -263,7 +244,7 @@ If you choose to import from a Docker Registry, the process is the same, except 
 
 4. Select your image from the list. If you just imported it, it will be selected for you automatically.
 
----
+
 
 ### Step 2.1: Configure Volumes
 
@@ -279,7 +260,7 @@ Some container images may specify volumes (persistent data storage). Cycle will 
 
 ![volumes](/imgs/getting-started/quick-start/volumes.png)
 
----
+
 
 ### Step 3: Configure the Network
 
@@ -295,13 +276,13 @@ There are three types of network privilege a container can have:
 - **Egress Only** - The container may initiate connections over the internet, but all incoming connections will be blocked. This is ideal for things that require fetching data from the web, but do not need to respond to inbound requests, such as web scrapers.
 - **Enabled** - The container is able to both start and accept connections over the internet. This is a must for websites, APIs, and other services where clients may not be known ahead of time.
 
----
+
 
 ### Step 4: Finalize
 
 Verify everything is correct in the deployment summary box on the right, then click the "Create Container" button, located on the bottom right side of the form. All of these options will be fully configurable after creation as well, so if you make a mistake you can easily correct it before starting the container.
 
----
+
 
 #### Start Your Containers and View Instance
 

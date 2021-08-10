@@ -3,8 +3,6 @@ sidebar_label: Networks Overview
 sidebar_position: 1
 ---
 
-
-
 # Cycle Networks Overview
 Cycle does all the heavy lifting when it comes to the creation and maintenance of networks.
 
@@ -51,5 +49,3 @@ To figure out if the container is listening on "dual stack" or IPv4 and IPv6:
 * If the output from this command shows `:::port` the instance is listening on both IPv4 and IPv6.
 * If it shows `0.0.0.0:port`, it is only listening on IPv4.
 * If nothing is showing, the container is not listening for traffic at all.
-
-<img src="/svgs/duotone/abacus.svg" />
