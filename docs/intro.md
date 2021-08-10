@@ -17,7 +17,7 @@ A quick introduction to the platform and the problems it solves. [Learn More abo
 
 Take a dive into containers and learn about the technology that's shaping the development world. [Learn about Containers](https://www.cycle.io)
 
-## Get Started
+## Guides 
 
 ### Add a Provider
 
