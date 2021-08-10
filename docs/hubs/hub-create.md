@@ -15,11 +15,10 @@ If this is your first time creating a hub, simply log in to the portal and click
 
 ### Step 1: Name Your Hub
 
-Give your hub a name that will remind you what you plan to use the space for.
+A hub is generally used as a way to show that a space is fully isolated from another.  Naming a hub should reflect that.  For example: SaaS products will generally use the name of the product as the hub name, where as Developement teams completing projects as third party contractors will often times use the client name for some hubs, while using their company name for their main workspace.
 
 ![Name your hub](/imgs/getting-started/quick-start/hub-name.png)
 
----
 
 ### Step 2: Choose Your Provider
 
@@ -27,19 +26,22 @@ Enable the providers of your choice and enter your API keys in the box.
 
 ![Choose your provider](/imgs/getting-started/quick-start/choose-your-provider.png)
 
-:::caution
-
-There will be a short infopanel that talks about how Cycle interacts with your infrastructure. This is just here to remind you that all infrastructure actions (provisioning, deprovisioning) should happen through the platform. Not using the platform to take these actions can lead to unintended consequences.
-
-:::
 
 #### Where do I get API Keys to connect providers?
+
+
 
 - For Vultr: [Text](https://www.cycle.io) | [Video](https://www.youtube.com/watch?v=SNEp3rlTluQ)
 - For Equinix: [Text](https://www.cycle.io) | [Video](https://www.youtube.com/watch?v=SNEp3rlTluQ)
 - For AWS: [Text](https://www.cycle.io) | [Video](https://www.youtube.com/watch?v=Pr_7IjPagic)
 
----
+
+:::note Videos
+
+Please note that while the videos listed here may show a different hub create process than is currently live, the steps required to create the assets (API Keys, etc) still are accurate.
+
+:::
+
 
 ### Step 3: Choose a Tier
 
@@ -51,7 +53,6 @@ Hub tiers are how you define how much storage and RAM your hub will need. Each t
 
 Cycle offers a standard support plan that is included at no additional cost. This includes communication with our team via our portal live chat and access to the Cycle Slack channel. If your business need a Service Level Agreement, that can be selected as well.
 
----
 
 ### Step 4: Enter Billing Information
 
@@ -65,7 +66,6 @@ Enter the credit card information you want to use for this hub. Your card will b
 If you need to arrange alternate payment methods, please reach out to our support team.
 :::
 
----
 
 ### Step 5: Add Collaborators and Finalize
 
@@ -76,3 +76,6 @@ Congratulations, your hub has been created! You'll be able to start deploying co
 Before you finalize your order you will have a chance to add collaborators to the hub. Cycle makes it easy to add collaborators and describe the type of access you want those users to have in one step. Type in the email address of the person you wish to add and then select their access level from the Role dropdown menu.
 
 ![members](/imgs/getting-started/quick-start/members.png)
+
+
+
