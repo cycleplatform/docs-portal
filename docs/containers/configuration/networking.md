@@ -4,7 +4,7 @@ sidebar_position: 2
 ---
 
 # Container Configuration: Networking
-Networking configuration is comprised of three sections:
+Networking configuration consists of three sections:
 1. Hostname
 2. Public Network
 3. Ports

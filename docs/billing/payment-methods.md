@@ -7,7 +7,7 @@ sidebar_position: 1
 
 Add additional payment methods or change the one used to pay for your hub.
 
----
+
 
 When you create a hub, your billing information is used to create your primary payment method. You can add additional methods that are used as fallback, or to set as a new primary payment method for the hub.
 
@@ -15,7 +15,7 @@ When you create a hub, your billing information is used to create your primary p
 At this time, Cycle only supports adding credit cards as payment methods through the portal. If you need to set up an alternative payment method, please contact support
 :::
 
----
+
 
 ## Adding a Payment Method
 
@@ -25,7 +25,7 @@ At this time, Cycle only supports adding credit cards as payment methods through
 4. Enter a name for the method, followed by your credit card information.
 5. When finished, click Add **Payment Method** to finish.
 
----
+
 
 ## Modifying a Payment Method
 
@@ -37,9 +37,6 @@ This page allows you to modify the name of the payment method, make it your prim
 
 Enter a new name into the "Payment Method" form, then click **UPDATE METHOD**.
 
-<!-- todo - embed video -->
-
----
 
 ## Deleting a Payment Method
 

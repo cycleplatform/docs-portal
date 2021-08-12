@@ -18,13 +18,23 @@ DNS Zones are comprised of records. Cycle supports all standard DNS records, as 
 ## Adding Records
 After navigating to the record create wizard, a user can create a wide range of supported record types.
 
-:::info Root and Wildcard
+:::note Root and Wildcard
 To refer to the root domain, use @ in the name field.
 To create a wildcard domain use an asterisk * in the name field.
 :::
 
+### Wildcard Records
+Creating a wildcard record with TLS certificate will cause all children of that record which are set to use TLS to use this wildcard certificate.
+
+:::caution Wildcard Cannot Be Deleted
+When the wildcard record is created with a TLS certificate it cannot be deleted if other records depend on it and trying to delete this record will show an error.
+:::
+
+
 ### Using the Record Create Wizard
 Use the following information to complete each form required for the record.
+
+
 
 Fill in all fields (detailed below), then click Add Record.
 
