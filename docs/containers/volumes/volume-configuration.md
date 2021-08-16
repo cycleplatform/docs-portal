@@ -22,7 +22,7 @@ To see information about a given volume, select it from the list of configured v
 **Read Only** - If the read only checkbox is checked this volume cannot be written to.
 
 :::info Storage Pool
-There is a setting for storage pool, for now this will always read use default storage, but we are actively developing new storage features, be sure to keep up to date by checking in on [Slack](https://slack.cycle.io) and the [Cycle blog](https://cycle.io/blog).
+If the server the instance is being deployed to has more than one disk and one or more of those disks are 2TB or larger, storage pool can be set to enabled to signify that the instance should create its volume from the space on larger disk.
 :::
 
 ### Remote Access
@@ -38,8 +38,10 @@ If the server your instance is deployed to does not have [SFTP connections enabl
 * **Raw** - Cycle will use the password exactly as you type it in. When accessing an instance volume, you will type the same password into your SFTP client that you have set in this box.
 
 * **SHA512** - A hashed version of your password. Run your password through a SHA512 generator, and paste the hash into the field. 
-:::info Online Hashers  
-It is not recommended to use an online SHA512 hash generator, since the purpose of this type of password is that it is not sent insecurely or stored by Cycle. When authenticating with your SFTP client, you will use your original, unhashed password to log in.
+
+
+:::info Online Hash Generators  
+It is not recommended using an online SHA512 hash generator, since the purpose of this type of password is that it is not sent insecurely or stored by Cycle. When authenticating with your SFTP client, you will use your original, unhashed password to log in.
 :::
   
 
