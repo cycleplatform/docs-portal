@@ -6,18 +6,23 @@ sidebar_position: 1
 # Environments Overview
 Environments are logical groupings of containers. All containers deployed inside an environment automatically have a private network built between them, enabling seamless communication.
 
-Only deploy containers into the same environment if they are related. For example, if you're building an app, you may have a database container, a frontend container, and an API container all deployed to an environment sharing the application name.
-
-### Private Networks
-One of the most difficult aspects of using containers is networking them together. Though this has gotten a bit easier over the years, nothing comes close to the simple, yet powerful approach of Cycle environments.
-
-Every container deployed into the same environment has a private, encrypted network built between them, regardless of their geographic location. Instances in Tokyo can communicate with your database in California, using nothing other than the hostname. Containers obtain both a private IPv4 and IPv6 address, where the format is:
-
-IPv4 - 10.[environment].[container].[instance].
-IPv6 - fd00::[environment]:[container]:[instance]:[unallocated].
+Containers deployed in environments are automatically configured to use environment private networks.  For default environments this is an IPv6 network, while `legacy` environments also configure an IPv4 network as well.
 
 
-### Environment Services
+`IPv4 - 10.[environment].[container].[instance].`
+
+`IPv6 - fd00::[environment]:[container]:[instance]:[unallocated].`
+
+:::info Legacy Networks
+A legacy environment will outfit each container with a subnet of IPv4 and IPv6 address space for its instances.  Legacy does not mean **instaed of** it is **also**. 
+:::
+
+
+Every container deployed into the same environment has a private network built between them, regardless of their geographic location. Instances in Tokyo can communicate with your database in California, using nothing other than the hostname. Containers obtain both a private IPv4 and IPv6 address, where the format is:
+
+
+
+## Environment Services
 An environment service is a container Cycle starts within the environment to provide extra functionality. These services are created and managed automatically, but may have some configuration options available. At this time, two services are started in each environment:
 
 * [Discovery Service](https://docs.cycle.io/docs/environments/services/discovery)
@@ -25,13 +30,19 @@ An environment service is a container Cycle starts within the environment to pro
 * [Load Balancer Service.](https://docs.cycle.io/docs/environments/services/loadbalancer)
 
 ### High Availability Services
-All environments will have the choice of setting services to high availability or HA. Marking a service as being HA will be done through a checkbox on the environment dashboard under Environment Summary.
+The loadbalancer and discovery service can be deployed in high availability mode.  
 
-When you mark a service **HA** Cycle will take steps to make sure that the service is deployed in a way that has a high failure tolerance. The service will spawn two - three more instances. If an instance fails, the platform will takes steps to bring that instance back online.
+:::caution Required Resources
+In order to use HA mode for services, there must be at least 2 servers deployed and those servers must be in different data centers. 
+:::
+
+To do this through the portal, click on any environment and then click the checkbox for HA & update.
+
+When marking a service **HA** Cycle will take steps to make sure that the service is deployed in a way that has a high failure tolerance.
 
 Swapping out of **HA** mode will scale your instances back down to a single instance. Cycle follows FILO and will eliminate the instances, starting with the last instance created and moving toward the original instance.
 
-### The Environment Dashboard
+## The Environment Dashboard
 From the environment dashboard, you are able to get a bird's eye view of containers and services for the environment, as well as information on the public load balancer and .
 
 :::note Navigating to the Environment Dashboard
@@ -40,3 +51,6 @@ From the environment dashboard, you are able to get a bird's eye view of contain
 
 * Alternatively, from within an environment, click the "Dashboard" tab at any time.
 :::
+
+
+Take the next step by learning how to [manage environments](/docs/environments/managing-environments).

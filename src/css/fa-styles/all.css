@@ -12739,3 +12739,9 @@ readers do not read off random characters that represent icons */
 .fas {
   font-family: 'Font Awesome 5 Pro';
   font-weight: 900; }
+
+
+
+.fastar-yellow{
+  color: rgb(255, 198, 41);
+}
