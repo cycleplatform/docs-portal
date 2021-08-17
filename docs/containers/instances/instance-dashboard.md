@@ -27,9 +27,9 @@ Here you will find information on:
 * Instance migration options.
 
 
-### Advanced
+## Advanced
 
-#### Instance Telemetry
+### Instance Telemetry
 Observe instance telemetry such as CPU usage and RAM usage for each instance.
 
 **CPU Usage** - Shows how many milliseconds of usage this instance is consuming over 30 second intervals.
@@ -43,7 +43,7 @@ The telemetry graphs are fully customizable for the user's needs. There are two 
 **Report** - Will create a report of data and populate the graph based on the time period selected from the dropdown. 
 
 
-### Instance Migration
+## Instance Migration
 To migrate your instance to another server in the same cluster you can use the Advanced modal to uncover the instance migration wizard. This is located under the migration exchange arrows   .  Using this wizard you can select where you would like to send your instance and whether or not you'd like to also migrate the contents of the instances volume.
 
 ### Revert Migration

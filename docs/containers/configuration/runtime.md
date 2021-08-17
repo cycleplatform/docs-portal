@@ -6,7 +6,7 @@ sidebar_position: 2
 # Container Configuration: Runtime
 The runtime configuration specifies how a container starts, information it has access to, and permissions it has on the host. It needs to be enabled for the settings underneath to have an effect.
 
-### Environment Variables
+## Environment Variables
 This section shows the currently configured environment variables for the container and also allows for a user to add/remove additional environment variables to the container after it's been created.
 
 To add additional environment variables to a container:
@@ -22,19 +22,19 @@ There are Cycle specific environment variables injected into each container. You
 Environment variables defined on the image cannot be removed. Cycle interprets these as critical to the way your program works. However, their values can be changed, which may be useful for things such as specific development-only settings. 
 :::
 
-### Command
+## Command
 The command section of the runtime configuration settings has options for overriding the startup command used to start your container and the containers configured working directory.
 
-#### Startup Command
+### Startup Command
 **Path** - Set an override to the default command run when the container starts. May be useful if you have a custom debug command you wish to run.
 
 **Args** - Any arguments you wish to pass into the overidden path.
 
-#### Working Directory
+### Working Directory
 **Workdir** - define the full path to be used when setting the containers working directory.  
 
 
-### Privileges
+## Privileges
 These settings define exactly what privileges the container has on the host.
 
 :::danger  Be Careful With Privileges

@@ -7,7 +7,6 @@ sidebar_position: 0
 
 Stacks offer a powerful way to declaratively manage multiple containers, and their deployments to the Cycle platform. Using stacks, you are able to configure every aspect of your applications ahead of time, save it to your version controlled repo, and have Cycle automate the deployment any time you make a push.
 
----
 
 :::info
 Though they share the same name, a Cycle stack is different from a Docker Compose file. Cycle stack files are meant for production deployments, which means they need to be more verbose about each setting. They also provide options unique to our platform. You can automatically convert a Docker Compose YAML file to a Cycle Stack file [here](/docs/stacks/reference/convert-docker-compose/).

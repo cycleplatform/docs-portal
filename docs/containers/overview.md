@@ -12,21 +12,27 @@ Want to go a bit deeper? Check out this [introductory article](https://cycle.io/
 Containers are created from [images](https://docs.cycle.io/docs/images/overview).  Creating a container on your local machine and creating a container on Cycle are relatively similar.  The main difference is that the Cycle portal allows you to select your configuration and deployment options, as well as maintain and debug through the portal - where your local experience will likely be a command line tool such as (Docker)[https://docker.io].
 
 An example of creating a container locally:
-1. Create a (Dockerfile)[https://docs.docker.com/engine/reference/builder/].
-2. Build the image running a command from the Docker CLI:<br />```docker build -t username/image .```
-3. Push the image to Dockerhub:<br />```docker push username/image```
+* Create a (Dockerfile)[https://docs.docker.com/engine/reference/builder/].
+* Build the image running a command from the Docker CLI:
+```bash
+docker build -t username/image .
+```
+* Push the image to Dockerhub:
+```bash
+docker push username/image
+```
 
 From here you can use your image on any computer that can pull from DockerHub or on Cycle using the [DockerHub image source](https://docs.cycle.io/docs/images/sources/dockerhub).
 
 Using Cycle to handle your builds:
-1. Create a [git](https://git-scm.com) source control management repository, accessible via url.
-2. Create a [Dockerfile](https://docs.cycle.io/docs/images/sources/dockerfile) image source.
-3. Use the [portal](https://docs.cycle.io/docs/images/images-workflow) to create and import the image from your dockerfile image source.
-4. (BONUS) Use the [deploy container](https://docs.cycle.io/docs/environments/deploy-a-single-container) form to create and deploy your container.
+* Create a [git](https://git-scm.com) source control management repository, accessible via url.
+* Create a [Dockerfile](https://docs.cycle.io/docs/images/sources/dockerfile) image source.
+* Use the [portal](https://docs.cycle.io/docs/images/images-workflow) to create and import the image from your dockerfile image source.
+* (BONUS) Use the [deploy container](https://docs.cycle.io/docs/environments/deploy-a-single-container) form to create and deploy your container.
 
 
 :::info Converting to Containers?
-If you have questions on converting to containers, or would like some help getting your application containerized, reach out to our support team. We're happy to help!
+If you have questions on converting to containers, or would like some help getting your application containerized, reach out to our support team on [Slack](https://slack.cycle.io). We're happy to help!
 :::
 
 
