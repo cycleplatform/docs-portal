@@ -1,0 +1,88 @@
+---
+sidebar_label: Demo with Components
+sidebar_position: 2
+---
+
+
+import HubName from "../../src/pages/hub/hub-create/hub-name.mdx"
+import HubTier from "../../src/pages/hub/hub-create/hub-tier.mdx"
+import SelectProvider from "../../src/pages/hub/hub-create/select-provider.mdx"
+import AddApiKeys from "../../src/pages/hub/hub-create/add-api-keys.mdx"
+import BillingInfo from "../../src/pages/hub/hub-create/billing-information.mdx"
+import Deploy from "../../src/pages/hub/hub-create/deploy.mdx"
+import EnvironmentCreate from "../../src/pages/environments/_create-environment.mdx"
+
+
+
+
+# Quick Start
+
+Use this guide to get up an running on Cycle by completing the  following steps:
+
+
+1. [Create An Account](#account-create)
+2. [Create A Hub](#hub-create)
+
+
+
+## Creating an Account
+
+Navigate to the [Cycle portal](https://portal.cycle.io) and click on "Sign Up".
+
+To complete signup, a user needs to add a valid email address, their name, and a password.  Cycle will send a verification code to the email entered.  Once the account is verified the user can log in and create their fist hub or join an existing hub.
+
+
+<!-- TODO what will this look like for someone with non hubs? -->
+
+
+
+## Hub Create
+Once logged into the new account, a hub can be created.
+
+### Hub Name
+<HubName />
+
+
+### Hub Tier
+<HubTier />
+
+
+### Select Provider
+<SelectProvider />
+
+
+### Add API Keys
+<AddApiKeys />
+
+
+### Billing Information
+<BillingInfo />
+
+### Deploy
+<Deploy />
+
+
+:::note  Whats A Cluster?
+Are you familiar with the concept of an infrastructure cluster?  On Cycle a cluster is a named group (or as we like to say "pool") of resources (the sum of the underlying server's CPU, RAM, and Disk).
+:::
+
+
+## Create An Image Source
+Now that the hub has been created and a server is online (give it a few minutes if its not online already) - the next step is to create an image source.
+
+Navigate to the images dashboard by clicking on *Images* in the left hand navigation, then select "Add Image Source" in the top right of the screen.
+
+### Image Source Types
+
+## Create Environment
+Now that the hub has been created and a server is online (give it a few minutes if its not online already) - the next step is to create an environment.
+
+An environment is a private network group for your containers, that includes 3 preconfigured services:
+1. A Loadbalancer
+2. A Discovery service
+3. A VPN
+
+<EnvironmentCreate />
+
+
+

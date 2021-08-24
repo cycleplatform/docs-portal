@@ -13,23 +13,23 @@ Cycle provides a completely UI based form to deploy individual containers. It pr
 
 ### Step 1: Describe The Container And It's State Settings
 
-#### Container Name
+### Container Name
 
 The name of a container is for user purposes only, and doesn't affect any other aspect of the container. However, on this form, Cycle will automatically prefill the hostname of the container with a formatted version of the name for convenience. You are free to change the hostname without affecting the name.
 
-#### State
+### State
 
 Choose **Stateful** or **Stateless** for your container. A Stateful container is a container that has a persistent volume, or the volume will hold state between restarts. A Stateless container can have a volume, but that volume will be cleared between starts.
 
-A full description of Stateful and Stateless can be found [here](http://www.google.com).
 
-![state](/imgs/getting-started/quick-start/state.png)
 
-#### Initial Instances
+
+
+### Initial Instances
 
 The instance slider tells Cycle exactly how many copies of the container you want to run when it starts. Based on the deployment strategy you set, Cycle will automatically balance the instances across your cloud.
 
-![instances](/imgs/getting-started/quick-start/instances.png)
+
 
 ### Deployment Strategy
 
@@ -55,11 +55,8 @@ The manual deployment strategy give you full control over where your instances a
 
 The First Available deployment strategy will deploy the instances to the server that is available first.
 
-![First Available](/imgs/getting-started/quick-start/first-available.png)
 
----
-
-#### Set Tags
+### Set Tags
 
 If you want to be descriptive about which servers this container will be deployed to use tags.
 
@@ -67,11 +64,9 @@ If you want to be descriptive about which servers this container will be deploye
 
 **All Tags**- Instances will only be deployed to a server that has every tag listed here.
 
-![set tags](/imgs/getting-started/quick-start/set-tags.png)
 
----
 
-### Step 2: Select an Image
+## Step 2: Select an Image
 
 In this step you'll choose to select an image that has already been imported to Cycle or choose to import a new image. Above, it was mentioned that we have prepared an special image for you to use with this guide:
 
@@ -80,7 +75,7 @@ In this step you'll choose to select an image that has already been imported to 
 
 1. Choose how you want to select your image, either an existing image, or import a new one. If you choose existing, skip to step 4.
 
-![Select an Image](/imgs/getting-started/quick-start/images-step2.png)
+
 
 2. Using the tabs on the left, select the source you wish to import from. At this time, you can import from either Docker Hub, or a private Docker Registry.
 

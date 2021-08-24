@@ -37,7 +37,7 @@ See the [Stages And Steps](/docs/pipelines/stages-and-steps) page for a full lis
 ## Triggering A Pipeline
 Starting a pipeline is referred to as **triggering**.  The pipeline will attempt to complete all stages and steps that are not **"paused"** or **"skipped"**.  
 
-Triggering can take place through the portal using the **Trigger Pipeline** button, via a [trigger key](/docs/pipelines/trigger-keys/trigger-key.md), and via the [API](https://docs.cycle.io/api/pipelines/trigger-pipeline)
+Triggering can take place through the portal using the **Trigger Pipeline** button, via a trigger key, and via the [API](https://docs.cycle.io/api/pipelines/trigger-pipeline)
 
 
 ## Trigger Keys

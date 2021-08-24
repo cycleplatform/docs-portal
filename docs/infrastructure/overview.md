@@ -15,7 +15,7 @@ This dashboard displays information about the currently provisioned servers and 
 
 * [Add A Provider](/docs/infrastructure/add-infrastructure)
 * [Clusters](/docs/infrastructure/clusters)
-* [Server Settings](/docs/infrastructure/settings.md)
+* [Server Settings](/docs/infrastructure/settings)
 
 
 
