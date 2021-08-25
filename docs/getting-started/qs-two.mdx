@@ -3,7 +3,14 @@ sidebar_label: Demo with Components
 sidebar_position: 2
 ---
 
-
+import ContainerName from "../../src/pages/environments/deploy-container-wizard/container-name.mdx"
+import ContainerState from "../../src/pages/environments/deploy-container-wizard/state.mdx"
+import InitialInstances from "../../src/pages/environments/deploy-container-wizard/initial-instances.mdx"
+import DeploymentStrategy from "../../src/pages/environments/deploy-container-wizard/deployment-strategy.mdx"
+import Tags from "../../src/pages/environments/deploy-container-wizard/tags.mdx"
+import ImageSelect from "../../src/pages/environments/deploy-container-wizard/image-select.mdx"
+import ImageSourceTypes from "../../src/pages/images/image-source-types.mdx"
+import NetworkFields from "../../src/pages/environments/deploy-container-wizard/network.mdx"
 import HubName from "../../src/pages/hub/hub-create/hub-name.mdx"
 import HubTier from "../../src/pages/hub/hub-create/hub-tier.mdx"
 import SelectProvider from "../../src/pages/hub/hub-create/select-provider.mdx"
@@ -11,6 +18,7 @@ import AddApiKeys from "../../src/pages/hub/hub-create/add-api-keys.mdx"
 import BillingInfo from "../../src/pages/hub/hub-create/billing-information.mdx"
 import Deploy from "../../src/pages/hub/hub-create/deploy.mdx"
 import EnvironmentCreate from "../../src/pages/environments/_create-environment.mdx"
+
 
 
 
@@ -72,17 +80,55 @@ Now that the hub has been created and a server is online (give it a few minutes 
 
 Navigate to the images dashboard by clicking on *Images* in the left hand navigation, then select "Add Image Source" in the top right of the screen.
 
-### Image Source Types
+For this quick start, the image to use will be the [DockerHub](/docs/images/sources/dockerhub-source) type.  Name the image whatever you'd like and in the **Image Name** field enter `cycleplatform/getting-started`.  The tag can stay as latest, as that is the desired tag for this image.
+
+Click **Create Source** to continue and on the next screen press the **Import Image** button.  The getting started image will import from DockerHub and show in the list of images created from this image source.
+
 
 ## Create Environment
-Now that the hub has been created and a server is online (give it a few minutes if its not online already) - the next step is to create an environment.
-
 An environment is a private network group for your containers, that includes 3 preconfigured services:
 1. A Loadbalancer
 2. A Discovery service
 3. A VPN
 
 <EnvironmentCreate />
+
+
+## Deploy A Container
+The final step is to deploy a container to your environment.  Cycle's intuitive container deploy wizard makes this a simple task.
+
+From the dashboard of the environment that was just created click on the **Deploy Container** button in the top right of the screen.
+
+### Container Name
+<ContainerName />
+
+### State
+<ContainerState />
+
+### Initial Instances
+<InitialInstances />
+
+### Deployment Strategy
+<DeploymentStrategy />
+
+### Tags
+<Tags />
+
+### Image Select
+<ImageSelect />
+
+In a previous step, the getting-started image was created and imported.  Click the **Recent Imports** box and select that image from the dropdown.
+
+### Network Settings
+<NetworkFields />
+
+For the getting started image change the **Public Network** field to **Enabled**.  The hostname and port mappings will be automatically filled in.
+
+Click **Create Container** to continue.
+
+## Starting The Environment
+In order for the containers to come online they need to be running.  Also, the two of the service containers will need to be running as well, the load balancer and the discovery container.  To start all of these containers at once, exit the modal after container create by pressing `esc` (or clicking the x in the corner) and then clicking the **Dashboard**
+
 
 
 
