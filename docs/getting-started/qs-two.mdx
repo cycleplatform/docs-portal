@@ -3,6 +3,7 @@ sidebar_label: Demo with Components
 sidebar_position: 2
 ---
 
+import NoteGlobalVsSingleStart from "../../src/pages/admonitions/global-vs-single-start.mdx"
 import ContainerName from "../../src/pages/environments/deploy-container-wizard/container-name.mdx"
 import ContainerState from "../../src/pages/environments/deploy-container-wizard/state.mdx"
 import InitialInstances from "../../src/pages/environments/deploy-container-wizard/initial-instances.mdx"
@@ -127,7 +128,15 @@ For the getting started image change the **Public Network** field to **Enabled**
 Click **Create Container** to continue.
 
 ## Starting The Environment
-In order for the containers to come online they need to be running.  Also, the two of the service containers will need to be running as well, the load balancer and the discovery container.  To start all of these containers at once, exit the modal after container create by pressing `esc` (or clicking the x in the corner) and then clicking the **Dashboard**
+Press the `esc` key to exit the container modal from the getting started container that was just created.  This lands on the environment's dashboard.  In the top right corner of the screen find the start button (looks like pressing play) and hold that down to start all containers in the environment
+
+To visit the running container, click **Containers** from the horizontal navigation and then the name of the container to open the container modal. On the container modal dashboard there is a value called **domain**.  Copy that url and paste it into a browser to view the getting started with Cycle page.
+
+
+
+<NoteGlobalVsSingleStart />
+
+
 
 
 
