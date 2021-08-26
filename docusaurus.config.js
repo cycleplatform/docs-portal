@@ -16,6 +16,7 @@ module.exports = {
     '@saucelabs/theme-github-codeblock'
   ],
   themeConfig: {
+    defaultMode: "dark",
     hideableSidebar: true,
     algolia: {
       // TODO replace with our api key
