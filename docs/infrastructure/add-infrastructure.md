@@ -11,7 +11,7 @@ Deploying a new server on Cycle is simple.
 * From there, select **Add Servers**.
 
 ## Infrastructure Deploy Modal 
-The infrastructure deploy modal will pop up after clicking on the add servers button. If the provider desired for this deployment is not selectable, that means that credentials have not yet been added to the [providers](/docs/infrastructure/providers/adding-providers.md) page.  
+The infrastructure deploy modal will pop up after clicking on the add servers button. If the provider desired for this deployment is not selectable, that means that credentials have not yet been added to the [providers](/docs/infrastructure/providers/adding-providers) page.  
 
 After selecting a provider select a location to provision from and click **Next**.
 
