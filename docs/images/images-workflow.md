@@ -14,6 +14,11 @@ Images can be used during container create and reimaging.
 
 After selecting an image source there will be a list of images that have been created from that source.  Selecting any one of these images will show a summary of image information.  
 
+![Image Summary](https://static.cycle.io/docs/images/image-summary.png)
+
+<details>
+<summary>Image Summary Bullets</summary>
+
 
 Currently, these values are grouped into the following sections:
 
@@ -37,6 +42,11 @@ Currently, these values are grouped into the following sections:
 * Environment Variables
 
 * Volumes
+
+
+</details>
+
+
 
 :::note Image Source
 Image source will show information relevant to the specific image source type.

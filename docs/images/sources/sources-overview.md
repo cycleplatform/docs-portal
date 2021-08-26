@@ -9,9 +9,9 @@ By creating a source and giving Cycle access to a specific image, developers can
 ### Creating Sources
 There are currently 3 types of image sources supported.
 
-1. **Docker Hub** - create an image source from an existing image repo on Docker Hub.
-2. **Docker Registry** - create an image source from an exisitng image repo on a private Docker registry, with support for other registry types coming very soon!
-3. **Docker File** - create an image source from a repositiory hosted on any git solution (private or public) by adding a Dockerfile to your repo and telling Cycle where its located.
+1. **[Docker Hub](/docs/images/sources/dockerhub-source)** - create an image source from an existing image repo on Docker Hub.
+2. **[Docker Registry](/docs/images/sources/docker-registry-source)** - create an image source from an exisitng image repo on a private Docker registry, with support for other registry types coming very soon!
+3. **[Docker File](/docs/images/sources/dockerfile-source)** - create an image source from a repositiory hosted on any git solution (private or public) by adding a Dockerfile to your repo and telling Cycle where its located.
 
 
 ### Managing Sources
