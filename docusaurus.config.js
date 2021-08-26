@@ -9,7 +9,7 @@ module.exports = {
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  favicon: '/static/imgs/cycle/logo/logo-gear.svg',
   organizationName: 'cycleplatform', // Usually your GitHub org/user name.
   projectName: 'docs-portal', // Usually your repo name.
   themes: [
@@ -28,7 +28,7 @@ module.exports = {
       title: 'Portal Docs',
       logo: {
         alt: 'Cycle Logo',
-        src: 'img/logo.svg',
+        src: '/static/imgs/cycle/logo/logo-white.svg',
       },
       items: [
         {
@@ -38,7 +38,10 @@ module.exports = {
           label: 'Portal',
         },
         {
-          href: 'https://google.com', label: 'API', position: 'left',
+          href: "https://docs.cycle.io/api/introduction", label: "Public API", position: "left",
+        },
+        {
+          href: 'https://docs.cycle.io/internal-api/introduction', label: 'Internal API', position: 'left',
         },
         {
           href: 'https://portal.cycle.io',
@@ -62,8 +65,12 @@ module.exports = {
               to: '/docs/intro',
             },
             {
-              label: 'API',
-              href: "https://google.com"
+              label: 'Public API',
+              href: "https://docs.cycle.io/api/introduction"
+            },
+            {
+              label: "Internal API",
+              href: "https://docs.cycle.io/internal-api/introduction"
             },
           ],
         },
@@ -98,7 +105,7 @@ module.exports = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Petrichor Holdings, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Petrichor Holdings, Inc.`,
     },
     prism: {
       theme: lightCodeTheme,
