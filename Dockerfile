@@ -8,7 +8,7 @@ RUN npm install --prefer-online
 
 COPY ./ ./
 
-CMD ["npm", "run", "build"]
+RUN npm run build
 
 
 FROM nginx:1.20.1-alpine
