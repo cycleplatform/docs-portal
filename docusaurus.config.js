@@ -17,6 +17,7 @@ module.exports = {
   ],
   themeConfig: {
     defaultMode: "dark",
+    respectPrefersColorScheme: false,
     hideableSidebar: true,
     algolia: {
       // TODO replace with our api key
