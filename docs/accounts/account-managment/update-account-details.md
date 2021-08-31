@@ -7,7 +7,6 @@ sidebar_position: 2
 
 Keep your account information up to date and learn how to change your profile image.
 
----
 
 ## Update Basic Details
 
@@ -20,10 +19,7 @@ Keep your account information up to date and learn how to change your profile im
 You must save your account information before navigating away, otherwise the changes will not persist.
 :::
 
-<!-- todo - embded video -->
-
----
 
 ## Upload Profile Picture
 
-Profile pictures on Cycle are pulled from [Gravatar](https://gravatar.com/). If you see a random fractal image for your profile picture, but want your actual photo displayed, head over to gravatar and register the email you used to sign up with Cycle. The next time you log in, your profile picture will automatically be displayed.
+Profile pictures on Cycle are pulled from [Gravatar](https://gravatar.com/). Updating the Gravatar image will result in a change to the Cycle profile image. 

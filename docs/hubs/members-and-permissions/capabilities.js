@@ -369,7 +369,7 @@ export function PermissionsTables() {
     <Tabs
         defaultValue="owner"
         values={[
-            {label: 'Owner', value: 'owner'},
+            {label: 'Owner (All)', value: 'owner'},
             {label: 'Admin', value: 'admin'},
             {label: 'Developer', value: 'developer'},
             {label: 'Analyst', value: 'analyst'}

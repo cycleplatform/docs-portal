@@ -19,38 +19,20 @@ Take a dive into containers and learn about the technology that's shaping the de
 
 ## Guides 
 
-### Add a Provider
+### [Add a Provider](/docs/infrastructure/providers/adding-providers)
 
-Add a provider to your hub to deploy infrastructure. [Add a Provider](/docs/infrastructure/providers/adding-providers)
+### [Deploy a Container](/docs/environments/deployments/deploy-single-container)
 
-### Deploy a Container
+### [Set up DNS](/docs/DNS/zones/zone-management#create-the-zone)
 
-Learn how to deploy a container on cycle. [Deploy a Container](/docs/environments/deployments/deploy-single-container)
+### [Create an Environment](/docs/environments/managing-environments#environment-create)
 
-### Set up DNS
+### [Add a Server](/docs/infrastructure/add-infrastructure)
 
-Set up a hosted or un-hosted DNS zone. [Set up DNS](/docs/DNS/zones/zone-management#create-the-zone)
+###  [Creating A New Image Source](/docs/images/sources/sources-overview#creating-sources)
 
-### Create an Environment
+###  [Importing Stacks](/docs/stacks/stacks-workflow#importing-from-a-git-repo)
 
-A private network group with automated services. [Create an Environment](/docs/environments/managing-environments#environment-create)
+###  [Create an API Key](/docs/hubs/API-access/api-key-generate)
 
-### Add a Server
 
-Deploy new infrastructure to you hub. [Add a Server](/docs/infrastructure/add-infrastructure)
-
-### Create An Image Source
-
- A reusable resource for creating images. [Creating A New Image Source](/docs/images/sources/sources-overview#creating-sources)
-
-### Learn About Stacks
-
-A powerful way to manage multiple containers. [Learn about Stacks](/docs/stacks/overview)
-
-### Import a Stack
-
-From a git repository. [Importing Stacks](/docs/stacks/stacks-workflow#importing-from-a-git-repo)
-
-### Create an API Key
-
-Use the public API for powerful programmatic control. [Create an API Key](/docs/hubs/API-access/api-key-generate)

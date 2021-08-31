@@ -26,3 +26,7 @@ To add a new cluster, add the name of the cluster to the list of clusters during
 :::caution Custom Cluster Names
 If you add a custom cluster name outside of `production`, `development`, or `staging` and then later delete all servers deployed to that cluster, it will not show up as part of the list of clusters the next time you go to add a server.  To deploy to that custom cluster once again, just add the name during a server deploy and it will once again show in the list.
 :::
+
+
+## Deleting Clusters
+To remove a cluster simply delete all associated infrastructure for that cluster.  The clusters `production`, `development`, and `staging` will always exist as options when deploying infrastructure as these are defualt settings.

@@ -7,7 +7,6 @@ sidebar_position: 1
 
 Manage who has access to your account.
 
----
 
 ## Grant Cycle Employees Access
 
@@ -20,7 +19,6 @@ In certain situations, it may be beneficial to have a member of Cycle's support 
 
 ![Grant Access](/imgs/accounts/account-management/grant-access.png)
 
----
 
 ## Setting up Two-Factor Authentication
 
@@ -34,7 +32,6 @@ Enable (Disable) two-factor authentication:
 6. Enter the new 6 digit code into the Token field.
 7. Select the Enable (Disable) button.
 
----
 
 ## Resetting Two-Factor Authentication
 
