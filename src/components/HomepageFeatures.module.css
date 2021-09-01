@@ -1,13 +1,35 @@
-/* stylelint-disable docusaurus/copyright-header */
+.feature {
+  border-radius: 3px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgb(31,31,40);
+  height: 100%;
+}
+
+.featureButton {
+  margin: 1rem;
+  background-color: rgb(42,167,255);
+  border: none;
+  color: white !important;
+}
+
+.featureButton:hover {
+  color: rgb(31,31,40) !important;
+}
 
 .features {
   display: flex;
   align-items: center;
   padding: 2rem 0;
   width: 100%;
+  background-color: #121218;
 }
 
 .featureSvg {
-  height: 200px;
-  width: 200px;
+  height: 150px;
+  width: 150px;
+  padding: 20px 0;
 }
+

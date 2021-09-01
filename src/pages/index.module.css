@@ -6,20 +6,42 @@
  */
 
 .heroBanner {
-  padding: 4rem 0;
-  text-align: center;
+  padding: 4rem 2rem;
+  text-align: left;
   position: relative;
   overflow: hidden;
+  background-color: #121218;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bannerImage {
+  height: 200px;
+}
+
+.headerItemText {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+}
+.headerItemImage {
+  width: 20%;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 2rem;
 }
 
 @media screen and (max-width: 966px) {
   .heroBanner {
     padding: 2rem;
   }
+  .headerItemImage {
+    display: none;
+  }
+  .headerItemText {
+    width: 100%;
+    text-align: center;
+  }
 }
 
-.buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}

@@ -1,49 +1,59 @@
-import React from 'react';
-import clsx from 'clsx';
-import styles from './HomepageFeatures.module.css';
+import React from "react";
+import clsx from "clsx";
+import styles from "./HomepageFeatures.module.css";
+import Link from "@docusaurus/Link";
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
-    Svg: require('../../static/imgs/undraw_docusaurus_mountain.svg').default,
+    title: "Portal",
+    Svg: require("../../static/imgs/cycle/logo/logo-gear.svg").default,
+    to: `/docs/intro`,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        The portal is Cycle's graphical user interface that allows you to easily
+        and quickly manage environments, containers, and deployment.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('../../static/imgs/undraw_docusaurus_tree.svg').default,
+    title: "API",
+    to: "https://docs.cycle.io/api/introduction/",
+    Svg: require("../../static/imgs/cycle/logo/brand-container.svg").default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
-      </>
-    ),
-  },
-  {
-    title: 'Powered by React',
-    Svg: require('../../static/imgs/undraw_docusaurus_react.svg').default,
-    description: (
-      <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        The Cycle API is a REST-based, resource-oriented API designed to be easy
+        to use and understand. Using this API, you are able to fully interact
+        with the Cycle Platform. In fact, this is the same API used by our
+        Portal.
       </>
     ),
   },
 ];
 
-function Feature({Svg, title, description}) {
+function Feature({ Svg, title, description, to }) {
   return (
-    <div className={clsx('col col--4')}>
-      <div className="text--center">
-        <Svg className={styles.featureSvg} alt={title} />
-      </div>
-      <div className="text--center padding-horiz--md">
-        <h3>{title}</h3>
-        <p>{description}</p>
+    <div
+      className={clsx("col col--6")}
+      onClick={() => (window.location.href = to)}
+    >
+      <div className={styles.feature}>
+        <div className="text--center">
+          <Svg className={styles.featureSvg} alt={title} />
+        </div>
+        <div className="text--center padding-horiz--md">
+          <h3>{title}</h3>
+          <p>{description}</p>
+          <Link
+            className={clsx(
+              "button button--secondary button--lg",
+              styles.featureButton
+            )}
+            style={{ margin: "2rem" }}
+            to={to}
+          >
+            {title}
+          </Link>
+        </div>
       </div>
     </div>
   );
