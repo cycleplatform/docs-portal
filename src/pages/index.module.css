@@ -6,42 +6,51 @@
  */
 
 .heroBanner {
-  padding: 4rem 2rem;
-  text-align: left;
-  position: relative;
-  overflow: hidden;
-  background-color: #121218;
+  background-color: var(--cycle-black);
   display: flex;
   justify-content: center;
-  align-items: center;
+  padding: 2rem;
+  color: white;
+  background-image: url('/static/imgs/cycle/hero-background-layer.svg');
+  background-size: cover;
 }
 
-.bannerImage {
-  height: 200px;
-}
-
-.headerItemText {
-  width: 40%;
+.heroContainer {
+  margin: 2rem;
   display: flex;
   justify-content: center;
 }
-.headerItemImage {
-  width: 20%;
+
+.heroImageDiv {
   display: flex;
-  justify-content: flex-end;
-  margin-right: 2rem;
+  align-items: start;
+  justify-content: center;
+}
+
+.heroTitle {
+  font-weight: 800;
+  letter-spacing: 1px;
+  font-size: 4rem;
+  margin-bottom: 0;
+}
+
+.heroSubtitle {
+  padding: 1.5rem 0 3rem; 
+  margin-bottom: 0;
+}
+
+.heroImage {
+  width: 75%;
 }
 
 @media screen and (max-width: 966px) {
+  .heroTitle {
+    font-size: 3rem;
+  }
   .heroBanner {
     padding: 2rem;
   }
-  .headerItemImage {
+  .heroImage {
     display: none;
   }
-  .headerItemText {
-    width: 100%;
-    text-align: center;
-  }
 }
-

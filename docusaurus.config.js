@@ -34,16 +34,16 @@ module.exports = {
           type: "doc",
           docId: "intro",
           position: "left",
-          label: "Portal",
+          label: "Portal Docs",
         },
         {
           href: "https://docs.cycle.io/api/introduction",
-          label: "Public API",
+          label: "Public API Docs",
           position: "left",
         },
         {
           href: "https://docs.cycle.io/internal-api/introduction",
-          label: "Internal API",
+          label: "Internal API Docs",
           position: "left",
         },
         {

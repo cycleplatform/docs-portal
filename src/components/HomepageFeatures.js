@@ -5,9 +5,10 @@ import Link from "@docusaurus/Link";
 
 const FeatureList = [
   {
-    title: "Portal",
-    Svg: require("../../static/imgs/cycle/logo/logo-gear.svg").default,
+    title: "Portal Docs",
+    Svg: require("../../static/svgs/duotone/book.svg").default,
     to: `/docs/intro`,
+    className: styles.featureButton,
     description: (
       <>
         The portal is Cycle's graphical user interface that allows you to easily
@@ -16,21 +17,21 @@ const FeatureList = [
     ),
   },
   {
-    title: "API",
+    title: "API Docs",
     to: "https://docs.cycle.io/api/introduction/",
-    Svg: require("../../static/imgs/cycle/logo/brand-container.svg").default,
+    Svg: require("../../static/svgs/duotone/book-heart.svg").default,
+    className: styles.featureButtonInverted,
     description: (
       <>
         The Cycle API is a REST-based, resource-oriented API designed to be easy
         to use and understand. Using this API, you are able to fully interact
-        with the Cycle Platform. In fact, this is the same API used by our
-        Portal.
+        with the Cycle Platform.
       </>
     ),
   },
 ];
 
-function Feature({ Svg, title, description, to }) {
+function Feature({ Svg, title, to, className, description }) {
   return (
     <div
       className={clsx("col col--6")}
@@ -39,16 +40,12 @@ function Feature({ Svg, title, description, to }) {
       <div className={styles.feature}>
         <div className="text--center">
           <Svg className={styles.featureSvg} alt={title} />
+          <h6 className={styles.featureTitle}>{title}</h6>
+          <p className={styles.featureDescription}>{description}</p>
         </div>
-        <div className="text--center padding-horiz--md">
-          <h3>{title}</h3>
-          <p>{description}</p>
+        <div>
           <Link
-            className={clsx(
-              "button button--secondary button--lg",
-              styles.featureButton
-            )}
-            style={{ margin: "2rem" }}
+            className={clsx("button button--secondary button--lg", className)}
             to={to}
           >
             {title}
@@ -62,7 +59,7 @@ function Feature({ Svg, title, description, to }) {
 export default function HomepageFeatures() {
   return (
     <section className={styles.features}>
-      <div className="container">
+      <div>
         <div className="row">
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />

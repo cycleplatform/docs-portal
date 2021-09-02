@@ -1,29 +1,31 @@
 import React from "react";
 import Layout from "@theme/Layout";
-import clsx from "clsx";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import HomepageFeatures from "../components/HomepageFeatures";
 import styles from "./index.module.css";
+import clsx from "clsx";
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
   return (
     <header className={styles.heroBanner}>
-      <div className={styles.headerItemImage}>
-        <img
-          src="static/imgs/cycle/logo/cycle-platform-diagram.svg"
-          className={styles.bannerImage}
-        />
-      </div>
-      <div
-        className={styles.headerItemText}
-        style={{ flexDirection: "column" }}
-      >
-        <h1 className="hero__title">{siteConfig.title}</h1>
-        <p className="hero__subtitle">
-          Cycle is a SaaS platform that makes running containerized applications
-          on cloud infrastructure simple.
-        </p>
+      <div className="container">
+        <div className={"row"}>
+          <div className={"col col--7"}>
+            <h1 className={styles.heroTitle}>{siteConfig.title}</h1>
+            <p className={clsx("hero__subtitle", styles.heroSubtitle)}>
+              Cycle is a SaaS platform that makes running containerized
+              applications on cloud infrastructure simple.
+            </p>
+            <HomepageFeatures />
+          </div>
+          <div className={clsx("col col--5", styles.heroImageDiv)}>
+            <img
+              src="static/imgs/cycle/logo/cycle-platform-diagram.svg"
+              className={styles.heroImage}
+            />
+          </div>
+        </div>
       </div>
     </header>
   );
@@ -33,13 +35,10 @@ export default function Home() {
   const { siteConfig } = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
+      title={`${siteConfig.title}`}
       description="Description will go into a meta tag in <head />"
     >
       <HomepageHeader />
-      <main>
-        <HomepageFeatures />
-      </main>
     </Layout>
   );
 }

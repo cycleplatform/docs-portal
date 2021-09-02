@@ -1,35 +1,68 @@
+.features {
+  display: flex;
+  width: 100%;
+  justify-content: start;
+  background-color: var(--cycle-black);
+}
+
 .feature {
-  border-radius: 3px;
+  border-radius: 0.5rem;
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  background-color: rgb(31,31,40);
+  background-color: var(--cycle-black-accent);
+  padding: 2rem;
+  cursor: pointer;
   height: 100%;
+  justify-content: space-between;
 }
 
 .featureButton {
-  margin: 1rem;
-  background-color: rgb(42,167,255);
+  margin: 0.5rem;
+  background-color: var(--cycle-blue);
   border: none;
   color: white !important;
 }
 
 .featureButton:hover {
-  color: rgb(31,31,40) !important;
+  color: var(--cycle-black) !important;
 }
 
-.features {
-  display: flex;
-  align-items: center;
-  padding: 2rem 0;
-  width: 100%;
-  background-color: #121218;
+.featureButtonInverted {
+  margin: 0.5rem;
+  background-color: var(--cycle-black-accent);
+  border: 1px solid var(--cycle-blue);
+  color: white !important;
+}
+
+.featureButtonInverted:hover {
+  background-color: var(--cycle-blue) !important;
+  color: var(--cycle-black) !important;
+}
+
+.featureTitle {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+
+}
+
+.featureDescription {
+  margin-bottom: 0.5rem;
 }
 
 .featureSvg {
-  height: 150px;
-  width: 150px;
-  padding: 20px 0;
+  height: 24px;
+  margin-bottom: 1rem;
+  width: 31px;
+  fill: var(--cycle-blue);
 }
 
+@media screen and (max-width: 966px) {
+  .features {
+    justify-content: center;
+  }
+  .feature {
+    margin: 2rem 0;
+    height: auto;
+  }
+}
