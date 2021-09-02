@@ -9,7 +9,7 @@ module.exports = {
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
-  favicon: "/static/imgs/cycle/logo/logo-gear.svg",
+  favicon: "imgs/cycle/logo/logo-gear.svg",
   organizationName: "cycleplatform", // Usually your GitHub org/user name.
   projectName: "docs-portal", // Usually your repo name.
   themes: ["@saucelabs/theme-github-codeblock"],
