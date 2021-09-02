@@ -33,7 +33,7 @@ const FeatureList = [
 function Feature({ Svg, title, description, to }) {
   return (
     <div
-      className={clsx("col col--6")}
+      className={clsx("col col--5")}
       onClick={() => (window.location.href = to)}
     >
       <div className={styles.feature}>
@@ -63,7 +63,7 @@ export default function HomepageFeatures() {
   return (
     <section className={styles.features}>
       <div className="container">
-        <div className="row">
+        <div className="row" style={{ gridGap: "1rem", justifyContent: "center"}}>
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />
           ))}

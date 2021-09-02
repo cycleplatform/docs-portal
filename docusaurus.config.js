@@ -14,16 +14,16 @@ module.exports = {
   projectName: "docs-portal", // Usually your repo name.
   themes: ["@saucelabs/theme-github-codeblock"],
   themeConfig: {
-    defaultMode: "dark",
-    respectPrefersColorScheme: false,
+    // defaultMode: "dark",
+    // respectPrefersColorScheme: false,
     hideableSidebar: true,
-    algolia: {
-      // TODO replace with our api key
-      apiKey: "47ecd3b21be71c5822571b9f59e52544",
-      // TODO create a new index on algolia
-      indexName: "docusaurus-2",
-      contextualSearch: true,
-    },
+    // algolia: {
+    //   // TODO replace with our api key
+    //   apiKey: "47ecd3b21be71c5822571b9f59e52544",
+    //   // TODO create a new index on algolia
+    //   indexName: "docusaurus-2",
+    //   contextualSearch: true,
+    // },
     navbar: {
       logo: {
         alt: "Cycle Logo",
@@ -37,12 +37,12 @@ module.exports = {
           label: "Portal",
         },
         {
-          href: "https://docs.cycle.io/api/introduction",
+          href: "http://localhost/api/introduction",
           label: "Public API",
           position: "left",
         },
         {
-          href: "https://docs.cycle.io/internal-api/introduction",
+          href: "http://localhost/internal-api/introduction",
           label: "Internal API",
           position: "left",
         },
@@ -69,11 +69,11 @@ module.exports = {
             },
             {
               label: "Public API",
-              href: "https://docs.cycle.io/api/introduction",
+              href: "http://localhost/api/introduction",
             },
             {
               label: "Internal API",
-              href: "https://docs.cycle.io/internal-api/introduction",
+              href: "http://localhost/internal-api/introduction",
             },
           ],
         },
