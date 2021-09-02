@@ -37,12 +37,12 @@ module.exports = {
           label: "Portal",
         },
         {
-          href: "http://localhost/api/introduction",
+          href: "https://docs.cycle.io/api/introduction",
           label: "Public API",
           position: "left",
         },
         {
-          href: "http://localhost/internal-api/introduction",
+          href: "https://docs.cycle.io/internal-api/introduction",
           label: "Internal API",
           position: "left",
         },
@@ -69,11 +69,11 @@ module.exports = {
             },
             {
               label: "Public API",
-              href: "http://localhost/api/introduction",
+              href: "https://docs.cycle.io/api/introduction",
             },
             {
               label: "Internal API",
-              href: "http://localhost/internal-api/introduction",
+              href: "https://docs.cycle.io/internal-api/introduction",
             },
           ],
         },
