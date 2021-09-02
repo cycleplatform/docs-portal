@@ -27,7 +27,7 @@ module.exports = {
     navbar: {
       logo: {
         alt: "Cycle Logo",
-        src: "/static/imgs/cycle/logo/logo-white.svg",
+        src: "imgs/cycle/logo/logo-white.svg",
       },
       items: [
         {
