@@ -1,11 +1,13 @@
 .feature {
-  border-radius: 3px;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   background-color: rgb(31,31,40);
   height: 100%;
+
+  padding: 2rem;
+  border-radius: 0.5rem;
 }
 
 .featureButton {
