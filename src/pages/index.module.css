@@ -5,12 +5,18 @@
  * and scoped locally.
  */
 
+.hero__subtitle {
+  color: var(--cycle-white) !important;
+}
+
+
 .heroBanner {
   padding: 4rem 2rem;
   text-align: left;
   position: relative;
   overflow: hidden;
   background-color: #121218;
+  color: var(--cycle-white) !important;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,7 +30,9 @@
   width: 40%;
   display: flex;
   justify-content: center;
+  color: var(--cycle-white) !important;
 }
+
 .headerItemImage {
   width: 20%;
   display: flex;

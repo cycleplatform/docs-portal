@@ -9,25 +9,25 @@ module.exports = {
   baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
-  favicon: "/static/imgs/cycle/logo/logo-gear.svg",
+  favicon: "imgs/cycle/logo/logo-gear.svg",
   organizationName: "cycleplatform", // Usually your GitHub org/user name.
   projectName: "docs-portal", // Usually your repo name.
   themes: ["@saucelabs/theme-github-codeblock"],
   themeConfig: {
-    defaultMode: "dark",
-    respectPrefersColorScheme: false,
+    // defaultMode: "dark",
+    // respectPrefersColorScheme: false,
     hideableSidebar: true,
-    algolia: {
-      // TODO replace with our api key
-      apiKey: "47ecd3b21be71c5822571b9f59e52544",
-      // TODO create a new index on algolia
-      indexName: "docusaurus-2",
-      contextualSearch: true,
-    },
+    // algolia: {
+    //   // TODO replace with our api key
+    //   apiKey: "47ecd3b21be71c5822571b9f59e52544",
+    //   // TODO create a new index on algolia
+    //   indexName: "docusaurus-2",
+    //   contextualSearch: true,
+    // },
     navbar: {
       logo: {
         alt: "Cycle Logo",
-        src: "/static/imgs/cycle/logo/logo-white.svg",
+        src: "imgs/cycle/logo/logo-white.svg",
       },
       items: [
         {

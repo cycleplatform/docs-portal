@@ -1,17 +1,18 @@
 import React from "react";
 import Layout from "@theme/Layout";
-import clsx from "clsx";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import HomepageFeatures from "../components/HomepageFeatures";
+import clsx from "clsx"
 import styles from "./index.module.css";
+import MainIcon from "@site/static/imgs/cycle/logo/cycle-platform-diagram.svg";
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
   return (
     <header className={styles.heroBanner}>
       <div className={styles.headerItemImage}>
-        <img
-          src="static/imgs/cycle/logo/cycle-platform-diagram.svg"
+        <MainIcon
+            style={{ width: "20rem", height: "20rem"}}
           className={styles.bannerImage}
         />
       </div>
