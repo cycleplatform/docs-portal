@@ -119,5 +119,20 @@ From the settings page a user can update the URL, branch, ref, auth, and name va
 
 to delete a stack, enter the stack name in the delete form and click **Delete Stack**.
 
+## Deploy A Stack (New Environment)
+To deploy a stack build to a new environment, simply [create a new environment](/docs/environments/managing-environments) and select "From Stack" - then the stack and build to be used.
 
+## Deploy A Stack (Existing Environment)
+Once a stack build has been generated that stack can be deployed to an existing environment.  From the stack dashboard, select the stack to be deployed and then click on **Options**.
 
+### The Options Modal
+The options modal provides a form for deploying a specific stack build to an environment. 
+
+If the container identifier used in a stack matches 0 times with existing container identifiers for a selected environment, the container will show up under the **New Containers** section.
+
+If the container identifier used in a stack matches with an existing container identifier for a selected environment, the container will show up under the **Existing Containers** section along with reimage and reconfigure checkboxes.
+
+* **reimage** - reimage the existing image with the image from the stack build.
+* **reconfigure** - reconfigure the container's configuration settings with the settings from the stack build.
+
+There is also an option to reimage or reconfigure all containers that have a match.
