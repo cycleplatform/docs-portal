@@ -17,13 +17,11 @@ module.exports = {
     // defaultMode: "dark",
     // respectPrefersColorScheme: false,
     hideableSidebar: true,
-    // algolia: {
-    //   // TODO replace with our api key
-    //   apiKey: "47ecd3b21be71c5822571b9f59e52544",
-    //   // TODO create a new index on algolia
-    //   indexName: "docusaurus-2",
-    //   contextualSearch: true,
-    // },
+    algolia: {
+      apiKey: "84a003ff8e5e1e501ec55ac34b8566d4",
+      indexName: "docs_portal",
+      contextualSearch: true,
+    },
     navbar: {
       logo: {
         alt: "Cycle Logo",
