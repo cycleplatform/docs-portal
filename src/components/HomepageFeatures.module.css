@@ -2,7 +2,6 @@
   display: flex;
   width: 100%;
   justify-content: start;
-  background-color: var(--cycle-black);
 }
 
 .feature {
