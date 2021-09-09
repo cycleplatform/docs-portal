@@ -1,6 +1,6 @@
 {
   "name": "portal-docs",
-  "version": "0.0.0-1",
+  "version": "2021.09.09.1",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
