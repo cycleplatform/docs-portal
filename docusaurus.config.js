@@ -18,9 +18,9 @@ module.exports = {
     // respectPrefersColorScheme: false,
     hideableSidebar: true,
     algolia: {
-      apiKey: "84a003ff8e5e1e501ec55ac34b8566d4",
-      indexName: "docs_portal",
-      contextualSearch: true,
+      apiKey: "244e0078287a09c076d180a1ce1ae05a",
+      indexName: "portal",
+      appId: "DV41ALWI3Z",
     },
     navbar: {
       logo: {
