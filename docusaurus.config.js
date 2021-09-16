@@ -35,14 +35,19 @@ module.exports = {
           label: "Portal Docs",
         },
         {
-          href: "https://docs.cycle.io/api/introduction",
-          label: "Public API Docs",
+          type: "dropdown",
+          label: "API Docs",
           position: "left",
-        },
-        {
-          href: "https://docs.cycle.io/internal-api/introduction",
-          label: "Internal API Docs",
-          position: "left",
+          items: [
+            {
+              href: "https://docs.cycle.io/api/introduction",
+              label: "Public API Docs",
+            },
+            {
+              href: "https://docs.cycle.io/internal-api/introduction",
+              label: "Internal API Docs",
+            }
+          ]
         },
         {
           href: "https://portal.cycle.io",
