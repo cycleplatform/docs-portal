@@ -56,6 +56,11 @@ html[data-theme="light"] aside a.menu__link, html[data-theme="light"] aside a.me
   --ifm-menu-link-sublist-icon-filter: none;
 }
 
+html[data-theme="light"] aside a.menu__link--active {
+  color: var(--cycle-blue);
+}
+
+
 .menu__link--active {
   color: var(--cycle-blue);
 }
