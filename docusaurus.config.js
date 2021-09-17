@@ -19,7 +19,7 @@ module.exports = {
     hideableSidebar: true,
     algolia: {
       apiKey: "244e0078287a09c076d180a1ce1ae05a",
-      indexName: "portal",
+      indexName: "prod_portal",
       appId: "DV41ALWI3Z",
     },
     navbar: {
