@@ -17,6 +17,8 @@
   color: white;
   background-image: url("/static/imgs/cycle/hero-background-layer.svg");
   background-size: cover;
+
+  flex: 1 0 auto;
 }
 
 .heroContainer {

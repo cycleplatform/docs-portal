@@ -18,9 +18,9 @@ module.exports = {
     // respectPrefersColorScheme: false,
     hideableSidebar: true,
     algolia: {
-      apiKey: "84a003ff8e5e1e501ec55ac34b8566d4",
-      indexName: "docs_portal",
-      contextualSearch: true,
+      apiKey: "244e0078287a09c076d180a1ce1ae05a",
+      indexName: "prod_portal",
+      appId: "DV41ALWI3Z",
     },
     navbar: {
       logo: {
@@ -35,14 +35,19 @@ module.exports = {
           label: "Portal Docs",
         },
         {
-          href: "https://docs.cycle.io/api/introduction",
-          label: "Public API Docs",
+          type: "dropdown",
+          label: "API Docs",
           position: "left",
-        },
-        {
-          href: "https://docs.cycle.io/internal-api/introduction",
-          label: "Internal API Docs",
-          position: "left",
+          items: [
+            {
+              href: "https://docs.cycle.io/api/introduction",
+              label: "Public API Docs",
+            },
+            {
+              href: "https://docs.cycle.io/internal-api/introduction",
+              label: "Internal API Docs",
+            }
+          ]
         },
         {
           href: "https://portal.cycle.io",
