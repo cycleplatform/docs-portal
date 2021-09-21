@@ -6,7 +6,6 @@ sidebar_position: 1
 # Containers Overview
 Containers are a way to package together your application along with it's dependencies, and run in a resource isolated process. They provide consistency across different hosts, efficiency over traditional hosting methods, and facilitate a micro-service based approach, where each logical piece of your application is split into multiple, easily testable parts (such as API, Backend, Frontend, etc).
 
-Want to go a bit deeper? Check out this [introductory article](https://cycle.io/blog/2019/11/a-brief-introduction-to-containers/) from our publication.
 
 ### Containers Workflow
 Containers are created from [images](https://docs.cycle.io/docs/images/overview).  Creating a container on your local machine and creating a container on Cycle are relatively similar.  The main difference is that the Cycle portal allows you to select your configuration and deployment options, as well as maintain and debug through the portal - where your local experience will likely be a command line tool such as (Docker)[https://docker.io].
