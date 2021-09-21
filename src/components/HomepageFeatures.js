@@ -20,7 +20,7 @@ const FeatureList = [
     title: "API Docs",
     to: "https://docs.cycle.io/api/introduction/",
     Svg: require("../../static/svgs/duotone/book-heart.svg").default,
-    className: styles.featureButtonInverted,
+    className: styles.featureButton,
     description: (
       <>
         The Cycle API is a REST-based, resource-oriented API designed to be easy
