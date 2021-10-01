@@ -12,7 +12,7 @@ Reimaging is the process by which you can update the image of an already deploye
 4. Select the container from the list.
 5. Click the Settings tab under the container name.
 
-[comment]: # (TODO add new video or gif?)
+
 
 
 ### Understanding the Reimage Form

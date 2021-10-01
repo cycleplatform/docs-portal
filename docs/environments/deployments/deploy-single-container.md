@@ -79,7 +79,7 @@ In this step you'll choose to select an image that has already been imported to 
 
 2. Using the tabs on the left, select the source you wish to import from. At this time, you can import from either Docker Hub, or a private Docker Registry.
 
-<!-- todo - warning -->
+
 
 #### Docker Hub
 
@@ -87,7 +87,7 @@ Typing in the "Image Name" box will automatically search [hub.docker.com](https:
 
 #### Docker Registry
 
-<!-- todo - green info panel -->
+
 
 If you choose to import from a Docker Registry, the process is the same, except in the URL field you will need to enter the custom url the registry is hosted on. For example, if your image name is `images.website.com/myimage:latest`, you would enter `images.example.com` into the URL field. It's recommended to host your own Docker Registry on Cycle for extra security instead of using the public Docker Hub option.
 
@@ -103,7 +103,7 @@ If you choose to import from a Docker Registry, the process is the same, except 
 
 Some container images may specify volumes (persistent data storage). Cycle will automatically detect these and ask you to configure them.
 
-<!-- todo - warning panel -->
+
 
 Some container images may specify volumes (persistent data storage). Cycle will automatically detect these and ask you to configure them.
 
