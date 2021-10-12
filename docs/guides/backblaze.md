@@ -16,7 +16,7 @@ There are 3 main steps to setting up Backblaze for automated backups on Cycle:
 
 ## Backblaze setup
 If you haven't set up a Backblaze account you can do so as part of this step in just a few moments.
-[Backblaze Website Link](https://backblaze.com)
+[Backblaze Signup Page](https://www.backblaze.com/b2/sign-up.html?referrer=compute&utm_source=Partner&utm_medium=cycle-announcement&utm_campaign=10-gb-free&utm_content=cta).
 
 `Creating A Backblaze Bucket & Application Key`
 
