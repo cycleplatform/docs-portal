@@ -49,7 +49,6 @@ On Cycle, settings that affect how the container is run are called "Config", whi
 ### The Container Dashbaord
 The container dashboard has lots of information about the container and also an activity log. You can reach this dashboard several ways, such as clicking directly on the container name while viewing the list of environments or selecting your container from the containers list inside the environment itself.
 
-TODO ADD IMAGE
 
 **Network** - At the top, we have basic network information, private and public IPs, the assigned domain, and hostname are all listed here.
 
