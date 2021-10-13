@@ -35,45 +35,6 @@ Cycle will build the VPC as described in the AWS docs linked above.  The key poi
 2. The VPC is region specific.  A new VPC is created each time a new region is deployed to.  
 
 
-
-
-
-
-### Cycle Subnet
-
-<details>
-<summary>Cycle Generated Subnet Fields </summary>
-
-
-`Name` - `-`
-
-`Subnet ID` - subnet-000333eeeaa000333eeeaa
-
-`State` - Available 
-
-`VPC` -  `vpc-000... | Cycle VPC 
-
-`IPv4 CIDR` - 172.0.0.0\24 
-
-`IPv6 CIDR` - 2600:1fff:c:33:2a00::\64
-
-`Available IPv4 addresses` - 250 
-
-`Availability Zone` - us-west-1b 
-
-`Availability Zone ID` - usw1-az3 
-
-`Route Table` -  rtb-0123....
-
-`Network ACL` - acl-0ba... 
-
-
-There are a few other IP settings that should be relatively inconsequential, but can be viewed by navigating to the vpc subnets area of the AWS console.  Like most things in cloud, these values and column names are subject to change by AWS.
-
-
-</details>
-
-
 The main `routing table` is associated with the local and internet gateway (prefixed igw in the aws backend) routes.  Local routes are used for traffic inside the VPC while the igw routes are used to handle public ingress.
 
 The main reason that Cycle creates and manages this VPC for you is to facilitate the seamless experience through the platform.  Once you've created your keys and connected AWS to Cycle, there will be very few times that you'll need to approach this VPC and make any changes.

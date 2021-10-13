@@ -61,9 +61,9 @@ Make sure to save these rules.
 
 
 ## Connecting To The DB
-Now you can deploy a container to your existing Cycle hub (*container needs to be on an AWS instance within the VPC*) and test a remote connection using a MySQL remote connection command such as:
+Now you can deploy a container to your existing Cycle hub (*container needs to be on an AWS instance within the VPC*), then use the two-way console to connect to the container instance and run a mysql connection attempt to see if your configuration changes were correct. 
 
-`mysql -u user -h url.for.db -p` 
+example command: `mysql -u user -h url.for.db -p` 
 
 When prompted for the password, enter the password you used when creating the database.
 
