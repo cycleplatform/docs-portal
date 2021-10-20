@@ -62,7 +62,7 @@ If you're new to cron and want to know how to format a cron string, [this page](
 :::
 
 
-## Creating & Restoring Backups
+## Backup & Restore `Commands` 
 The `command` used to create the backups should write to `stdout`. For example: `tar cf - -C /dir/change directory/to/backup` uses the `-` flag to signify the intention to write to `stdout`.  Another example is the popular command line tool `mysqldump` which is packaged with most SQL database official images.  Given the command: `mysqldump --all-databases -uuser -ppassword`, mysqldump will write all the files to `stdout`.
 
 Similar to creating backups, the `command` used to restore a backup should read from `stdin`.  For example the counterpart to the mysqldump command would be: `mysql -uuser -ppassword < /dev/stdin`

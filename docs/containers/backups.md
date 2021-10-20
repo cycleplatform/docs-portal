@@ -19,10 +19,25 @@ Here you will see all backups that have been created for the given container, as
 
 
 
-## Restoring Backups
-To restore a backup, simply click on the sync icon and select the instance you wish to restore this backup to.  When the backup restore attempt is made, Cycle will run the command you have set in config > integrations > backups > restore and if successful you will see your files have been restored.
+## Managing Backups
+### Restore From Backup
+To restore from a backup, simply click on the sync icon and select the instance you wish to restore this backup to.  When the backup restore attempt is made, Cycle will run the command you have set in config > integrations > backups > restore and if successful you will see your files have been restored.
 
 :::note Checking Restore 
 The current best way to check on your files would be to use the two-way console and check on the files, database tables, or whatever else you may have restored.
 :::
 
+### Deleting Backups
+If a container is deleted all backups created for the container will be automatically removed as well.
+
+To remove individual backup(s) from the list of backups for a given container:
+
+1. Navigate to the **Backups** page.
+2. Mark the checkbox on the backup(s) to be removed.
+3. Press the **Delete Backup** button.
+
+:::caution Deleting Backups Properly
+Like infrastructure, backups should always be managed through the Cycle portal or API.  Trying to manage backups from the Backblaze portal means that Cycle will have no record of a file change and the state of the edited or removed backups will be broken on the Cycle side resulting in a degraded user experience. 
+:::
+
+## Backup Logs
