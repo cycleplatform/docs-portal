@@ -12,7 +12,11 @@ After setting up container backups, using the aforementioned guide, a user can s
 ## Viewing Backups
 To view a backup, navigate to the container that has been backed up and select the "Backups" option from the container modal navigation.  
 
-Here you will see all backups that have been created for the given container, as well as a log showing information about the command and other stats for the backup (coming soon!)
+Here you will see all backups that have been created for the given container, basic information about the backup, and data log with output from `stderr`.
+
+:::note STDOUT & STDERR
+Some programs print error messages to `stdout` instead of `stderr`, to hedge against missing errors in the backup log Cycle will look for backup exit codes of `not 0` and scan the last 1kb of `stdout` if `stderr` is empty.
+:::
 
 
 ![image](https://static.cycle.io/docs/containers/backups.png)
@@ -39,5 +43,3 @@ To remove individual backup(s) from the list of backups for a given container:
 :::caution Deleting Backups Properly
 Like infrastructure, backups should always be managed through the Cycle portal or API.  Trying to manage backups from the Backblaze portal means that Cycle will have no record of a file change and the state of the edited or removed backups will be broken on the Cycle side resulting in a degraded user experience. 
 :::
-
-## Backup Logs

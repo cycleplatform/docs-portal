@@ -4,15 +4,26 @@ sidebar_position: 3
 ---
 
 # Hub Tiers
+Cycle Hub tiers are simple, for a full breakdown visit our [pricing page](https://cycle.io/pricing).
 
-## Storage & RAM
+`Tiers Resource Table (truncated)`
 
-For a full description of Cycle pricing along with an interactive pricing tool go [here](https://cycle.io/pricing/).
+Tier |  RAM Pool | Max Servers | Max Users | Support
+-----|-----------|-------------|-----------|---------
+Free | 5GB       | 1           | 1         | Community
+Lite | 15GB      | 3           | 5         | Standard
+Business | 150GB | 75          | 25        | Standard
 
-### RAM
+:::info Hard and Soft Caps
+* **hard cap** - An amount that cannot be exceeded.
+* **soft cap** - An amount that can be exceeded but carries a corresponding action.
+:::
 
-Part of the Cycle license fee is based on the amount of RAM Cycle is managing on your behalf. Each tier comes with a base amount of RAM and includes an overage rate that is used to calculate your overages.
 
-### Storage
 
-Image storage is also included with any tier you select. The Standard tier comes with 200GB of image storage to start. Unlike RAM, storage has a hard cap. If you reach your storage limit you will need to remove images from your storage before you can add new images. The other option would be to upgrade your tier to an option with more image storage available.
+For the Free tier, all resources are hard capped - as this tier is meant for an individual user just trying out the platform.  The Lite and Business tiers only have hard caps on servers and users, the RAM Pool is a soft cap that can be exceeded.  Overages to the soft cap are covered on the pricing page linked to above.
+
+
+## Enterprise
+For larger organizations, custom solutions and tiers can be crafted.  Please reach out to our [strategic accounts](mailto:sales@cycle.io) team.
+
