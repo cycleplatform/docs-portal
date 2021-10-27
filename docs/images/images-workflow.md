@@ -4,7 +4,7 @@ sidebar_position: 1
 ---
 
 # Images Workflow
-Working with Images on Cycle is incredibly simple.  After creating an [image source](https://docs.cycle.io/docs/images/sources/sources-overview) image source.
+Working with Images on Cycle is incredibly simple.  After creating an [image source](https://docs.cycle.io/docs/images/sources/sources-overview).
 
 To creat a new image from an image source, select the source from the list and then click **Import Image**.
 
