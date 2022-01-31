@@ -1,16 +1,12 @@
-To create and environment:
+![environment create form](https://static.cycle.io/docs/environments/env-create-markup.png)
+1. **Cluster Selection** - Select the cluster this environment will use resources from.
+2. **Initial Deployment Type** - Use default unless the user wishes to initialize this environment with a stack build.
+3. **Environment Networking Architecture** - For users that would like to use IPv4 networking as their primary protocol in an environment, legacy networking is available as an option during environment create.
+
+
+**Create workflow**:
 * Click the Environments tab on the navigation menu to the left.
 * In the top right corner, select the **Create Environment** button.
 * In the form, enter a name for this environment (usually the name of your application you are building) and an optional description.
 * Click Create Environment. You will be taken to the environment dashboard.
 
-
-#### Default or Stack
-When creating a stack there is an option to create the environment with a stack.  Selecting this option will prompt the user to select both a stack and a stack build to use for the initial deployment of the stack to the environment upon environment creation.
-
-Selecting **Default** will create the environment without any initial user containers.
-
-#### Legacy Networking
-If legacy networking is selected during environment create, Cycle will give each container instance an IPv4 address alongside the default IPv6 address. These addresses have a maximum of 255 per container as the reserved space is a /24 on the `10.*` IPv4 address space per container.
-
-The discovery service in a legacy environment will still return IPv6 addresses for lookups if they are requested, so containers listening on IPv6 can still be reached. However, Cycle does not exclude them from the IPv4 allotment and as such the maximum of 255 instances is still in place.
