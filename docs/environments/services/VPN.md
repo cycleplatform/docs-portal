@@ -6,7 +6,14 @@ sidebar_position: 3
 
 Joining the environment VPN will join your machine to the private network of the environment. This gives you the choice to never expose critical container instances (like databases) to public internet.
 
-### Configuring the VPN Service
+## VPN Dashboard
+![vpn dashboard](https://static.cycle.io/docs/environments/vpn-manage-markup.png)
+1. The VPN tab, available once a user has selected an environment to manage, brings up the VPN dashboard - where users can enable, update, and further configure the environments VPN service.
+2. Each VPN service has its own client connection files that must be downloaded, unzipped, & added to a VPN client.  Users can download these files by clicking "Request VPN Files".
+3. The Access Control section of the page is where users will take actions that effect account management.  This is where users can toggle on/off the types of accounts they want to have access to this VPN.
+
+
+## Configuring the VPN Service
 The service is automatically created in every environment, but as per Cycle's security philosophy, it is disabled by default.
 
 To configure the VPN service, follow these steps:
@@ -18,17 +25,19 @@ To configure the VPN service, follow these steps:
 5. Click the Enable button.
 
 
-#### User Login
+## User Login
 For simplicity, the VPN service provides the option to allow any Cycle user with permission to access the environment, permission to access the VPN as well. They will be able to log in with their Cycle username/password. Check the box that says "Allow Cycle User Access", then click "Update".
 
 The VPN service also provides the option to use an Access Control List (ACL) to limit who can connect. Specify a username and password for the user and add them to the list. Enabling either form of user authentication requires you to click the checkbox next to your preferred method on the VPN dashboard.
 
-Make sure you click Update VPN Access after making any changes.
+![vpn manage](https://static.cycle.io/docs/environments/vpn-custom-users.png)
 
-#### Download Connection File
-Cycle automatically generates the OpenVPN file necessary to connect to the service. In the top right corner, click Download VPN File.
+:::success UPDATE VPN ACCESS
+Always click the "Update VPN Access" button after making changes to the user access controls.
+:::
 
-### Interacting with Your Environment while Connected to the VPN
+
+## Interacting with Your Environment while Connected to the VPN
 
 Now that you are connected to the environment VPN, your local machine is a part of the private network group. If you want to reach a container you can access it via hostname. Try using ping hostname where hostname = the container instance your trying to reach or if your containers are a part of a Cycle network try ping hostname.network to reach an instance in another environment. If your container is a browser based program, you can access it via the browser by using the address http://hostname.cycle:port.
 

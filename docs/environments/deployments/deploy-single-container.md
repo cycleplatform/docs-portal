@@ -68,36 +68,8 @@ If you want to be descriptive about which servers this container will be deploye
 
 ## Step 2: Select an Image
 
-In this step you'll choose to select an image that has already been imported to Cycle or choose to import a new image. Above, it was mentioned that we have prepared an special image for you to use with this guide:
+Select an image thats already been imported from the "Recent Images" selection or choose an existing [image source](/docs/images/sources/sources-overview) and create a new image from that source for this deployment.
 
-- Image Name - `cycleplatform/getting-started`
-- Tag - `latest`
-
-1. Choose how you want to select your image, either an existing image, or import a new one. If you choose existing, skip to step 4.
-
-
-
-2. Using the tabs on the left, select the source you wish to import from. At this time, you can import from either Docker Hub, or a private Docker Registry.
-
-
-
-#### Docker Hub
-
-Typing in the "Image Name" box will automatically search [hub.docker.com](https://hub.docker.com/) as you type, returning images along with their description and rating. Select your image from the list (or enter a custom one), then set the tag in the tag field. By default Cycle will import the 'latest' tag. You may also provide custom authorization by selecting the "Use Auth" checkbox. Enter your username and password into the respective fields.
-
-#### Docker Registry
-
-
-
-If you choose to import from a Docker Registry, the process is the same, except in the URL field you will need to enter the custom url the registry is hosted on. For example, if your image name is `images.website.com/myimage:latest`, you would enter `images.example.com` into the URL field. It's recommended to host your own Docker Registry on Cycle for extra security instead of using the public Docker Hub option.
-
-![Select Image Registry](/imgs/getting-started/quick-start/images-step2.1.png)
-
-3. Wait for the image to import. When complete, a dropdown menu will become clickable that says "Select Image".
-
-4. Select your image from the list. If you just imported it, it will be selected for you automatically.
-
----
 
 ### Step 2.1: Configure Volumes
 
@@ -110,10 +82,6 @@ Some container images may specify volumes (persistent data storage). Cycle will 
 **Path** - The path is automatically determined by the image, and cannot be changed.
 
 **Max Size** - Containers will grow to the max size set. Since this is a limit and not an allocation, it is possible that the volume won't have enough data to grow to the max size.
-
-![volumes](/imgs/getting-started/quick-start/volumes.png)
-
----
 
 ### Step 3: Configure the Network
 
@@ -128,8 +96,6 @@ There are three types of network privilege a container can have:
 - **Disabled** - Public internet access is completely disabled for this container. It may only communicate with other containers within the same environment. This is ideal for sensitive things, such as databases.
 - **Egress Only** - The container may initiate connections over the internet, but all incoming connections will be blocked. This is ideal for things that require fetching data from the web, but do not need to respond to inbound requests, such as web scrapers.
 - **Enabled** - The container is able to both start and accept connections over the internet. This is a must for websites, APIs, and other services where clients may not be known ahead of time.
-
----
 
 ### Step 4: Finalize
 

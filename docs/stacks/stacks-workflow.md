@@ -24,7 +24,7 @@ The raw stack file option is a convenience method of creating a stack.  It would
 
 After submitting the raw stack file the stack will 
 
-## Importing From A Git Repo
+## Importing From A Git Repo (recommended)
 Importing a stack from a git repo is very simple.  At the root of the repo, store the `cycle.json` file.
 
 Open a browser window, and with the Cycle portal loaded:

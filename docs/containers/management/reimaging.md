@@ -15,7 +15,8 @@ Reimaging is the process by which you can update the image of an already deploye
 
 
 
-### Understanding the Reimage Form
+## Understanding the Reimage Form
+
 The reimage form will be populated with any compatible images for deployment. An image is considered "compatible" when the volume paths match. Select your recently imported image (it will appear at the top), and then click reimage.
 
 When you press the **Reimage Container** button, a few things will be set in motion.
@@ -36,9 +37,12 @@ Reimaging replaces the container image - none of your config options will be cha
 
 ### Advanced Options
 Located directly below the reimage form is a toggle for **advanced options**.  Toggling this will show two additional options for reimageing:
+![reimage-form](https://static.cycle.io/docs/containers/reimage-form-markup.png)
 
-1. **Allow Incompatible Images** - If checked this will allow a user to use any image currently available on their hub to reimage the container.
-2. **Overwrite Runtime Config** - Generally when reimaging the containers runtime configuration will stay in tact.  If you wish to overwrite the currently implemented configuration with the configuration used in your selected container, this setting will need to be checked.
+
+1. **Image Dropdown** - where the user will select the image to reimage with.
+2. **Allow Incompatible Images** - If checked this will allow a user to use any image currently available on their hub to reimage the container.
+3. **Overwrite Runtime Config** - Generally when reimaging the containers runtime configuration will stay in tact.  If you wish to overwrite the currently implemented configuration with the configuration used in your selected container, this setting will need to be checked.
 
 The ability to allow incompatible images was developed in order to facilitate image name changes, so that if you were to import an image with a different name but that was meant to replace your current image you'd still be able to use that image.
 
