@@ -28,10 +28,18 @@ The command section of the runtime configuration settings has options for overri
 ### Startup Command
 **Path** - Set an override to the default command run when the container starts. May be useful if you have a custom debug command you wish to run.
 
-**Args** - Any arguments you wish to pass into the overidden path.
+**Args** - Any args for the override command.
 
 ### Working Directory
 **Workdir** - define the full path to be used when setting the containers working directory.  
+
+## SYSCTL & RLIMITS
+Settings for sysctl fields and rlimits can be set as described in their associated man pages.
+
+[rlimits man page](https://man7.org/linux/man-pages/man2/getrlimit.2.html)
+
+[sysctl man page](https://man7.org/linux/man-pages/man8/sysctl.8.html)
+
 
 
 ## Privileges

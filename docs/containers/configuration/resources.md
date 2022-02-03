@@ -9,11 +9,14 @@ If you're coming from the VM world, you are probably used to resource allocation
 
 **Shares** are the units we use to describe compute usage. A full share is 10 and equates to a single virtualized core or thread. To calculate shares available, multiply the amount of virtual cores or the amount of threads you have available on the infrastructure by 10.
 
-By default, Cycle will pre-allocate each instance with a default of 2 shares. That means that when you create an environment Cycle will allocate shares to your service containers as well. If you go over the total shares available on your infrastructure, Cycle will no longer allow you to deploy instances to that infrastructure.
+By default, Cycle will set CPU reserve to 2 shares. That means that when you create an environment Cycle will allocate shares to your service containers as well. If you go over the total shares available on your infrastructure, Cycle will no longer allow you to deploy instances to that infrastructure.
 
-:::note VPN Containers
-VPN containers are never counted during pre-allocation.
-:::
+
+
+![resources image](https://static.cycle.io/docs/containers/resources-markup.png)
+1. Limits are the maximum amount of resource that can be used.
+2. Reserve is the amount each instance of a container should pre-allocate of the given resource.
+3. Units are kilobytes(KB), megabytes(MB), gigabytes(GB), and so on.
 
 ### CPU
 Both the **limit** and **reserve** of the CPU can be set. This setting directly relates to the amount of shares available on the host. Setting a limit of 6 would translate to limiting the instance to 60% of a single core or thread. Setting a reserve of 2 would reserve 1/5th of the total available compute time on a single core for each instance.
