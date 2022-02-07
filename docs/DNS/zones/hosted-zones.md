@@ -9,6 +9,33 @@ A hosted zone is a dns zone that is using Cycles nameservers(ns1-ns4) and which 
 Zones which represent a delegation of a root domain must include a TXT record to verify ownership as described in the following section.
 :::
 
+## Creating A DNS Zone from the Root Domain
+### Step 1: Create the NS Record
+The first thing you want to do is tell DNS Servers where to look for your Domain information.
+
+Add 4 NS records that point to Cycle's nameservers.
+
+ns1.cycle.io
+ns2.cycle.io
+ns3.cycle.io
+ns4.cycle.io
+
+
+### Step 2: Create and Verify the Zone
+The next step would be to create and verify your new zone. In this case we will create a zone that includes the full domain name.
+
+If your domain was "example.com" enter "example.com" into the origin field when creating your zone.
+
+Select the Hosted Zone option from the dropdown.
+
+After your zone has been created click the Verify button on the top right of the screen.
+
+:::info DNS Propagation
+Root nameserver changes can take a while to propagate through DNS nameservers.  While these changes can sometimes take place rather quickly, its not unheard of for a NS switch on a root domain to take 3-6 hours for propagation.  If you're having trouble with configuration, don't hesitate to reach out to the Cycle team on [Slack](https://slack.cycle.io).
+:::
+
+
+
 
 
 ## Delegating Sub-Domains to Cycle from your Domain Management Service
@@ -44,8 +71,6 @@ To retrieve your hub ID simply click Settings on the left hand nav of your hub. 
 You can now create your txt record. Go to your providers record creator and select a txt record. Name the record "cycle-verify" and paste the hub ID into the text value section of the form.
 
 ### Step 3: Create and Verify the Zone
-If you have never created a DNS Zone on Cycle please reference this guide.
-
 The next step would be to create and verify your new zone. In this case we will create a zone that includes the full domain name.
 
 If your domain was "example.com" and your sub-domain is "docs" enter "docs.example.com" into the origin field when creating your zone.
@@ -55,7 +80,5 @@ Select the Hosted Zone option from the dropdown.
 After your zone has been created click the Verify button on the top right of the screen.
 
 ### Step 4: Add a Linked Record
-If you have never added a record to a DNS Zone on Cycle please reference this guide.
-
 Add a Linked record and point it at the container serving the contents of your sub-domain.
 
