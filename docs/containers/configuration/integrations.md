@@ -15,7 +15,7 @@ These three integrations represent 3 separate features.
 
 ## Let's Encrypt
 
-Allow's the user to control where TLS certificates are installed for a container. Using this option on a container means that you'll be reserving a specific inbound port as the loadbalancer will have no information other than port to route the traffic if the connection is still encrypted.
+Allows the user to control where TLS certificates are installed for a container. Using this option on a container means that you'll be reserving a specific inbound port as the loadbalancer will have no information other than port to route the traffic if the connection is still encrypted.
 
 To create a TLS certificate, you'll need to set up a [DNS Zone](https://docs.cycle.io/docs/dns/zones/overview). This doesn't mean that the container needs to have public networks enabled.
 

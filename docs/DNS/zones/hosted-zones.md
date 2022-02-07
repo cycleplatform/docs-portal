@@ -2,32 +2,23 @@
 sidebar_label: Hosted Zones
 sidebar_position: 2
 ---
-# Verifying Hosted Zones
-Cycle offers a wonderful DNS manager, use this guide to learn how to verify your hosted DNS Zones.
+# Hosted Zones
+A hosted zone is a dns zone that is using Cycles nameservers(ns1-ns4) and which has been verified for ownership.  
 
-### Pre-Verify a Domain using a TXT record
-If you would like to switch your DNS management to Cycle from an existing provider, adding a TXT record before changing the nameservers can minimize downtime.
+:::info Delegation
+Zones which represent a delegation of a root domain must include a TXT record to verify ownership as described in the following section.
+:::
 
-#### Creating a cycle-verify TXT record.
 
-1. Sign into your Cycle account and go to the Hub thats serving your site.
-2. Click the Setting option from the left side navigation.
-3. Copy the Hub ID located on the right side of the screen.
-4. Open your current DNS management platform.
-5. Create a TXT record.
-6. Give the record a name of cycle-verify and a value of your hub id.
-7. Go back to Cycle and create your new DNS Zone.
-8. Click Verify Domain.
 
-After adding a `cycle-verify` TXT record to your domain on your existing provider, Cycle is able to verify domain ownership prior to changing any nameservers / migrating DNS records.
-
-### Delegating Sub-Domains to Cycle from your Domain Management Service
+## Delegating Sub-Domains to Cycle from your Domain Management Service
 If you would like to manage your DNS records on your own registrar but still want to point certain sub-domains to Cycle, that can be accomplished in a few steps.
 
 1. Create an NS record on your provider so the internet will look for your sub-domain through Cycle's Name Servers.
 2. Create a Text Record that allows you to verify the domain as hosted on Cycle.
 3. Create a zone on Cycle and then verify that zone.
 4. Add a Linked Record that points to the container you want.
+
 
 ### Step 1: Create the NS Record
 The first thing you want to do is tell DNS Servers where to look for your Domain information.

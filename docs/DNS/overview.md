@@ -8,7 +8,16 @@ DNS (Domain Name System), is a decentralized naming system for computers, servic
 
 Cycle provides full support for all DNS record types, and introduces its own record type, "Linked", to facilitate the association of domains with containers.
 
-### Connecting Your Domain To Cycle
+## DNS Zones Dashboard
+Users can find this dashboard by clicking "DNS" from the main navigation.
+
+![dns zone dashboard](https://static.cycle.io/docs/dns/dns-dash-markup.png)
+1. TLS record generation attempts are all listed under the "TLS" tab.  
+2. If the DNS Zone is hosted, it must be verified before a user can generate TLS certificates.  
+3. The list of currently created DNS Zones.
+
+
+## Connecting Your Domain To Cycle
 Your domain will need to be configured to use Cycle's name servers before it can be utilized by your containers. How this is done varies depending on who you purchased your domain from (the registrar). Unfortunately, Cycle cannot modify your name servers at third party registrars on your behalf.
 
 If you need help configuring your domains on Cycle, please reach out to our support team using the live chat in the bottom right corner of the screen.
