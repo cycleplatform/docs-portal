@@ -21,7 +21,7 @@ When a container has [`Public Network`](/docs/containers/configuration/networkin
 Some software, SQL databases for example, often come prepackaged with CLI tooling.  Using CLI tools sparingly to interact with a running container can be a great way to get quick answers about an instance's configuration settings and to make quick administrative changes, such as creating a database table or deleting a database user.
 
 ### `scenario`
-After starting a web service, you notice that calls to the database are failing.  To see if there is any error information being provided by the container, the best thing to check fist is the containers [instance console](/docs/containers/instances/instance-console).  
+After starting a web service, you notice that calls to the database are failing.  To see if there is any error information being provided by the container, the best thing to check fist is the containers instance console.  
 
 The console reveals that a connection to that database has been denied for `user`@`ip address`.  Using the twc combined with the already installed DB CLI tooling, you're able to connect and make an administrative change to user remote connection privileges.  After making the change, the web service is able to run correctly!
 
