@@ -15,17 +15,18 @@ The infrastructure deploy modal will pop up after clicking on the add servers bu
 
 After selecting a provider select a location to provision from and click **Next**.
 
-### Available Servers
-The next page shows all available servers for the datacenter chosen.  Added servers will show in the **Order Summary** panel - on the right-hand side of the page. 
+## Deploy Form 
+The deploy form is the last step before deploying new infrastructure on Cycle.
 
+![deploy form](https://static.cycle.io/docs/infrastructure/server-deploy-markup.png)
 
-### Cluster
-Select an existing cluster from the dropdown or create a new cluster by typing a cluster name into the box.  For more information on clusters - go [here](/docs/infrastructure/clusters)
+1. For some locations, providers will have a wide range of server types with resources optimized for compute, storage, or other specs like GPU support.  Users that wish to see a locations available servers of a given type can use the given options to narrow servers to an individual type.
+2. The hub usage summary shows the current state of your infrastructure for a given hub and then changes to accomodate the servers a user adds to the order summary.  A node represents a server, while RAM pool represents the current sum of all ram.
+3. Server selection is done by using the `^` carrat button to increase or `v` carrat to decrease the number of servers of any given type.  The orders summary shows the total selection in real time.
+4. At the bottom of the order summary, users are presented with the sum of new costs to be expected from their provider after deploying this infrastructure & if they are over the soft limit on RAM pool cap, any additional charges to their Cycle bill will be shown.  
 
+ 
+Not included in the above image is an arrow to the "Cluster", as they are covered on the [clusters page](/docs/infrastructure/clusters).
 
-
-The final step is to click the **Deploy This Infrastructure** button.  Once that's complete, the infrastructure will be deployed by Cycle on the users behalf through the associated credentials used when adding the provider to Cycle.  The provisioning process generally takes anywhere from 3-10 minutes depending on the server. 
-
-<!-- TODO this needs a footer -->
 
 
