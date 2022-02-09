@@ -7,11 +7,11 @@ The container record(s) define containers identifiers as keys and their correspo
 
 
 ### Containers Record
-| Field                  | Type                               | Required | Nullable | Description      |
-|------------------------|------------------------------------|:--------:|:--------:|------------------|
-| `containers`           | Record                             | ✅        | ❌        | `container_identifier` records holding information about the image source, configuration, annotations, and granular settings. |
+| Field        | Type   | Required | Nullable | Description                                                                                                                   |
+|--------------|--------|:--------:|:--------:|-------------------------------------------------------------------------------------------------------------------------------|
+| `containers` | Record |    ✅     |    ❌     | `container_identifier` records holding information about the image source, configuration, annotations, and granular settings. |
 
-### 3 Container Records
+### Container Records
 ```json
 {
 "containers": {
@@ -24,15 +24,15 @@ The container record(s) define containers identifiers as keys and their correspo
 
 ### `Container Object`
 
-| Field         | Type                                 | Required | Nullable | Description      |
-|---------------|--------------------------------------|:--------:|:--------:|------------------|
-| `name`        | String                               | ✅        | ❌        | some description |
-| `image`       | Object                               | ✅        | ❌        | some description |
-| `annotations` | Object                               | ❌        | ✅        | A key value store of custom data for your container. Not used by the platform internally. |
-| `stateful`    | Boolean                              | ❌        | ❌        | If true, this container is set to stateful. |
-| `config`      | Object                               | ❌        | ✅        | The configuration options for the container. |
-| `volumes`     | Object                               | ❌        | ✅        | The volumes, if any, for this container. |
-| `deprecate`   | Boolean                              | ❌        | ❌        | If true this container will be marked deprecated. |
+| Field         | Type    | Required | Nullable | Description                                                                               |
+|---------------|---------|:--------:|:--------:|-------------------------------------------------------------------------------------------|
+| `name`        | String  |    ✅     |    ❌     | A name for the container                                                                  |
+| `image`       | Object  |    ✅     |    ❌     | A description for the container                                                           |
+| `annotations` | Object  |    ❌     |    ✅     | A key value store of custom data for your container. Not used by the platform internally. |
+| `stateful`    | Boolean |    ❌     |    ❌     | If true, this container is set to stateful.                                               |
+| `config`      | Object  |    ❌     |    ✅     | The configuration options for the container.                                              |
+| `volumes`     | Object  |    ❌     |    ✅     | The volumes, if any, for this container.                                                  |
+| `deprecate`   | Boolean |    ❌     |    ❌     | If true this container will be marked deprecated.                                         |
 
 ### Top Level Container Keys
 ```json
