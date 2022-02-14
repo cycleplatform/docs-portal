@@ -22,6 +22,10 @@ There are Cycle specific environment variables injected into each container. You
 Environment variables defined on the image cannot be removed. Cycle interprets these as critical to the way your program works. However, their values can be changed, which may be useful for things such as specific development-only settings. 
 :::
 
+:::success Enable Seccomp
+Currently, [seccomp](https://man7.org/linux/man-pages/man2/seccomp.2.html) is only enabled on containers that implement an `ENABLE_SECCOMP` environment variable (the value can be blank only the key is scanned by Cycle).  In the future seccomp will be enabled by default.
+:::
+
 ## Command
 The command section of the runtime configuration settings has options for overriding the startup command used to start your container and the containers configured working directory.
 
