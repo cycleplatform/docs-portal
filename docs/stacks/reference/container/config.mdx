@@ -216,7 +216,7 @@ The word `cores` is used interchangeably with the word thread in the following d
 | Field    | Type                                  | Required | Nullable | Description      |
 |----------|-------------------------------------  |:--------:|:--------:|------------------|
 |cpu       | Object                                |✅        | ❌       | An object holding the CPU shares limit and reserve settings. |
-|ram       | Object                                |✅        | ❌       | An object holding the RAM container instance configuration settings, including swapiness and kernel fields. |
+|ram       | Object                                |✅        | ❌       | An object holding the RAM container instance configuration settings. |
 
 
 <CodeBlock className="language-json" >
@@ -269,8 +269,6 @@ Instead of numbers, RAM fields are delineated with strings where the first part 
 |limit     | String                                |❌        | ✅        | The maximum amount of RAM each instance will have access to. |
 |reserve   | String                                |❌        | ✅        | The amount of RAM to reserve for each instance. |
 |swapiness | Number                                |❌        | ✅        | The swapiness value for each instance `0-100`. |
-|kernel    | String                                |❌        | ✅        | The amount of RAM to allocate to the kernel log for each instance. |
-|kernel_tcp| String                                |❌        | ✅        | The amount of write space to be kept during a lost connection. |
 
 
 

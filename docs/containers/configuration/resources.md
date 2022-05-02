@@ -11,17 +11,18 @@ If you're coming from the VM world, you are probably used to resource allocation
 
 By default, Cycle will set CPU reserve to 2 shares. That means that when you create an environment Cycle will allocate shares to your service containers as well. If you go over the total shares available on your infrastructure, Cycle will no longer allow you to deploy instances to that infrastructure.
 
-
-
 ![resources image](https://static.cycle.io/docs/containers/resources-markup.png)
+
 1. Limits are the maximum amount of resource that can be used.
 2. Reserve is the amount each instance of a container should pre-allocate of the given resource.
 3. Units are kilobytes(KB), megabytes(MB), gigabytes(GB), and so on.
 
-### CPU
+## CPU
+
 Both the **limit** and **reserve** of the CPU can be set. This setting directly relates to the amount of shares available on the host. Setting a limit of 6 would translate to limiting the instance to 60% of a single core or thread. Setting a reserve of 2 would reserve 1/5th of the total available compute time on a single core for each instance.
 
 In addition to the limit and reserve, Cycle also supports CPU pinning. Setting this option will force your container to run only on the specified cores. This allows you to control which cores your instances have access to.
 
-### RAM
+## RAM
+
 RAM is very straightforward - limits and reserves are set in KB, MB, GB etc. In addition, you can define the swappiness of your container's RAM usage. Swappiness defines how much (and how often) your container will copy RAM contents to swap. This parameter's default value is "60" and it can take anything from "0" to "100". The higher the value of the swappiness parameter, the more aggressively your container will swap.
