@@ -1,51 +1,138 @@
-import React from 'react'
-import {AutoTable} from "../../autotable";
+import React from "react";
+import { AutoTable } from "../../autotable";
 
 // ❌  ✅
 
 export const RuntimeFields = [
-    ["workdir", "String", "❌", "✅", "Override the working directory defined on the image."],
-    ["command", "String", "❌", "✅", "Override the default command used for this image."],
-    ["namespaces", "Array", "❌", "✅", "A list of the namespaces accessible - can be `ipc`, `pid`, `uts`, `network`, `mount`, `user`."],
-    ["environment_vars", "Record", "❌", "✅", "Additional environment variables that can will be available to the container during runtime."],
-    ["privileged", "Boolean", "❌", "✅", "A boolean where true sets this container to privileged mode."],
-    ["sysctl", "Record", "❌", "✅", "A record of key value sysctl pairs."],
-    ["rlimits", "Record", "❌", "✅", "A record of key value rlimit settings."],
-    ["seccomp", "Object", "❌", "❌", "An array of seccomp rules that can be disabled"]
-    ["capabilities", "Array", "❌", "✅", "A list of linux kernel capabilities to apply to the container instances."],
-]
+  [
+    "workdir",
+    "String",
+    "❌",
+    "✅",
+    "Override the working directory defined on the image.",
+  ],
+  [
+    "command",
+    "String",
+    "❌",
+    "✅",
+    "Override the default command used for this image.",
+  ],
+  [
+    "namespaces",
+    "Array",
+    "❌",
+    "✅",
+    "A list of the namespaces accessible - can be `ipc`, `pid`, `uts`, `network`, `mount`, `user`.",
+  ],
+  [
+    "environment_vars",
+    "Record",
+    "❌",
+    "✅",
+    "Additional environment variables that can will be available to the container during runtime.",
+  ],
+  [
+    "privileged",
+    "Boolean",
+    "❌",
+    "✅",
+    "A boolean where true sets this container to privileged mode.",
+  ],
+  ["sysctl", "Record", "❌", "✅", "A record of key value sysctl pairs."],
+  ["rlimits", "Record", "❌", "✅", "A record of key value rlimit settings."],
+  [
+    "seccomp",
+    "Object",
+    "❌",
+    "❌",
+    "An optional array of seccomp rules that can be disabled.",
+  ],
+  [
+    "capabilities",
+    "Array",
+    "❌",
+    "✅",
+    "A list of linux kernel capabilities to apply to the container instances.",
+  ],
+];
 
 export const SeccompRules = [
-  ["capabilities", "object", "✅", "❌", "A container capability that acts as a filter on syscalls saying if this capability is included or excluded act according to the following rules." ],
-  ["syscall", "object",  "✅", "❌", "An object holding a list of syscalls, an action, and optional args to evaluate when the capability is used." ]
-]
+  [
+    "capabilities",
+    "object",
+    "✅",
+    "❌",
+    "A container capability that acts as a filter on syscalls saying if this capability is included or excluded act according to the following rules.",
+  ],
+  [
+    "syscall",
+    "object",
+    "✅",
+    "❌",
+    "An object holding a list of syscalls, an action, and optional args to evaluate when the capability is used.",
+  ],
+];
 
 export const SeccompRulesCapabilities = [
-  ["includes", "String", "❌", "❌", "A container capability that should be checked to exist and if so follow the syscall rule and actions."],
-  ["exludes", "String", "❌", "❌", "A container capability that should be checked to not exist and if so follow the syscall rule and actions."]
-]
+  [
+    "includes",
+    "String",
+    "❌",
+    "❌",
+    "A container capability that should be checked to exist and if so follow the syscall rule and actions.",
+  ],
+  [
+    "exludes",
+    "String",
+    "❌",
+    "❌",
+    "A container capability that should be checked to not exist and if so follow the syscall rule and actions.",
+  ],
+];
 
 export const SeccompRulesSyscall = [
-  ["names", "Array",  "✅", "❌", "An array of syscalls."],
-  ["action", "String",  "✅", "❌", "An action to apply."],
-  ["args", "Object", "❌", "❌", "An optional object that has the specific syscall in seccomp."]
-]
+  ["names", "Array", "✅", "❌", "An array of syscalls."],
+  ["action", "String", "✅", "❌", "An action to apply."],
+  [
+    "args",
+    "Object",
+    "❌",
+    "❌",
+    "An optional object that has the specific syscall in seccomp.",
+  ],
+];
 
 export const SeccompArgs = [
-  ["index", "✅", "❌", "The index for syscall arguemnets."],
-  ["value", "✅", "❌", "The value for syscall arguements."],
-  ["valueTwo", "❌", "❌", "An optional second value for the syscall arguments."],
-  ["op", "✅", "❌", "The operator for syscall arguements in seccomp"]
-]
-
+  ["index", "Number", "✅", "❌", "The index for syscall arguemnets."],
+  ["value", "Number", "✅", "❌", "The value for syscall arguements."],
+  [
+    "valueTwo",
+    "Number",
+    "❌",
+    "❌",
+    "An optional second value for the syscall arguments.",
+  ],
+  [
+    "op",
+    "String",
+    "✅",
+    "❌",
+    "The operator for syscall arguements in seccomp",
+  ],
+];
 
 export const SeccompRulesTable = () => <AutoTable tablevalues={SeccompRules} />;
-export const SeccompRulesCapabilitiesTable = () => <AutoTable tablevalues={SeccompRulesCapabilities} />;
-export const SeccompRulesSyscallTable = () => <AutoTable tablevalues={SeccompRulesSyscall} />;
-export const SeccompArgsTable = () => <Autotable tablevales={SeccompArgs} />;
+export const SeccompRulesCapabilitiesTable = () => (
+  <AutoTable tablevalues={SeccompRulesCapabilities} />
+);
+export const SeccompRulesSyscallTable = () => (
+  <AutoTable tablevalues={SeccompRulesSyscall} />
+);
 
 export const RuntimeTable = () => <AutoTable tablevalues={RuntimeFields} />;
 
+export const SeccompArgsTable = () => <AutoTable tablevalues={SeccompArgs} />;
 
 export const RuntimeExample = `{
   "workdir": "/override/working/directory",
@@ -80,10 +167,7 @@ export const RuntimeExample = `{
     ]
   }
   "capabilities": [ "CAP_CHOWN", "CAP_FSETID", "CAP_DAC_OVERRIDE"]
-}`
-
-
-
+}`;
 
 // seccomp > rules > syscall
 // type LinuxSyscall struct {
@@ -105,7 +189,6 @@ export const RuntimeExample = `{
 // )
 // Define actions for Seccomp rules
 
-
 // type LinuxSeccompArg struct {
 // 	Index    uint                 `json:"index"`
 // 	Value    uint64               `json:"value"`
@@ -114,8 +197,7 @@ export const RuntimeExample = `{
 // }
 // LinuxSeccompArg used for matching specific syscall arguments in Seccomp
 
-// is the value here a syscall bit? 
-
+// is the value here a syscall bit?
 
 // type LinuxSeccompOperator string
 // LinuxSeccompOperator used to match syscall arguments in Seccomp
@@ -130,8 +212,6 @@ export const RuntimeExample = `{
 // 	OpMaskedEqual  LinuxSeccompOperator = "SCMP_CMP_MASKED_EQ"
 // )
 // Define operators for syscall arguments in Seccomp
-
-
 
 // Seccomp
 // Seccomp provides application sandboxing mechanism in the Linux kernel. Seccomp configuration allows one to configure actions to take for matched syscalls and furthermore also allows matching on values passed as arguments to syscalls. For more information about Seccomp, see Seccomp kernel documentation. The actions, architectures, and operators are strings that match the definitions in seccomp.h from libseccomp and are translated to corresponding values.
