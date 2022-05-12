@@ -3,17 +3,22 @@ sidebar_label: Image
 sidebar_position: 1
 ---
 
-import ImageOriginTypes from "../components/images/origintype"
-import ImageOriginDetails from "../components/images/origindetails"
-import {RemoteRepo, RepoTable, DetailsExamples} from "../components/images/origins/dockerfile/repo"
+import ImageOriginTypes from "../components/images/origintype";
+import ImageOriginDetails from "../components/images/origindetails";
+import {
+  RemoteRepo,
+  RepoTable,
+  DetailsExamples,
+} from "../components/images/origins/dockerfile/repo";
 
 # Container Image
 
 ## Image
-| Field    | Type                                  | Required | Nullable | Description      |
-|----------|-------------------------------------  |:--------:|:--------:|------------------|
-| `name`   | String                                | ❌       | ✅       | The name of the image. |
-| `origin` | Object                                | ✅       | ❌       | An object holding information about the image's origin. |
+
+| Field    | Type   | Required | Description                                             |
+| -------- | ------ | :------: | ------------------------------------------------------- |
+| `name`   | String |    ❌    | The name of the image.                                  |
+| `origin` | Object |    ✅    | An object holding information about the image's origin. |
 
 ```json
 {
@@ -23,20 +28,18 @@ import {RemoteRepo, RepoTable, DetailsExamples} from "../components/images/origi
 ```
 
 ## Image Origin Object
-| Field     | Type   | Required | Nullable | Description      |
-|-----------|--------|:--------:|:--------:|------------------|
-| `type`    | String | ✅        | ❌      | The type of image origin, can be `docker-file`, `docker-registry`, `docker-hub`, or `cycle`.|
-| `details` | Object | ✅        | ❌      | Location, authentication, and meta data about the origin. Object key values are different based on the type defined.  |
 
+| Field     | Type   | Required | Description                                                                                                          |
+| --------- | ------ | :------: | -------------------------------------------------------------------------------------------------------------------- |
+| `type`    | String |    ✅    | The type of image origin, can be `docker-file`, `docker-registry`, `docker-hub`, or `cycle`.                         |
+| `details` | Object |    ✅    | Location, authentication, and meta data about the origin. Object key values are different based on the type defined. |
 
 ### Image Origin Details Object
 
-
 <ImageOriginDetails />
 
-
-
 ## Dockerfile Origin Object: Details
+
 The `docker-file` image origin type is incredibly flexible and powerful.
 
 <RepoTable />
@@ -44,12 +47,14 @@ The `docker-file` image origin type is incredibly flexible and powerful.
 <DetailsExamples />
 
 ### Using The Repo Field
+
 If the stack references an image source, which resides in a different remote git repository, the repo field is used.
 
 <RemoteRepo />
 
 ### Using The `targz_url` Field
-Some users prefer to host packaged files on an endpoint for their image sources.  If the targz_url is used, it must include the protocol of `http` or `https` along with the full url and endpoint in one string.
+
+Some users prefer to host packaged files on an endpoint for their image sources. If the targz_url is used, it must include the protocol of `http` or `https` along with the full url and endpoint in one string.
 
 Along with that string, a user will provide the context directory and buildfile, unless those two values are root `/` and `/Dockerfile` respectively as it relates to the downloaded package, after being unzipped.
 
@@ -83,15 +88,14 @@ A user will NEVER use both the repo object and the targz_url in the same details
 }
 ```
 
-
 </details>
 
-
-
 ### Context Directory
+
 The context directory field `context_dir`, is used to explicitly state the context to be used during image create.
 
 Using this partial Dockerfile and file tree as an example:
+
 ```Dockerfile
 FROM node:alpine3.13
 
@@ -108,27 +112,26 @@ COPY ./package*.json ./
 |   +-- otherfile.js
 +-- node_modules
 ```
-The context directory that should be targeted in this example is `/`.  This is desirable because the files referenced in the `COPY` command would be correctly found in that context.
+
+The context directory that should be targeted in this example is `/`. This is desirable because the files referenced in the `COPY` command would be correctly found in that context.
 
 If the context directory were to be set to `/src`, Cycle would look inside the source directory when trying to perform the COPY command, which has no files that start with `package` or that end in `.json`.
 
 ### Build File
-Using that same idea, the build file `build_file` field is the full path to the file that will be used for building the image.  In most cases, this file is named `Dockerfile` but regardless of the name all that is needed is the full path from the root directory to the file itself.
+
+Using that same idea, the build file `build_file` field is the full path to the file that will be used for building the image. In most cases, this file is named `Dockerfile` but regardless of the name all that is needed is the full path from the root directory to the file itself.
 
 In the above example this would have been: `/Dockerfile`
 
-
 ### Registry Credentials
-In some builds, there is a reference to a private image.  Those private images require authentication before the files can be pulled.  In order to facilitate this use the `credentials` field and list all necessary authentication objects needed by the image.
+
+In some builds, there is a reference to a private image. Those private images require authentication before the files can be pulled. In order to facilitate this use the `credentials` field and list all necessary authentication objects needed by the image.
 
 For example, there may be an image hosted on a private Docker registry with the following values:
 
-* The `url` where the registry is hosted is `privateregistry.io`.
-* The `username` to use for authentication is `username`.
-* The `token` is `1231-5462-7556
-
-
-
+- The `url` where the registry is hosted is `privateregistry.io`.
+- The `username` to use for authentication is `username`.
+- The `token` is `1231-5462-7556
 
 ```jsx
 "credentials": [
@@ -139,5 +142,3 @@ For example, there may be an image hosted on a private Docker registry with the 
   }
 ]
 ```
-
-

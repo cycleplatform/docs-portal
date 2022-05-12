@@ -4,131 +4,50 @@ import { AutoTable } from "../../autotable";
 // ❌  ✅
 
 export const RuntimeFields = [
-  [
-    "workdir",
-    "String",
-    "❌",
-    "✅",
-    "Override the working directory defined on the image.",
-  ],
-  [
-    "command",
-    "String",
-    "❌",
-    "✅",
-    "Override the default command used for this image.",
-  ],
-  [
-    "namespaces",
-    "Array",
-    "❌",
-    "✅",
-    "A list of the namespaces accessible - can be `ipc`, `pid`, `uts`, `network`, `mount`, `user`.",
-  ],
-  [
-    "environment_vars",
-    "Record",
-    "❌",
-    "✅",
-    "Additional environment variables that can will be available to the container during runtime.",
-  ],
-  [
-    "privileged",
-    "Boolean",
-    "❌",
-    "✅",
-    "A boolean where true sets this container to privileged mode.",
-  ],
-  ["sysctl", "Record", "❌", "✅", "A record of key value sysctl pairs."],
-  ["rlimits", "Record", "❌", "✅", "A record of key value rlimit settings."],
-  [
-    "seccomp",
-    "Object",
-    "❌",
-    "❌",
-    "An optional array of seccomp rules that can be disabled.",
-  ],
-  [
-    "capabilities",
-    "Array",
-    "❌",
-    "✅",
-    "A list of linux kernel capabilities to apply to the container instances.",
-  ],
+  ["workdir", "String", "❌", "Override the working directory defined on the image."],
+  ["command", "String", "❌", "Override the default command used for this image."],
+  ["namespaces", "Array", "❌", "A list of the namespaces accessible - can be `ipc`, `pid`, `uts`, `network`, `mount`, `user`."],
+  ["environment_vars", "Record", "❌", "Additional environment variables that can will be available to the container during runtime."],
+  ["privileged", "Boolean", "❌", "A boolean where true sets this container to privileged mode."],
+  ["sysctl", "Record", "❌", "A record of key value sysctl pairs."],
+  ["rlimits", "Record", "❌", "A record of key value rlimit settings."],
+  ["seccomp", "Object", "❌", "An optional array of seccomp rules that can be disabled."],
+  ["capabilities", "Array", "❌", "A list of linux kernel capabilities to apply to the container instances."],
+];
+
+export const SeccompObject = [
+  ["disabled", "Boolean", "✅", "A boolean where true means seccomp will be disabled for this container."],
+  ["rules", "object", "❌", "An array of seccomp rules."],
 ];
 
 export const SeccompRules = [
-  [
-    "capabilities",
-    "object",
-    "✅",
-    "❌",
-    "A container capability that acts as a filter on syscalls saying if this capability is included or excluded act according to the following rules.",
-  ],
-  [
-    "syscall",
-    "object",
-    "✅",
-    "❌",
-    "An object holding a list of syscalls, an action, and optional args to evaluate when the capability is used.",
-  ],
+  ["capabilities", "object", "✅", "A container capability that acts as a filter on syscalls saying if this capability is included or excluded act according to the following rules."],
+  ["syscall", "object", "✅", "An object holding a list of syscalls, an action, and optional args to evaluate when the capability is used."],
 ];
 
 export const SeccompRulesCapabilities = [
-  [
-    "includes",
-    "String",
-    "❌",
-    "❌",
-    "A container capability that should be checked to exist and if so follow the syscall rule and actions.",
-  ],
-  [
-    "exludes",
-    "String",
-    "❌",
-    "❌",
-    "A container capability that should be checked to not exist and if so follow the syscall rule and actions.",
-  ],
+  ["includes", "String", "❌", "A container capability that should be checked to exist and if so follow the syscall rule and actions."],
+  ["exludes", "String", "❌", "A container capability that should be checked to not exist and if so follow the syscall rule and actions."],
 ];
 
 export const SeccompRulesSyscall = [
-  ["names", "Array", "✅", "❌", "An array of syscalls."],
-  ["action", "String", "✅", "❌", "An action to apply."],
-  [
-    "args",
-    "Object",
-    "❌",
-    "❌",
-    "An optional object that has the specific syscall in seccomp.",
-  ],
+  ["names", "Array", "✅", "An array of syscalls."],
+  ["action", "String", "✅", "An action to apply."],
+  ["args", "Object", "❌", "An optional object that has the specific syscall in seccomp."],
 ];
 
 export const SeccompArgs = [
-  ["index", "Number", "✅", "❌", "The index for syscall arguemnets."],
-  ["value", "Number", "✅", "❌", "The value for syscall arguements."],
-  [
-    "valueTwo",
-    "Number",
-    "❌",
-    "❌",
-    "An optional second value for the syscall arguments.",
-  ],
-  [
-    "op",
-    "String",
-    "✅",
-    "❌",
-    "The operator for syscall arguements in seccomp",
-  ],
+  ["index", "Number", "✅", "The index for syscall arguemnets."],
+  ["value", "Number", "✅", "The value for syscall arguements."],
+  ["valueTwo", "Number", "❌", "An optional second value for the syscall arguments."],
+  ["op", "String", "✅", "The operator for syscall arguements in seccomp"],
 ];
 
+export const SeccompObjectTable = () => <AutoTable tablevalues={SeccompObject} />;
+
 export const SeccompRulesTable = () => <AutoTable tablevalues={SeccompRules} />;
-export const SeccompRulesCapabilitiesTable = () => (
-  <AutoTable tablevalues={SeccompRulesCapabilities} />
-);
-export const SeccompRulesSyscallTable = () => (
-  <AutoTable tablevalues={SeccompRulesSyscall} />
-);
+export const SeccompRulesCapabilitiesTable = () => <AutoTable tablevalues={SeccompRulesCapabilities} />;
+export const SeccompRulesSyscallTable = () => <AutoTable tablevalues={SeccompRulesSyscall} />;
 
 export const RuntimeTable = () => <AutoTable tablevalues={RuntimeFields} />;
 
