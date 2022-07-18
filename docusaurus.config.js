@@ -12,15 +12,20 @@ module.exports = {
   favicon: "imgs/cycle/logo/logo-gear.svg",
   organizationName: "cycleplatform", // Usually your GitHub org/user name.
   projectName: "docs-portal", // Usually your repo name.
-  themes: ["@saucelabs/theme-github-codeblock"],
+  // themes: ["@saucelabs/theme-github-codeblock"],
   themeConfig: {
     // defaultMode: "dark",
     // respectPrefersColorScheme: false,
-    hideableSidebar: true,
+    // hideableSidebar: true,
     algolia: {
       apiKey: "244e0078287a09c076d180a1ce1ae05a",
       indexName: "prod_portal",
       appId: "DV41ALWI3Z",
+    },
+    docs: {
+      sidebar: {
+        hideable: true,
+      },
     },
     navbar: {
       logo: {
@@ -46,8 +51,8 @@ module.exports = {
             {
               href: "https://docs.cycle.io/internal-api/introduction",
               label: "Internal API Docs",
-            }
-          ]
+            },
+          ],
         },
         {
           href: "https://portal.cycle.io",
@@ -141,13 +146,7 @@ module.exports = {
         },
 
         theme: {
-          customCss: [
-            require.resolve("./src/css/fa-styles/all.css"),
-            require.resolve("./src/css/base.css"),
-            require.resolve("./src/css/lists.css"),
-            require.resolve("./src/css/code.css"),
-            require.resolve("./src/css/fonts.css"),
-          ],
+          customCss: [require.resolve("./src/css/fa-styles/all.css"), require.resolve("./src/css/base.css"), require.resolve("./src/css/lists.css"), require.resolve("./src/css/code.css"), require.resolve("./src/css/fonts.css")],
         },
       },
     ],
