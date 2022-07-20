@@ -9,34 +9,20 @@ const FeatureList = [
     Svg: require("../../static/svgs/duotone/book.svg").default,
     to: `/docs/intro`,
     className: styles.featureButton,
-    description: (
-      <>
-        The portal is Cycle's graphical user interface that allows you to easily
-        and quickly manage environments, containers, and deployment.
-      </>
-    ),
+    description: <>The portal is Cycle's graphical user interface that allows you to easily and quickly manage environments, containers, and deployment.</>,
   },
   {
     title: "API Docs",
-    to: "https://docs.cycle.io/api/introduction/",
+    to: "https://api-docs.cycle.io",
     Svg: require("../../static/svgs/duotone/book-heart.svg").default,
     className: styles.featureButton,
-    description: (
-      <>
-        The Cycle API is a REST-based, resource-oriented API designed to be easy
-        to use and understand. Using this API, you are able to fully interact
-        with the Cycle Platform.
-      </>
-    ),
+    description: <>The Cycle API is a REST-based, resource-oriented API designed to be easy to use and understand. Using this API, you are able to fully interact with the Cycle Platform.</>,
   },
 ];
 
 function Feature({ Svg, title, to, className, description }) {
   return (
-    <div
-      className={clsx("col col--5")}
-      onClick={() => (window.location.href = to)}
-    >
+    <div className={clsx("col col--5")} onClick={() => (window.location.href = to)}>
       <div className={styles.feature}>
         <div className="text--center">
           <Svg className={styles.featureSvg} alt={title} />
@@ -44,10 +30,7 @@ function Feature({ Svg, title, to, className, description }) {
           <p className={styles.featureDescription}>{description}</p>
         </div>
         <div>
-          <Link
-            className={clsx("button button--secondary button--lg", className)}
-            to={to}
-          >
+          <Link className={clsx("button button--secondary button--lg", className)} to={to}>
             {title}
           </Link>
         </div>
