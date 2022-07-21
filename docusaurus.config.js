@@ -50,13 +50,13 @@ module.exports = {
           position: "left",
           items: [
             {
-              href: "https://docs.cycle.io/api/introduction",
+              href: "https://api-docs.cycle.io",
               label: "Public API Docs",
             },
-            {
-              href: "https://docs.cycle.io/internal-api/introduction",
-              label: "Internal API Docs",
-            },
+            // {
+            //   href: "https://docs.cycle.io/internal-api/introduction",
+            //   label: "Internal API Docs",
+            // },
           ],
         },
         {
@@ -82,12 +82,12 @@ module.exports = {
             },
             {
               label: "Public API",
-              href: "https://docs.cycle.io/api/introduction",
+              href: "https://api-docs.cycle.io",
             },
-            {
-              label: "Internal API",
-              href: "https://docs.cycle.io/internal-api/introduction",
-            },
+            // {
+            //   label: "Internal API",
+            //   href: "https://docs.cycle.io/internal-api/introduction",
+            // },
           ],
         },
         {

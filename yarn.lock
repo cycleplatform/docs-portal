@@ -1512,7 +1512,7 @@
     "tslib" "^2.4.0"
     "utility-types" "^3.10.0"
 
-"@docusaurus/theme-search-algolia@2.0.0-rc.1":
+"@docusaurus/theme-search-algolia@^2.0.0-rc.1", "@docusaurus/theme-search-algolia@2.0.0-rc.1":
   "integrity" "sha512-H5yq6V/B4qo6GZrDKMbeSpk3T9e9K2MliDzLonRu0w3QHW9orVGe0c/lZvRbGlDZjnsOo7XGddhXXIDWGwnpaA=="
   "resolved" "https://registry.npmjs.org/@docusaurus/theme-search-algolia/-/theme-search-algolia-2.0.0-rc.1.tgz"
   "version" "2.0.0-rc.1"
