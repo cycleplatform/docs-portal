@@ -58,9 +58,22 @@ The stateful object holds a single key called `instances`.
 
 `stateful:`
 
-| Field     | Type  | Required | Description                                                                                               |
-| --------- | ----- | :------: | --------------------------------------------------------------------------------------------------------- |
-| instances | Array |    ✅    | An array of instance objects which allow for granular control over each instance of a stateful container. |
+| Field     | Type   | Required | Description                                                                                               |
+| --------- | ------ | :------: | --------------------------------------------------------------------------------------------------------- |
+| instances | Array  |    ✅    | An array of instance objects which allow for granular control over each instance of a stateful container. |
+| options   | Object |    ❌    | An object holding additional configuration options for a given stateful instance.                         |
+
+### Options
+
+An instance can have additional optional configuration settings, they are defined in the following object.
+
+| Field             | Type    | Required | Description                                                                                                                                                    |
+| ----------------- | ------- | :------: | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| use_base_hostname | Boolean |    ❌    | A boolean where true represents the desire for this instance to use the base hostname instead of the given stateful hostname of `1.hostname` `2.hostname` etc. |
+
+:::caution Naming collisions
+Using this option on multiple instances can cause hostname collisions, use with care.
+:::
 
 ### Instances
 
