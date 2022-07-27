@@ -5,11 +5,7 @@ sidebar_position: 1
 
 import ImageOriginTypes from "../components/images/origintype";
 import ImageOriginDetails from "../components/images/origindetails";
-import {
-  RemoteRepo,
-  RepoTable,
-  DetailsExamples,
-} from "../components/images/origins/dockerfile/repo";
+import { RemoteRepo, RepoTable, DetailsExamples } from "../components/images/origins/dockerfile/repo";
 
 # Container Image
 
@@ -134,11 +130,13 @@ For example, there may be an image hosted on a private Docker registry with the 
 - The `token` is `1231-5462-7556
 
 ```jsx
+
 "credentials": [
   {
-    url: "privateregistry.io",
-    username: "username",
-    token: "1231-4562-7556"
+    "url": "privateregistry.io",
+    "username": "username",
+    "token": "1231-4562-7556"
   }
 ]
+
 ```
