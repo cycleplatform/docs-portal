@@ -37,6 +37,18 @@ The environment variables that the platform looks for are:
 
 This information is also used by the platform when deciding what servers are qualified as a potential target for a given image. For example, an image with `NVIDIA GPU` tag will only be able to be deployed to a server with GPU resources and not to a server that only has CPU resources.
 
-## GPU Driver Access
+## Deploying A GPU Sample Container
 
-For containers that are marked NVIDIA GPU, the driver(s) needed to support usage of the servers GPU resources will be mounted at `/dev` have access to use the GPU.
+After provisioning GPU powered infrastructure, users are ready to deploy GPU workloads as soon as the server comes online. To help with this process we've created a "Sample Container" that has the NVIDIA GPU samples repo pre-compiled and ready to be executed.
+
+To use this container, create a new DockerHub image source type with the image name: `cycleplatform/gpu` and the tag `samples-cuda`.
+
+Next, move to an environment (or create a new one) that has acess to a cluster with a GPU powered server. Use the deploy contianers form to deploy a stateless copy of this image, and start the container.
+
+:::note First Starts
+The first time this container is started can take up to a few minutes. This is due to the fact that the container image is quite large and must be copied to the server before it can be started.
+:::
+
+After the container is started, head over to the instances tab and use the two-way console to connect to the container. Once connected, there will be a directory called `release`. This directory has a compiled "copy" of every available sample from the NVIDIA repo, but not every sample is meant to work on every machine, due to their not being screen attached to the servers. The most interesting binary to run is `deviceQuery` which prints lots of information about the GPU being used. Play around with some of the others to see different outputs.
+
+Its also possible to run the NVIDIA System Management Interface `nvidia-smi` command and all (most) subcommands associated with it. More information about nvidia-smi can be found [here](https://developer.nvidia.com/nvidia-system-management-interface).
