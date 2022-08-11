@@ -7,7 +7,7 @@ sidebar_position: 1
 
 Adding a provider is a simple process and allows the user to fully manage their infrastructure through Cycle.
 
-- Navigatet to the infrastructure dashboard by selecting Infrastructure from the main left-hand navigation.
+- Navigate to the infrastructure dashboard by selecting Infrastructure from the main left-hand navigation.
 - Next select the Providers tab from the top nav.
 - Select The Add Provider button at the top right of the screen.
 - Pick the provider of your choice from the dropdown and add credentials.
