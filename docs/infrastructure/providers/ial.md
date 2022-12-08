@@ -15,45 +15,57 @@ While the aim of Cycle is to be able to utilize any commodity infrastructure tha
 
 ### Hardware Requirements (Compute Servers):
 
-1. Minimum of 4GB RAM
-2. An x86 processor
-   1. CycleOS currently does not support ARM
-3. Minimum of 45GB of disk space, though 100GB+ is recommended for general purpose deployments.
-4. CycleOS will attempt to allocate 35GB of disk space for its base volume. This base volume is used to store:
-   1. CycleOS logs (~150Mb)
-   2. CycleOS updates (~100Mb)
-   3. Container Images
-   4. Storage for any files written outside of persistent volumes.
-5. The base volume can be increased after the server is online.
-6. While not required, an SSD or NVME disk is highly recommended.
+- Minimum of 4GB RAM
+- An x86 processor
+
+:::note x86 Required
+CycleOS currently does not support ARM
+:::
+
+- Minimum of 45GB of disk space, though 100GB+ is recommended for general purpose deployments.
+
+CycleOS will attempt to allocate 35GB of disk space for its base volume. This base volume is used to store:
+
+- CycleOS logs (~150Mb)
+- CycleOS updates (~100Mb)
+- Container Images
+- Storage for any files written outside of persistent volumes.
+- The base volume can be increased after the server is online.
+- While not required, an SSD or NVME disk is highly recommended.
 
 ### Network Requirements (Compute Servers):
 
-1. A 20Mbps+ public internet connectionk
-2. A minimum of 1 static IPv4 address
-   1. The Compute server (host) will utilize one ip address itself
-   2. Every load balancer instance will consume its own IP addresses.
-      1. If this server was going to host 4 load balancers, for different environments, it would need a total of 5 static ips.
-3. IPv6 support is highly recommended, but not required.
-   a. Cycle can be configured to use IPv4-only, IPv6-only, or dual stack.
+- A 20Mbps+ public internet connection.
+- A minimum of 1 static IPv4 address.
+
+  The Compute server (host) will utilize one ip address itself. Every load balancer instance will consume its own IP addresses. If this server was going to host 4 load balancers, for different environments, it would need a total of 5 static ips.
+
+- IPv6 support is highly recommended, but not required.
+  a. Cycle can be configured to use IPv4-only, IPv6-only, or dual stack.
 
 ### Software Requirements (Compute Servers):
 
-1. IPXE / PXE support
-   1. CycleOS is a read-only operating system built specifically for running containers. The OS is very lightweight / barebones to limit attack surface and legacy code.
-   2. CycleOS is never written to disk, and lives purely in RAM. Every time a server is rebooted, a fresh version of CycleOS is pulled. This process enables the Cycle platform to mitigate security risks while also ensuring the entire software stack stays modernized.
-      1. For example, CycleOS ships with a modern mainline kernel that is automatically maintained by the Cycle team.
-   3. Cycle has both an [IPXE ISO and an IPXE EFI](https://ipxe-images.platform-cdn.cycle.io/) image to pull CycleOS.
-2. Metadata or DHCP support
-   1. When a server with CycleOS boots it utilizes a ‘node-setup’ container, maintained by Cycle, to configure basic networking and storage configurations. This node-setup container must be able to learn, from an outside source, how to configure the network for the desired machines. As of now, there is no way to manually configure static IP interfaces within Cycle.
+- IPXE / PXE support
+
+  CycleOS is a read-only operating system built specifically for running containers. The OS is very lightweight / barebones to limit attack surface and legacy code.
+
+  CycleOS is never written to disk, and lives purely in RAM. Every time a server is rebooted, a fresh version of CycleOS is pulled. This process enables the Cycle platform to mitigate security risks while also ensuring the entire software stack stays modernized.
+
+  - For example, CycleOS ships with a modern mainline kernel that is automatically maintained by the Cycle team.
+  - Cycle has both an [IPXE ISO and an IPXE EFI](https://ipxe-images.platform-cdn.cycle.io/) image to pull CycleOS.
+
+- Metadata or DHCP support
+
+  When a server with CycleOS boots it utilizes a ‘node-setup’ container, maintained by Cycle, to configure basic networking and storage configurations. This node-setup container must be able to learn, from an outside source, how to configure the network for the desired machines. As of now, there is no way to manually configure static IP interfaces within Cycle.
 
 ### Software Requirements (Integration):
 
-1. The ability to build and publicly serve a highly-available API.
-   1. Cycle’s IAL is built around the idea of extending Cycle’s internal infrastructure provisioning system with custom APIs. Cycle maintains a git repository of the required spec definitions and endpoints needed for IAL support.
+- The ability to build and publicly serve a highly-available API.
 
-The git repository can be found here:
-https://github.com/cycleplatform/integrations
+  Cycle’s IAL is built around the idea of extending Cycle’s internal infrastructure provisioning system with custom APIs. Cycle maintains a git repository of the required spec definitions and endpoints needed for IAL support.
+
+  The git repository can be found here:
+  https://github.com/cycleplatform/integrations
 
 ## Setup and Integration
 
