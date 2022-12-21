@@ -33,9 +33,13 @@ The **Global** checkbox being checked signifies that every container in the envi
 
 The Access section of the form defines where the scoped variable should be accessible from.
 
-If the **Environment Variable** checkbox is selected, the scoped variable will be accessible as a runtime environment variable, whereas the **Internal API** checkbox means the scoped variable will be available through the Internal API endpoint.
+If the **Environment Variable** checkbox is selected, the scoped variable will be accessible as a runtime environment variable.
 
-:::info Internal API Call & Return
+```bash
+echo $VARIABLE_IDENTIFIER
+```
+
+If the **Internal API** checkbox is selected, the scoped variable will be available through the Internal API endpoint.
 
 ```bash
 curl --unix-socket /var/run/cycle/api/api.sock \
@@ -49,9 +53,13 @@ This will be returned as a `data` object in JSON holding all environment variabl
 {"data":{"INTERNAL_SCOPED_VAR":"VALUE"}}
 ```
 
-:::
+If the **File** checkbox is selected, the scoped variable will be available through a file at the following endpoint.
 
-Both checkboxes can be checked if a user wishes to have the scoped variable accessible as both an environment variable and from the internal API.
+`/var/run/cycle/variables/<myVariable>`
+
+This is facilitated by mounting a read only volume to `/var/run/cycle/variables` in the container instance. This volume is only updated upon restart of the container.
+
+Any, all, or some of the checkboxes in the access section can be selected for a given scoped variable. If all boxes are selected, for example, a user can use any of the access methods to retrieve the value.
 
 :::note Return Types
 Due to the nature of the internal API, certain returns, such as JSON will not be parsed ahead of time. Be prepared to parse a JSON encoded string if using the internal API alongside URL source types when JSON is the content type.  
@@ -81,3 +89,7 @@ When making updates to existing scoped variables two things must happen:
 To stage a change a user can either make changes in-line to the identifier or source of an unencrypted scoped variable, or using the advanced options modal - which is accessible via the gear icon under the **Advanced** column.
 
 Once a change has been staged, make sure the scoped variable checkbox is selected and submit **Update Selected** at the bottom of the page.
+
+:::caution Updating Values
+The only values that can be dynamically updated outside of container restarts are the values assigned as "internal api". All other types of scoped variables will require a container restart in order for values to be updated.
+:::
