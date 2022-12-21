@@ -30,7 +30,7 @@ Using HTTPS for repository authentication will require the entry of a username a
 :::note Example Keygen Command
 
 ```bash
-ssh-keygen -P ‘yourpassword’ -t ecdsa -b 256 -m PEM -f your-filename.pem
+ssh-keygen -P yourpassword -t ecdsa -b 256 -m PEM -f your-filename.pem
 ```
 
 This command will produce two files, the public and private key. Depending on your repository service you'll need to add the public key at the account or repository level and then add the private key to your Cycle image source.
