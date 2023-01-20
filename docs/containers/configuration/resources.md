@@ -23,6 +23,21 @@ Both the **limit** and **reserve** of the CPU can be set. This setting directly 
 
 In addition to the limit and reserve, Cycle also supports CPU pinning. Setting this option will force your container to run only on the specified cores. This allows you to control which cores your instances have access to.
 
+The default settings for container instance CPU's limits and reserves is as follows.
+
+- If deployed to a server with less than 2 cores, default is 1 share.
+- If deployed to a server with more than 2 cores, default is 2 shares.
+- If deployed with a HA deployement strategy, default is 2 shares.
+- If deployed with Manual deployment strategy, default is 2 shares.
+
+:::info When Does This Matter?
+The limits set in the resource config don't get enforced until the CPU is working at its "maximum".
+:::
+
+:::Danger Maximum Limits
+Setting the CPU limit to 0 is giving full access to the servers underlying compute
+:::
+
 ## RAM
 
 RAM is very straightforward - limits and reserves are set in KB, MB, GB etc. In addition, you can define the swappiness of your container's RAM usage. Swappiness defines how much (and how often) your container will copy RAM contents to swap. This parameter's default value is "60" and it can take anything from "0" to "100". The higher the value of the swappiness parameter, the more aggressively your container will swap.
