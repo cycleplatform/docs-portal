@@ -109,7 +109,7 @@ Backend configuration options are related to how the load balancer handles and r
   - Source - The same client IP always reaches the same container instance as long as no instance goes down or up.
 - Server Request Timeout - The number of seconds the load balancer will wait for a response from the container instance. See the HAProxy Docs for more information.
 - Server Finish Timeout - The number of milliseconds the load balancer will wait for the server to send data when one direction is already closed. See the HAProxy Docs for more information.
-- Server Finish Timeout - The number of milliseconds the load balancer will wait for a successful connection to a container instance. See the HAProxy Docs for more information.
+- Connection Timeout - The number of milliseconds the load balancer will wait for a successful connection to a container instance. See the HAProxy Docs for more information.
 - Queue Timeout - The number of milliseconds the load balancer will hold connections in a queue when the maximum number of connections has been reached. See the HAProxy Docs for more information.
 - Tunnel Timeout - The number of milliseconds the load balancer will allow for inactivity on a bidirectional tunnel. See the HAProxy Docs for more information.
 
