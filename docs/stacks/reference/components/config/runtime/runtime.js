@@ -5,7 +5,7 @@ import { AutoTable } from "../../autotable";
 
 export const RuntimeFields = [
   ["workdir", "String", "❌", "Override the working directory defined on the image."],
-  ["command", "String", "❌", "Override the default command used for this image."],
+  ["command", "Object", "❌", "Override the default command used for this image."],
   ["namespaces", "Array", "❌", "A list of the namespaces accessible - can be `ipc`, `pid`, `uts`, `network`, `mount`, `user`."],
   ["environment_vars", "Record", "❌", "Additional environment variables that can will be available to the container during runtime."],
   ["privileged", "Boolean", "❌", "A boolean where true sets this container to privileged mode."],
@@ -13,6 +13,11 @@ export const RuntimeFields = [
   ["rlimits", "Record", "❌", "A record of key value rlimit settings."],
   ["seccomp", "Object", "❌", "An optional array of seccomp rules that can be disabled."],
   ["capabilities", "Array", "❌", "A list of linux kernel capabilities to apply to the container instances."],
+];
+
+export const CommandObject = [
+  ["path", "String", "✅", "A string showing the 'path' to the executable to be used."],
+  ["args", "String", "✅", "The args for the program executed in path."],
 ];
 
 export const SeccompObject = [
@@ -51,11 +56,16 @@ export const SeccompRulesSyscallTable = () => <AutoTable tablevalues={SeccompRul
 
 export const RuntimeTable = () => <AutoTable tablevalues={RuntimeFields} />;
 
+export const RuntimeCommandTable = () => <AutoTable tablevalues={CommandObject} />;
+
 export const SeccompArgsTable = () => <AutoTable tablevalues={SeccompArgs} />;
 
 export const RuntimeExample = `{
   "workdir": "/override/working/directory",
-  "command": "sh",
+  "command": {
+    "path": "redis-server", 
+    "args": "/var/lib/config/redis.conf"
+  },
   "namespaces": ["uts"],
   "environment_vars": {
     "MY_CUSTOM_VARIABLE": "isthisvalue",

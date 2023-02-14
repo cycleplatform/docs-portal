@@ -7,7 +7,7 @@ import CodeBlock from "@theme/CodeBlock";
 import { DeployTable } from "../components/config/deploy/deploytable";
 import { InstancesTable, MatchTable, StartsTable, StatefulExample } from "../components/config/deploy/stateful";
 import { ConstraintsExample, ShutdownExample, TelemetryExample, HealthCheckExample, RestartExample, StartupExample } from "../components/config/deploy/deploy";
-import { RuntimeTable, RuntimeExample, SeccompRulesTable, SeccompRulesCapabilitiesTable, SeccompRulesSyscallTable, SeccompArgsTable, SeccompObjectTable } from "../components/config/runtime/runtime";
+import { RuntimeTable, RuntimeCommandTable, RuntimeExample, SeccompRulesTable, SeccompRulesCapabilitiesTable, SeccompRulesSyscallTable, SeccompArgsTable, SeccompObjectTable } from "../components/config/runtime/runtime";
 import { IntegrationsExample } from "../components/config/integrations";
 import { ResourcesExample } from "../components/config/resources";
 
@@ -203,6 +203,12 @@ Runtime settings are specifically settings that could affect the way the contain
 <RuntimeTable />
 
 <CodeBlock className={"language-json"}>{RuntimeExample}</CodeBlock>
+
+### Runtime Command Overrides
+
+Override the default command for the container.
+
+<RuntimeCommandTable />
 
 ### Seccomp
 
