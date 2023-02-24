@@ -44,8 +44,26 @@ When a volume should be reachable via SFTP, remote access is moved to enabled an
 | -------- | ------- | :------: | --------------------------------------------------------------------- |
 | enable   | Boolean |    ✅    | A boolean where true means remote access is enabled for this volume.  |
 | ips      | Array   |    ❌    | A whitelist of IP addresses, omitting this will allow any IP address. |
-| web_hook | String  |    ❌    | The path where the volume will be mounted.                            |
+| web_hook | String  |    ❌    | An endpoint used for authentication.                                  |
 | password | Object  |    ✅    | Password auth credentials for the volume.                             |
+
+The `web_hook` enpoint will receive a POST with the following data.
+
+```json
+{
+  "instance_id": "63ec1003dbe0680bac319991",
+  "container_id": "63ec1003dbe0680bac319999",
+  "username": "username",
+  "password": "password",
+  "volume": {
+    "id": "63ec1003dbe0680bac319992",
+    "hash": "f2ccfb",
+    "destination": "/var/lib/directory"
+  }
+}
+```
+
+If Cycle receieves a 200 response to the POST the user will be authenticated. The `id` field is the volume ID, the `hash` is a unique string used
 
 #### Password
 
@@ -55,3 +73,7 @@ Authentication information for remotely connecting to the volume.
 | ------ | ------- | :------: | --------------------------------------------------------------------- |
 | enable | Boolean |    ✅    | A boolean where true means remote access is enabled for this volume.  |
 | ips    | Array   |    ❌    | A whitelist of IP addresses, omitting this will allow any IP address. |
+
+```
+
+```

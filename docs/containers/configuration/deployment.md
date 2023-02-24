@@ -13,7 +13,7 @@ Initial instances refers to the number of instances to create during the contain
 
 ## Deployment Strategy
 
-The following link navigates to the page in docs with full information on the available deployment strategies that can be selected when deploying container instances through Cycle.
+Get full info on deployment strategies [here](/docs/containers/deployment-strategies)
 
 ## Constraints
 

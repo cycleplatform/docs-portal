@@ -1,4 +1,9 @@
-Depending on the tier you've chosen you may have access to different advanced deployment strategies. Choose a deployment strategy for the container. Each time an instance of the image is created Cycle will follow the deployment strategy when choosing a server to start the container on.
+---
+sidebar_label: Deployment Strategies
+sidebar_position: 40
+---
+
+# Container Deployment Stratgies
 
 The following is a list and description of the currently supported deployment strategies.
 

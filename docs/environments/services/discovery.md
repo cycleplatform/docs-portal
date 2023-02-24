@@ -2,7 +2,6 @@
 sidebar_label: Discovery
 
 sidebar_position: 1
-
 ---
 
 import Mermaid from '@theme/Mermaid';
@@ -27,11 +26,7 @@ If there is no entry that matches, the nameservers will fall back to Google's DN
 The discovery service caches queries for 5 minutes, giving a performance boost for repeated lookups, since they will be
 served over the private network.
 
-
-
-
-<Mermaid chart={`
-sequenceDiagram
+<Mermaid chart={`sequenceDiagram
     participant Cycle
     participant User Container One
     participant User Container Two
@@ -41,12 +36,17 @@ sequenceDiagram
     User Container One->>Discovery: Whats the IP of User Container Two
     Discovery->>User Container One: Here is a list of all IP's I have for that container
     Note left of User Container One: IP List: [10.0.11.100, 10.0.11.101]
-    User Container One->>User Container Two: Request files from http://10.0.11.100/static/file
-`} />
-
-
+    User Container One->>User Container Two: Request files from http://10.0.11.100/static/file`} />
 
 ### Forcing Random IP Order From Discovery
 
 When discovery returns a list of IP's after a DNS lookup the list is sorted by proximity to the requesting instance. If
 the user would like that list to be randomized prepend the hostname with an underscore - ex: `_hostname`.
+
+## Ingress And Egress
+
+In regards to traffic and the services that facilitate ingress and egress.
+
+When traffic comes in from public internet it will always hit the load balancer. These load balancers have a dedicated IP per load balancer and that information is available on the envrionment dashboard.
+
+When traffic leaves a container (egress), that traffic is routed "out" through the servers host IP. You can find a given servers host IP by going to the server dashboard.
