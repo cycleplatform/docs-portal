@@ -123,3 +123,11 @@ Load balancers carry two types of state, `state` and `ready_state`.
 The main difference here is that `ready_state` is used more to define when the load balancer is ready to be used or when it is waiting to be deleted.
 
 An example: if a load balancer is awaiting an IP assingment it will be in the `configuring` ready_state, once it has that IP assignment it will move to `active`. If a user tries to `start` a `configuring` load balancer, that request will fail. Requests to `start` an `active` load balancer will succeed.
+
+## Ingress And Egress
+
+In regards to traffic and the services that facilitate ingress and egress.
+
+When traffic comes in from public internet it will always hit the load balancer. These load balancers have a dedicated IP per load balancer and that information is available on the envrionment dashboard.
+
+When traffic leaves a container (egress), that traffic is routed "out" through the servers host IP. You can find a given servers host IP by going to the server dashboard.
