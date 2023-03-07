@@ -19,10 +19,11 @@ const FeatureList = [
     description: <>The Cycle API is a REST-based, resource-oriented API designed to be easy to use and understand. Using this API, you are able to fully interact with the Cycle Platform.</>,
   },
 ];
+// onClick={() => (window.location.href = to)}
 
 function Feature({ Svg, title, to, className, description }) {
   return (
-    <div className={clsx("col col--5")} onClick={() => (window.location.href = to)}>
+    <div className={clsx("col col--5")}>
       <div className={styles.feature}>
         <div className="text--center">
           <Svg className={styles.featureSvg} alt={title} />

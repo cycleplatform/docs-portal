@@ -25,6 +25,10 @@ Deployment of GPU enabled infrastructure is the exact same process as with any o
 - Select A Provider & Location (currently AWS and Vultr carry GPU boxes)
 - Select the Server from the list and deploy that server.
 
+:::danger Google Cloud Platform Quotas
+For users looking to deploy GPU infrastructure from GCP, you will need to request an increase to the `GPUS_ALL_REGIONS` and `NVIDIA_A100_GPUS` settings placed on your account if you have not done so already. As of writing this, those amounts are defaulted to 0 and will prevent you from being able to deploy GPU powered infrastructure.
+:::
+
 ## Containers Needing GPU Resources
 
 When GPU powered images are uploaded to Cycle, the platform will look for special environment variables in the image and then post a badge thats says `NVIDIA GPU` next to the image that signifies the need a GPU server.
