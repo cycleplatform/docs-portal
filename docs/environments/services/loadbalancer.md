@@ -59,7 +59,7 @@ Your containers expecting connections from the load balancer using TLS terminati
 
 Automatic redirection to HTTPS is only available for DNS being managed by a Cycle Hosted Zone that is using the built in TLS functionality.
 
-If you are planning to use automatic HTTPS/HTTPS redirection, you will still need to expose your container to public internet by listening on port 80, not just port 443.
+If you are planning to use automatic HTTP/HTTPS redirection, you will still need to expose your container to public internet by listening on port 80, not just port 443.
 
 When the incoming HTTP traffic hits an available environment load balancer, the load balancer will perform a check to see if there is a certificate available for this container. If there is the connection will be upgraded to HTTPS. The connection will be encrypted between the client and the load balancer, but the load balancer will still terminate the TLS connection and forward to the appropriate container over port 80. For this reason you will still need to set your port mappings to 443:80 and 80:80 as described in the SSL Termination section directly above this.
 

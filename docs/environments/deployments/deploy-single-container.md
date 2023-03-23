@@ -4,6 +4,7 @@ sidebar_position: 2
 ---
 
 # Deploy A Single Container
+
 Cycle provides a completely UI based form to deploy individual containers. It provides a quick and easy way to get a container online without much configuration. Once the container is created, you will be able to modify any part of it's configuration to a fine degree. We've created a great container to go along with this guide **cycleplatform/getting-started** that can be used during the image import step. To get started, follow these steps:
 
 1. [Describe the container,](#step-1-describe-the-container-and-its-state-settings) and provide initial information about the deployment.
@@ -21,15 +22,9 @@ The name of a container is for user purposes only, and doesn't affect any other 
 
 Choose **Stateful** or **Stateless** for your container. A Stateful container is a container that has a persistent volume, or the volume will hold state between restarts. A Stateless container can have a volume, but that volume will be cleared between starts.
 
-
-
-
-
 ### Initial Instances
 
 The instance slider tells Cycle exactly how many copies of the container you want to run when it starts. Based on the deployment strategy you set, Cycle will automatically balance the instances across your cloud.
-
-
 
 ### Deployment Strategy
 
@@ -55,7 +50,6 @@ The manual deployment strategy give you full control over where your instances a
 
 The First Available deployment strategy will deploy the instances to the server that is available first.
 
-
 ### Set Tags
 
 If you want to be descriptive about which servers this container will be deployed to use tags.
@@ -64,24 +58,32 @@ If you want to be descriptive about which servers this container will be deploye
 
 **All Tags**- Instances will only be deployed to a server that has every tag listed here.
 
-
-
 ## Step 2: Select an Image
 
 Select an image thats already been imported from the "Recent Images" selection or choose an existing [image source](/docs/images/sources/sources-overview) and create a new image from that source for this deployment.
 
-
 ### Step 2.1: Configure Volumes
-
-Some container images may specify volumes (persistent data storage). Cycle will automatically detect these and ask you to configure them.
-
-
 
 Some container images may specify volumes (persistent data storage). Cycle will automatically detect these and ask you to configure them.
 
 **Path** - The path is automatically determined by the image, and cannot be changed.
 
 **Max Size** - Containers will grow to the max size set. Since this is a limit and not an allocation, it is possible that the volume won't have enough data to grow to the max size.
+
+:::danger Defining Image Volumes
+If an image does not have a volume defined, Cycle will not show an option to configure the volume or to "add" a volume during container create. To make the volume configuration an option add a `VOLUME` to the Dockerfile.
+
+If you're using an official image and expect that you should find a volume on the image, yet Cycle doesn't show that one is defined, it is not defined on the image.
+
+To add a volume to an official image simply create the following Dockerfile:
+
+```Dockerfile
+FROM official:image
+VOLUME /path/you/desire
+```
+
+After creating the image, you can host it in a repo and use the `docker-file` image source type to pull it into Cycle, or you can build it locally and push to DockerHub or any supported Docker Registry before pulling it into Cycle.
+:::
 
 ### Step 3: Configure the Network
 
