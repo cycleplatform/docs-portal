@@ -5,7 +5,7 @@ sidebar_position: 5
 
 # Configuring GCP
 
-Use this guide to configure the assets you'll need to use AWS as a provider on Cycle.
+Use this guide to configure the assets you'll need to use GCP as a provider on Cycle.
 
 :::info
 This guide assumes the user has already signed up for a [GCP](https://cloud.google.com/) account.
