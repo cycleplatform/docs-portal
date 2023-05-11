@@ -1,9 +1,7 @@
 ---
-
 sidebar_label: Overview
 
 sidebar_position: 1
-
 ---
 
 # Environments Overview
@@ -19,7 +17,7 @@ environments this is an IPv6 network, while `legacy` environments also configure
 `IPv6 - fd00::[environment]:[container]:[instance]:[unallocated].`
 
 :::info Legacy Networks A legacy environment will outfit each container with a subnet of IPv4 and IPv6 address space for
-its instances. Legacy does not mean **instaed of** it is **also**.
+its instances. Legacy does not mean **instead of** it is **also**.
 :::
 
 Every container deployed into the same environment has a private network built between them, regardless of their
@@ -42,17 +40,17 @@ Breaking down this image, a user can see several very important pieces of inform
 ## Environment Services
 
 An environment service is a container Cycle starts within the environment to provide extra functionality. These services
-are created and managed automatically, but may have some configuration options available. At this time, two services are
+are created and managed automatically, but may have some configuration options available. At this time, three services are
 started in each environment:
 
-* [Discovery Service](https://docs.cycle.io/docs/environments/services/discovery)
-* [VPN Service](https://docs.cycle.io/docs/environments/services/vpn)
-* [Load Balancer Service.](https://docs.cycle.io/docs/environments/services/loadbalancer)
+- [Discovery Service](https://docs.cycle.io/docs/environments/services/discovery)
+- [VPN Service](https://docs.cycle.io/docs/environments/services/vpn)
+- [Load Balancer Service.](https://docs.cycle.io/docs/environments/services/loadbalancer)
 
 ### High Availability Services
 
-High availability can be an important milestone in creating a reslient production environment for your applications. On
-Cycle, setting environment services to be highly availabile is as simple as checking the boxes under the column
+High availability can be an important milestone in creating a resilient production environment for your applications. On
+Cycle, setting environment services to be highly available is as simple as checking the boxes under the column
 marked **HA** and then submitting that change using the "update" button.
 
 After this setting is enabled the environment configuration will know that it should maintain at least two instances of
@@ -71,14 +69,14 @@ eliminate the instances, starting with the last instance created and moving towa
 ## The Environment Dashboard
 
 From the environment dashboard, you are able to get a bird's eye view of containers and services for the environment, as
-well as information on the public load balancer and .
+well as information on the public load balancer and its associated IP's.
 
 :::note Navigating to the Environment Dashboard
 
 1. Select the Environments tab on the left in the navigation menu.
 2. Click the name of environment you wish to see from the list.
 
-* Alternatively, from within an environment, click the "Dashboard" tab at any time.
+- Alternatively, from within an environment, click the "Dashboard" tab at any time.
   :::
 
 Take the next step by learning how to [manage environments](/docs/environments/managing-environments).

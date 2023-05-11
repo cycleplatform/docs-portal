@@ -74,7 +74,7 @@ Settings for how you'd like Cycle to collect your telemetry data.
 
 ## Stateful Instances
 
-There are a special class of configuration settings specifically for stateful instances. These settings will only be present when a stateful instnace is being configured and will not show at all in stateless instance configuration panels.
+There are a special class of configuration settings specifically for stateful instances. These settings will only be present when a stateful instance is being configured and will not show at all in stateless instance configuration panels.
 
 ### Use Base Hostname
 
@@ -82,7 +82,7 @@ For containers that need to use the "base hostname" or the hostname without the 
 
 ### Hostname Pattern
 
-Enter the instnace you'd like to manage (ex `1.hostname`).
+Enter the instance you'd like to manage (ex `1.hostname`).
 
 This will open additional settings where you can set per instance commands and environment variables.
 
