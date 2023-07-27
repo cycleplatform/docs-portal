@@ -4,22 +4,26 @@ sidebar_position: 1
 ---
 
 # Images Workflow
-Container images are atomic copies of a filesystem that are built from a file (ex: Dockerfile).  
 
+Container images are atomic copies of a filesystem that are built from a file (ex: Dockerfile).
 
-On Cycle, users will [create an image source](/docs/images/sources/sources-overview#creating-sources) - describing where to find image assets - and then import images from that source.  Each imported image is a point in time atomic reference.
+Adding and using an image on Cycle comes down to a few simple steps:
 
+1. ** [Create an Image Source](/docs/images/sources/sources-overview#creating-sources) ** - describing where to find image assets.
+2. ** Importing An Image ** - From the image sources menu, select the image source and then import a copy of that image.
 
 ## Image Summary
 
-After selecting an image source there will be a list of images that have been created from that source.  Selecting any one of these images will show a summary of image information.  
+![Image Dashboard](https://static.cycle.io/portal-docs/images/image-dash.png)
 
-![Image Summary](https://static.cycle.io/docs/images/image-summary-markup.png)
+Every image, imported from a given source, will be listed when select the given image source. Clicking into any one of the listed images will then open a modal showing information about the image such as:
 
-1. Image scope is showing that this page relates to an individual image within the "mysql" image source.
-2. Image info is pointing to the different sections of available information for this image.
+- A place to update the image name.
+- The defined entrypoint, command, ports, and working directory.
+- All defined environment variables.
+- Whether that image is being used by any containers.
+- Information about the source.
 
+### Build Log
 
-### Image Settings
-There is also an option to select image settings from the horizontal navigation.  From this page, a user can update the name of the image, see the ID, or delete the image.
-
+There is also a navigation option for `Build Log`. This will take you to the build log of the image you've selected and show you the factory services output during the building of the image.

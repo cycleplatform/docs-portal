@@ -11,7 +11,7 @@ If you're coming from the VM world, you are probably used to resource allocation
 
 By default, Cycle will set CPU reserve to 2 shares. That means that when you create an environment Cycle will allocate shares to your service containers as well. If you go over the total shares available on your infrastructure, Cycle will no longer allow you to deploy instances to that infrastructure.
 
-![resources image](https://static.cycle.io/docs/containers/resources-markup.png)
+![resources image](https://static.cycle.io/portal-docs/containers/resources.png)
 
 1. Limits are the maximum amount of resource that can be used.
 2. Reserve is the amount each instance of a container should pre-allocate of the given resource.

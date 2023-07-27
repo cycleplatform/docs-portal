@@ -7,11 +7,11 @@ sidebar_position: 2
 
 Cycle provides powerful, automatic load balancing to every environment.
 
-![load balancer image](https://static.cycle.io/docs/environments/lb-general-markup.png)
+![load balancer image](https://static.cycle.io/portal-docs/environments/loadbalancer.png)
 
 1. The Load Balancer tab, available once a user has selected an environment to manage, brings up the Load Balancer Dashboard, as shown in the image.
-2. Instance State info about the current state of the enabled load balancers for this environment.
-3. Live configuration for the IPv\* settings of this environments load balancers.
+2. Instance State info about the current state of the enabled load balancers for this environment (Includes Public IP Information).
+3. Live configuration for the IPv4 and IPv6 settings of this environments load balancers, the load balancer type, and high availability settings.
 
 :::success Update Load Balancer
 To apply changes made in the configuration section of the load balancer dashboard, submit the changes via the "Update Load Balancer" button.
@@ -39,11 +39,11 @@ Each provider gives a different amount of IPv6 addresses for your load balancer.
 
 Cycle load balancers are configured to pass along the following special headers.
 
-| HEADER                  | POSSIBLE RETURN VALUES | DESCRIPTION                                                                     |
-| ----------------------- | ---------------------- | ------------------------------------------------------------------------------- |
-| X-Forwarded-Proto       | HTTP, HTTPS            | Information about the protocol of the incoming traffic.                         |
-| X-Forwarded-Port        | Any port               | The port that received the traffic on the load balancer.                        |
-| X-Cycle-Listening-HTTPS | yes, no                | Carries a yes if the load balancer is currently listening for traffic on HTTPS. |
+| HEADER             | POSSIBLE RETURN VALUES | DESCRIPTION                                                  |
+| ------------------ | ---------------------- | ------------------------------------------------------------ |
+| X-Forwarded-Proto  | HTTP/1.0, HTTP/2.0     | Information about the protocol of the incoming traffic.      |
+| X-Forwarded-For    | IP address             | The IP of the requesting client or user (origin of traffic). |
+| X-Forwarded-Scheme | HTTP, HTTPS            | The scheme of the incoming traffic.                          |
 
 ## Public Routing
 

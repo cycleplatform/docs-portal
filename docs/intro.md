@@ -14,7 +14,35 @@ allowfullscreen></iframe>
 
 ---
 
-- **First Time Using Cycle?**
+## Getting Started
+
+:::info Getting An Account
+To become an account holder for the Cycle platform, you'll need to see a [demo](https://cycle.io/demo). If you haven't seen a demo, head on over to sign up. If you have and you lost your code to make your account reach out to us through the chat window available in the bottom right of the demo scheduling page.
+:::
+
+### Create A Hub
+
+### Deploy A Server
+
+### Import An Image
+
+### Create Environment
+
+### Deploy Container
+
+---
+
+## What's Next?
+
+### Set Up DNS
+
+### Learn About Stacks
+
+### Infrastructure Clusters
+
+### API
+
+<!-- - **First Time Using Cycle?**
 
   - [Add a Provider](/docs/infrastructure/providers/adding-providers)
   - [Add a Server](/docs/infrastructure/add-infrastructure)
@@ -25,4 +53,4 @@ allowfullscreen></iframe>
   - [Set up DNS](/docs/DNS/zones/zone-management#create-the-zone)
   - [Creating A New Image Source](/docs/images/sources/sources-overview#creating-sources)
   - [Importing Stacks](/docs/stacks/stacks-workflow#importing-from-a-git-repo)
-  - [Create an API Key](/docs/hubs/API-access/api-key-generate)
+  - [Create an API Key](/docs/hubs/API-access/api-key-generate) -->
