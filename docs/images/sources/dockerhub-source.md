@@ -8,9 +8,10 @@ sidebar_position: 2
 Use Docker Hub as as the origin of an image source on Cycle.
 
 ### Docker Hub Workflow
+
 Using Docker Hub as the origin of an image source is very simple.
 
-After navigating to the images dashbaord (by clicking on the Images tab in the main nav), click on the Add Image Source button to bring up the create form.
+After navigating to the images dashboard (by clicking on the Images tab in the main nav), click on the Add Image Source button to bring up the create form.
 
 On the create form, simply fill in the Docker Hub details for image name/tag. If the repo requires auth to pull the image, select the use auth checkbox and enter your Docker username along with a token.
 

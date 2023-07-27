@@ -48,7 +48,7 @@ A **context directory** is the full path from the root of a resource to the dire
 
 The following image shows two projects. The project in the top window has two applications sharing a single root context and separated into two directories with each one holding an individual Dockerfile responsible for creating that services image. The bottom window shows a single application with the Dockerfile in the root context.
 
-![image](https://static.cycle.io/docs/images/context-directory.png)
+![image](https://static.cycle.io/portal-docs/images/context-directory.png)
 
 ### Branches, Tags And Hashes
 

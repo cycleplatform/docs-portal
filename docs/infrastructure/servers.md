@@ -15,16 +15,24 @@ The Infrastructure > Servers page shows all provisioned servers split by cluster
 
 Clicking the `Instances` tab from the horizontal navigation will show all instances currently deployed to this server and their state.
 
+:::note Change Timeframe & Show Suggested Load
+The gear above the telemetry graphs opens a small modal allowing the user to change the timeframe represented in the graphs and allowing the user to toggle the suggested load for the top CPU telemetry graph.
+:::
+
 ## Server Settings
 
 Manage the settings of individual servers. Server settings control the type of instances that can be deployed to each server as well as resource allocation limits.
 
-![server settings](https://static.cycle.io/docs/infrastructure/server-settings-markup.png)
+![server settings](https://static.cycle.io/portal-docs/server/settings.png)
 
 1. The server settings tab, reachable when in the infrastructure section of the portal.
 2. Server tags can be added and deleted using this form.
 3. Currently, there are two ways a user can reconfigure a server. They are covered in more detail below.
-4. Force delete a server can be used to forcefully remove a server from the hub.
+4. Server delete form. Using force delete will tell Cycle to forcibly delete the server regardless of instances deployed.
+
+:::caution Containers.Lock
+The container lock setting can cause force delete to fail.  
+:::
 
 ## Reconfigure Server
 
