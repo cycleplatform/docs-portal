@@ -9,9 +9,8 @@ Your Cycle account is your gateway to the platform. With it, you can create or j
 
 ---
 
-Use the [Account Wizard](https://portal.cycle.io/signup) to begin the signup process.
+Use the [Account Wizard](https://signup.cycle.io) to begin the sign up process.
 
-1. Enter your name, email address, and password.
-2. You will receive an email with a verification code. Enter the code into the box and select **Verify Email**.
-3. You've successfully created an account, click the **Login** button to be automatically logged in.
+For those new to the Cycle platform, sign up now requires seeing a [demo](https://cycle.io/demo). If you've been invited to a hub, you'll find the necessary information to create your account in an email.
 
+If you're having any issues signing up, or, if you have an invite and are unable to complete your sign up, please reach out to us at info@cycle.io or message us on our public [Slack](https://slack.cycle.io).

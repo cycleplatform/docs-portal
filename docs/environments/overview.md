@@ -76,6 +76,7 @@ well as information on the public load balancer and its associated IP's.
 2. Click the name of environment you wish to see from the list.
 
 - Alternatively, from within an environment, click the "Dashboard" tab at any time.
-  :::
+
+:::
 
 Take the next step by learning how to [manage environments](/docs/environments/managing-environments).
