@@ -25,19 +25,23 @@ The constraints form has two way to tag container instances:
 
 ## Startup Policy
 
-A delay, in seconds, that Cycle will wait before sending the start signal to this container upon environment start.
+A delay, in a time string, that Cycle will wait before sending the start signal to this container upon environment start.
+
+:::note Time String
+
+This accepts a string with modifiers. Example for 3 days 15 hours 10 minutes 5 seconds `3d15h10m5s`
+
+:::
 
 These settings are related to how the container updates its image.
 
-**Delay** - The number of seconds for Cycle to wait before starting the update.
-
-**Parallelism** - The number of instances of the container that can be updated at a time.
+**Delay** - A time string for Cycle to wait before starting the update.
 
 ## Shutdown Policy
 
 Information on how Cycle should handle a shutdown signal.
 
-**Graceful Timeout** - The time in seconds the platform will wait for a container to stop gracefully.
+**Graceful Timeout** - A time string the platform will wait for a container to stop gracefully. This accepts a string with modifiers. Example for 3 days 15 hours 10 minutes 5 seconds `3d15h10m5s`
 
 ## Restart Policy
 
@@ -45,7 +49,7 @@ Information about how Cycle should handle a restart event.
 
 **Restart Condition** - If the container fails under what conditions should Cycle attempt a restart.
 
-**Delay** - If there is a restart condition that is not
+**Delay** - A time string for how long to wait between restart attempts. This accepts a string with modifiers. Example for 3 days 15 hours 10 minutes 5 seconds `3d15h10m5s`
 
 **Max Restart** - The maximum number of times to try and restart this container.
 
@@ -57,16 +61,16 @@ Commands and instructions Cycle will run to verify your containers health.
 
 **Retries** - How many times to try the command.
 
-**Interval** - The time between tries to wait before trying again.
-**Timeout** - The amount of time to wait before the assumption the the command has failed.
+**Interval** - A time string between tries to wait before trying again. This accepts a string with modifiers. Example for 3 days 15 hours 10 minutes 5 seconds `3d15h10m5s`
+**Timeout** - A time string that says the amount of time to wait before the assumption the the command has failed. This accepts a string with modifiers. Example for 3 days 15 hours 10 minutes 5 seconds `3d15h10m5s`
 
 ## Telemetry
 
 Settings for how you'd like Cycle to collect your telemetry data.
 
-**Retention** - a number in seconds, which will tell Cycle how long you'd like to keep your data. The default is 21,600 or 6 hours.
+**Retention** - A time string for how long the platform will retain telemetry for a given instance. This accepts a string with modifiers. Example for 3 days 15 hours 10 minutes 5 seconds `3d15h10m5s`
 
-**Interval** - a number in seconds that represents how much time your would like each telemetry report to cover.
+**Interval** - A time string that represents how much time your would like each telemetry report to cover. This accepts a string with modifiers. Example for 3 days 15 hours 10 minutes 5 seconds `3d15h10m5s`
 
 **WebHook** - a url that Cycle will post your telemetry reports to.
 
@@ -79,13 +83,3 @@ There are a special class of configuration settings specifically for stateful in
 ### Use Base Hostname
 
 For containers that need to use the "base hostname" or the hostname without the instance number signifier prepended to it (ex `1.hostname`).
-
-### Hostname Pattern
-
-Enter the instance you'd like to manage (ex `1.hostname`).
-
-This will open additional settings where you can set per instance commands and environment variables.
-
-:::caution Naming collisions
-Using this option on multiple instances can cause hostname collisions, use with care.
-:::

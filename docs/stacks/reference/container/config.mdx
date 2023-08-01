@@ -54,14 +54,13 @@ For a full breakdown of the different deployment strategies available click [her
 
 ### Stateful
 
-The stateful object holds a single key called `instances`.
+The stateful object holds `options`:
 
 `stateful:`
 
-| Field     | Type   | Required | Description                                                                                               |
-| --------- | ------ | :------: | --------------------------------------------------------------------------------------------------------- |
-| instances | Array  |    ✅    | An array of instance objects which allow for granular control over each instance of a stateful container. |
-| options   | Object |    ❌    | An object holding additional configuration options for a given stateful instance.                         |
+| Field   | Type   | Required | Description                                                                       |
+| ------- | ------ | :------: | --------------------------------------------------------------------------------- |
+| options | Object |    ❌    | An object holding additional configuration options for a given stateful instance. |
 
 ### Options
 
@@ -70,37 +69,6 @@ An instance can have additional optional configuration settings, they are define
 | Field             | Type    | Required | Description                                                                                                                                                    |
 | ----------------- | ------- | :------: | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | use_base_hostname | Boolean |    ❌    | A boolean where true represents the desire for this instance to use the base hostname instead of the given stateful hostname of `1.hostname` `2.hostname` etc. |
-
-:::caution Naming collisions
-Using this option on multiple instances can cause hostname collisions, use with care.
-:::
-
-### Instances
-
-An instances object is represented by the following values:
-
-`instances:`
-
-<InstancesTable />
-
-#### Stateful Instance Match
-
-The instance object describes the instance being targeted in the `match` object. Currently, for each instance of a stateful container created, Cycle will look at the hostname and prepend a number (starting at 1) separated by a dot.
-
-To match a stateful containers first instance, the user can simply use the hostname value `1.thecontainershostname`.
-`match:`
-
-<MatchTable />
-
-#### Statful Instance Start Commands
-
-`default`, `first`, and `auto` _start_ each have different use cases, but the object shape is consistent between them.
-
-`starts:`
-
-<StartsTable />
-
-<CodeBlock className="language-json">{StatefulExample}</CodeBlock>
 
 ### Constraints
 
@@ -140,10 +108,10 @@ There are 2 types of node tags: `any` & `all`.
 
 The shutdown policy is an optional configuration that gives the user control over how the initial shutdown of the instance should be handled.
 
-| Field            | Type   | Required | Description                                                                                        |
-| ---------------- | ------ | :------: | -------------------------------------------------------------------------------------------------- |
-| graceful_timeout | Number |    ✅    | The time in seconds Cycle will wait before escalating the shutdown command from SIGINT to SIGKILL. |
-| all              | Array  |    ✅    | A list of SIGNALS to use - Do not use `SIGKILL`.                                                   |
+| Field            | Type   | Required | Description                                                                                                                                                                                            |
+| ---------------- | ------ | :------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| graceful_timeout | String |    ✅    | The time in seconds Cycle will wait before escalating the shutdown command from SIGINT to SIGKILL. This accepts a string with modifiers. Example for 3 days 15 hours 10 minutes 5 seconds `3d15h10m5s` |
+| all              | Array  |    ✅    | A list of SIGNALS to use - Do not use `SIGKILL`.                                                                                                                                                       |
 
 <CodeBlock className="language-json">{ShutdownExample}</CodeBlock>
 
@@ -151,9 +119,9 @@ The shutdown policy is an optional configuration that gives the user control ove
 
 The startup policy is an optional configuration for actions to take during instance startup.
 
-| Field | Type   | Required | Description                                                                                |
-| ----- | ------ | :------: | ------------------------------------------------------------------------------------------ |
-| delay | Number |    ❌    | A value in seconds that Cycle will wait before sending the start signal to this container. |
+| Field | Type   | Required | Description                                                                                                                                                                                          |
+| ----- | ------ | :------: | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| delay | String |    ❌    | A value in a time string that Cycle will wait before sending the start signal to this container. This accepts a string with modifiers. Example for 3 days 15 hours 10 minutes 5 seconds `3d15h10m5s` |
 
 <CodeBlock className="language-json">{StartupExample}</CodeBlock>
 
@@ -161,11 +129,11 @@ The startup policy is an optional configuration for actions to take during insta
 
 The restart policy is an optional configuration for actions to take if a container fails.
 
-| Field        | Type   | Required | Description                                                                                                                                                              |
-| ------------ | ------ | :------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| condition    | String |    ✅    | When a container qualifies for a restart event, this value will represent how often the restart policy is applied. The possible values are `always`, `never`, `failure`. |
-| max_attempts | Number |    ✅    | The maximum amount of times the restart policy will be applied before manual intervention is required.                                                                   |
-| delay        | Number |    ✅    | A value in seconds that Cycle will wait before sending the start signal to this container.                                                                               |
+| Field        | Type   | Required | Description                                                                                                                                                                                          |
+| ------------ | ------ | :------: | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| condition    | String |    ✅    | When a container qualifies for a restart event, this value will represent how often the restart policy is applied. The possible values are `always`, `never`, `failure`.                             |
+| max_attempts | Number |    ✅    | The maximum amount of times the restart policy will be applied before manual intervention is required.                                                                                               |
+| delay        | String |    ✅    | A value as a time string that Cycle will wait before sending the start signal to this container. This accepts a string with modifiers. Example for 3 days 15 hours 10 minutes 5 seconds `3d15h10m5s` |
 
 <CodeBlock className="language-json">{RestartExample}</CodeBlock>
 
@@ -173,13 +141,13 @@ The restart policy is an optional configuration for actions to take if a contain
 
 The health check policy is an optional configuration that can be used to check on the health of a running instance.
 
-| Field    | Type    | Required | Description                                                                                                                                            |
-| -------- | ------- | :------: | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| command  | String  |    ✅    | A command or path to an executable that should be run to perform the health check. The program or command should exit with code 0 if it is successful. |
-| retries  | Number  |    ✅    | The number of times Cycle will retry the health check command.                                                                                         |
-| interval | Number  |    ✅    | A value in seconds that Cycle will wait between retries.                                                                                               |
-| timeout  | Number  |    ✅    | The maximum amount of time the command or program can run before timing out.                                                                           |
-| restart  | Boolean |    ✅    | A boolean where true means the container instance should restart if its unhealthy.                                                                     |
+| Field    | Type    | Required | Description                                                                                                                                                                      |
+| -------- | ------- | :------: | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| command  | String  |    ✅    | A command or path to an executable that should be run to perform the health check. The program or command should exit with code 0 if it is successful.                           |
+| retries  | Number  |    ✅    | The number of times Cycle will retry the health check command.                                                                                                                   |
+| interval | String  |    ✅    | A time string that Cycle will wait between retries. This accepts a string with modifiers. Example for 3 days 15 hours 10 minutes 5 seconds `3d15h10m5s`                          |
+| timeout  | String  |    ✅    | The maximum amount of time the command or program can run before timing out. This accepts a string with modifiers. Example for 3 days 15 hours 10 minutes 5 seconds `3d15h10m5s` |
+| restart  | Boolean |    ✅    | A boolean where true means the container instance should restart if its unhealthy.                                                                                               |
 
 <CodeBlock className="language-json">{HealthCheckExample}</CodeBlock>
 
@@ -187,12 +155,12 @@ The health check policy is an optional configuration that can be used to check o
 
 Telemetry is an optional configuration for reporting instance telemetry.
 
-| Field     | Type    | Required | Description                                                                                  |
-| --------- | ------- | :------: | -------------------------------------------------------------------------------------------- |
-| retention | Number  |    ✅    | The number in seconds for telemetry data to be retained. This defaults to 21,600 or 6 hours. |
-| webhook   | String  |    ❌    | An optional webhook to report the telemetry data to.                                         |
-| interval  | Number  |    ✅    | A number in seconds to wait between samples. Default is 30 seconds.                          |
-| disable   | Boolean |    ✅    | A boolean where true represents telemetry reporting as disabled.                             |
+| Field     | Type    | Required | Description                                                                                                                                                       |
+| --------- | ------- | :------: | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| retention | String  |    ✅    | A time string for telemetry data to be retained. This accepts a string with modifiers. Example for 3 days 15 hours 10 minutes 5 seconds `3d15h10m5s`.             |
+| webhook   | String  |    ❌    | An optional webhook to report the telemetry data to.                                                                                                              |
+| interval  | String  |    ✅    | A time string to wait between samples. Default is 30 seconds. This accepts a string with modifiers. Example for 3 days 15 hours 10 minutes 5 seconds `3d15h10m5s` |
+| disable   | Boolean |    ✅    | A boolean where true represents telemetry reporting as disabled.                                                                                                  |
 
 <CodeBlock className="language-json">{TelemetryExample}</CodeBlock>
 
@@ -301,11 +269,12 @@ Instead of numbers, RAM fields are delineated with strings where the first part 
 
 Integrations is an optional section of configurations that allows the user to take control over files, certificates and webhook's for the container.
 
-| Field        | Type   | Required | Description                                                |
-| ------------ | ------ | :------: | ---------------------------------------------------------- |
-| lets_encrypt | Object |    ❌    | Advanced certificate integration for the container.        |
-| webhooks     | Object |    ❌    | Webhooks for container events.                             |
-| files        | Array  |    ❌    | Files from the repository to be copied into the container. |
+| Field        | Type   | Required | Description                                                                |
+| ------------ | ------ | :------: | -------------------------------------------------------------------------- |
+| lets_encrypt | Object |    ❌    | Advanced certificate integration for the container.                        |
+| webhooks     | Object |    ❌    | Webhooks for container events.                                             |
+| files        | Array  |    ❌    | Files from the repository to be copied into the container.                 |
+| backups      | Object |    ❌    | For stateful instances [backups](/docs/containers/backups) can be defined. |
 
 <CodeBlock className="language-json">{IntegrationsExample}</CodeBlock>
 
@@ -347,3 +316,29 @@ If there are files in the repo that need to be copied to the container but are n
 | ----------- | ------ | :------: | ---------------------------------------------------------------- |
 | source      | String |    ❌    | The path to the file in the repository that should be copied.    |
 | destination | String |    ❌    | The path to where in the container the file should be copied to. |
+
+### Backups
+
+For stateful instances [backups](/docs/containers/backups) can be defined.
+
+| Field       | Type   | Required | Description                                                                                                                                        |
+| ----------- | ------ | :------: | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| destination | String |    ✅    | A string identifying the destination for backups currently can only be `backblaze-b2`                                                              |
+| backup      | Object |    ✅    | An object holding information about how to back up the container data.                                                                             |
+| restore     | Object |    ✅    | An object holding information about how to restore data from a backup.                                                                             |
+| retention   | String |    ❌    | A time string, how long to retain the backups. This accepts a string with modifiers. Example for 3 days 15 hours 10 minutes 5 seconds `3d15h10m5s` |
+
+#### Backup
+
+| Field       | Type   | Required | Description                                                                                                                                                   |
+| ----------- | ------ | :------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| command     | String |    ✅    | A backup command. Should write to STDOUT. ex: `mysqldump -uuser -ppassword database`                                                                          |
+| timeout     | String |    ✅    | A time string, how long to run the backup before failing. This accepts a string with modifiers. Example for 3 days 15 hours 10 minutes 5 seconds `3d15h10m5s` |
+| cron_string | String |    ✅    | A cron string for how often to run the backup                                                                                                                 |
+
+#### Restore
+
+| Field   | Type   | Required | Description                                                                                                                                                    |
+| ------- | ------ | :------: | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| command | String |    ✅    | A restore command. Should read from STDIN. ex: `mysqlimport -uuser -ppassword database < /dev/stdin`                                                           |
+| timeout | String |    ✅    | A time string, how long to run the restore before failing. This accepts a string with modifiers. Example for 3 days 15 hours 10 minutes 5 seconds `3d15h10m5s` |

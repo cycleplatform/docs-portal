@@ -13,31 +13,31 @@ export const ConstraintsExample = `{
 }`;
 
 export const ShutdownExample = `{
-  "graceful_timeout": 45,
+  "graceful_timeout": "45s",
   "signals": ["SIGTERM", "SIGINT", "SIGHUP","SIGQUIT"]
 }`;
 
 export const StartupExample = `{
-  "delay":  10
+  "delay":  "10s"
 }`;
 
 export const RestartExample = `{
   "condition": "always",
-  "delay": 10,
+  "delay": "10s",
   "max_attempts": 10
 }`;
 
 export const HealthCheckExample = `{
   "command": "healthcheck_script"
   "retries": 10,
-  "interval": 5,
-  "timeout": 30,
+  "interval": "5s",
+  "timeout": "30s",
   "restart": true
 }`;
 
 export const TelemetryExample = `{
-  "retention": 35000,
-  "interval": 30,
+  "retention": "36h",
+  "interval": "30s",
   "webhook": "https://myurl.com/endpoint",
   "disable": false
 }`;

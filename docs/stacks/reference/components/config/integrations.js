@@ -1,5 +1,4 @@
-import React from 'react'
-
+import React from "react";
 
 // ❌  ✅
 
@@ -22,5 +21,18 @@ export const IntegrationsExample = `{
     {
       "source": "/directory/file.json", "destination": "/path/to/destination/file.json"
     }
-  ]
-}`
+  ], 
+  "backups": {
+    "destination": "backblaze-b2",
+    "backup": {
+      "command": "mysqldump -uusername -ppassword database",
+      "timeout": "900s",
+      "cron_string": "@daily"
+    },
+    "restore": {
+      "command": "mysqlimport -uusername -ppassword database < /dev/stdin",
+      "timeout": "900s"
+    },
+    "retention": "2y"
+  }
+}`;
