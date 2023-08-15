@@ -16,7 +16,9 @@ environments this is an IPv6 network, while `legacy` environments also configure
 
 `IPv6 - fd00::[environment]:[container]:[instance]:[unallocated].`
 
-:::info Legacy Networks A legacy environment will outfit each container with a subnet of IPv4 and IPv6 address space for
+:::info Legacy Networks
+
+A legacy environment will outfit each container with a subnet of IPv4 and IPv6 address space for
 its instances. Legacy does not mean **instead of** it is **also**.
 :::
 

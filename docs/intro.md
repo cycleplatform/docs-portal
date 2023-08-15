@@ -160,7 +160,7 @@ To visit the running container, click **Containers** from the horizontal navigat
 
 ### [Learn About Stacks](/docs/stacks/overview)
 
-### [Infrastructure Clusters](/docs/infrastructure//clusters)
+### [Infrastructure Clusters](/docs/infrastructure/clusters)
 
 ### [Visit the API Docs](https://api-docs.cycle.io)
 
