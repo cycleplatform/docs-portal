@@ -20,6 +20,7 @@ import AddApiKeys from "../src/pages/hub/hub-create/add-api-keys.mdx";
 import BillingInfo from "../src/pages/hub/hub-create/billing-information.mdx";
 import Deploy from "../src/pages/hub/hub-create/deploy.mdx";
 import EnvironmentCreate from "../src/pages/environments/\_create-environment.mdx";
+import Mermaid from '@theme/Mermaid';
 
 # Welcome to Cycle
 
@@ -36,6 +37,17 @@ allowfullscreen></iframe>
 :::info Getting An Account
 To become an account holder for the Cycle platform, you'll need to see a [demo](https://cycle.io/demo). If you haven't seen a demo, head on over to sign up. If you have and you lost your code to make your account reach out to us through the chat window available in the bottom right of the demo scheduling page.
 :::
+
+<Mermaid chart={
+`graph LR
+    A[Create an Account] --> B[Create A Hub]
+    B --> C[Add an Infrastructure Provider and Provision a Server]
+    C --> D[Create an Image Source and Image]
+    D --> E[Create an Environment]
+    E --> F[Deploy a Container]
+`
+}/>
+
 Use this guide to get up and running on Cycle:
 
 1. [Make An Account](#creating-an-account)
@@ -64,6 +76,14 @@ Hub create is now part of signing up, but here is some information on how you ca
 
 <HubTier />
 
+### Billing Information
+
+<BillingInfo />
+
+## Infrastructure
+
+After a user creates a hub, the next step is to add infrastructure.
+
 ### Select Provider
 
 <SelectProvider />
@@ -71,10 +91,6 @@ Hub create is now part of signing up, but here is some information on how you ca
 ### Add API Keys
 
 <AddApiKeys />
-
-### Billing Information
-
-<BillingInfo />
 
 ### Deploy
 

@@ -15,4 +15,4 @@ After navigating to the images dashboard (by clicking on the Images tab in the m
 
 On the create form, simply fill in the Docker Hub details for image name/tag. If the repo requires auth to pull the image, select the use auth checkbox and enter your Docker username along with a token.
 
-![Add Image Source](https://static.cycle.io/docs/images/add-image-source-dockerhub.png)
+![Add Image Source](https://static.cycle.io/portal-docs/images/add-image-source-dockerhub.png)

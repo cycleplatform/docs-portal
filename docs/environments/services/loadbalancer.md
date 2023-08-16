@@ -67,6 +67,8 @@ When the incoming HTTP traffic hits an available environment load balancer, the 
 
 The Cycle load balancer allows for Sticky Sessions, or the ability for the load balancer to create a persistent connection to an instance. Sticky Sessions ensure that a connection that is in process is not lost as a result of additional requests being routed to a different instance.
 
+To configure the load balancer to support sticky sessions, navigate to the load balancer configuration and select `Static Round Robin` for the backend `Balance` setting.
+
 ## Instance Health
 
 Cycle checks the health of instances. If an instance is unhealthy it will be removed from the pool of available instances that incoming traffic can be routed to. This ensures that all incoming traffic finds its way to healthy instances.

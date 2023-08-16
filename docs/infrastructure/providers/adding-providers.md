@@ -35,4 +35,4 @@ The supported base url's are:
 
 Alongside these base url's, the user will also need to provide the respective API key, secret, config, or whatever that provider requires.
 
-![Aux Provider](https://static.cycle.io/docs/infrastructure/custom-aux-provider.png)
+![Aux Provider](https://static.cycle.io/portal-docs/infrastructure/custom-aux-provider.png)
