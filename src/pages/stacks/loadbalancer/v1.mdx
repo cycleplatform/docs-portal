@@ -1,0 +1,36 @@
+The v1 load balancer was created by Cycle vertically integrate perfectly with the rest of the platform. At the time of this writing, the defaults are a 1:1 replica of the interactions a user could expect from the `haproxy` load balancer. However, there are a large amount of coming features that will continue to make this load balancer the strongest choice for power users.
+
+`details`
+Each type of load balancer has a corresponding details object. This object defines the configuration for the given load balancer type.
+
+| Field         | Type                   | Required | Description                                                   |
+| ------------- | ---------------------- | :------: | ------------------------------------------------------------- |
+| `controllers` | Record<String, Object> |    ✅    | Each controller entry is a port and that ports configuration. |
+
+## Controller Object
+
+For each entry in controller the user will supply a port as the key (ex: `"80"`) and an object for the configuration including an identifier and a transport object.
+
+`controller`
+
+| Field        | Type   | Required | Description                                                                                         |
+| ------------ | ------ | :------: | --------------------------------------------------------------------------------------------------- |
+| `identifier` | String |    ✅    | A human-readable identifier used to refer to a resource. The identifier does not have to be unique. |
+| `transport`  | Object |    ✅    | Configuration settings for the transport layer of the given port.                                   |
+
+### Transport
+
+`transport`
+
+| Field     | Type   | Required | Description                                                                  |
+| --------- | ------ | :------: | ---------------------------------------------------------------------------- |
+| `mode`    | String |    ✅    | Can be `tcp` or `http`, set for the desired load balancing mode.             |
+| `config`  | Object |    ✅    | Performance, timeout, and ingress configuration settings for the given port. |
+| `routers` | Array  |    ✅    | Performance, timeout, and ingress configuration settings for the given port. |
+
+`config`
+| Field | Type | Required | Description |
+| -------- | ------ | :------: | ---------------------------------------------------------------------------- |
+| `performance` | Boolean | ✅ | A performance setting for the load balancer, true represents on. |
+| `ingress` | Object | ✅ | Ingress networking settings. |
+| `timeouts` | Object | ✅ | Configuration for timeouts on the given port. |

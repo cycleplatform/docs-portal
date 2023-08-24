@@ -1,0 +1,38 @@
+Each type of load balancer has a corresponding details object. This object defines the configuration for the given load balancer type.
+
+## Details
+
+`details`
+
+| Field     | Type                   | Required | Description                                                                                                      |
+| --------- | ---------------------- | :------: | ---------------------------------------------------------------------------------------------------------------- |
+| `default` | Object                 |    ✅    | Any port not defined to have specific settings in the ports object falls under default configuration.            |
+| `ports`   | Record<String, Object> |    ✅    | A port as a key that points to a frontend and backend settings object that specifies the specific port settings. |
+
+## Default
+
+`default`
+
+| Field      | Type   | Required | Description                      |
+| ---------- | ------ | :------: | -------------------------------- |
+| `frontend` | Object |    ✅    | Frontend load balancer settings. |
+| `backend`  | Object |    ✅    | Backend load balancer settings.  |
+
+## Frontend
+
+| Field             | Type   | Required | Description                                                             |
+| ----------------- | ------ | :------: | ----------------------------------------------------------------------- |
+| `mode`            | String |    ✅    | Can be `tcp` or `http`, set for the desired load balancing mode.        |
+| `max_connections` | Number |    ✅    | The maximum number of connections for the load balancer (per instance). |
+| `timeout`         | Object |    ✅    | Timeout settings.                                                       |
+
+### Timeout
+
+| Field                | Type   | Required | Description                                                                                                                                                                                                                                                |
+| -------------------- | ------ | :------: | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `client_secs`        | Number |    ✅    | The number of seconds the load balancer will wait for a response from a client before disconnecting.                                                                                                                                                       |
+| `client_fin_ms`      | Number |    ❌    | The number of milliseconds the load balancer will wait for a client to send it data when one direction is already closed. This is particularly useful to avoid keeping connections in a waiting state for too long when clients do not disconnect cleanly. |
+| `http_keep_alive_ms` | Number |    ❌    | The number of milliseconds the load balancer will wait for a new HTTP request to start coming after a response was set. See the HAProxy Docs for more information.                                                                                         |
+| `http_request_ms`    | Number |    ❌    | The number of milliseconds the load balancer will wait for a complete HTTP request. See the HAProxy Docs for more information.                                                                                                                             |
+
+## Backend

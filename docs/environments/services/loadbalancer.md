@@ -7,6 +7,17 @@ sidebar_position: 2
 
 Cycle provides powerful, automatic load balancing to every environment.
 
+:::warning HAProxy Only
+The following documentation covers the HAProxy load balancer and does not yet include:
+
+- The v1 load balancer information
+- Images of the new management modals (instead of clicking the load balancer tab from horizontal navigation you will now click the "Manage" button under Services )
+
+I'm working on getting this out the door this week, but I wanted the other updated, new portal pages to be available asap. Thank you for your patience.
+
+~Chris
+:::
+
 ![load balancer image](https://static.cycle.io/portal-docs/environments/loadbalancer.png)
 
 1. The Load Balancer tab, available once a user has selected an environment to manage, brings up the Load Balancer Dashboard, as shown in the image.
@@ -95,7 +106,7 @@ Frontend configuration options are related to how inbound traffic is treated.
   - HTTP - Traffic is treated as web traffic. If a LINKED record is configured for a container exposing this port, the domain will be parsed and it will be forwarded to the proper container. This allows multiple services to run on port 80 in the same environment.
 - Max Connections - The number of simultaneous connections that can be processed at a time.
 - Client Timeout - The number of seconds the load balancer will wait for a response from a client before disconnecting.
-  +\_ Client Finish Timeout - The number of milliseconds the load balancer will wait for a client to send it data when one direction is already closed. This is particularly useful to avoid keeping connections in a waiting state for too long when clients do not disconnect cleanly.
+- Client Finish Timeout - The number of milliseconds the load balancer will wait for a client to send it data when one direction is already closed. This is particularly useful to avoid keeping connections in a waiting state for too long when clients do not disconnect cleanly.
 - HTTP Keep Alive [HTTP mode only] - The number of milliseconds the load balancer will wait for a new HTTP request to start coming after a response was set. See the HAProxy Docs for more information.
 - HTTP Request Timeout [HTTP mode only] - The number of milliseconds the load balancer will wait for a complete HTTP request. See the HAProxy Docs for more information.
 

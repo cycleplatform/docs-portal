@@ -1,0 +1,24 @@
+---
+sidebar_label: VPN
+sidebar_position: 2
+---
+
+# VPN
+
+`VPN`
+
+| Field          | Type    | Required | Description                                     |
+| -------------- | ------- | :------: | ----------------------------------------------- |
+| auth           | Object  |    ❌    | Settings for VPN service.                       |
+| allow_internet | Boolean |    ❌    | Can connections to the VPN access the internet. |
+
+## Auth
+
+The auth object holds two fields that define the type of accounts that have access to your VPN as connection credentials.
+
+`auth`
+
+| Field          | Type    | Required | Description                                                                                                           |
+| -------------- | ------- | :------: | --------------------------------------------------------------------------------------------------------------------- |
+| cycle_account  | Boolean |    ❌    | If true, members with access to the environment this stack is deployed to can use their Cycle credentials to connect. |
+| allow_internet | Boolean |    ❌    | Users defined in the VPN users configuration on the environment can use the defined credentials to connect.           |
