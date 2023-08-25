@@ -1,7 +1,7 @@
 ---
 sidebar_label: Discovery
 
-sidebar_position: 1
+sidebar_position: 2
 ---
 
 import Mermaid from '@theme/Mermaid';
@@ -38,7 +38,17 @@ served over the private network.
     Note left of User Container One: IP List: [10.0.11.100, 10.0.11.101]
     User Container One->>User Container Two: Request files from http://10.0.11.100/static/file`} />
 
-### Forcing Random IP Order From Discovery
+## Managing Discovery
+
+Users can manage environment services by opening the given services, service modal on environment dashboard.
+
+![environment dashboard services](https://static.cycle.io/portal-docs/environments/services-summary.png)
+
+For discovery, there is currently no telemetry information. However, users can interact with the instances panel and high availability settings on the dashboard.
+
+![discovery modal dashboard](https://static.cycle.io/portal-docs/environments/discovery-modal.png)
+
+## Forcing Random IP Order From Discovery
 
 When discovery returns a list of IP's after a DNS lookup the list is sorted by proximity to the requesting instance. If
 the user would like that list to be randomized prepend the hostname with an underscore - ex: `_hostname`.
