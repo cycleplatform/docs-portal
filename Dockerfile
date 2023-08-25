@@ -2,7 +2,7 @@ FROM node:16.16-alpine3.16 as builder
 RUN mkdir -p /app
 WORKDIR /app
 COPY ./package*.json ./
-RUN npm install --prefer-online
+RUN npm install --legacy-peer-deps
 COPY ./ ./
 RUN npm run build
 
