@@ -9,7 +9,7 @@ Cycle’s Infrastructure Abstraction Layer, or IAL for short, was built to allow
 
 By expanding the Cycle platform, organizations gain the infrastructure and devops benefits enabled by Cycle but with more flexibility in terms of deployments.
 
-## Prerequisits
+## Prerequisite
 
 While the aim of Cycle is to be able to utilize any commodity infrastructure that has an internet connection, there are a few requirements that it’s important to be aware of:
 
