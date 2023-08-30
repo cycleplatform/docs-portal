@@ -82,3 +82,15 @@ well as information on the public load balancer and its associated IP's.
 :::
 
 Take the next step by learning how to [manage environments](/docs/environments/managing-environments).
+
+## Security Events & Graph
+
+Users will notice a security graph on each environments dashboard.
+
+![security events graph](https://static.cycle.io/portal-docs/environments/security-graph.png)
+
+This graph will report any security events, scoped to the given environment, that have taken place along the time-span shown (currently 24 hours).
+
+:::success Security Reports
+To see a full list of what can be returned via the security report check out the `/security/report` endpoint in the API Docs [here](https://api-docs.cycle.io/docs/public-api/get-security-report) and expand the data object.
+:::

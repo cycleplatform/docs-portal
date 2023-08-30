@@ -57,6 +57,6 @@ the user would like that list to be randomized prepend the hostname with an unde
 
 In regards to traffic and the services that facilitate ingress and egress.
 
-When traffic comes in from public internet it will always hit the load balancer. These load balancers have a dedicated IP per load balancer and that information is available on the envrionment dashboard.
+When traffic comes in from public internet it will always hit the load balancer. These load balancers have a dedicated IP per load balancer and that information is available on the environment dashboard.
 
 When traffic leaves a container (egress), that traffic is routed "out" through the servers host IP. You can find a given servers host IP by going to the server dashboard.
