@@ -35,8 +35,6 @@ This accepts a string with modifiers. Example for 3 days 15 hours 10 minutes 5 s
 
 These settings are related to how the container updates its image.
 
-**Delay** - A time string for Cycle to wait before starting the update.
-
 ## Shutdown Policy
 
 Information on how Cycle should handle a shutdown signal.
@@ -64,6 +62,14 @@ Commands and instructions Cycle will run to verify your containers health.
 **Interval** - A time string between tries to wait before trying again. This accepts a string with modifiers. Example for 3 days 15 hours 10 minutes 5 seconds `3d15h10m5s`
 **Timeout** - A time string that says the amount of time to wait before the assumption the the command has failed. This accepts a string with modifiers. Example for 3 days 15 hours 10 minutes 5 seconds `3d15h10m5s`
 
+**Delay** - How long to wait before performing an initial health check when the instance starts. The state of the instance will be `null`` until the first check is performed (see below for more info).
+
+:::info Health State
+To learn more about the health state of the container instances as they respond to health checks check the [Instances API Docs](https://api-docs.cycle.io/docs/public-api/get-container-instance). Here users can expand the `data` object, then `state`, and finally `health` to get an idea of what the health states mean.
+
+More advanced uses may use this information to build a healthiness probe for their instances.
+:::
+
 ## Telemetry
 
 Settings for how you'd like Cycle to collect your telemetry data.
@@ -83,3 +89,11 @@ There are a special class of configuration settings specifically for stateful in
 ### Use Base Hostname
 
 For containers that need to use the "base hostname" or the hostname without the instance number signifier prepended to it (ex `1.hostname`).
+
+## Update
+
+This setting is used to configure behavior of the container instances on "update" (reimage). The main setting is "Stagger", which, when set, will cause the platform to pick a random time from 0 - this duration. This stagger is applied to the instances so they all re-start at different times (up to the time specified here).
+
+:::success Reimage & Downloads
+When reimaging a container, the Cycle platform will fully download the image to the server before the reimage step is executed.
+:::
