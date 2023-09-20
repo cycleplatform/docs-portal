@@ -28,11 +28,16 @@ export const RestartExample = `{
 }`;
 
 export const HealthCheckExample = `{
-  "command": "healthcheck_script"
+  "command": "healthcheck_script.sh"
   "retries": 10,
   "interval": "5s",
   "timeout": "30s",
-  "restart": true
+  "restart": true,
+  "delay": "120s"
+}`;
+
+export const UpdateExample = `{
+  "stagger": "15s"
 }`;
 
 export const TelemetryExample = `{
