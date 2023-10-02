@@ -43,6 +43,64 @@ The container configuration allows for ultra granular access to network, deploym
 }
 ```
 
+## Scale
+
+Auto scaling settings for the container.
+
+| Field           | Type   | Required | Description                                                                                                                                                                                                                                                                                                                                                                                |
+| --------------- | ------ | :------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| autoscale_group | String |    ❌    | An identifier for the autoscale group this container will belong to.                                                                                                                                                                                                                                                                                                                       |
+| instances       | Object |    ✅    | An object describing configuration data for the scaled instances.                                                                                                                                                                                                                                                                                                                          |
+| window          | String |    ✅    | A value in a time string, a window is the time period used to derive the average usage for gauging if an instance is over or under a threshold. For example: 10m with a CPU threshold of 50% will gauge if the instance has used more than 50% CPU alloted during the 5 minute period. This accepts a string with modifiers. Example for 3 days 15 hours 10 minutes 5 seconds `3d15h10m5s` |
+| thresholds      | Array  |    ✅    | An array of thresholds used to determine whether an instance will need to be scaled or not.                                                                                                                                                                                                                                                                                                |
+
+### Instances
+
+When configuring scaling, the instances object will hold information about minimums, maximums, deltas, & more.
+
+| Field      | Type   | Required | Description                                                                                                                                            |
+| ---------- | ------ | :------: | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| min        | Number |    ✅    | The minimum number of instances at any given time.                                                                                                     |
+| delta      | Number |    ✅    | For each scaling event, change the number of instances by this many.                                                                                   |
+| max        | Number |    ✅    | The maximum number of instances at any given time.                                                                                                     |
+| max_server | Number |    ✅    | The maximum instances allowed per server.                                                                                                              |
+| min_ttl    | String |    ✅    | The minimum number of instances at any given time. This accepts a string with modifiers. Example for 3 days 15 hours 10 minutes 5 seconds `3d15h10m5s` |
+
+### Thresholds
+
+A threshold is a resource type and details object describing the values that make up the condition for scaling based on the type.
+
+| Field   | Type   | Required | Description                                                                                                  |
+| ------- | ------ | :------: | ------------------------------------------------------------------------------------------------------------ |
+| type    | String |    ✅    | The type of threshold. Can be `cpu`, `ram`, `network-connections`, `network-requests`, `network-throughput`. |
+| details | Object |    ✅    | An object with the values based on the type.                                                                 |
+
+`type cpu`
+| Field | Type | Required | Description |
+| ------- | ------ | :------: | ------------------------------------------------------------------------------------------------------------ |
+| utilization | Number | ✅ | This number represents the % of CPU usage at which the threshold for scaling should be set. |
+
+`type ram`
+| Field | Type | Required | Description |
+| ------- | ------ | :------: | ------------------------------------------------------------------------------------------------------------ |
+| used | String | ✅ | This number represents the amount of ram usage at which the threshold for scaling should be set. Ex: 5G or 2M is 5 gigabytes or 2 megabytes. |
+
+`type network-connections`
+| Field | Type | Required | Description |
+| ------- | ------ | :------: | ------------------------------------------------------------------------------------------------------------ |
+| connections_total | Number | ✅ | This number represents the total number of connections active for an instance, at which the threshold for scaling should be set. |
+
+`type network-requests`
+| Field | Type | Required | Description |
+| ------- | ------ | :------: | ------------------------------------------------------------------------------------------------------------ |
+| requests_total | Number | ✅ | This number represents the total number of connections made, at which the threshold for scaling should be set. |
+
+` type network-throughput`
+| Field | Type | Required | Description |
+| ------- | ------ | :------: | ------------------------------------------------------------------------------------------------------------ |
+| private | Boolean | ✅ | A boolean where true means base this reading on private interface traffic, or false where it means public interface. |
+| bandwidth | String | ✅ | This number represents the total throughput amount for network bandwidth across the defined interface as a threshold for scaling. Ex: 5G or 2M is 5 gigabytes or 2 megabytes. |
+
 ## Deploy
 
 <DeployTable />
