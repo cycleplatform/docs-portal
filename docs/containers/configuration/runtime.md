@@ -18,7 +18,7 @@ To add additional environment variables to a container:
 - Repeat the last two steps until you've added all the environment variables for this container.
 - Press the **Save Config** button on the bottom right of the screen.
 
-There are Cycle specific environment variables injected into each container. You can find the full list [here](https://docs.cycle.io/docs/containers/integrations/environment-varibales). Some of these will be instance specific, such as `CYCLE_INSTANCE_IPV6_SUBNET`.
+There are Cycle specific environment variables injected into each container. You can find the full list [here](/docs/containers/integrations/environment-variables). Some of these will be instance specific, such as `CYCLE_INSTANCE_IPV6_SUBNET`.
 
 :::note Environment Variable Management
 Environment variables defined on the image cannot be removed. Cycle interprets these as critical to the way your program works. However, their values can be changed, which may be useful for things such as specific development-only settings.
