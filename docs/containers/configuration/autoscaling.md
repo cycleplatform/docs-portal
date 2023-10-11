@@ -20,7 +20,7 @@ Container autoscaling is a straightforward set of fields that outline what shoul
 
 ## Autoscale Group
 
-This field is set to join a container to a configured [autoscale group](/docs/infrastructure/autoscaling.md).
+This field is set to join a container to a configured [autoscale group](/docs/infrastructure/autoscaling).
 
 ## Window
 
