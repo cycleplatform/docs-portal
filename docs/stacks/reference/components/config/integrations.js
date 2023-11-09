@@ -22,6 +22,12 @@ export const IntegrationsExample = `{
       "source": "/directory/file.json", "destination": "/path/to/destination/file.json"
     }
   ], 
+  "shared_directories": {
+    "application_files": {
+      "writeable": true,
+      "mount_point": "/app/shared"
+    }
+  },
   "backups": {
     "destination": "backblaze-b2",
     "backup": {

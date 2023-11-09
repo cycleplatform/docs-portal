@@ -17,6 +17,20 @@ There are four options when setting up container integrations:
 
 The files integration has a `Source` and `Destination` setting for each entry. The source entry is an endpoint serving the files and the destination is where the file should be written to in the container.
 
+## Shared Directories
+
+Shared directories allow for a shared directory between containers running on the same host.
+
+This integration has three parts:
+
+1. Identifier - think of this as a key that can be used to identify which directory you'd like the given container to have access to.
+2. Writable - a boolean where true means the given container can write to the directory.
+3. Mount Point - where in the container to mount the shared directory.
+
+:::success Mount Points
+The mount point can be a directory that does not yet exist on the container. For example `/app/shared` can be used and if that directory does not exist on the host it will be added.
+:::
+
 ## Let's Encrypt
 
 Allows the user to control where TLS certificates are installed for a container. Using this option on a container means that you'll be reserving a specific inbound port as the loadbalancer will have no information other than port to route the traffic if the connection is still encrypted.

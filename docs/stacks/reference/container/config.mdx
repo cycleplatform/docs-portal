@@ -7,7 +7,7 @@ import CodeBlock from "@theme/CodeBlock";
 import { DeployTable } from "../components/config/deploy/deploytable";
 import { InstancesTable, MatchTable, StartsTable, StatefulExample } from "../components/config/deploy/stateful";
 import { ConstraintsExample, ShutdownExample, TelemetryExample, HealthCheckExample, RestartExample, StartupExample, UpdateExample } from "../components/config/deploy/deploy";
-import { RuntimeTable, RuntimeCommandTable, RuntimeExample, SeccompRulesTable, SeccompRulesCapabilitiesTable, SeccompRulesSyscallTable, SeccompArgsTable, SeccompObjectTable } from "../components/config/runtime/runtime";
+import { RuntimeTable, RuntimeCommandTable, RuntimeExample, SeccompRulesTable, SeccompRulesCapabilitiesTable, SeccompRulesSyscallTable, SeccompArgsTable, SeccompObjectTable, HostTable } from "../components/config/runtime/runtime";
 import { IntegrationsExample } from "../components/config/integrations";
 import { ResourcesExample } from "../components/config/resources";
 
@@ -281,6 +281,12 @@ An optional set of args for the given syscall rule.
 
 <SeccompArgsTable />
 
+### Host
+
+Configuration for the containers exposure to resources on the underlying host.
+
+<HostTable />
+
 ## Resources
 
 The purpose of the resource config is to explicitly set resource limits and reserves for container instances.
@@ -342,12 +348,13 @@ Instead of numbers, RAM fields are delineated with strings where the first part 
 
 Integrations is an optional section of configurations that allows the user to take control over files, certificates and webhook's for the container.
 
-| Field        | Type   | Required | Description                                                                |
-| ------------ | ------ | :------: | -------------------------------------------------------------------------- |
-| lets_encrypt | Object |    ❌    | Advanced certificate integration for the container.                        |
-| webhooks     | Object |    ❌    | Webhooks for container events.                                             |
-| files        | Array  |    ❌    | Files from the repository to be copied into the container.                 |
-| backups      | Object |    ❌    | For stateful instances [backups](/docs/containers/backups) can be defined. |
+| Field              | Type   | Required | Description                                                                |
+| ------------------ | ------ | :------: | -------------------------------------------------------------------------- |
+| lets_encrypt       | Object |    ❌    | Advanced certificate integration for the container.                        |
+| webhooks           | Object |    ❌    | Webhooks for container events.                                             |
+| files              | Array  |    ❌    | Files from the repository to be copied into the container.                 |
+| shared_directories | Object |    ❌    | Files stored on the host and mounted into the container.                   |
+| backups            | Object |    ❌    | For stateful instances [backups](/docs/containers/backups) can be defined. |
 
 <CodeBlock className="language-json">{IntegrationsExample}</CodeBlock>
 
@@ -389,6 +396,28 @@ If there are files in the repo that need to be copied to the container but are n
 | ----------- | ------ | :------: | ---------------------------------------------------------------- |
 | source      | String |    ❌    | The path to the file in the repository that should be copied.    |
 | destination | String |    ❌    | The path to where in the container the file should be copied to. |
+
+### Shared Directories
+
+Configuration data for the container regarding to the shared directories it has access to.
+
+Object is the following format:
+
+```json
+{
+  "identifier": {
+    "writeable": true,
+    "mount_point": "/app/shared"
+  }
+}
+```
+
+`identifier`
+
+| Field       | Type    | Required | Description                                                                      |
+| ----------- | ------- | :------: | -------------------------------------------------------------------------------- |
+| writeable   | Boolean |    ✅    | A boolean where true represents this container can make writes to the directory. |
+| mount_point | String  |    ✅    | A directory in the container where the files will be mounted.                    |
 
 ### Backups
 

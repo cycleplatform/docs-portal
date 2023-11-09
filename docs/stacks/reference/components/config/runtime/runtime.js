@@ -13,6 +13,7 @@ export const RuntimeFields = [
   ["rlimits", "Record", "❌", "A record of key value rlimit settings."],
   ["seccomp", "Object", "❌", "An optional array of seccomp rules that can be disabled."],
   ["capabilities", "Array", "❌", "A list of linux kernel capabilities to apply to the container instances."],
+  ["host", "Object", "❌", "Settings to interact with the underlying host."],
 ];
 
 export const CommandObject = [
@@ -48,6 +49,8 @@ export const SeccompArgs = [
   ["op", "String", "✅", "The operator for syscall arguements in seccomp"],
 ];
 
+export const HostArgs = [["expose_proc", "Boolean", "❌", "A boolean where true represents this container having the underlying hosts `/proc` directory mounted to it."]];
+
 export const SeccompObjectTable = () => <AutoTable tablevalues={SeccompObject} />;
 
 export const SeccompRulesTable = () => <AutoTable tablevalues={SeccompRules} />;
@@ -59,6 +62,8 @@ export const RuntimeTable = () => <AutoTable tablevalues={RuntimeFields} />;
 export const RuntimeCommandTable = () => <AutoTable tablevalues={CommandObject} />;
 
 export const SeccompArgsTable = () => <AutoTable tablevalues={SeccompArgs} />;
+
+export const HostTable = () => <AutoTable tablevalues={HostArgs} />;
 
 export const RuntimeExample = `{
   "workdir": "/override/working/directory",
@@ -94,7 +99,10 @@ export const RuntimeExample = `{
         }
       }
     ]
-  }
+  }, 
+  "host": {
+    "allow_proc": true
+  },
   "capabilities": [ "CAP_CHOWN", "CAP_FSETID", "CAP_DAC_OVERRIDE"]
 }`;
 

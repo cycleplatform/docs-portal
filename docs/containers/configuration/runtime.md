@@ -51,6 +51,14 @@ Use `" "` 's to wrap arg entries. For example a path that is `/bin/sh` could hav
 
 Currently, [seccomp](https://man7.org/linux/man-pages/man2/seccomp.2.html) is enabled on containers by default. To disable SECCOMP, a user must go to the contianer config > runtime setttings and select the disable checkbox.
 
+## Host
+
+The host section of the containers runtime config lists optional items that can be included which will interact with the underlying host the container is deployed to.
+
+To expose the underlying host's `/proc` directory to the container, which will be visible at `/var/run/cycle/host/proc` in the container, check the box.
+
+Toggling this setting off will remove the exposed filesystem from the host.
+
 ## SYSCTL & RLIMITS
 
 Settings for sysctl fields and rlimits can be set as described in their associated man pages.
