@@ -76,34 +76,39 @@ A threshold is a resource type and details object describing the values that mak
 | details | Object |    ✅    | An object with the values based on the type.                                                                 |
 
 `type cpu`
-| Field | Type | Required | Description |
-| ------- | ------ | :------: | ------------------------------------------------------------------------------------------------------------ |
-| utilization | Number | ✅ | This number represents the % of CPU usage at which the threshold for scaling should be set. |
+
+| Field       | Type   | Required | Description                                                                                 |
+| ----------- | ------ | :------: | ------------------------------------------------------------------------------------------- |
+| utilization | Number |    ✅    | This number represents the % of CPU usage at which the threshold for scaling should be set. |
 
 `type ram`
-| Field | Type | Required | Description |
-| ------- | ------ | :------: | ------------------------------------------------------------------------------------------------------------ |
-| used | String | ✅ | This number represents the amount of ram usage at which the threshold for scaling should be set. Ex: 5G or 2M is 5 gigabytes or 2 megabytes. |
+
+| Field | Type   | Required | Description                                                                                                                                  |
+| ----- | ------ | :------: | -------------------------------------------------------------------------------------------------------------------------------------------- |
+| used  | String |    ✅    | This number represents the amount of ram usage at which the threshold for scaling should be set. Ex: 5G or 2M is 5 gigabytes or 2 megabytes. |
 
 :::info Unreleased
 The following two options `connections` and `requests` are not yet released, but will be soon.
 :::
 
 `type network-connections`
-| Field | Type | Required | Description |
-| ------- | ------ | :------: | ------------------------------------------------------------------------------------------------------------ |
-| connections_total | Number | ✅ | This number represents the total number of connections active for an instance, at which the threshold for scaling should be set. |
+
+| Field             | Type   | Required | Description                                                                                                                      |
+| ----------------- | ------ | :------: | -------------------------------------------------------------------------------------------------------------------------------- |
+| connections_total | Number |    ✅    | This number represents the total number of connections active for an instance, at which the threshold for scaling should be set. |
 
 `type network-requests`
-| Field | Type | Required | Description |
-| ------- | ------ | :------: | ------------------------------------------------------------------------------------------------------------ |
-| requests_total | Number | ✅ | This number represents the total number of connections made, at which the threshold for scaling should be set. |
+
+| Field          | Type   | Required | Description                                                                                                    |
+| -------------- | ------ | :------: | -------------------------------------------------------------------------------------------------------------- |
+| requests_total | Number |    ✅    | This number represents the total number of connections made, at which the threshold for scaling should be set. |
 
 ` type network-throughput`
-| Field | Type | Required | Description |
-| ------- | ------ | :------: | ------------------------------------------------------------------------------------------------------------ |
-| private | Boolean | ✅ | A boolean where true means base this reading on private interface traffic, or false where it means public interface. |
-| bandwidth | String | ✅ | This number represents the total throughput amount for network bandwidth across the defined interface as a threshold for scaling. Ex: 5G or 2M is 5 gigabytes or 2 megabytes. |
+
+| Field     | Type    | Required | Description                                                                                                                                                                   |
+| --------- | ------- | :------: | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| private   | Boolean |    ✅    | A boolean where true means base this reading on private interface traffic, or false where it means public interface.                                                          |
+| bandwidth | String  |    ✅    | This number represents the total throughput amount for network bandwidth across the defined interface as a threshold for scaling. Ex: 5G or 2M is 5 gigabytes or 2 megabytes. |
 
 ## Deploy
 
