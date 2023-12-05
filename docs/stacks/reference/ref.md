@@ -9,13 +9,14 @@ The Cycle stack file is an intuitive take on orchestrating services together in 
 
 ## Top Level Fields
 
-| Field         | Type   | Required | Nullable | Description                                                                            |
-| ------------- | ------ | :------: | :------: | -------------------------------------------------------------------------------------- |
-| `version`     | String |    ✅    |    ❌    | This is the version of the Cycle Stack Spec (currently 1.0).                           |
-| `about`       | Object |    ❌    |    ✅    | Extra information about this stack. Not used by the platform.                          |
-| `services`    | Object |    ❌    |    ✅    | Define the configuration settings for the environment services.                        |
-| `containers`  | Object |    ✅    |    ✅    | An object where the key is a container identifier and the value is a container object. |
-| `annotations` | Object |    ❌    |    ✅    | A key value store of custom data for your stack. Not used by the platform internally.  |
+| Field              | Type   | Required | Nullable | Description                                                                            |
+| ------------------ | ------ | :------: | :------: | -------------------------------------------------------------------------------------- |
+| `version`          | String |    ✅    |    ❌    | This is the version of the Cycle Stack Spec (currently 1.0).                           |
+| `about`            | Object |    ❌    |    ✅    | Extra information about this stack. Not used by the platform.                          |
+| `services`         | Object |    ❌    |    ✅    | Define the configuration settings for the environment services.                        |
+| `scoped_variables` | Array  |    ✅    |    ✅    | An array of scoped variables, assignable to the containers in the stack.               |
+| `containers`       | Object |    ✅    |    ✅    | An object where the key is a container identifier and the value is a container object. |
+| `annotations`      | Object |    ❌    |    ✅    | A key value store of custom data for your stack. Not used by the platform internally.  |
 
 ## Version
 

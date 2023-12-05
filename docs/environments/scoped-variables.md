@@ -53,6 +53,8 @@ This will be returned as a `data` object in JSON holding all environment variabl
 {"data":{"INTERNAL_SCOPED_VAR":"VALUE"}}
 ```
 
+If you set a `duration` value, the value will only be accessible for the first "duration" of the container instances runtime. Resets each stop/start cycle.
+
 If the **File** checkbox is selected, the scoped variable will be available through a file at the following endpoint.
 
 `/var/run/cycle/variables/<myVariable>`
