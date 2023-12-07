@@ -59,7 +59,30 @@ The access object defines in it the way the scoped variable can be accessed in a
 
 Information about the source, also referred to as the value in `key`, `value`. Broken down into type and details.
 
-| Field     | Type   | Required | Description                                                                                                                                                                                                                                  |
-| --------- | ------ | :------: | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `type`    | String |    ✅    | The type of scoped variable source, either `raw` or `url`.                                                                                                                                                                                   |
-| `details` | Any    |    ✅    | Details can hold various types of information depending on the Source Type. For a Source Type of "raw", Details might be a string containing raw data. For a Source Type of "url", Details might be a struct with fields "URL" and "Method". |
+| Field     | Type   | Required | Description                                                                 |
+| --------- | ------ | :------: | --------------------------------------------------------------------------- |
+| `type`    | String |    ✅    | The type of scoped variable source, either `raw` or `url`.                  |
+| `details` | Object |    ✅    | Details can hold various types of information depending on the Source Type. |
+
+### Details (URL)
+
+| Field            | Type   | Required | Description                                                                                                           |
+| ---------------- | ------ | :------: | --------------------------------------------------------------------------------------------------------------------- |
+| `url`            | String |    ✅    | The url to pull from.                                                                                                 |
+| `headers`        | Record |    ❌    | Header map.                                                                                                           |
+| `auth_token_url` | string |    ❌    | A URL, where the response from this URL will be added to the sent headers in the format `{authorization: <response>}` |
+
+### Details (Raw)
+
+| Field    | Type    | Required | Description                                                                                                                                                   |
+| -------- | ------- | :------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `value`  | String  |    ✅    | The value to be returned.                                                                                                                                     |
+| `secret` | Object  |    ❌    | Information about the secret.                                                                                                                                 |
+| `blob`   | Boolean |    ✅    | A boolean where true represents the value is a formatted string that should maintain its formatting on retrieval. Not usable with `env_variable` access type. |
+
+#### Secret
+
+| Field  | Type   | Required | Description                                                              |
+| ------ | ------ | :------: | ------------------------------------------------------------------------ |
+| `iv`   | String |    ❌    | The initialization vector used for encryption.                           |
+| `hint` | String |    ❌    | A hint for decryption, generally used by the portal but can be user set. |
