@@ -353,13 +353,13 @@ Instead of numbers, RAM fields are delineated with strings where the first part 
 
 Integrations is an optional section of configurations that allows the user to take control over files, certificates and webhook's for the container.
 
-| Field              | Type   | Required | Description                                                                |
-| ------------------ | ------ | :------: | -------------------------------------------------------------------------- |
-| lets_encrypt       | Object |    ❌    | Advanced certificate integration for the container.                        |
-| webhooks           | Object |    ❌    | Webhooks for container events.                                             |
-| files              | Array  |    ❌    | Files from the repository to be copied into the container.                 |
-| shared_directories | Object |    ❌    | Files stored on the host and mounted into the container.                   |
-| backups            | Object |    ❌    | For stateful instances [backups](/docs/containers/backups) can be defined. |
+| Field              | Type   | Required | Description                                                                                                                    |
+| ------------------ | ------ | :------: | ------------------------------------------------------------------------------------------------------------------------------ |
+| lets_encrypt       | Object |    ❌    | Advanced certificate integration for the container.                                                                            |
+| webhooks           | Object |    ❌    | Webhooks for container events.                                                                                                 |
+| files              | Array  |    ❌    | Files from the repository to be copied into the container.                                                                     |
+| shared_directories | Object |    ❌    | Files stored on the host and mounted into the container. Follows the map format `identifier`: {`fields`}, example noted below. |
+| backups            | Object |    ❌    | For stateful instances [backups](/docs/containers/backups) can be defined.                                                     |
 
 <CodeBlock className="language-json">{IntegrationsExample}</CodeBlock>
 
