@@ -7,9 +7,11 @@ sidebar_position: 3
 
 Scoped variables are a way for users to dynamically allocate runtime specific environment variables across any number of containers in an environment.
 
-## Create
+## Create && Update
 
-To create a scoped variable, navigate to an environment and click the **Scoped Variables (Beta)** link from the horizontal navigation. Then click **Create Variable** - opening the create modal.
+To create a scoped variable, navigate to an environment and click the **Scoped Variables** link from the horizontal navigation. Then click **Create Variable** - opening the create modal.
+
+To update simply click the edit icon next to an existing scoped variable and use the button at the bottom of the modal to submit the update.
 
 ### General
 
