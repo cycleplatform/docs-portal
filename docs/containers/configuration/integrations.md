@@ -21,6 +21,8 @@ The files integration has a `Source` and `Destination` setting for each entry. T
 
 Shared directories allow for a shared directory between containers running on the same host.
 
+These directories are defined as identifiers in the [server configuration](/docs/infrastructure/servers/configure).
+
 This integration has three parts:
 
 1. Identifier - think of this as a key that can be used to identify which directory you'd like the given container to have access to.

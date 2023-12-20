@@ -1,25 +1,9 @@
 ---
-sidebar_label: Servers
-sidebar_position: 3
+sidebar_label: Settings
+sidebar_position: 4
 ---
 
-# Servers
-
-The Infrastructure > Servers page shows all provisioned servers split by cluster. Selecting any given server will show the `Server Dashboard` which includes things like:
-
-- CPU Telemetry Info & Load
-- RAM Usage
-- Storage Usage
-- Compute & Agent Versions
-- Uptime
-
-Clicking the `Instances` tab from the horizontal navigation will show all instances currently deployed to this server and their state.
-
-:::note Change Timeframe & Show Suggested Load
-The gear above the telemetry graphs opens a small modal allowing the user to change the timeframe represented in the graphs and allowing the user to toggle the suggested load for the top CPU telemetry graph.
-:::
-
-## Server Settings
+# Server Settings
 
 Manage the settings of individual servers. Server settings control the type of instances that can be deployed to each server as well as resource allocation limits.
 
@@ -30,8 +14,8 @@ Manage the settings of individual servers. Server settings control the type of i
 3. Currently, there are two ways a user can reconfigure a server. They are covered in more detail below.
 4. Server delete form. Using force delete will tell Cycle to forcibly delete the server regardless of instances deployed.
 
-:::caution Containers.Lock
-The container lock setting can cause force delete to fail.  
+:::caution Locked Containers
+The container lock setting can cause force delete to fail. If a user tries to delete a server, on which a container has lock set to true
 :::
 
 ## Reconfigure Server
