@@ -185,7 +185,7 @@ To visit the running container, click **Containers** from the horizontal navigat
   - [Add a Provider](/docs/infrastructure/providers/adding-providers)
   - [Add a Server](/docs/infrastructure/add-infrastructure)
   - [Create an Environment](/docs/environments/managing-environments#environment-create)
-  - [Deploy a Container](/docs/environments/deployments/deploy-single-container)
+  - [Deploy a Container](/docs/environments/deploy-single-container)
 
 - **Looking To Explore the Platform?**
   - [Set up DNS](/docs/DNS/zones/zone-management#create-the-zone)

@@ -27,7 +27,7 @@ Other menus available in this modal are:
 - Backups - for stateful containers with backups enabled, where backups can be viewed and restored.
 - Settings - where containers settings can be updated and applied.
 
-Visit this [guide](/docs/environments/deployments/deploy-single-container) for more information on deploying a container.
+Visit this [guide](/docs/environments/deploy-single-container) for more information on deploying a container.
 
 :::info Converting to Containers?
 If you have questions on converting to containers, or would like some help getting an application containerized, reach out to our support team on [Slack](https://slack.cycle.io). We're happy to help!
