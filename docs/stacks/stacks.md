@@ -1,9 +1,4 @@
----
-sidebar_label: Stacks Overview
-sidebar_position: 0
----
-
-# Stacks Overview
+# Stacks
 
 Stacks offer a powerful way to declarative manage multiple containers, and their deployments to the Cycle platform. Using stacks, you are able to configure every aspect of your applications ahead of time, save it to your version controlled repo, and have Cycle automate the deployment any time you make a push.
 

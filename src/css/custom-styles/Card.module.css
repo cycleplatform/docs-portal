@@ -1,0 +1,40 @@
+.cardContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Create as many columns as can fit, but not fewer than 300px */
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.cardLink {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card {
+  background-color: #333;
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  padding: 20px;
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.card:hover {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6); /* Glow effect */
+  transform: translateY(-5px); /* Slight raise effect */
+}
+
+.cardTitle, .cardContent {
+  display: block;
+}
+
+@media (max-width: 1000px) {
+  .cardContainer {
+    grid-template-columns: 1fr; /* Stack cards vertically on smaller screens */
+  }
+}

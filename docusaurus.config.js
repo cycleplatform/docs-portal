@@ -17,11 +17,6 @@ module.exports = {
     // defaultMode: "dark",
     // respectPrefersColorScheme: false,
     // hideableSidebar: true,
-    // algolia: {
-    //   apiKey: "244e0078287a09c076d180a1ce1ae05a",
-    //   indexName: "prod_portal",
-    //   appId: "DV41ALWI3Z",
-    // },
     algolia: {
       apiKey: "e3d876b635908b0ab9c420076449e467",
       indexName: "portal-docs",

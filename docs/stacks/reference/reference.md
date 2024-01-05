@@ -1,9 +1,4 @@
----
-sidebar_label: Spec & Top Level Keys
-sidebar_position: 0
----
-
-# Stack Reference Introduction
+# Stack Reference
 
 The Cycle stack file is an intuitive take on orchestrating services together in a single configuration file. The file itself is meant to be standardized, while letting the user maintain granular control over important container and service level settings.
 

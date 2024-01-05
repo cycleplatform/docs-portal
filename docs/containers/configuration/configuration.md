@@ -1,9 +1,4 @@
----
-sidebar_label: Overview
-sidebar_position: 1
----
-
-# Container Configuration Overview
+# Container Configuration 
 
 :::note Navigating to the Container Configuration
 

@@ -1,9 +1,9 @@
 ---
-sidebar_label: Networks Overview
+sidebar_label: Networks
 sidebar_position: 1
 ---
 
-# Cycle Networks Overview
+# Cycle Networks
 
 Cycle does all the heavy lifting when it comes to the creation and maintenance of networks.
 
@@ -15,7 +15,7 @@ Given that constraint, it may seem as though the question of what to put into a 
 There is no way to connect two environments within different clusters.
 :::
 
-### Creating Networks
+## Creating Networks
 
 When creating a Cycle Network, the user is defining a name, cluster, and identifier to be used during the construction of a the new private network. The identifier must be unique among Cycle environments on the hub and is used when making http requests on the private network. By appending the network identifier to the hostname of a container, the discovery service will understand it should reference that specific network when resolving the query.
 
@@ -25,7 +25,7 @@ To create a network:
 2. Fill in a name and select which cluster you would like to make this network available on.
 3. Add up to 5 environments to the network.
 
-### Manage Networks
+## Manage Networks
 
 - Add or remove an environment from the Network.
 - Change the name of the network
@@ -35,17 +35,17 @@ Click **Update Network** to save the changes.
 
 To delete the network, type the name of the network into the delete form field and hold the delete button until it completes.
 
-#### Check That You Can Get a Response
+### Check That You Can Get a Response
 
 Use the two-way console to SSH into an instance on the network and try to ping an instance in a different environment using ping hostname.networkidentifier. The ability to ping the other instances over the network signifies that the network is usable.
 
-#### Check Network Interfaces
+### Check Network Interfaces
 
 Using a command such as `ip a` or `ifconfig` check the existing network interfaces on the container and see if the network identifier is included.
 
 An example would be a network identified as `network` being shown as `eth-network`.
 
-#### IPv4 vs IPv6
+### IPv4 vs IPv6
 
 Discovery will return Cycle network DNS queries as IPv6 addresses. If a container is only listening on IPv4, communication can have unintended results.
 

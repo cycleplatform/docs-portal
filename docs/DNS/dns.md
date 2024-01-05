@@ -1,10 +1,6 @@
----
-sidebar_label: Overview
-sidebar_position: 1
----
 
-# DNS Overview
 
+# DNS 
 DNS (Domain Name System), is a decentralized naming system for computers, services, or other resources connected to the internet or a private network. It is what allows the translation of a URL, such as http://example.com, to an IP address.
 
 Cycle provides full support for most DNS record types, and introduces its own record type, "Linked", to facilitate the association of domains with containers.

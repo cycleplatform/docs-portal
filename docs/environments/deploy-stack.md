@@ -1,6 +1,6 @@
 ---
 sidebar_label: Deploy Stack
-sidebar_position: 3
+sidebar_position: 21
 ---
 
 # Deploying A Stack

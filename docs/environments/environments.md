@@ -1,10 +1,6 @@
----
-sidebar_label: Overview
 
-sidebar_position: 1
----
 
-# Environments Overview
+# Environments
 
 Environments are logical groupings of containers. All containers deployed inside an environment automatically have a
 private network built between them, enabling seamless communication.

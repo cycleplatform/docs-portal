@@ -172,9 +172,9 @@ To visit the running container, click **Containers** from the horizontal navigat
 
 ## What's Next?
 
-### [Set Up DNS](/docs/dns/overview)
+### [Set Up DNS](/docs/dns/)
 
-### [Learn About Stacks](/docs/stacks/overview)
+### [Learn About Stacks](/docs/stacks/)
 
 ### [Infrastructure Clusters](/docs/infrastructure/clusters)
 
@@ -188,7 +188,7 @@ To visit the running container, click **Containers** from the horizontal navigat
   - [Deploy a Container](/docs/environments/deploy-single-container)
 
 - **Looking To Explore the Platform?**
-  - [Set up DNS](/docs/DNS/zones/zone-management#create-the-zone)
+  - [Set up DNS](/docs/DNS/zones/)
   - [Creating A New Image Source](/docs/images/sources/sources-overview#creating-sources)
   - [Importing Stacks](/docs/stacks/stacks-workflow#importing-from-a-git-repo)
   - [Create an API Key](/docs/hubs/API-access/api-key-generate) -->

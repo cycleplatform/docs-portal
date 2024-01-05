@@ -1,9 +1,5 @@
----
-sidebar_label: Infrastructure Overview
-sidebar_position: 1
----
 
-# Infrastructure Overview
+# Infrastructure
 
 Cycle creates a paradigm shift when it comes to dealing with your infrastructure. The primary focus when using the platform is your containers, while the servers underneath appear as a giant pool of distributed resources.
 

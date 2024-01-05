@@ -1,9 +1,5 @@
----
-sidebar_label: Containers Overview
-sidebar_position: 1
----
 
-# Containers Overview
+# Containers
 
 Containers are a way to package together your application along with it's dependencies, and run in a resource isolated process. They provide consistency across different hosts, efficiency over traditional hosting methods, and facilitate a micro-service based approach, where each logical piece of your application is split into multiple, easily testable parts (such as API, Backend, Frontend, etc).
 

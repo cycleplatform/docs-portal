@@ -1,9 +1,4 @@
----
-sidebar_label: Pipelines Overview
-sidebar_position: 1
----
-
-# Pipelines Overview
+# Pipelines
 
 From simple tasks like importing an image, to complex sequences that affect entire clusters, Deployment Pipelines make it easy to automate nearly any task within Cycle.
 

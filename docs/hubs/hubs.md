@@ -1,9 +1,4 @@
----
-sidebar_label: Overview
-sidebar_position: 1
----
-
-# Hubs Overview
+# Hubs 
 Hubs are a wonderful way to unify compute resources from different cloud providers. This allows you to manage all of your multi cloud environments. Your account can be a member of multiple hubs at the same time, and you can switch between them seamlessly using the portal. There are various roles and granular permissions an account can have within a hub.
 
 ## Activity and Audit Log

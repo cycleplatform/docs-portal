@@ -1,5 +1,5 @@
 ---
-sidebar_label: Variables
+sidebar_label: Scoped Variables
 sidebar_position: 1
 ---
 

@@ -1,10 +1,9 @@
----
-sidebar_label: Records Management
-sidebar_position: 1
----
+# Records 
+Cycle supports a large range of record types.  Records can be managed per zone.
 
-# Records managemnet
 
+
+## Changing Records
 Follow this guide to change the values of your records, or to delete them.
 Use the records table from within a zone to modify and delete them.
 

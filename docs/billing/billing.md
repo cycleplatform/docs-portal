@@ -1,9 +1,5 @@
----
-sidebar_label: Billing Overview
-sidebar_position: 0
----
 
-# Billing Overview
+# Billing
 
 Payment is due upon creation of a hub. This starts the billing cycle, which is on a 28-day basis. 
 

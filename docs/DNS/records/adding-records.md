@@ -14,7 +14,8 @@ DNS Zones are comprised of records. Cycle supports all standard DNS records, as 
 1. Click **DNS** in the nav menu on the left hand side.
 2. Select the zone you want to add records to from the list.
 3. Click **Add Record** in the top right of the screen.
-   :::
+
+:::
 
 ## Adding Records
 

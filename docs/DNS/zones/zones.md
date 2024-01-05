@@ -1,9 +1,4 @@
----
-sidebar_label: Zone Management
-sidebar_position: 1
----
-
-# DNS Zone Management
+# DNS Zones
 Manage your domain by creating a zone on Cycle.
 
 By creating a zone on Cycle, you are able to manage the records for that domain. There are two options available for DNS zones on Cycle:
