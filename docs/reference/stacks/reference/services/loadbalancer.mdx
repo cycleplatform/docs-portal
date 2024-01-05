@@ -1,0 +1,30 @@
+---
+sidebar_label: Loadbalancer
+sidebar_position: 3
+---
+
+# Loadbalancer
+
+There are three options for setting the load balancer configuration:
+
+- v1
+- haproxy
+- default
+
+The default currently returns the default configuration for `haproxy`.
+
+| Field     | Type    | Required | Description                                                                                               |
+| --------- | ------- | :------: | --------------------------------------------------------------------------------------------------------- |
+| `type`    | String  |    ✅    | The type of loadbalancer. Can be `default`, `v1`, or `haproxy`.                                           |
+| `ipv4`    | Boolean |    ✅    | Boolean where true represents the load balancer having public IPv4 address assigned.                      |
+| `ipv6`    | Boolean |    ✅    | Boolean where true represents the load balancer having pubic IPv6 address assigned.                       |
+| `details` | Object  |    ❌    | The details object holding the configuration for the given load balancer type. Can be `null` for default. |
+
+## Types
+
+There are 3 types of load balancer that each have their own corresponding `details` object.
+
+For `default` the user can simply submit `null` for details, the other two types `v1` and `haproxy` configuration details can be found:
+
+1. [HAProxy Details](/docs/stacks/reference/services/haproxy)
+1. [v1 Details](/docs/stacks/reference/services/v1)

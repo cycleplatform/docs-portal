@@ -14,9 +14,12 @@ module.exports = {
   projectName: "docs-portal", // Usually your repo name.
   // themes: ["@saucelabs/theme-github-codeblock"],
   themeConfig: {
-    // defaultMode: "dark",
-    // respectPrefersColorScheme: false,
-    // hideableSidebar: true,
+    colorMode: {
+      defaultMode: "dark",
+      respectPrefersColorScheme: true,
+      disableSwitch: false,
+    },
+    image: "https://static.cycle.io/website/og.png",
     algolia: {
       apiKey: "e3d876b635908b0ab9c420076449e467",
       indexName: "portal-docs",
@@ -31,34 +34,51 @@ module.exports = {
       logo: {
         alt: "Cycle Logo",
         src: "imgs/cycle/logo/logo-white.svg",
+        href: "https://docs.cycle.io/",
+        target: "_self"
       },
       items: [
         {
           type: "doc",
-          docId: "intro",
-          position: "left",
-          label: "Portal Docs",
+          docId: "overview/overview", 
+          position: "left", 
+          label: "Getting Started"
+        }, 
+        {
+          type: "doc", 
+          docId: "reference/intro", 
+          position: "left", 
+          label: "Reference"
+        }, 
+        {
+          type: "doc",
+          docId: "guides/guides",
+          position: "left", 
+          label: "Guides"
         },
         {
-          type: "dropdown",
-          label: "API Docs",
-          position: "left",
-          items: [
-            {
-              href: "https://api-docs.cycle.io",
-              label: "Public API Docs",
-            },
-            // {
-            //   href: "https://docs.cycle.io/internal-api/introduction",
-            //   label: "Internal API Docs",
-            // },
-          ],
-        },
-        {
-          href: "https://portal.cycle.io",
-          label: "Portal Login",
-          position: "right",
-        },
+          
+          href: "https://slack.cycle.io", 
+          target: "_blank", 
+          label: "Community"
+        }
+        // {
+        //   type: "doc",
+        //   docId: "intro",
+        //   position: "left",
+        //   label: "Portal Docs",
+        // },
+        // {
+          
+        //   label: "API Docs",
+        //   position: "left",
+        //   href: "https://api-docs.cycle.io"
+        // },
+        // {
+        //   href: "https://portal.cycle.io",
+        //   label: "Portal Login",
+        //   position: "right",
+        // },
         // {
         //   href: 'https://github.com/cycleplatform/docs-portal/',
         //   label: 'GitHub',
@@ -143,6 +163,8 @@ module.exports = {
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           editUrl: "https://github.com/cycleplatform/docs-portal/tree/main",
+          // routeBasePath removes the /docs slug from the url
+          routeBasePath: "/"
         },
 
         theme: {

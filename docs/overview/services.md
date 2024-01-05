@@ -1,9 +1,10 @@
 ---
-sidebar_label: Services
-sidebar_position: 1
+sidebar_label: Cycle's Core Services
+sidebar_position: 19
+displayed_sidebar: gettingStartedSidebar
 ---
 
-# Services
+# Cycle's Core Services
 
 Cycle consists of several stand-alone services. These services provide all the functionality offered by the platform. Most services listed here are used under the hood by the platform, and users will mostly interact with the platform via the Portal or Public API services.
 

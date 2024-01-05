@@ -1,0 +1,257 @@
+# The Services Object
+
+Users can define configuration for VPN and Load Balancer environment services in the stack file.
+
+When deployed these settings will configure the environment based on the settings described.
+
+`Services`
+
+| Field        | Type   | Required | Description                             |
+| ------------ | ------ | :------: | --------------------------------------- |
+| vpn          | Object |    ❌    | Settings for VPN service.               |
+| loadbalancer | Object |    ❌    | Settings for the load balancer service. |
+
+## Example Services Struct with V1 LB
+
+```json
+{
+  "version": "1.0",
+  "services": {
+    "vpn": {
+      "auth": {
+        "cycle_accounts": true,
+        "vpn_accounts": true
+      },
+      "allow_internet": true
+    },
+    "loadbalancer": {
+      "type": "v1",
+      "ipv4": true,
+      "ipv6": true,
+      "details": {
+        "controllers": {
+          "1194": {
+            "identifier": "default-1194",
+            "transport": {
+              "mode": "tcp",
+              "config": {
+                "performance": false,
+                "ingress": {
+                  "port": 1194,
+                  "tls": null
+                },
+                "timeouts": {
+                  "idle": "15m"
+                }
+              },
+              "routers": [
+                {
+                  "match": {
+                    "domains": null,
+                    "internal_port": null
+                  },
+                  "mode": "round-robin",
+                  "config": {
+                    "sticky_sessions": true,
+                    "destination_retries": 3,
+                    "timeouts": {
+                      "destination_connection": "3s"
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "443": {
+            "identifier": "default-443",
+            "transport": {
+              "mode": "http",
+              "config": {
+                "performance": false,
+                "ingress": {
+                  "port": 443,
+                  "tls": {
+                    "enable": true,
+                    "server_name": null,
+                    "allow_insecure": null,
+                    "client_auth": null
+                  }
+                },
+                "timeouts": {
+                  "idle": "60s"
+                },
+                "extension": {
+                  "type": "http",
+                  "details": {
+                    "connections": {
+                      "max_idle_conns_per_connection": 5
+                    }
+                  }
+                }
+              },
+              "routers": [
+                {
+                  "match": {
+                    "domains": null,
+                    "internal_port": null
+                  },
+                  "mode": "round-robin",
+                  "config": {
+                    "sticky_sessions": true,
+                    "destination_retries": 3,
+                    "timeouts": {
+                      "destination_connection": "3s"
+                    },
+                    "extension": {
+                      "type": "http",
+                      "details": {
+                        "redirect": null,
+                        "forward": {
+                          "scheme": "http"
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "match": {
+                    "domains": null,
+                    "internal_port": [443, 8443]
+                  },
+                  "mode": "round-robin",
+                  "config": {
+                    "sticky_sessions": true,
+                    "destination_retries": 3,
+                    "timeouts": {
+                      "destination_connection": "3s"
+                    },
+                    "extension": {
+                      "type": "http",
+                      "details": {
+                        "redirect": null,
+                        "forward": {
+                          "scheme": "https"
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "80": {
+            "identifier": "default-80",
+            "transport": {
+              "mode": "http",
+              "config": {
+                "performance": false,
+                "ingress": {
+                  "port": 80,
+                  "tls": null
+                },
+                "timeouts": {
+                  "idle": "60s"
+                },
+                "extension": {
+                  "type": "http",
+                  "details": {
+                    "connections": {
+                      "max_idle_conns_per_connection": 5
+                    }
+                  }
+                }
+              },
+              "routers": [
+                {
+                  "match": {
+                    "domains": null,
+                    "internal_port": [80]
+                  },
+                  "mode": "round-robin",
+                  "config": {
+                    "sticky_sessions": true,
+                    "destination_retries": 3,
+                    "timeouts": {
+                      "destination_connection": "3s"
+                    },
+                    "extension": {
+                      "type": "http",
+                      "details": {
+                        "redirect": {
+                          "auto_https_redirect": true,
+                          "port": null,
+                          "scheme": null,
+                          "url": null
+                        },
+                        "forward": {
+                          "scheme": "http"
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "match": {
+                    "domains": null,
+                    "internal_port": [443, 8443]
+                  },
+                  "mode": "round-robin",
+                  "config": {
+                    "sticky_sessions": true,
+                    "destination_retries": 3,
+                    "timeouts": {
+                      "destination_connection": "3s"
+                    },
+                    "extension": {
+                      "type": "http",
+                      "details": {
+                        "redirect": null,
+                        "forward": {
+                          "scheme": "https"
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          },
+          "8812": {
+            "identifier": "default-8812",
+            "transport": {
+              "mode": "tcp",
+              "config": {
+                "performance": false,
+                "ingress": {
+                  "port": 8812,
+                  "tls": null
+                },
+                "timeouts": {
+                  "idle": "20s"
+                }
+              },
+              "routers": [
+                {
+                  "match": {
+                    "domains": null,
+                    "internal_port": null
+                  },
+                  "mode": "round-robin",
+                  "config": {
+                    "sticky_sessions": false,
+                    "destination_retries": 3,
+                    "timeouts": {
+                      "destination_connection": "3s"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "containers": {}
+}
+```

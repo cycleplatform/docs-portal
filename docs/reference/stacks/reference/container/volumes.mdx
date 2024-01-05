@@ -1,0 +1,79 @@
+---
+sidebar_label: Volumes
+sidebar_position: 3
+---
+
+import CodeBlock from "@theme/CodeBlock";
+import { VolumesExample } from "../components/volumes";
+
+# Container Volumes
+
+Containers are atomic and will return to their original state after each restart. Volumes offer a way to mount persistent storage to a defined path on a container.
+
+| Field   | Type  | Required | Description                        |
+| ------- | ----- | :------: | ---------------------------------- |
+| volumes | Array |    ❌    | An array of volume configurations. |
+
+## Volume
+
+Each volume consist of its own configuration fields.
+
+| Field         | Type    | Required | Description                                                                                                              |
+| ------------- | ------- | :------: | ------------------------------------------------------------------------------------------------------------------------ |
+| read_only     | Boolean |    ✅    | A boolean where true marks the volume as read_only.                                                                      |
+| local         | Object  |    ❌    | Local is a configuration object holding the maximum size and storage pools options.                                      |
+| destination   | String  |    ✅    | The path where the volume will be mounted.                                                                               |
+| remote_access | Object  |    ❌    | If the volume needs to be remotely accessible this configuration object defines how that authentication will take place. |
+
+<CodeBlock className="language-json">{VolumesExample}</CodeBlock>
+
+### Local Storage Types
+
+If the server being deployed to has multiple drives **and** one of the drives is 2TB or over, the `storage pool` boolean can be used to declare the volume should use the bigger drive.
+
+| Field        | Type    | Required | Description                                                                            |
+| ------------ | ------- | :------: | -------------------------------------------------------------------------------------- |
+| storage_pool | Boolean |    ❌    | A boolean where true signifies using the largest drive over 2TB for the target server. |
+| max_size     | String  |    ✅    | The maximum size the volume can grow to.                                               |
+
+### Remote Access
+
+When a volume should be reachable via SFTP, remote access is moved to enabled and remote access credentials are added to enable connection authentication.
+
+| Field    | Type    | Required | Description                                                           |
+| -------- | ------- | :------: | --------------------------------------------------------------------- |
+| enable   | Boolean |    ✅    | A boolean where true means remote access is enabled for this volume.  |
+| ips      | Array   |    ❌    | A whitelist of IP addresses, omitting this will allow any IP address. |
+| web_hook | String  |    ❌    | An endpoint used for authentication.                                  |
+| password | Object  |    ✅    | Password auth credentials for the volume.                             |
+
+The `web_hook` enpoint will receive a POST with the following data.
+
+```json
+{
+  "instance_id": "63ec1003dbe0680bac319991",
+  "container_id": "63ec1003dbe0680bac319999",
+  "username": "username",
+  "password": "password",
+  "volume": {
+    "id": "63ec1003dbe0680bac319992",
+    "hash": "f2ccfb",
+    "destination": "/var/lib/directory"
+  }
+}
+```
+
+If Cycle receieves a 200 response to the POST the user will be authenticated. The `id` field is the volume ID, the `hash` is a unique string used
+
+#### Password
+
+Authentication information for remotely connecting to the volume.
+
+| Field  | Type    | Required | Description                                                           |
+| ------ | ------- | :------: | --------------------------------------------------------------------- |
+| enable | Boolean |    ✅    | A boolean where true means remote access is enabled for this volume.  |
+| ips    | Array   |    ❌    | A whitelist of IP addresses, omitting this will allow any IP address. |
+
+```
+
+```

@@ -1,0 +1,50 @@
+---
+sidebar_label: Members Management
+sidebar_position: 1
+---
+# Managing Hub Members
+
+Learn how to add, remove, and control what the members of your hub have access to.
+
+Cycle's simple yet powerful member management puts you in control of who has access to your hubs. Using a role based permission system built on top of a granular list of capabilities, give just the right amount of access to anyone who joins.
+
+All member management is done through the members tab of the hub settings.
+
+### Inviting New Members
+After navigating to the members tab of hub settings, locate the "Invite Members" box on the right hand side.
+
+1.Enter the email of the person you wish to invite.
+2. Select the role this person should have in the hub. See here for a breakdown of roles and permissions.
+3. Click "Invite". Once your invitation has been sent, you'll receive a notification at the bottom of your screen as confirmation.
+
+:::info
+Only admins and the owner can invite new hub members. Admins cannot invite others to become admins, only the owner has this ability.
+:::
+
+### Accepting an Invitation
+If you receive a Cycle invitation, you can access your invite by navigating to your account settings and clicking "Hubs".
+
+1. Navigate to Account Settings by clicking on the dropdown menu located in the top right of the portal and then click the username.
+2. Once in the account settings area, select "Hubs" from the top navigation.
+3. Invites are listed in the Hubs section of Account Settings. To accept an invite simply click accept, and the Hub will be added to the Hubs list.
+
+
+### Removing Members
+Using the table on the members page of hub settings, select the accounts you wish to delete. In the dropdown at the bottom of the table, select "Remove selected" and click "Apply". All selected members will be removed from the hub.
+
+:::note
+You cannot remove the owner of a hub. The ability to transfer ownership will be coming in a future update. If you need assistance with this, please contact support.
+:::
+
+### Access Control Lists
+With environment scoped Access Control Lists, hub members can be granted granular per-environment access rights. There are two flavors of access: Read-Only and Manage.
+
+Giving a hub user read-only permission to an environment allows them to interact with a given environment, with the assurance that clicking the wrong button or changing a setting won't be available to that user.
+
+The manage permission allows the user to perform actions within the environment that are in line with their higher level permissions.
+
+To reach the ACL modal, navigate to the settings dashboard by clicking Settings on the left hand navigation and then the Members tab. Click the name of the member whose access you wish to audit and then follow the easy to use GUI options to add environments or change their role.
+
+:::caution
+Admins can not control the access rights of other admins. The hub owner is the only user who has complete control over ACL's.
+:::
