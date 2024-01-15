@@ -11,6 +11,18 @@ sidebar_position: 4
 | url    | String |    ✅    | The url of the remote registry.                                 |
 | auth   | Object |    ❌    | Authentication details for a third party image registry/source. |
 
+## Image Origin Details (Existing)
+
+Any image origin type can use the existing object to define the use of an existing Cycle image source resource. Alongside the `existing` field, the user can also fill in any other fields in the details object based on the type of the `existing` resource. Any fields defined in the stack will override the fields set in the existing resource.
+
+| Field    | Type   | Required | Description                                                                        |
+| -------- | ------ | :------: | ---------------------------------------------------------------------------------- |
+| existing | object |    ❌    | An object holding a source ID for an image source already defined on the platform. |
+
+| Field     | Type   | Required | Description                                             |
+| --------- | ------ | :------: | ------------------------------------------------------- |
+| source_id | string |    ✅    | The source ID for the existing image source to be used. |
+
 ## Auth
 
 Three types:
@@ -58,14 +70,4 @@ Three types:
 | ----- | ------ | :------: | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | url   | String |    ✅    | The webhook wil do a GET request to the specified URL, and expects back a base-64 encoded string that when decoded is in the format username:token |
 
-### Image Origin Details (Existing)
 
-Any image origin type can use the existing object to define the use of an existing Cycle image source resource. Alongside the `existing` field, the user can also fill in any other fields in the details object based on the type of the `existing` resource. Any fields defined in the stack will override the fields set in the existing resource.
-
-| Field    | Type   | Required | Description                                                                        |
-| -------- | ------ | :------: | ---------------------------------------------------------------------------------- |
-| existing | object |    ❌    | An object holding a source ID for an image source already defined on the platform. |
-
-| Field     | Type   | Required | Description                                             |
-| --------- | ------ | :------: | ------------------------------------------------------- |
-| source_id | string |    ✅    | The source ID for the existing image source to be used. |
