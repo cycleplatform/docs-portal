@@ -27,8 +27,10 @@ import { RemoteRepo, RepoTable, DetailsExamples } from "../components/images/ori
 
 | Field     | Type   | Required | Description                                                                                                          |
 | --------- | ------ | :------: | -------------------------------------------------------------------------------------------------------------------- |
-| `type`    | String |    ✅    | The type of image origin, can be `docker-file`, `docker-registry`, `docker-hub`, or `cycle`.                         |
+| `type`    | String |    ✅    | The type of image origin, can be `docker-file`, `docker-registry`, `docker-hub`, `oci-registry`, or `cycle-source`.                         |
 | `details` | Object |    ✅    | Location, authentication, and meta data about the origin. Object key values are different based on the type defined. |
+
+
 
 ### Origin Details Guides
 
@@ -38,3 +40,4 @@ The following pages will give a full account of each `type` of origin `details`:
 - [Docker Registry](/docs/stacks/reference/container/image-sources/dockerregistry)
 - [Dockerfile](/docs/stacks/reference/container/image-sources/dockerfile)
 - [OCI Registry](/docs/stacks/reference/container/image-sources/ociregistry)
+- [Cycle Source](/docs/stacks/reference/container/image-sources/cycle-source)
