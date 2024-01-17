@@ -1,9 +1,13 @@
 ---
-sidebar_label: Adding Providers
+sidebar_label: Providers
 sidebar_position: 1
 ---
 
-# Adding Providers
+# Providers
+A provider on Cycle represents either an IaaS provider or an on-prem / colo type integration.  
+
+
+## Adding Providers
 
 Adding a provider is a simple process and allows the user to fully manage their infrastructure through Cycle.
 

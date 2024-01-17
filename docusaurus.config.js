@@ -16,8 +16,7 @@ module.exports = {
   themeConfig: {
     colorMode: {
       defaultMode: "dark",
-      respectPrefersColorScheme: true,
-      disableSwitch: false,
+      disableSwitch: true,
     },
     image: "https://static.cycle.io/website/og.png",
     algolia: {

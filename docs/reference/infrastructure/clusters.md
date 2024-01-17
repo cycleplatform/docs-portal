@@ -1,9 +1,9 @@
 ---
-sidebar_label: Infrastructure Clusters
+sidebar_label: Clusters
 sidebar_position: 4
 ---
 
-# Infrastructure Clusters
+# Clusters
 On Cycle, an infrastructure cluster is a named group of server resources that represent a logical separation from other groups of servers (other clusters).
 
 

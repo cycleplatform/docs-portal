@@ -7,9 +7,7 @@ displayed_sidebar: gettingStartedSidebar
 # Getting Help
 There are many ways to get help, both for new users and those experienced with the platform.  
 
-The fastest way to get help is through our [Slack](https://slack.cycle.io) channel.  Here you can interact with our team directly and also with the community. 
-
-If you'd really like to avoid Slack and want to use email, you can reach out to info@cycle.io and someone will get back to you promptly.  
+The fastest way to get help is through this documentation along with our [YouTube](https://youtube.com/cycleplatform) channel. For direct interactions with the community and Cycle team members, our [Slack](https://slack.cycle.io) channel is available. If you'd really like to avoid Slack and want to use email, you can reach out to info@cycle.io and someone will get back to you promptly.  
 
 While working through issues can be frustrating, our team loves giving a helping hand... however there are some things that can make it much easier for us to get you the solution you need quickly:
 
