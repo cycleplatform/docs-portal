@@ -1,11 +1,8 @@
----
-sidebar_label: Sources Overview
-sidebar_position: 1
----
+
 
 import Mermaid from '@theme/Mermaid';
 
-# Image Sources Overview
+# Image Sources
 
 By creating a source and giving Cycle access to a specific image, developers can easily reimage containers without constantly managing credentials.
 
