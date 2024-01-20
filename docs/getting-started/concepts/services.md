@@ -1,6 +1,6 @@
 ---
 sidebar_label: Cycle's Core Services
-sidebar_position: 1
+sidebar_position: 0
 displayed_sidebar: gettingStartedSidebar
 ---
 

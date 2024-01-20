@@ -1,3 +1,0 @@
-# Guides 
-
-Placeholder for now
