@@ -22,6 +22,7 @@ Beyond this understanding, we'd like users to also know that the goal with Cycle
 | [IPs](/reference/infrastructure/#ips) | IP's on Cycle are IPv4 or IPv6 addresses that have been provisioned from a provider and are either in use or free to be assigned. | 
 | [Auto Scale Groups](/reference/infrastructure/scale) | These groups define how Cycle should treat infrastructure during scaling events. | 
 | [Environments](/reference/environments) | This resource represents a group of containers that share an isolated network that spans all servers in a given cluster. |
+| [Deployments](/reference/environments/deployments) |Maintain multiple independent versions of their applications within one single environment.|
 | [Scoped Variables](/reference/environments/scoped-variables) | Scoped variables allow users to assign variables in the format of environment variables, api returns, or files to one or more containers in an environment. | 
 | [Images](/reference/images) | An image on Cycle is an atomic copy of a filesystem. They can be built from multiple different sources.|
 | [Image Source](/reference/images/sources)| An image source is location, type, and authentication information to be used in creating images | 

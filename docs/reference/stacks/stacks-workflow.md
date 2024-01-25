@@ -112,17 +112,18 @@ From the settings page a user can update the URL, branch, ref, auth, and name va
 
 to delete a stack, enter the stack name in the delete form and click **Delete Stack**.
 
-## Deploy A Stack (New Environment)
 
-To deploy a stack build to a new environment, simply [create a new environment](/docs/environments/managing-environments) and select "From Stack" - then the stack and build to be used.
 
-## Deploy A Stack (Existing Environment)
+## Deploy A Stack
 
-Once a stack build has been generated that stack can be deployed to an existing environment. From the stack dashboard, select the stack to be deployed and then click on **Options**.
+Once a stack build has been generated that stack can be deployed to an existing environment. From the stack dashboard, select the stack to be deployed and then click on **Deploy**.
 
-### The Options Modal
+The deploy modal provides a form for deploying a specific stack build to an environment. There are two main ways to deploy a stack. 
 
-The options modal provides a form for deploying a specific stack build to an environment.
+1. As part of a deployment.
+2. Outside of a deployment.
+
+Either way you deploy the stack the same process will happen when evaluating whether the containers being deployed are "new" or "redeployments".  
 
 If the container identifier used in a stack matches 0 times with existing container identifiers for a selected environment, the container will show up under the **New Containers** section.
 
@@ -132,3 +133,6 @@ If the container identifier used in a stack matches with an existing container i
 - **reconfigure** - reconfigure the container's configuration settings with the settings from the stack build.
 
 There is also an option to reimage or reconfigure all containers that have a match.
+
+### Scoped Variables 
+As stacks now support [scoped variables](/reference/stacks/reference/scoped-variables/) there will be an option during stack deploy for if the scoped variables being created will be new or will be replacing existing variables. 

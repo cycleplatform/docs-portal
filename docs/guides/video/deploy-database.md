@@ -1,7 +1,7 @@
 ---
 sidebar_label: Deploy Database
 
-sidebar_position: 11
+sidebar_position: 30
 ---
 # Deploying A Database
 

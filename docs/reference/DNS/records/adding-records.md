@@ -47,7 +47,7 @@ Linked records are a special type of record provided by the Cycle platform. Thes
 - **Name** - Enter the subdomain you want for the record. For example, if you wanted the container to be assigned to subdomain.example.com, you'd enter subdomain in the box. To set it to the root domain, use the @ symbol.
 - **Assignment** - Use this dropdown to select the how you would like to associate this domain to the continer.
 - **Environment** - Use this dropdown to select which environment the container you will be associating with, live in.
-- **Container** - Use this dropdown to select which container you would like to point the domain to.
+- **Link To** - Use this dropdown to select either linking the record to a container or to a [deployment tag](/reference/DNS/records/linked-record-tags).
 - **Enable TLS** - By checking this box, Cycle will automatically generate and renew TLS certificates for this domain using Let'sEncrypt. These certificates are special - they are automatically installed to the container's load balancer. When encrypted traffic comes in for that container over port 443 Cycle will automatically terminate the SSL/TLS connection at the load balancer and route the traffic over port 80 to your container. This process helps speed up communication between the load balancer and the container by offloading the cryptographic processing at the load balancer.
 
 :::caution TLS Attemps
