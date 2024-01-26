@@ -1,6 +1,6 @@
 {
   "index_name": "portal-docs",
-  "start_urls": ["https://docs.cycle.io/"],
+  "start_urls": ["https://docs.cycle.io/", "https://docs.cycle.io/getting-started/overview", "https://docs.cycle.io/reference/intro", "https://docs.cycle.io/guides/intro" ],
   "sitemap_urls": ["https://docs.cycle.io/sitemap.xml"],
   "sitemap_alternate_links": true,
   "stop_urls": ["/tests"],
