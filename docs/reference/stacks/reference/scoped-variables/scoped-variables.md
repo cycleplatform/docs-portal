@@ -39,8 +39,8 @@ The access object defines in it the way the scoped variable can be accessed in a
 | Field          | Type    | Required | Description                                                                                                          |
 | -------------- | ------- | :------: | -------------------------------------------------------------------------------------------------------------------- |
 | `env_variable` | Boolean |    ✅    | A boolean where true represents this scoped variable being available through the environment variable format.        |
-| `internal_api` | Object  |    ❌    | An object with an optional duration. Settings for use with [(see)internal api](/docs/environments/scoped-variables). |
-| `file`         | Object  |    ❌    | Configuration options for the [(see) file](/docs/environments/scoped-variables) type.                                |
+| `internal_api` | Object  |    ❌    | An object with an optional duration. Settings for use with [(see)internal api](/reference/environments/scoped-variables). |
+| `file`         | Object  |    ❌    | Configuration options for the [(see) file](/reference/environments/scoped-variables) type.                                |
 
 ### Internal API
 

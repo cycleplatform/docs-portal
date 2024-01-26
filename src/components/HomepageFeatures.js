@@ -7,7 +7,7 @@ const FeatureList = [
   {
     title: "Portal Docs",
     Svg: require("../../static/svgs/duotone/book.svg").default,
-    to: `/docs/intro`,
+    to: `/reference/intro`,
     className: styles.featureButton,
     description: <>The portal is Cycle's graphical user interface that allows you to easily and quickly manage environments, containers, and deployment.</>,
   },

@@ -11,7 +11,7 @@ Auto-Scaling groups allow users to define how Cycle should respond in a situatio
 2. The current infrastructure does not have enough space to complete the scaling event.
 
 :::info Container Auto-Scaling
-For information about setting up container auto-scaling go [here](/docs/containers/configuration/autoscaling).
+For information about setting up container auto-scaling go [here](/reference/containers/configuration/autoscaling).
 :::
 
 ![Autoscaling Dashboard](https://static.cycle.io/portal-docs/infrastructure/autoscaling-dashboard.png)
@@ -26,7 +26,7 @@ Click the `Add` button to open the Create Auto-Scaling Group modal. From here a 
 
 - **Name** - The name for the auto scaling group.
 - **Identifier** - A resource identifier for the auto-scale group. (Will become significant when using forthcoming CLI)
-- **Cluster** - The [infrastructure cluster](/docs/infrastructure/clusters) to associate this auto-scaling group with.
+- **Cluster** - The [infrastructure cluster](/reference/infrastructure/clusters) to associate this auto-scaling group with.
 - **Scale Up** - Settings for increasing number of servers.
 - **Scale Down** - Settings for reducing the number of servers and TTL's.
 

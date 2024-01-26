@@ -21,10 +21,11 @@ Adding a provider is a simple process and allows the user to fully manage their 
 
 Cycle currently supports the following providers:
 
-- [Vultr](/docs/infrastructure/providers/configure-vultr)
-- [Equinix-Metal](/docs/infrastructure/providers/configure-equinix)
-- [AWS](/docs/infrastructure/providers/configure-aws)
-- [GCP](/docs/infrastructure/providers/configure-gcp)
+
+- [AWS](/reference/infrastructure/providers/configure-aws)
+- [GCP](/reference/infrastructure/providers/configure-gcp)
+- [Equinix-Metal](/reference/infrastructure/providers/configure-equinix)
+- [Vultr](/reference/infrastructure/providers/configure-vultr)
 
 ## Auxillary Native Providers
 
@@ -33,9 +34,10 @@ To set up an Auxillary native provider, or, more simply, to add another account 
 The supported base url's are:
 
 - `aws`
+- `gcp`
 - `equinix-metal`
 - `vultr`
-- `gcp`
+
 
 Alongside these base url's, the user will also need to provide the respective API key, secret, config, or whatever that provider requires.
 

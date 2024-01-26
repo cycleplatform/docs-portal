@@ -115,7 +115,7 @@ The following two options `connections` and `requests` are not yet released, but
 <DeployTable />
 
 :::note Deployment Strategies
-For a full breakdown of the different deployment strategies available click [here](https://docs.cycle.io/docs/containers/configuration/deployment)
+For a full breakdown of the different deployment strategies available click [here](/reference/containers/configuration/deployment)
 .
 :::
 
@@ -359,7 +359,7 @@ Integrations is an optional section of configurations that allows the user to ta
 | webhooks           | Object |    ❌    | Webhooks for container events.                                                                                                 |
 | files              | Array  |    ❌    | Files from the repository to be copied into the container.                                                                     |
 | shared_directories | Object |    ❌    | Files stored on the host and mounted into the container. Follows the map format `identifier`: {`fields`}, example noted below. |
-| backups            | Object |    ❌    | For stateful instances [backups](/docs/containers/backups) can be defined.                                                     |
+| backups            | Object |    ❌    | For stateful instances [backups](/reference/containers/backups) can be defined.                                                     |
 
 <CodeBlock className="language-json">{IntegrationsExample}</CodeBlock>
 
@@ -426,7 +426,7 @@ Object is the following format:
 
 ### Backups
 
-For stateful instances [backups](/docs/containers/backups) can be defined.
+For stateful instances [backups](/reference/containers/backups) can be defined.
 
 | Field       | Type   | Required | Description                                                                                                                                        |
 | ----------- | ------ | :------: | -------------------------------------------------------------------------------------------------------------------------------------------------- |

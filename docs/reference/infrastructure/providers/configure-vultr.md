@@ -19,4 +19,4 @@ To create the required credentials for adding Vultr as a provider on Cycle, a us
 
 ### Add Credentials To Cycle
 
-[Add Provider Steps](/docs/infrastructure/providers/adding-providers.md)
+[Add Provider Steps](/reference/infrastructure/providers/)

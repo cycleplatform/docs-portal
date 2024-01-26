@@ -9,7 +9,7 @@ With a single file in git repo, you can orchestrate an entire application, from 
 
 To create a stack, you'll first need to add a JSON file with the name `cycle.json` to the root of your git repository. When you import your stack into Cycle, it will read this file and generate a build, containing all images and configurations needed to deploy your application. By committing this file to your repo, it becomes version tracked, giving you a history of all changes.
 
-Check out our full documentation on stack files [here](/docs/stacks/reference/ref).
+Check out our full documentation on stack files [here](/reference/stacks/reference/).
 
 An Example Stack (more complete example at very bottom of this page)
 
