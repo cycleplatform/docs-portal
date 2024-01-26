@@ -8,7 +8,7 @@ sidebar_position: 100
 Scaling containers on Cycle is a straight forward process in two parts:
 
 1. Container Auto-Scaling
-2. [Infrastructure Auto-Scaling](/docs/infrastructure/scale)
+2. [Infrastructure Auto-Scaling](/reference/infrastructure/scale)
 
 Scaled container instances will have an icon next to them showing they've been created from a scaling event. In the example below, containers instances are being stressed through api endpoints that cause either RAM or CPU usage, with thresholds set on both resources.
 
@@ -20,7 +20,7 @@ Container auto-scaling is a straightforward set of fields that outline what shou
 
 ## Autoscale Group
 
-This field is set to join a container to a configured [auto-scale group](/docs/infrastructure/scale).
+This field is set to join a container to a configured [auto-scale group](/reference/infrastructure/scale).
 
 ## Window
 

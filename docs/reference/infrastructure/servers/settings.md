@@ -12,31 +12,14 @@ Manage the settings of individual servers. Server settings control the type of i
 1. The server settings tab, reachable when in the infrastructure section of the portal.
 2. Server tags can be added and deleted using this form.
 3. Currently, there are two ways a user can reconfigure a server. They are covered in more detail below.
+    - [Reconfigure Server](/reference/infrastructure/servers/configure#reconfigure-server) - moved to configure page. 
 4. Server delete form. Using force delete will tell Cycle to forcibly delete the server regardless of instances deployed.
 
 :::caution Locked Containers
 The container lock setting can cause force delete to fail. If a user tries to delete a server, on which a container has lock set to true
 :::
 
-## Reconfigure Server
 
-:::success No Restart Needed
-The reconfigure server button will not restart the server and you should expect no service interruptions when enabling or disabling this feature.
-:::
-
-### Allow SFTP
-
-By default SFTP connections will not be available on a newly deployed server. Simply stated, the fewer ports open on a host machine, the more secure that machine is.
-
-To enable SFTP connections on your server, simply navigate to the server settings page, select the checkbox to enable, and click the Reconfigure Server button.
-
-### Custom Base Volume Size
-
-A base volume is how much space should be set aside for images on this server. If a user wishes to increase this amount they can using this form.
-
-:::danger Increase Only
-The custom base volume setting can only be increased, as a decrease could result in the corruption of the images stored in that volume.
-:::
 
 ## Update Server
 

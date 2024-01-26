@@ -40,9 +40,9 @@ An environment service is a container Cycle starts within the environment to pro
 are created and managed automatically, but may have some configuration options available. At this time, three services are
 started in each environment:
 
-- [Discovery Service](https://docs.cycle.io/docs/environments/services/discovery)
-- [VPN Service](https://docs.cycle.io/docs/environments/services/vpn)
-- [Load Balancer Service.](https://docs.cycle.io/docs/environments/services/loadbalancer)
+- [Discovery Service](/reference/environments/services/discovery)
+- [VPN Service](/reference/environments/services/vpn)
+- [Load Balancer Service.](/reference/environments/services/loadbalancer)
 
 ### High Availability Services
 
@@ -77,7 +77,7 @@ well as information on the public load balancer and its associated IP's.
 
 :::
 
-Take the next step by learning how to [manage environments](/docs/environments/managing-environments).
+Take the next step by learning how to [manage environments](/reference/environments/managing-environments).
 
 ## Security Events & Graph
 

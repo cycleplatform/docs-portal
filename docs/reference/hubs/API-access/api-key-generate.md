@@ -10,7 +10,7 @@ Navigate to the API Key create form:
 `settings > API Keys > Create API Key`
 
 
-When creating an API key on Cycle, capabilities of that key, similar to capabilities of a user, must be set. See a full list of capabilities and their description [here](/docs/hubs/members-and-permissions/roles-and-permissions). To create the API key enter a name and select the capabilities, then press Create API key.
+When creating an API key on Cycle, capabilities of that key, similar to capabilities of a user, must be set. See a full list of capabilities and their description [here](/reference/hubs/members-and-permissions/roles-and-permissions). To create the API key enter a name and select the capabilities, then press Create API key.
 
 With the addition of Environment Access Control Lists, you'll need to select which environments this API key can make reads from and which environments it can make changes to.
 

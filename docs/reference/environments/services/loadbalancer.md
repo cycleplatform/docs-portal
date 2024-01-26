@@ -58,7 +58,7 @@ When traffic leaves a container (egress), that traffic is routed "out" through t
 
 ## V1 Load Balancer
 
-Configuration options coming soon to portal, for now visit the [stack reference](/docs/stacks/reference/services/v1) to see available options
+Configuration options for the [native load balancer (v1)](/reference/environments/services/v1).
 
 ## HAProxy Load Balancer
 

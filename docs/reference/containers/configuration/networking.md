@@ -13,7 +13,7 @@ Networking configuration consists of three sections:
 
 ### Hostname
 
-The container hostname can be used when requesting DNS lookups from the [environment discovery service](https://docs.cycle.io/docs/environments/services/discovery).
+The container hostname can be used when requesting DNS lookups from the [environment discovery service](/reference/environments/services/discovery).
 
 ### Public Network
 

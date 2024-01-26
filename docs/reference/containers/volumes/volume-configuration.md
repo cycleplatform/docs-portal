@@ -33,7 +33,7 @@ If the server the instance is being deployed to has more than one disk and one o
 If enabled, the remote access section allows the user to change information on the currently configured for volume remote access.
 
 :::caution SFTP Server Settings
-If the server your instance is deployed to does not have [SFTP connections enabled](https://docs.cycle.io/docs/infrastructure/settings), you'll need to enable it before you can connect using the SFTP tool.
+If the server your instance is deployed to does not have [SFTP connections enabled](/reference/infrastructure/servers/configure), you'll need to enable it before you can connect using the SFTP tool.
 :::
 
 **Enable** - Remote access is enabled.

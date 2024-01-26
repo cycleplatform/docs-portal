@@ -180,15 +180,4 @@ To visit the running container, click **Containers** from the horizontal navigat
 
 ### [Visit the API Docs](https://api-docs.cycle.io)
 
-<!-- - **First Time Using Cycle?**
 
-  - [Add a Provider](/docs/infrastructure/providers/adding-providers)
-  - [Add a Server](/docs/infrastructure/add-infrastructure)
-  - [Create an Environment](/docs/environments/managing-environments#environment-create)
-  - [Deploy a Container](/docs/environments/deploy-single-container)
-
-- **Looking To Explore the Platform?**
-  - [Set up DNS](/docs/DNS/zones/)
-  - [Creating A New Image Source](/docs/images/sources/sources-overview#creating-sources)
-  - [Importing Stacks](/docs/stacks/stacks-workflow#importing-from-a-git-repo)
-  - [Create an API Key](/docs/hubs/API-access/api-key-generate) -->

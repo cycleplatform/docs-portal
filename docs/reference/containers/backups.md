@@ -5,7 +5,7 @@ sidebar_position: 20
 
 # Container Backups
 
-Stateful containers on Cycle can be set to automatically be backed up. Currently, this integration relies on [setting up Backblaze](/docs/guides/backblaze) as a hub level integration.
+Stateful containers on Cycle can be set to automatically be backed up. Currently, this integration relies on [setting up Backblaze](/guides/tutorials/backblaze) as a hub level integration.
 
 After setting up container backups, using the aforementioned guide, a user can see all backups of a stateful container using the "Backups" option available in the container modal's main navigation.
 

@@ -8,11 +8,13 @@ By creating a source and giving Cycle access to a specific image, developers can
 
 ### Creating Sources
 
-There are currently 3 types of image sources supported.
+There are currently 4 types of image sources supported.
 
-1. **[Docker Hub](/docs/images/sources/dockerhub-source)** - create an image source from an existing image repo on Docker Hub.
-2. **[Docker Registry](/docs/images/sources/docker-registry-source)** - create an image source from an exisitng image repo on a private Docker registry, with support for other registry types coming very soon!
-3. **[Docker File](/docs/images/sources/dockerfile-source)** - create an image source from a repositiory hosted on any git solution (private or public) by adding a Dockerfile to your repo and telling Cycle where its located.
+1. **[Docker Hub](/reference/images/sources/dockerhub-source)** - create an image source from an existing image repo on Docker Hub.
+2. **[Docker Registry](/reference/images/sources/docker-registry-source)** - create an image source from an exisitng image repo on a private Docker registry, with support for other registry types coming very soon!
+3. **[Docker File](/reference/images/sources/dockerfile-source)** - create an image source from a repositiory hosted on any git solution (private or public) by adding a Dockerfile to your repo and telling Cycle where its located.
+4. **[OCI Registry](/reference/images/sources/oci-registry)** - create an image source from an existing OCI registry.  With additional ECR flavor specific support built in for advanced auth mechanics.
+
 
 ### Managing Sources
 

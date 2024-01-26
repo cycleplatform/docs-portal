@@ -12,7 +12,7 @@ While this guide covers using Aurora, the same pattern can be used for consuming
 
 [AWS Aurora DB](https://aws.amazon.com/rds/aurora) is a popular relational cloud database tool. 
 
-If this is a service you'd like to evaluate or something that you're already using, this guide will bring you up to speed on how to create a subnet for your db within the [Cycle generated VPC](/docs/infrastructure/aws-vpc) for a given region and what settings will be needed on the containers side.
+If this is a service you'd like to evaluate or something that you're already using, this guide will bring you up to speed on how to create a subnet for your db within the [Cycle generated VPC](/reference/infrastructure/aws-vpc) for a given region and what settings will be needed on the containers side.
 
 
 :::note New Subnets & Implicit Routing

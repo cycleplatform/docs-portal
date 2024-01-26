@@ -13,7 +13,7 @@ Initial instances refers to the number of instances to create during the contain
 
 ## Deployment Strategy
 
-Get full info on deployment strategies [here](/docs/containers/deployment-strategies)
+Get full info on deployment strategies [here](/reference/containers/deployment-strategies)
 
 ## Constraints
 

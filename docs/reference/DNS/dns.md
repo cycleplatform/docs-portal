@@ -25,7 +25,7 @@ You will need to point your domain to Cycle's 3 name servers:
 - ns3.cycle.io
 - ns4.cycle.io
 
-Once that is done, you can head back to Cycle and set up your domain by [creating a zone](https://docs.cycle.io/docs/dns/zones/managing-dns-zones).
+Once that is done, you can head back to Cycle and set up your domain by [creating a zone](/reference/dns/zones/#create-the-zone).
 
 ### HTTP-HTTPS Redirection
 

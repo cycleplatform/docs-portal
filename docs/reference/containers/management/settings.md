@@ -15,7 +15,7 @@ Changing the container name is a simple task that can be completed by entering t
 
 ### Container Identifier
 
-The container identifier is one of the ways Cycle identifies a given container. This is most notably used when updating an environment through [stack redeploy](https://docs.cycle.io/docs/stacks/managing-stacks). Changing the identifier can have consequences such as duplicate services running after your next stack redeploy and can affect customized API calls created to interact with the container, so be sure that you double-check all potential conflicts before updating this value.
+The container identifier is one of the ways Cycle identifies a given container. This is most notably used when updating an environment through [stack redeploy](/reference/stacks/stacks-workflow#deploy-a-stack). Changing the identifier can have consequences such as duplicate services running after your next stack redeploy and can affect customized API calls created to interact with the container, so be sure that you double-check all potential conflicts before updating this value.
 
 ### Deprecate
 

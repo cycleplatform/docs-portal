@@ -7,7 +7,7 @@ Container images are atomic copies of a filesystem that are built from a file (e
 Adding and using an image on Cycle comes down to a few simple steps:
 
 
-1. ** [Create an Image Source](/docs/images/sources/sources-overview#creating-sources) ** - describing where to find image assets.
+1. ** [Create an Image Source](/reference/images/sources/#creating-sources) ** - describing where to find image assets.
 2. ** Importing An Image ** - From the image sources menu, select the image source and then import a copy of that image.
 
 ## Image Summary

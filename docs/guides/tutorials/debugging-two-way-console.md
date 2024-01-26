@@ -15,7 +15,7 @@ Although it is simple enough to expire the connection credentials, if it's neces
 
 ## Egress Networking For Package Installs
 
-When a container has [`Public Network`](/docs/containers/configuration/networking#public-network) set to `disable`, any attempt at installing packages through a package manager will fail. changing the network settings to `egress-only` will allow egress connection to package manager repositories, allowing the user to install packages to the running container. These packages will not be saved between restarts of the container as container filesystems are stateless outside of stateful container volumes.
+When a container has [Public Network](/reference/containers/configuration/networking#public-network) set to `disable`, any attempt at installing packages through a package manager will fail. changing the network settings to `egress-only` will allow egress connection to package manager repositories, allowing the user to install packages to the running container. These packages will not be saved between restarts of the container as container filesystems are stateless outside of stateful container volumes.
 
 ## CLI's
 

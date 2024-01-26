@@ -12,10 +12,11 @@
 
 Container configuration has its own submenu including:
 
-- [Network](/docs/containers/configuration/networking)
-- [Runtime](/docs/containers/configuration/runtime)
-- [Deployment](/docs/containers/configuration/deployment)
-- [Resources](/docs/containers/configuration/resources)
-- [Integrations](/docs/containers/configuration/integrations)
+- [Network](/reference/containers/configuration/networking)
+- [Runtime](/reference/containers/configuration/runtime)
+- [Deployment](/reference/containers/configuration/deployment)
+- [Resources](/reference/containers/configuration/resources)
+- [Integrations](/reference/containers/configuration/integrations)
+- [Auto-Scale](/reference/containers/configuration/autoscaling)
 
 Each of these submenus (other than network) has a configuration form and the option of enabling changes to that form. The "Save Config" button must be used to save changes made to the containers configuration.

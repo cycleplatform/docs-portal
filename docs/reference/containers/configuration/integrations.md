@@ -21,7 +21,7 @@ The files integration has a `Source` and `Destination` setting for each entry. T
 
 Shared directories allow for a shared directory between containers running on the same host.
 
-These directories are defined as identifiers in the [server configuration](/docs/infrastructure/servers/configure).
+These directories are defined as identifiers in the [server configuration](/reference/infrastructure/servers/configure).
 
 This integration has three parts:
 
@@ -37,7 +37,7 @@ The mount point can be a directory that does not yet exist on the container. For
 
 Allows the user to control where TLS certificates are installed for a container. Using this option on a container means that you'll be reserving a specific inbound port as the loadbalancer will have no information other than port to route the traffic if the connection is still encrypted.
 
-To create a TLS certificate, you'll need to set up a [DNS Zone](https://docs.cycle.io/docs/dns/zones/). This doesn't mean that the container needs to have public networks enabled.
+To create a TLS certificate, you'll need to set up a [DNS Zone](/reference/dns/zones/). This doesn't mean that the container needs to have public networks enabled.
 
 Choosing the checkbox under enable will install all four options to the default location `/var/run/cycle/tls/*` where `*` represents the specific asset path. If you wish to change which files are copied to your container, and the path they are copied to - simply click the **customize** checkbox next to the files you want and fill in the path you wish to install the certs to or leave the default path in place.
 
@@ -52,7 +52,7 @@ The integration webhooks represent the 4 different types of events that can be h
 
 ## Backups
 
-Stateful containers on Cycle can be set to automatically be backed up. Currently, this integration relies on [setting up Backblaze](/docs/guides/backblaze) as a hub level integration.
+Stateful containers on Cycle can be set to automatically be backed up. Currently, this integration relies on [setting up Backblaze](/guides/tutorials/backblaze) as a hub level integration.
 
 After setting up container backups, using the aforementioned guide, a user can see all backups of a stateful container using the "Backups" option available in the container modal's main navigation.
 

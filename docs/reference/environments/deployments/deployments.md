@@ -26,6 +26,8 @@ Deployments can only be created during two events:
 1. Container create
 2. Stack deploy
 
+These events CAN happen in a pipeline.
+
 
 A user cannot create an empty deployment, and deleting all containers from a deployment will cause that deployment (and all currently associated [tags](/reference/environments/deployments/tags)) to be deleted. 
 
@@ -46,4 +48,13 @@ To add a single container to an existing deployment, use the same workflow as cr
 
 
 ## Create with Stack 
-Stacks are associated with deployments during the stack deploy process.  When [deploying the stack](/)
+Stacks are associated with deployments during the stack deploy process.  When [deploying the stack](/reference/stacks/stacks-workflow#deploy-a-stack) select `Deployment` and then enter the deployment version or create a new deployment. 
+
+
+![Deploy Create](https://static.cycle.io/portal-docs/stacks/deployment-create.png)
+
+
+If the deployment you've selected has no matches for the container identifiers present in the stack the options will show `New Containers`, otherwise you'll be prompted on reimageing and reconfigure  options. 
+
+
+![Deploy Form Full](https://static.cycle.io/portal-docs/stacks/deploy-form-full.png)
