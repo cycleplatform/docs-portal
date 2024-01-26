@@ -8,15 +8,14 @@ sidebar_position: 3
 
 Certain field values in pipelines can use `pipeline variables`.  Similar in syntax to [stack variables](/), pipeline variables follow the variable name wrapped in double curly brackets.  
 
-These variables can be made up of: 
+
+Example: `{{variable-name}}`
+
+These variable names (keys) can be made up of: 
 
 * a-z
 * 0-9
 * `-`
-
-No other characters are supported
-
-Example: `{{variable-name}}`
 
 
 Available on:
