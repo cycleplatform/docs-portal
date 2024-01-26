@@ -7,6 +7,12 @@ sidebar_position: 2
 # Stack Variables
 All fields in stacks can be replaced by stack variables. 
 
+These variables can be made up of almost any valid json, but for single fields the constraints are:
+
+* a-z
+* 0-9
+* `-`
+
 To define a stack variable wrap the variable name in curly braces. Ex: `{{variable-name}}`
 
 
