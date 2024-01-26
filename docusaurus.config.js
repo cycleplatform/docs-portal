@@ -92,7 +92,7 @@ module.exports = {
           items: [
             {
               label: "Portal",
-              to: "/docs/intro",
+              to: "/reference/intro",
             },
             {
               label: "Public API",

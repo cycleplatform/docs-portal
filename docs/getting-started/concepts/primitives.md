@@ -1,7 +1,7 @@
 ---
 id: primitives
 displayed_sidebar: gettingStartedSidebar
-sidebar_position: 18
+sidebar_position: 1
 title: Primitives
 ---
 
