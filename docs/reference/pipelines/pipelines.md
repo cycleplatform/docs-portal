@@ -19,6 +19,9 @@ To create a new pipeline:
 * Click the **Pipelines** tab in the main navigation 
 * Use the Create Pipeline button. 
 * Name the pipeline and then click the Create Pipeline button on that page. 
+* Choose standard or dynamic pipeline type (can be updated later).
+    * **Standard** - Statically defined pipeline (no variables).
+    * **Dynamic** - Pipeline can use dynamic [variable support](/reference/pipelines/variables)
 
 ### Update & Delete
 While a pipeline is selected, the horizontal navigation will show a settings tab.  This tab can be used to update the name of the pipeline, see the pipeline ID, and delete the pipeline.
