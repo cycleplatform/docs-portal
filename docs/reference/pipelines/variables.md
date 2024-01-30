@@ -6,10 +6,9 @@ sidebar_position: 3
 
 # Pipeline Variables
 
-
-
-
-
+:::info Dynamic Mode
+To use pipeline variables set the pipeline to Dynamic mode.  This can be set either during pipeline creation or on the settings page of a pipeline with the checkbox. 
+:::
 
 
 Certain field values in pipelines can use `pipeline variables`.  Similar in syntax to [stack variables](/), pipeline variables follow the variable name wrapped in double curly brackets.  
