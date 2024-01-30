@@ -6,7 +6,15 @@ sidebar_position: 3
 
 # Pipeline Variables
 
+
+
+
+
+
+
 Certain field values in pipelines can use `pipeline variables`.  Similar in syntax to [stack variables](/), pipeline variables follow the variable name wrapped in double curly brackets.  
+
+
 
 
 Example: `{{variable-name}}`

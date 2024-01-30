@@ -1,6 +1,6 @@
 ---
 sidebar_label: Using GPU Powered Infrastructure
-sidebar_position: 20
+sidebar_position: 59
 ---
 
 # GPU Infrastructure On Cycle

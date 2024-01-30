@@ -1,6 +1,6 @@
 ---
 sidebar_label: Two-Way Console Tips
-sidebar_position: 2
+sidebar_position: 49
 ---
 
 # Two-Way Console Tips
