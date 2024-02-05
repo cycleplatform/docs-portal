@@ -18,7 +18,7 @@ module.exports = {
       defaultMode: "dark",
       disableSwitch: true,
     },
-    image: "https://static.cycle.io/website/og.png",
+    image: "https://cycle.io/global/resources/images/og.png",
     algolia: {
       apiKey: "e3d876b635908b0ab9c420076449e467",
       indexName: "portal-docs",
