@@ -142,7 +142,7 @@ Set the `Interval` to `20s` (twenty seconds) and `Max Attempts` to `5`.  This wi
 For the final step in this stage, create another step using `Update Deployment Tag Version`.  Use then `{{environment}}` variable for environment and the `{{version}}` variable for version.  For tag, I'm using `{{current-tag}}` to signify that I'm moving the second tag to this version.
 
 
-### Cleanup
+### Stage 3 - Cleanup
 The cleanup stage is just one step `Prune Environment Deployments`.  This step will prune all deployments (and their containers) for any deployment that does not have any tag assigned to it.  
 
 For the single field on this form use the `Resource` type and again use the `{{environment}}` variable. 
@@ -162,3 +162,9 @@ If you've never used the resource identifiers before, the `{{environment}}` vari
 Example Values: 
 
 ![Pipeline Variables](https://static.cycle.io/guides/deployment-pipeline/pipeline-variables.png)
+
+## Deployment Complete
+After firing the pipeline, your changes will be live within the next few minutes.  
+
+If you want to see some of the jobs in action, head over to the environment > deployments page and you'll see the container being created, as well as the first and second tag updating.  As soon as that second tag is updated your site will be rendering the new changes you've made.   
+
