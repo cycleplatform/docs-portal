@@ -89,9 +89,11 @@ Before visiting the linked record URL's, start the environment using the `Start 
 Make sure you point another linked record to the secondary tag you've created as well. After thats all configured, visit the URL's to verify that they resolve and all is working as expected. 
 
 ## Adding the Pipeline
+Head over to pipelines in the portal and click the `Create` button at the top of the page.  Feel free to name the pipeline whatever you'd like. We'll use the `Dynamic` type, so that we can use variables. 
+
 This [pipeline](/reference/pipelines/) will have 3 stages: 
 
-1. Image Create
+1. Create
 2. Deployment
 3. Cleanup
 
@@ -99,7 +101,64 @@ These stages aren't strict and 3 stages are not a requirement in any way for thi
 
 As for the steps, we will create enough steps to accomplish our task of creating a new deployment and switching traffic to it.  If you'd like to add additional steps you can but you'll want to add at least the steps defined in the tutorial.  
 
-### Create
-Head over to pipelines in the portal and click the `Create` button at the top of the page.  Feel free to name the pipeline whatever you'd like. We'll use the `Dynamic` 
+
+### Stage 1 - Create
+Click the `Editor` tab from the horizontal nav and add the first stage.  I'm calling mine `create`.  After naming the first stage, select the first step from the dropdown `Create And Import Image`.  
 
 
+![step 1](https://static.cycle.io/guides/deployment-pipeline/step-1.png)
+
+The second step to add in this stage is `Create Container`.  Make sure when filling out the create container step you use the same container name that you did during your original container create.  This name is used by the platform to create an identifier and the identifier is what's used by the linked record association.  Also fill in the step identifier as we will use a reference to this container later in the pipeline. 
+
+For `Environment` use the `Resource` type and the variable `{{environment}}`. 
+
+For the `Image` use the `From` type to target the image we created and imported in the first step. 
+
+Fill in the bottom of the form the same as the first container we created EXCEPT for the deployment version which should use the `{{version}}` variable (it doesn't have to be named this but will be in the example below).
+
+![step 2](https://static.cycle.io/guides/deployment-pipeline/step-2.png)
+
+### Stage 2 - Deploy
+Create a new stage called deploy, and then with the first step in this stage select `Start Container`. This step has a single field, `Target` which should use `From` to select the container we just created. 
+
+Next, we want to update the first deployment tag to point to the new deployment/container.  To do this we'll add a `Update Deployment Tag Version` step. 
+
+There are only 3 fields in this step and we want to use variables for each one of them.  For `Environment` use the `Resource` type with `{{environment}}`.  Using the same variable here as before allows us to make sure that the same environment is used across all places this variable is set.  The `Tag` field should be set to a variable, I used `{{test-tag}}` and the `New Version` field to `{{version}}` again aligning version around the variable `{{version}}`.
+
+![Update Deployment Tag Version Step](https://static.cycle.io/guides/deployment-pipeline/update-deployment-step.png)
+
+After the deployment tag version is updated, we'll add a `Sleep` step.  This step will give the container a few moments to get up and running as well as eliminate the chance that the next step (Get Webhook) will hit the wrong resource.  Set this step to `30s`. 
+
+With the new container started and the first tag set to be moved, we want to be sure the container comes online and is able to respond to a request before moving our `current` tag to it.  The next step we'll use will let us verify this.  Create a `Get Webhook` step.  For the `URL` field, set the URL to the URL of the linked record you associated with the `test` tag in the earlier step.  Open the `Advanced Options` section and check the boxes next to `Retry On` and `Not` in the second row.  Then enter the HTTP code `200` in the codes array.  
+
+This setting will tell Cycle, please retry this get webhook on any code that is not `200` from the URL. 
+
+Set the `Interval` to `20s` (twenty seconds) and `Max Attempts` to `5`.  This will give Cycle additional parameters to use when retrying the call.
+
+
+![Get Webhook Step](https://static.cycle.io/guides/deployment-pipeline/get-webhook.png)
+
+
+For the final step in this stage, create another step using `Update Deployment Tag Version`.  Use then `{{environment}}` variable for environment and the `{{version}}` variable for version.  For tag, I'm using `{{current-tag}}` to signify that I'm moving the second tag to this version.
+
+
+### Cleanup
+The cleanup stage is just one step `Prune Environment Deployments`.  This step will prune all deployments (and their containers) for any deployment that does not have any tag assigned to it.  
+
+For the single field on this form use the `Resource` type and again use the `{{environment}}` variable. 
+
+:::danger   Save Pipeline
+Remember to use the `Save Pipeline` button at the bottom of the screen to save all your step and stage changes.
+:::
+
+## Changing the Website
+Before we fire off this pipeline we want to make a change to the website itself.  If you're using the resource provided by this tutorial, all you'll need to do is change one of the text lines in the `/src/App.js` file to something else and commit that change.  
+
+## Triggering the Pipeline
+Head back to the pipeline you just created.  In the top right corner of the screen there is a button `Trigger Pipeline`, next to the button is a `V`, click there and fill in the variables with the correct values. 
+
+If you've never used the resource identifiers before, the `{{environment}}` variable needs the format `env:identifier` or `environment:identifier`.  If you don't have the environment identifier, just go to the environment's settings page and copy it.  
+
+Example Values: 
+
+![Pipeline Variables](https://static.cycle.io/guides/deployment-pipeline/pipeline-variables.png)
