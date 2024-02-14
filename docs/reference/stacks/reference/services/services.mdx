@@ -10,6 +10,7 @@ When deployed these settings will configure the environment based on the setting
 | ------------ | ------ | :------: | --------------------------------------- |
 | vpn          | Object |    ❌    | Settings for VPN service.               |
 | loadbalancer | Object |    ❌    | Settings for the load balancer service. |
+| discovery    | Object |    ❌    | Settings for the discovery service. |
 
 ## Example Services Struct with V1 LB
 
@@ -23,6 +24,14 @@ When deployed these settings will configure the environment based on the setting
         "vpn_accounts": true
       },
       "allow_internet": true
+    },
+    "discovery": {
+      "hosts": {
+        "host.to.resolve": {
+          "ipv4": ["1.2.3.4", "2.3.4.5", "5.6.7.8"]
+          "ipv6": ["d624:285d:27c5:5dd9:f500:de62:d858:a23d", "f608:49da:8282:4f7c:ca18:8107:12d1:72d6",  "83a7:e8f2:60f8:f0eb:a2ff:4001:4856:479"]
+        }
+      }
     },
     "loadbalancer": {
       "type": "v1",

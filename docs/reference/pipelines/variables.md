@@ -32,10 +32,10 @@ Available on:
 * [Deployment Tag](/reference/environments/deployments/tags)
 * Fluid Identifiers
 
+In the portal pipeline editor, users will notice the `</>` icon on steps that allow for variables to be used.
 
-:::success Coming Soon: Image Overrides
-Image overrides are coming for certain pipeline steps that deal with creating and importing images.  When this update is released, overrides will have variable support.
-:::
+![variable support](https://static.cycle.io/portal-docs/pipelines/variable-support-icon.png)
+
 
 ### Fluid Identifiers
 A fluid identifier on Cycle is one or more identifiers, in a text format, that allow the user to identify resources in as specific of terms as they see fit.  
