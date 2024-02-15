@@ -42,19 +42,26 @@ Open a browser window, and with the Cycle portal loaded:
 - In the top right corner, click the blue Import Stack button.
 - Select the Import from a Git Repo tile on the left, then click Next.
 
-#### Name & Branch
+### General
+
+- **Stack Name** - this is just what you want to name the stack, no impact on the stack itself. 
 
 The stack name is for your reference, but it is recommended to name it after the application it builds.
 
-A branch name can be entered if the target branch for the stack is not the master branch. If this field is entered or set, make sure that if the hash or tag field is set it is correct for what is pushed to the associated branch. A mismatch in branch & (tag or hash) will result in Cycle pulling the latest commit for that branch.
 
-### Git Repo URL
 
-Enter the git repo url associated with the repo to be used for the stack.
+### Git
 
-:::note URL Trimming
-If the url is pasted into the form field with `git@` or `https://` that part of the URL will be trimmed by the form validator.  
-:::
+- **Git Repo URL** - the URL of the repo where the stack file `cycle.json` that you'd like to use for building this stack can be found.
+- **Git Repo Branch** - when cloning the repo, Cycle will use this branch. 
+- **Ref** - reference information for targeting specific `hash` or `tag` in the branch.  Providing a branch here will override the `Git Repo Branch`. 
+
+
+A hash is a commit hash. Enter a value for a hash if the intended target for the stack build is a specific commit and not the latest commit
+
+The tag is a git tag. Enter a value for the tag field if the intended target for the stack build is a specific tag and not the latest commit.
+
+
 
 ### Repo Auth
 
@@ -71,17 +78,10 @@ ssh-keygen -P ‘yourpassword’ -t ecdsa -b 256 -m PEM -f your-filename.pem
 
 :::
 
-For `HTTPS`, just enter a username and password for the repo auth.
+For `HTTPS`, just enter a username and password/token for the repo auth.
 
-### Hash & Tag
 
-A hash is a commit hash. Enter a value for a hash if the intended target for the stack build is a specific commit and not the latest commit
 
-The tag is a git tag. Enter a value for the tag field if the intended target for the stack build is a specific tag and not the latest commit.
-
-:::success First Build
-Click **Import** after filling out the form and then on the stack dashboard click **Build**.
-:::
 
 ## Creating Stack Builds
 
