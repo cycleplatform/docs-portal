@@ -9,7 +9,7 @@ Stacks offer a powerful way to declaratively manage multiple containers, and the
 
 A stack build is a deployable snapshot of a stack. It contains all built images and their configurations, and can be directly deployed to an environment. The philosophy is the same as with an individual container image -- they are atomic, and hold everything they need to be deployed.
 
-When you first [import a stack](/reference/stacks/stacks-workflow/), it will also create an initial build. Every build generates a "build log", containing all the output generated when Cycle built the images.
+When you first import a stack, it will also create an initial build. Every build generates a "build log", containing all the output generated when Cycle built the images.
 
 
 ## Stacks Workflow

@@ -48,7 +48,7 @@ To add a single container to an existing deployment, use the same workflow as cr
 
 
 ## Create with Stack 
-Stacks are associated with deployments during the stack deploy process.  When [deploying the stack](/reference/stacks/stacks-workflow#deploy-a-stack) select `Deployment` and then enter the deployment version or create a new deployment. 
+Stacks are associated with deployments during the stack deploy process.  When [deploying the stack](/reference/stacks/#deploy-a-stack) select `Deployment` and then enter the deployment version or create a new deployment. 
 
 
 ![Deploy Create](https://static.cycle.io/portal-docs/stacks/deployment-create.png)
