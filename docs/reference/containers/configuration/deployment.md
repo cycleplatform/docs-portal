@@ -57,6 +57,10 @@ Commands and instructions Cycle will run to verify your containers health.
 
 **Command** - The command you want Cycle to run, success will mean that the container is healthy, and error will mean that it is not.
 
+:::info Running Inline Scripts
+If you want to describe an "inline script" in the command form field use `""` quotes to wrap the script.  Writing something like `sh -c "script here"` will not work correctly because of the way the sh shell exits.  
+:::
+
 **Retries** - How many times to try the command.
 
 **Interval** - A time string between tries to wait before trying again. This accepts a string with modifiers. Example for 3 days 15 hours 10 minutes 5 seconds `3d15h10m5s`
