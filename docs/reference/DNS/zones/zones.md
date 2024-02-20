@@ -17,16 +17,19 @@ To create a DNS zone on Cycle:
 
 ### Verifying a Zone
 
+To verify a DNS zone simply click the `Verify Zone` button after creating the zone.  
 
-Verifying a hosted zone is as easy as clicking the Verify Zone button at the top of your DNS zone, but if you create a TXT record through your domain registrar it's much faster. You can create the TXT record at the domain registrar where you purchased your domain name. This TXT record will have a name of cycle-verify and a value of your Hub's ID.
+The fastest way to verify a DNS zone that is a delegation of your root domain is by adding a `cycle-verify` txt record.  
+
+To do this create a record of type `TXT` at your domain provider.  give it the name `cycle-verify` and the value is your Hub ID.  
+
+For verifying the root domain, which has had its main nameserver records pointed to Cycle nameservers and for which you no longer can create records at the domain provider, you do not need to create the `TXT` record.  Verifying the zone using the same button, if it fails immediately after changing the nameserver records, be sure to check if the new NS records have propagated and try again.  For root domains this can sometimes take quite a bit longer than delegating a subdomain. 
 
 :::note Non-Hosted Zones
 If you create a Non-Hosted zone you will not have the option to "Verify" your zone.
 :::
 
-:::info
-For steps on how to delegate a subdomain to Cycle go here.
-:::
+
 
 ### Updating and Deleting Zones
 To update your DNS zone from Hosted to Non-Hosted or vice versa, do the following:
