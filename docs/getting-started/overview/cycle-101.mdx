@@ -30,20 +30,22 @@ You can see on this page there are three main tiers, `Lite`, `Startup`, and `Bus
 The hub itself doesn't really "do" anything other than represent this space, but its  essential to have a hub set up so that you can start adding things like providers, servers, images, containers, and environments. 
 
 ## Providers and Servers 
-The first thing you'll want to understand, once you have a hub set up, is how to add a provider and a server.  A provider is a cloud provider, and a server is a virtual (or bare metal) machine.  You can add a provider by clicking on the `Providers` tab in the left hand navigation, and then clicking the [`Add Provider`](/reference/infrastructure/providers/) button.  Once you've added a provider, you can add a server by clicking on the `Servers` tab in the left hand navigation, and then clicking the [`Add Server`](/reference/infrastructure/servers#add-server) button.
+The first thing you'll want to understand, once you have a hub set up, is how to add a provider and a server.  A provider is (generally) a cloud IaaS provider, and a server is a virtual (or bare metal) machine.  You can add a provider by clicking on on `Infrastructure` and then `Providers` in the left hand navigation, and then clicking the [`Add Provider`](/reference/infrastructure/providers/) button.  Once you've added a provider, you can add a server by clicking on the `Servers` tab in the left hand navigation, and then clicking the [`Add Server`](/reference/infrastructure/servers#add-server) button.
 
-Being able to create an environment and deploy a container is dependent on having a server online.  Thats because the server is the actual machine that the container(s) will run on. 
+
+A server being online comes before anything else.  Environments and containers are dependent on having at least 1 server in place so there is somewhere to deploy to, as the server is the actual machine that the container(s) will run on. 
 
 ## Images
 After provisioning the server (and making sure its online), the next thing to do is create an [image source](/reference/images/sources/) and image so that you can create a [container](/reference/containers). 
 
-An image source is just a place where, as the user, you can define a location that Cycle can reach to pull all information to build your image from.  There are many different types, defined in the reference link above.  Once you have an image source, you can create an image from it.  An image is a snapshot of the files present at the point in time when the image was created.  You can create an image by clicking on the `Images` tab in the left hand navigation, and then clicking the [`Add Image`](/reference/images) button.
+An image source is just a place where, as the user, you can define a location that Cycle can reach to pull all information to build your image from.  There are many different types, defined in the reference link above.  Once you have an image source, you can create an image from it.  An image is a snapshot of the files present at the point in time when the image was created.  You can create an image by clicking on the `Images` tab in the left hand navigation, then `Sources` followed by the [`Add Image`](/reference/images) button.
 
 
 Once you have an image imported and the server online, it's time to create an environment and then deploy a container. 
 
 ## Environments and Deploying Your First Container 
-An environment is a collection of containers that are deployed together.  If you're in a hurry and want to do this quickly, you can create an environment by clicking on the `Environments` tab in the left hand navigation, and then clicking the [`Add Environment`](/reference/environments) button.  Once you have an environment, you can deploy a container to it by clicking on the `Containers` tab in the left hand navigation, and then clicking the [`Add Container`](/reference/containers) button.
+
+If you're in a hurry and want to do this quickly, you can create an environment by clicking on the `Environments` tab in the left hand navigation, and then clicking the [`Add Environment`](/reference/environments) button.  Once you have an environment, you can deploy a container to it by clicking on the `Containers` tab in the left hand navigation, and then clicking the [`Add Container`](/reference/containers) button.
 
 **BUT** 
 
@@ -89,7 +91,7 @@ This is done by creating a `NS` record at your root nameservers that points to t
 
 
 ### Linked Records
-While many of the records you'd create in a DNS zone will be familiar, Cycle introduces the [linked record](/reference/DNS/records/adding-records#type-linked) which are a special type of record provided by the platform.  These records are tied directly to a  container (or deployment) an dalleviate the need to track and manage specific IP addresses. 
+While many of the records you'd create in a DNS zone will be familiar, Cycle introduces the [linked record](/reference/DNS/records/adding-records#type-linked) which are a special type of record provided by the platform.  These records are tied directly to a  container (or deployment) and alleviate the need to track and manage specific IP addresses. 
 
 When creating linked records you can also select the option to have a TLS certificate assocaited with that record and Cycle will automatically manage the certificate for you.
 
@@ -109,20 +111,24 @@ Beyond this, you can also think of a stack as a declairitve way to define an env
 
 </details>
 
-Don't love video.  Think of [deployments](/reference/environments/deployments) as a way  to maintain multiple independent versions of their applications within one single environment. Additionally, deployments make it easy to take new versions of your applications live with zero downtime.
+Think of [deployments](/reference/environments/deployments) as a way  to maintain multiple independent versions of their applications within one single environment. Additionally, deployments make it easy to take new versions of your applications live with zero downtime.
 
 What deployments bring to the table is a way to manage versions of "deployments" and traffic together so that users can "point to" the specific version of the application that they want to use without worrying about downtime.  
 
 ### Pipelines
-Another important tool is [pipelines](/reference/pipelines). 
+Another essential tool in the Cycle platform quiver is [pipelines](/reference/pipelines). 
 
 Pipelines are a way to automate certian tasks on Cycle.  The main use for this is managing deployments.  Check out [this guide](/guides/tutorials/deploy-pipeline) that goes through setting up rainbow deployments using deployments and pipelines.  
 
 Pipelines claim an exclusive lock on a resource to make sure that nothing else touches it during that time.  So while some users may opt into automation through our expressive [API](https://api-docs.cycle.io), others may find that pipelines provide the guaurantees they want to be able to confidently deploy knowing they won't be stepping on their own toes.
 
 
+## Keep Learning!
+
 This is a quick and dirty intro to Cycle thats meant to expose new users to quite a few of the main building blocks of the platform without overwhelming detail.  
 
-We also have a [primitives](/getting-started/concepts/primitives) section that goes into more detail about the main building blocks of the platform as a list with links to all the reference sections. 
+We also have a [primitives](/getting-started/concepts/primitives) section that goes into more detail about the main building blocks of the platform as a list with links to all the reference sections.
+
+Looking for [guides](/guides/intro)? Check out the guides section that has lots of text and video based guides. The main [reference](/reference/intro) section will have the most detailed, technical information about the platform.
 
 
