@@ -8,7 +8,7 @@ Adding and using an image on Cycle comes down to a few simple steps:
 
 
 1. ** [Create an Image Source](/reference/images/sources/#creating-sources) ** - describing where to find image assets.
-2. ** Importing An Image ** - From the image sources menu, select the image source and then import a copy of that image.
+2. ** Importing An Image ** - From the image sources menu, select the image source and then import a copy of that image by clicking on the button `Import Image`.  For image overrides, click the `V` arrow next to the button first to open the dropdown. 
 
 ## Image Summary
 

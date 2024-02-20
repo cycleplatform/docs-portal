@@ -54,7 +54,7 @@ To do this we will create a NS type record on your provider that says, when you 
 
 The NS record will include the sub-domain and a reference to Cycle's name servers.
 
-Its important to do this three times one for each of the Cycle name servers which are.
+Its important to do this for each of the Cycle name servers which are:
 ns1.cycle.io
 ns2.cycle.io
 ns3.cycle.io
