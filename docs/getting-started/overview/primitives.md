@@ -2,7 +2,7 @@
 id: primitives
 displayed_sidebar: gettingStartedSidebar
 sidebar_position: 1
-title: Primitives
+title: Cycle Primitives
 ---
 
 # Cycle Primitives

@@ -1,6 +1,6 @@
 ---
 sidebar_label: Announcements
-sidebar_position: 20
+sidebar_position: 54
 displayed_sidebar: gettingStartedSidebar
 ---
 

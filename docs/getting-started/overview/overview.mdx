@@ -9,22 +9,47 @@ import Accounts from "../../../src/pages/accounts/accounts.mdx"
 
 The leading LowOps platform that simplifies hybrid infrastructure management and container orchestration. Empower your team with seamless deployments, enhanced visibility, and effortless control, all while reducing complexity and technical debt.
 
+## Using Getting Started
+This section of the documentation is meant to give users quick access to information on common patterns necessary to deploy containers and manage infrastructure.
 
+What you'll notice on the left hand sidebar is a group of different directories, each of which is subdivided into categories.  Within each of these categories are groups of how-to guides that take the user through high level concepts and specific application of steps.  The goal is to provide a clear path to understanding without getting to in the weeds on technical detail.  That being said, we do aim to cover the full depth of technical detail in the [reference](/reference/intro) section of the documentation.
+
+So you can think of the getting started sections as a "how do I do this" more than a "what does this mean".
 
 
 
 ## Before You Begin 
 There are a few prerequisites for using the platform that need to be taken care of before you can really get going. 
 
+### Cycle's Core Services
 
-## Creating an Account
+Cycle consists of several stand-alone services. These services provide all the functionality offered by the platform. Most services listed here are used under the hood by the platform, and users will mostly interact with the platform via the Portal or Public API services.
+
+For real time status reports on all services check out the Official [Status Page](https://status.cycle.io).
+
+
+| SERVICE NAME  | DESCRIPTION                                                                                  |
+| ------------- | -------------------------------------------------------------------------------------------- |
+| `Nexus `        | Communication mesh for Cycle's core services.                                                |
+| `DNS`          | Cycle's Domain Name Service. Provides routing for domains pointed to Cycle's nameservers.    |
+| `Console`       | Cycle's console service. Provides SSH access to containers in a safe and centralized manner. |
+| `Public`        | API Cycle's Public API enables both users and the portal to interact with the platform.      |
+| `Auth`          | Cycle's authorization service.                                                               |
+| `Manager`       | Job scheduling and delegator for Cycle services.                                             |
+| `Factory`       | Cycle's factory service builds container images during stack imports.                        |
+| `Compute Proxy` | The compute proxy service routes requests between the central platform and client servers.   |
+| `Portal`        | The portal provides a user friendly interface for managing containers and infrastructure.    |
+
+
+
+### Creating an Account
 
 <Accounts />
 
 For more detailed informaiton visit the [Accounts Reference](https://docs.cycle.io/reference/accounts)
 
 
-## Logging In
+### Logging In
 
 
 <p>

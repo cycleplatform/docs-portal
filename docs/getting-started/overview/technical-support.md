@@ -1,6 +1,6 @@
 ---
 sidebar_label: Technical Support
-sidebar_position: 15
+sidebar_position: 55
 displayed_sidebar: gettingStartedSidebar
 ---
 
