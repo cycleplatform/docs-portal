@@ -1,5 +1,41 @@
 ---
-sidebar_label: Deploying the Container
+sidebar_label: Deploying A Container
 sidebar_position: 3
 displayed_sidebar: gettingStartedSidebar
 ---
+
+# Deploying A Container
+
+## Prerequisites
+
+* [Configuring Hub](/getting-started/overview/configuring-your-hub)
+* [Importing an Image](/getting-started/overview/deploy-first-container/import-image)
+* [Creating an Environment](/getting-started/overview/deploy-first-container/create-environment)
+
+
+Navigate to the environment you'd like to deploy your container into. From the portal `Dashboard`, you'd select `Environments` from the left-hand navigation, and then select the environment you'd like to deploy your container into.
+
+Once here select the `Deploy Container` button on the top right of the screen.  This will open the deploy container wizard.  
+
+Here we can do some VERY powerful things:  
+
+* Set the container to `Stateful` if its a database or has a volume that needs to persist between restarts.
+* Select the [deployment strategy](/reference/containers/deployment-strategies), for the container. 
+* Set the number of initial instances to create with the container. 
+* Modify which servers qualify as deployment targets for the container through [tags](/reference/infrastructure/servers/settings#tags). 
+* Select an image to create the container from. 
+* Networking settings for the container.
+* Create or add to a deployment. 
+
+If you'd like to go into detail on all these settings visit [this page](/reference/containers/#deploy-a-single-container) in the main reference docs. 
+
+For today, we'll just change only what we need to, to get this container online.  
+
+* Container Name - A name for the container (this form field also automatically updates the hostname field). 
+* Stateful - This can be left in its default `Stateless` as the website has no volume and no data to persist. 
+* Image - Select `Recent Images` and then the image we generated earlier ([on this page](/getting-started/overview/deploy-first-container/import-image)) from the dropdown. 
+  
+
+We'll get into deployments in a future page but for now leave it disabled and click on `Deploy Container`. 
+
+Cycle will create your container and open you into the container modal for the container you just created.  You'll notice that the container isn't running yet, but the instance has been created.  On the next page we'll get into [managing the container](/getting-started/overview/deploy-first-container/managing-container).

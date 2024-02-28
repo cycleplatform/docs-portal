@@ -3,3 +3,28 @@ sidebar_label: Configuring Ports and Routes
 sidebar_position: 4
 displayed_sidebar: gettingStartedSidebar
 ---
+
+# Configure Ports And Network
+
+## Prerequisites
+
+* [Configuring Hub](/getting-started/overview/configuring-your-hub)
+* [Deploying Your First Container](/getting-started/overview/deploy-first-container/)
+* [Configure DNS](/getting-started/overview/taking-container-public/config-dns)
+* [Create A Linked Record](/getting-started/overview/taking-container-public/linked-record)
+* [Start Load Balancer](/getting-started/overview/taking-container-public/load-balancer)
+
+To recap, we've created a container and then created all the necessary assets for the container to be reachable via public network:
+
+1. A load balancer is online.
+2. A linked record is created that points to the container. 
+
+Now, all thats left to do is configure the container so that:
+
+1. Public Network is set to `Enable`
+2. Check port mapping
+
+
+## Enable Public Network 
+Head back to the container we've been working with and click on the `Config` tab in the container modal. At the top of the page you'll see a network section and in this section a setting for `Public Network`.  If you've followed the previous steps this will currently say `Disable`. 
+

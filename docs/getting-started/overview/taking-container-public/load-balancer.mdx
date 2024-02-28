@@ -3,3 +3,36 @@ sidebar_label: Starting a Load Balancer
 sidebar_position: 3
 displayed_sidebar: gettingStartedSidebar
 ---
+
+# Starting A Load Balancer 
+
+## Prerequisites
+
+* [Configuring Hub](/getting-started/overview/configuring-your-hub)
+* [Deploying Your First Container](/getting-started/overview/deploy-first-container/)
+* [Configure DNS](/getting-started/overview/taking-container-public/config-dns)
+* [Create A Linked Record](/getting-started/overview/taking-container-public/linked-record)
+
+
+With the linked record in place there are two steps we need to take. 
+
+1. Make sure a load balancer is online - which we will cover on this page.
+2. Make sure the network settings and routes are set up correctly - which we will cover on the [next page](/getting-started/overview/taking-container-public/config-routes)
+
+## Managing Load Balancers 
+Head back to the environment we set up earlier.  If you scroll to the bottom of the environment dashboard you'll see that the discovery service is online but the load balancer is not.  Furthermore, you may notice that the number of load balancer instances currently created is 0. 
+
+We don't automatically create load balancer instances until you either manually create one or until you use the `Start All` button while also having at least 1 container with public network `Enabled`.  
+
+Why?
+
+Because creating a load balancer instance consumes an IP address from the provider its deployed to and, generally, those cost a monthly fee.  So if you don't need a load balancer, we don't want to create one for you.
+
+### Manually Starting 
+To manually start the load balancer, scroll down on the environment dashboard and click the `Manage` button next to the load balancer in the services summary.  This will open the load balancer container modal. It's very similar to a container modal, but has a few different views.  All we're looking for here is the start button.  Click the start button on the modal and Cycle will create and start a load balancer for you. 
+
+### Starting All
+If you have at least 1 container with public network `Enabled` and you click the `Start All` button on the environment dashboard, Cycle will automatically create and start a load balancer for you.
+
+## Verify 
+To verify everything worked correctly, head back to the environment dashboard and see that there is now information about the load balancer IP address assignments and the load balancer will report 1 instance in the running state.

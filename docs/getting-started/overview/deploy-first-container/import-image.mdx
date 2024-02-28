@@ -3,3 +3,65 @@ sidebar_label: Importing an Image
 sidebar_position: 1
 displayed_sidebar: gettingStartedSidebar
 ---
+
+# Importing an Image
+
+## Prerequisites
+
+* [Configuring Hub](/getting-started/overview/configuring-your-hub)
+
+
+
+Importing an image is two steps: 
+
+1. Create an Image Source
+2. Import an Image 
+
+
+## Creating the Image Source 
+After logging into the portal, click on the `Images` tab on the left-hand side of the screen.  With that expanded, click on `Sources`.  
+
+If this is a new hub, you'll likely not have any sources created, but if you're joining an existing hub, here you will find a list of all the image sources currently live on the hub.  
+
+### Opening the Modal 
+To start creating a new image source, click the `Create` button at the top of the page.  This will open a modal where you can:
+
+* Give the image source a name.
+* Give the image source a description
+* Choose the type of the image source.  
+    * [Docker Hub](/reference/images/sources/dockerhub-source)
+    * [Docker Registry](/reference/images/sources/docker-registry-source)
+    * [Dockerfile](/reference/images/sources/dockerfile-source)
+    * [OCI Registry](/reference/images/sources/oci-registry)
+
+Each of these types represents a slightly different set of configuration details the platform will use to locate, download, and create your image. 
+
+This document will cover the Dockerfile (Git Repo) type, but any of the above links for information on configuring the other types.
+
+### Dockerfile Config 
+TL;DR use the link below to add the git repo url and leave all other fields as their default, then click `Create Image Source`.
+
+-- 
+
+Once you've selected `Docker File - Git Repo` from the dropdown, a configuration form will appear. I've prepared a [companion repo](https://github.com/cycleplatform/basic-dockerfile) to go along with this step.  
+
+If you open the repo, you'll see that we have a very basic website based on `create-react-app` and in the root of the repo is a `Dockerfile`. 
+
+The first field in the config for the image source is `Git Repo URL`.  This supports both http and ssh based pulling, but for today we will use http.  The `Git Repo Branch` field is for specifying any branch in the repo to be used when creating images.  The default for this is just `main`, so leave it blank if you're following along with the companion repo. 
+
+The other two fields to pay close attention to here are `Context Directory` and `Build File`.  The `Context Directory` tells Cycle where in the repo to treat as the context when executing steps in the Dockerfile.  So if you have a step in the Dockerfile that says `COPY ./ ./`, and the context directory is `/`, then Cycle will copy everything from the root of the repo into the image. The `Build File` tells Cycle "where in this repo is the Dockerfile located I want to use for this image source".  So if it were  in the root of the repo, like it is in the companion repo, you would just put `/Dockerfile` in this field.
+
+`/` and `/Dockerfile` are the default values for these fields, so in any cases where you're have these settings you can leave them blank. 
+
+To recap, you should have the https clone url in the `Git Repo URL` field and all other fields can be blank (if you're using the companion repo to follow along). 
+
+Once you have all this, click on `Create Image Source`.
+
+## Import The Image 
+With the image source created you can now create new copies of the container image.  To create a copy of the image click and hold down the `Import Image` button at the top of the page.  The image will go through several states and then end up in the `live` state.  
+
+Each copy of the image is a point in time reference to the files present in the repo at the time of image create.  Adding new images does not replace or change anything in the existing image.  Instead, you get a new copy of the image.  This makes it much easier to roll back to a previous version of the image if you need to.
+
+
+
+

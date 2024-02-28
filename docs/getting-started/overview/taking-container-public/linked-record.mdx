@@ -3,3 +3,31 @@ sidebar_label: Creating a Linked Record
 sidebar_position: 2
 displayed_sidebar: gettingStartedSidebar
 ---
+
+# Create A Linked Record 
+
+
+## Prerequisites
+
+* [Configuring Hub](/getting-started/overview/configuring-your-hub)
+* [Deploying Your First Container](/getting-started/overview/deploy-first-container/)
+* [Configure DNS](/getting-started/overview/taking-container-public/config-dns)
+
+
+With the zone created, we can now create a [linked record](/reference/DNS/records/adding-records#type-linked) that points to the container and associates a domain to it.  
+
+To do this we can click `Add Record` on the zone dashboard to bring up the record create wizard.  Select `Linked` from the dropdown and a new section of the form will appear. 
+
+Enter the following settings and then click `Create` at the bottom of the form. 
+
+* Name - `@`
+* Environment - select the environment you created from the dropdown.
+* Link to Container - and then select the container that we've created in this guide from the dropdown.
+* TLS Enabled - check the box. 
+
+The linked records allows us to create an association between the domain and the container, without creating an association between the available IP addresses that will need to be translated on DNS lookups.  This makes the record more flexible, because as you add and remove load balancers you'll not have to worry about updating anything. 
+
+Linked records with TLS can also opt in to http>https redirection and TLS termination at the load balancer which we will cover in an upcoming page. 
+
+
+Now you might be thinking: "How is this container going to resolve we have the public network set to disable?".  The answer is, it won't work yet. First we're going to get the load balancer running manually and then we'll dive into setting up the public network settings and common troubleshooting tips. 

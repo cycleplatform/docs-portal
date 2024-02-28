@@ -110,13 +110,13 @@ VOLUME /path/you/desire
 After creating the image, you can host it in a repo and use the `docker-file` image source type to pull it into Cycle, or you can build it locally and push to DockerHub or any supported Docker Registry before pulling it into Cycle.
 :::
 
-### Step 3: Configure the Network
+## Step 3: Configure the Network
 
-#### Hostname
+### Hostname
 
 The hostname is the string that all other containers within the same environment can refer to it by. It must be lowercase, and only contain letters, numbers, and hyphens.
 
-#### Public Network
+### Public Network
 
 There are three types of network privilege a container can have:
 
@@ -124,6 +124,12 @@ There are three types of network privilege a container can have:
 - **Egress Only** - The container may initiate connections over the internet, but all incoming connections will be blocked. This is ideal for things that require fetching data from the web, but do not need to respond to inbound requests, such as web scrapers.
 - **Enabled** - The container is able to both start and accept connections over the internet. This is a must for websites, APIs, and other services where clients may not be known ahead of time.
 
-### Step 4: Finalize
+
+### Step 4: Deployments 
+Setting up deployments requires a bit of understanding. You can get much more info on deployments [here](/reference/environments/deployments).  
+
+For this form, you can either select an existing deployment or create one by entering the deployment name in the form.  
+
+### Step 5: Finalize
 
 Verify everything is correct in the deployment summary box on the right, then click the "Create Container" button, located on the bottom right side of the form. All of these options will be fully configurable after creation as well, so if you make a mistake you can easily correct it before starting the container.

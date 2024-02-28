@@ -3,3 +3,41 @@ sidebar_label: Configuring a DNS Zone
 sidebar_position: 1
 displayed_sidebar: gettingStartedSidebar
 ---
+
+
+# Configure DNS 
+
+
+## Prerequisites
+
+* [Configuring Hub](/getting-started/overview/configuring-your-hub)
+* [Deploying Your First Container](/getting-started/overview/deploy-first-container/)
+
+
+If you want to access a publicly accessible container you'll need to set up a [DNS Zone](/reference/DNS/zones/hosted-zones). For this guide we'll set up a hosted zone.  
+
+## Create a Hosted Zone
+Click on `DNS` in the left-hand navigation and then click on `Zones`. Open the zone create modal by selecting the `Create` button.  
+
+You'll have to decide.  Do you want to point your domains root nameservers at Cycle or would you like to delegate a subdomain? 
+
+Pointing the root nameservers would mean going to your domain manager and updating the root nameserver records.  
+
+:::danger Backup
+If you're going to do this on a domain where you have some records already in place please make a backup of all your records before proceeding
+:::
+
+A sometimes easier approach is to just delegate a subdomain to Cycle.  Many of our users find it cathartic to delegate the subdomain `cycle`.  
+
+If this is the path you choose, you'll want to:
+
+1. Create the NS records in your domain manager which will point to `ns1.cycle.io`, `ns2.cycle.io`, `ns3.cycle.io`, and `ns4.cycle.io`.
+2. Create a TXT record.  
+    * Name: `cycle-verify`
+    * Value: `yourhubid`
+
+Hub Id is found under Hubs > Settings in portal. 
+
+
+Once you've created the zone, you'll want to click the `Verify Zone` button on the top right of your zone.  This will check to make sure the zone is correctly set up and Cycle has the authority it needs to create certificates for the zone.  
+

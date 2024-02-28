@@ -3,3 +3,59 @@ sidebar_label: Managing Containers
 sidebar_position: 4
 displayed_sidebar: gettingStartedSidebar
 ---
+
+# Managing Containers
+
+## Prerequisites
+
+* [Configuring Hub](/getting-started/overview/configuring-your-hub)
+* [Importing an Image](/getting-started/overview/deploy-first-container/import-image)
+* [Creating an Environment](/getting-started/overview/deploy-first-container/create-environment)
+* [Deploy A Container](/getting-started/overview/deploy-first-container/deploy-container)
+
+## Starting Containers
+So far we've run through quite a few steps going from adding a provider all the way through deploying the container.  We now dive into managing containers, which includes the container we just created and also environment services. 
+
+To recap, to get to the environment we're working in head to `Environments` on the main left-hand navigation and then select the environment you want to work in. 
+
+On this page, which we often refer to as the `environment dashboard` you'll notice there are buttons at the top that say `Start All` and `Stop All`.  The significance of those buttons is, they will start or stop every container in the environment.  
+
+To notice the difference, click on the `Containers` tab and then into the container we created in [the previous section](/getting-started/overview/deploy-first-container/deploy-container).  From the modal here you'll see the play and stop button but not the text from the environment dashboard.  When you're in the modal view, the start and stop commands are scoped to the container you're interacting with. 
+
+Use the `Start All` button from the environment dashboard to start all the containers in the environment.  The containers that should start at this point are: 
+
+* Discovery 
+* The container you created in the previous section.
+
+:::caution Scheduler
+The new scheduler service might start but is not currently part of the functionality in an environment. It's a service that will be used in the future.
+:::
+
+The containers that should not start at this point are:
+
+* Load Balancer
+* VPN
+
+Once the containers are started, head back to the container we've deployed and to the `Instances` tab.  Here you'll find the [Instance Console](/reference/containers/instances/#instance-dashboard), which shows all output from the containers main process. 
+
+
+## Configuring Containers 
+Below instances is `Config`. Here you'll find [network](/reference/containers/configuration/networking), [runtime](/reference/containers/configuration/runtime), [deployment](/reference/containers/configuration/deployment), [resources](/reference/containers/configuration/resources), [auto-scaling](/reference/containers/configuration/autoscaling), and [integration](/reference/containers/configuration/integrations) options.  
+
+The first section, `network`, is a common place for users to pay attention early.  In the next section [Taking A Container Public](/getting-started/overview/taking-container-public/) we'll cover the network settings in more detail.
+
+
+### Volumes
+Volumes are a way to persist data across container restarts.  This is a common need for databases, file storage, and other services that need to maintain state.  Volumes are outside of this guide but for more information about volumes check out the [main reference](/reference/containers/volumes/volume-configuration).
+
+### Backups
+Backups are a two part configuration.  Currently Cycle supports an integration with [Backblaze](/guides/tutorials/backblaze).  
+
+## Settings 
+The settings tab allows the user to:
+
+* Change basic [settings](/reference/containers/management/settings#basic-settings).
+* [Reimage](/reference/containers/management/reimaging) the container. 
+* [Scale](reference/containers/management/settings#scaling) the container instances. 
+* [Delete](reference/containers/management/settings#container-delete) the container.
+

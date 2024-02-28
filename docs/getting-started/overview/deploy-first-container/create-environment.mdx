@@ -3,3 +3,25 @@ sidebar_label: Create an Environment
 sidebar_position: 2
 displayed_sidebar: gettingStartedSidebar
 ---
+
+# Create An Environment 
+
+## Prerequisites
+
+* [Configuring Hub](/getting-started/overview/configuring-your-hub)
+* [Importing an Image](/getting-started/overview/deploy-first-container/import-image)
+
+An environment can be a more advanced topic, but for now just think of an environment as a collection of containers that are deployed together.
+
+## Create the Environment 
+From the left hand navigation, click on the `Environments` tab. If you're joining an existing hub you may see several environments here or if its a new hub this could be the first.  The process for adding an environment remains the same, click on the `Create` button at the top of the page to open the create environment wizard. 
+
+* Name - Give your environment a name, this is a required field but the name itself has no bearing on how the environment is configured.
+* Cluster - Select which [infrastructure cluster](/reference/infrastructure/clusters) to crate this environment in.  If you only have one cluster there will only be one option.  If you're unsure and there are multiple options, ask your hub administrator.
+* Description - Add a description to help others understand the purpose of this environment.  This is optional but can be helpful.
+* Advanced - The private networks in all environments on Cycle are IPv6, this means that all containers will be assigned only IPv6 IP addresses for container to container communication.  If you'd like the containers to also be assigned IPv4 addresses you can enable `Legacy Networking` here by clicking the checkbox.  
+
+To finalize the creation of the environment click `Create Environment` and Cycle will initialize the environment for you. 
+
+
+
