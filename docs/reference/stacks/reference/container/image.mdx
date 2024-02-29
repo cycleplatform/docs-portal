@@ -15,13 +15,36 @@ import { RemoteRepo, RepoTable, DetailsExamples } from "../components/images/ori
 | -------- | ------ | :------: | ------------------------------------------------------- |
 | `name`   | String |    ❌    | The name of the image.                                  |
 | `origin` | Object |    ✅    | An object holding information about the image's origin. |
+| `build`   | Object |    ❌    | Build time configuration data.                                  |
+| `builder`   | Object |    ❌    | The image builder to use.  This can be an integration, example "depot".                                  |
 
 ```json
 {
   "name": "Image Name",
-  "origin": { ... image_origin }
+  "origin": { ... image_origin },
+  "build": {
+    "args": {
+      "SOME_BUILD_ARG": "some-value"
+    }
+  },
+  "builder":  {
+    "integration_id": "cycle-depot"
+  }
 }
 ```
+
+## Build 
+
+| Field    | Type   | Required | Description                                             |
+| -------- | ------ | :------: | ------------------------------------------------------- |
+| `args`   | Object |    ❌    | Build time arguments.                                  |
+
+## Builder
+
+| Field    | Type   | Required | Description                                             | 
+| -------- | ------ | :------: | ------------------------------------------------------- |
+| `integration_id`   | String |    ✅    | The integration id of the builder to use.                                  |
+
 
 ## Image Origin Object
 
