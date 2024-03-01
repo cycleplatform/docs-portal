@@ -16,7 +16,7 @@ Beyond this understanding, we'd like users to also know that the goal with Cycle
 |---------|---------------|
 |[Hubs](/reference/hubs) | The hub is the highest level resource. It is directly tied to a tier and it describes the access rights you have for the platform, the number of users, servers, environments, images, etc... All other resources, when created, are a part of a hub.| 
 | [Infrastructure](/reference/infrastructure) | Represents the collection of servers, clusters, providers, IPs, and auto scale groups|
-| [Providers](/reference/infrastructure/providers) | A provider on Cycle is either a native provider or a custom integration. Example AWS is a native provider a user can easily integrate with | 
+| [Providers](/reference/hubs/integrations/providers) | A provider on Cycle is either a native provider or a custom integration. Example AWS is a native provider a user can easily integrate with | 
 | [Clusters](/reference/infrastructure/clusters)| A cluster represents a group of servers from one or more providers that are associated by name. | 
 | [Servers](/reference/infrastructure/servers) | Servers are simply compute nodes deployed through the platform, into a cluster. | 
 | [IPs](/reference/infrastructure/#ips) | IP's on Cycle are IPv4 or IPv6 addresses that have been provisioned from a provider and are either in use or free to be assigned. | 

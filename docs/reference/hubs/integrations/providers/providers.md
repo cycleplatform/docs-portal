@@ -11,21 +11,21 @@ A provider on Cycle represents either an IaaS provider or an on-prem / colo type
 
 Adding a provider is a simple process and allows the user to fully manage their infrastructure through Cycle.
 
-- Navigate to the infrastructure dashboard by selecting Infrastructure from the main left-hand navigation.
-- Next select the Providers tab from the top nav.
-- Select The Add Provider button at the top right of the screen.
-- Pick the provider of your choice from the dropdown and add credentials.
-- Click the Verify button to verify the credentials are correct.
+- Select `Hubs` from the main left-hand navigation.
+- Click `Integrations` in the menu.
+- Select the provider to integrate with and use the `Add Integration` button to bring up the modal.
+- Add the appropriate credentials (guides linked below).
+
 
 ## Currently Supported Providers
 
 Cycle currently supports the following providers:
 
 
-- [AWS](/reference/infrastructure/providers/configure-aws)
-- [GCP](/reference/infrastructure/providers/configure-gcp)
-- [Equinix-Metal](/reference/infrastructure/providers/configure-equinix)
-- [Vultr](/reference/infrastructure/providers/configure-vultr)
+- [AWS](/reference/hubs/integrations/providers/configure-aws)
+- [GCP](/reference/hubs/integrations/providers/configure-gcp)
+- [Equinix-Metal](/reference/hubs/integrations/providers/configure-equinix)
+- [Vultr](/reference/hubs/integrations/providers/configure-vultr)
 
 ## Auxillary Native Providers
 
@@ -41,4 +41,10 @@ The supported base url's are:
 
 Alongside these base url's, the user will also need to provide the respective API key, secret, config, or whatever that provider requires.
 
-![Aux Provider](https://static.cycle.io/portal-docs/infrastructure/custom-aux-provider.png)
+
+
+
+## Provider Names and Identifiers
+The provider configuration forms support both name (optional) and identifier (required).  While the native providers will have the identifier filled in with a default value, this value can be changed to the user preference.  
+
+Valid identifiers support alphanumeric chars and `-`'s.

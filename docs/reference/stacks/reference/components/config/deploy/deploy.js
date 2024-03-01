@@ -28,9 +28,9 @@ export const RestartExample = `{
 }`;
 
 export const HealthCheckExample = `{
-  "command": "healthcheck_script.sh"
+  "command": "healthcheck_script.sh",
   "retries": 10,
-  "interval": "5s",
+  "interval": "15s",
   "timeout": "30s",
   "restart": true,
   "delay": "120s"

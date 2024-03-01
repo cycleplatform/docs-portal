@@ -3,6 +3,11 @@
 
 Cycle creates a paradigm shift when it comes to dealing with your infrastructure. The primary focus when using the platform is your containers, while the servers underneath appear as a giant pool of distributed resources.
 
+
+:::info Infrastructure Providers 
+Looking for info on how to add a provider to your hub? Check out the [provider integrations](/reference/hubs/integrations/providers) page. 
+:::
+
 ## Infrastructure Dashboard
 
 Selecting the infrastructure tab from the main navigation results in being routed to the infrastructure dashboard.

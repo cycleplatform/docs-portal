@@ -37,9 +37,10 @@ If you haven't set up a Backblaze account you can do so as part of this step in 
 `Cycle Hub Level Integration`
 
 1. Navigate to [Cycle](https://portal.cycle.io) and log into the desired hub.
-2. Click settings on the left hand navigation - from there select “Integrations”.
+2. Click Hubs on the left hand navigation - from there select “Integrations”.
+3. Click on the Backblaze integration and then `Add Integration` button.
 3. Paste the “Application Key” key, key ID, and the bucket name into the form fields under Backblaze.
-4. Save the changes using the “Update Integrations” button.
+4. Save the changes using the “Add” button.
 
 The container to be backed up must be a stateful container, if a container is not stateful the backup integration option in the container config will be disabled.
 
