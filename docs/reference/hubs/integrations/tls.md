@@ -4,7 +4,7 @@ sidebar_position: 4
 ---
 
 
-## TLS Integration
+# TLS Integration
 
 This integration is created during hub create and is used in conjunction with let's encrypt to create [TLS Certificates for linked records](/). 
 
