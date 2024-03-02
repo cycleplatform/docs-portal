@@ -9,3 +9,19 @@ With Cycle, you own the infrastructure but in order to add new servers through t
 
 Steps to add a provider:
 
+1. Navigate to the [portal](https://portal.cycle.io) and log in, then select the hub from your hubs list.  (if you only have one hub this will automatically be selected) 
+2. Click on the `Hub` tab in the left-hand navigation bar and then `Integrations`
+3. Select the infrastructure provider you'd like to add from the list of available providers and then use the `Add Integration` button to open the provider's configuration modal.
+
+
+For a guide on how to generate provider specific credentials see the links on this [page](/reference/hubs/integrations/providers#currently-supported-providers)
+
+:::caution Questions About On Prem or Colo Infrastructure?
+Yes! We support on-prem and colo infrastructure.  If you have a unique infrastructure setup, please reach out to us through our [Public Slack](https://slack.cycle.io).  We'd love to help you get started with an integration. 
+:::
+
+## Verified?
+
+After the credentials are added, the provider will be verified.  This step makes a preliminary call to the provider through Cycle's API to ensure the credentials are valid.  If the verification fails, there's likely a configuration step thats been missed.  
+
+If you get hung up on this step, please reach out to us through our [Public Slack](https://slack.cycle.io).  Our team is happy to help clear up any confusion or help diagnose problems. 

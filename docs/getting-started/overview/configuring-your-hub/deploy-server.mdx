@@ -3,3 +3,38 @@ sidebar_label: Deploying a Server
 sidebar_position: 2
 displayed_sidebar: gettingStartedSidebar
 ---
+
+# Deploying A Server
+
+
+## Prerequisites
+
+* [Integrating with a Provider](/getting-started/overview/configuring-your-hub/integrating-provider)
+
+Now that the provider has been configured, the next step is to get a server online.  This is a super straight forward process and can be done in a few simple steps.
+
+1. Click on `Infrastructure` from the main navigation and then `Servers`. 
+2. Click on the `Deploy` button to open the server deploy wizard.
+3. Click on the provider who you've integrated with and select a location that you'd like to deploy the server to.
+4. Use the final page of the form to select the server you'd like and click `Deploy`. (This form is explained in more detail below). 
+
+
+Once you've deployed the server, it will take a few minutes to come online.  During that time, Cycle will be programmatically interacting with your provider to do things like:
+
+1. Install CycleOS on the server. 
+2. Set up the servers IP address.
+
+Its also common for Cycle to create its own VPC at the provider the first time a server is deployed.  This is so Cycle can have a safe, managed space to create infrastructure in for the users that isn't "inside" of other VPCs.
+
+
+## Server Deploy Wizard Final page
+The final page of the server deploy wizard has a lot of information for the user.  For a full breakdown check out [this page](/reference/infrastructure/servers/#add-server)
+
+
+Here is a great image from that page with some descriptions of what you're seeing there: 
+
+![deploy form](https://static.cycle.io/portal-docs/server/create.png)
+
+1. At the bottom of the order summary, users are presented with the sum of new costs to be expected from their provider & Cycle after deploying this server.
+2. The hub usage summary shows the current state of your infrastructure for a given hub and then changes to accommodate the servers a user adds to the order summary. A node represents a server.
+3. Server selection is done by using the `^` carrat button to increase or `v` carrat to decrease the number of servers of any given type. The orders summary shows the total selection in real time.

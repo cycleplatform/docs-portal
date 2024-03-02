@@ -25,6 +25,36 @@ Now, all thats left to do is configure the container so that:
 2. Check port mapping
 
 
-## Enable Public Network 
+## Public Network 
+Currently the container dashboard should look like this.  
+
+![Network Disable](https://static.cycle.io/portal-docs/containers/network-map/network-disable.png)
+
+This network diagram was designed to help users diagnose what configuration changes should be made in order for the container to have access to public networking 
+
+If you were to hover over the green checkmark, you'd see that it says `Connection between internet and load balancer configured correctly`. So in the previous step where we set up the load balancer, this was enabled.  
+
+**BUT**
+
+If you hover over the crossed out circle you'll see that it says `container network is disabled`.  So let's start by enabling that. 
+
+
+
+## Enabling the Public Network
+
 Head back to the container we've been working with and click on the `Config` tab in the container modal. At the top of the page you'll see a network section and in this section a setting for `Public Network`.  If you've followed the previous steps this will currently say `Disable`. 
 
+Select `Enable` from the list and then use the `Save Container` button to save the changes. 
+
+![Port Config](https://static.cycle.io/portal-docs/containers/network-map/no-port.png)
+
+With the public network set to `Enable` the network diagram has updated to show that `the container has no open ports that the load balancer accepts traffic on`.  
+
+Heading back to the container network configuration settings, you should have a ports field with no entries, so this message makes a lot of sense.  Add `80:80` and `443:80` to the ports field and then save the container. 
+
+![Correctly configured](https://static.cycle.io/portal-docs/containers/network-map/configured.png)
+
+
+:::success DNS Linked Record
+If you skipped the step where we set up a DNS zone and a linked record, you'll have an error in your network diagram.  If you'd like to resolve that just head over to [that step](/getting-started/overview/taking-container-public/config-dns) now and follow along.
+:::
