@@ -5,19 +5,26 @@ import Link from "@docusaurus/Link";
 
 const FeatureList = [
   {
-    title: "Portal Docs",
+    title: "Getting Started",
+    Svg: require("../../static/svgs/duotone/book.svg").default,
+    to: `/getting-started/overview`,
+    className: styles.featureButton,
+    description: <>Portal centric, getting started guide.</>,
+  },
+  {
+    title: "Portal Reference",
     Svg: require("../../static/svgs/duotone/book.svg").default,
     to: `/reference/intro`,
     className: styles.featureButton,
-    description: <>The portal is Cycle's graphical user interface that allows you to easily and quickly manage environments, containers, and deployment.</>,
+    description: <>The full portal reference documentation.</>,
   },
-  {
-    title: "API Docs",
-    to: "https://api-docs.cycle.io",
-    Svg: require("../../static/svgs/duotone/book-heart.svg").default,
-    className: styles.featureButton,
-    description: <>The Cycle API is a REST-based, resource-oriented API designed to be easy to use and understand. Using this API, you are able to fully interact with the Cycle Platform.</>,
-  },
+  // {
+  //   title: "API Docs",
+  //   to: "https://api-docs.cycle.io",
+  //   Svg: require("../../static/svgs/duotone/book-heart.svg").default,
+  //   className: styles.featureButton,
+  //   description: <>The full Cycle API documentation.</>,
+  // },
 ];
 // onClick={() => (window.location.href = to)}
 

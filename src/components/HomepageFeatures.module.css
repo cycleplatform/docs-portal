@@ -1,26 +1,35 @@
 .features {
   display: flex;
   width: 100%;
-  justify-content: start;
+  justify-content: center;
+  
 }
 
 .feature {
   border-radius: 0.5rem;
-  text-align: center;
+  background-color: var(--cycle-black-accent);
   display: flex;
   flex-direction: column;
-  background-color: var(--cycle-black-accent);
-  padding: 2rem;
+  padding: 1rem; /* Adjust padding as needed */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* This creates a subtle shadow around the card */
+  transition: 0.3s; /* Adds a smooth transition for hover effects */
   cursor: pointer;
-  height: 100%;
-  justify-content: space-between;
+
+  align-items: center;
+  
 }
 
 .featureButton {
   margin: 0.5rem;
+  padding: 0.5rem 1rem; /* Provide some space inside the button */
   background-color: var(--cycle-blue);
   border: none;
   color: white !important;
+  text-align: center; /* Center the text inside the button */
+  text-decoration: none;
+  display: inline-block;
+  
+  transition: background-color 0.3s; /* Smooth background color transition on hover */
 }
 
 .featureButton:hover {
