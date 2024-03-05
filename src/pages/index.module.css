@@ -15,8 +15,8 @@
   justify-content: center;
   padding: 2rem;
   color: white;
-  background-image: url("/static/imgs/cycle/hero-background-layer.svg");
-  background-size: cover;
+  
+  
 
   flex: 1 0 auto;
 }
@@ -32,23 +32,25 @@
   align-items: start;
   justify-content: center;
   color: var(--cycle-white) !important;
+  height: 100%
 }
 
 .heroTitle {
-  font-weight: 800;
+  font-weight: 600;
   letter-spacing: 1px;
-  font-size: 4rem;
+  font-size: 3rem;
   margin-bottom: 0;
 }
 
 .heroSubtitle {
   padding: 1.5rem 0 3rem;
   margin-bottom: 0;
+  font-weight: 400;
+  font-size: 1.25rem
+
 }
 
-.heroImage {
-  width: 75%;
-}
+
 
 @media screen and (max-width: 966px) {
   .heroTitle {

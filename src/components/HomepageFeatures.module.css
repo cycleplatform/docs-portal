@@ -21,15 +21,18 @@
 
 .featureButton {
   margin: 0.5rem;
-  padding: 0.5rem 1rem; /* Provide some space inside the button */
+  display: inline-block;
+  border-radius: 0.5rem;
+  border-width: 1px;
+  border-color: var(--cycle-blue);
+  padding: 0.5rem 0.75rem; 
   background-color: var(--cycle-blue);
-  border: none;
   color: white !important;
   text-align: center; /* Center the text inside the button */
   text-decoration: none;
   display: inline-block;
-  
   transition: background-color 0.3s; /* Smooth background color transition on hover */
+  font-size: 0.875rem;
 }
 
 .featureButton:hover {

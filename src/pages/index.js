@@ -14,14 +14,13 @@ function HomepageHeader() {
           <div className={"col col--7"}>
             <h1 className={styles.heroTitle}>{siteConfig.title}</h1>
             <p className={clsx("hero__subtitle", styles.heroSubtitle)}>
-              Cycle is a SaaS platform that makes running containerized
-              applications on cloud infrastructure simple.
+            Cycle is the leading LowOps platform built to simplify containers, standardize infrastructure, and automate DevOps. Deploy to your own infrastructure whether it's in the cloud, on-prem, or a mixture of both.
             </p>
             <HomepageFeatures />
           </div>
           <div className={clsx("col col--5", styles.heroImageDiv)}>
             <img
-              src="imgs/cycle/logo/cycle-platform-diagram.svg"
+              src="imgs/cycle/company.svg"
               className={styles.heroImage}
             />
           </div>

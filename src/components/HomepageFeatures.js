@@ -9,14 +9,14 @@ const FeatureList = [
     Svg: require("../../static/svgs/duotone/book.svg").default,
     to: `/getting-started/overview`,
     className: styles.featureButton,
-    description: <>Portal centric, getting started guide.</>,
+    description: <>Learn platform primitives, get your hub configured, and get your first container online.</>,
   },
   {
     title: "Portal Reference",
     Svg: require("../../static/svgs/duotone/book.svg").default,
     to: `/reference/intro`,
     className: styles.featureButton,
-    description: <>The full portal reference documentation.</>,
+    description: <>The portal reference aims to be a single source of truth for all things portal. </>,
   },
   // {
   //   title: "API Docs",
