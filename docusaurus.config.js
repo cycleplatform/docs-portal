@@ -56,6 +56,11 @@ module.exports = {
           label: "Guides"
         },
         {
+          href: "https://api-docs.cycle.io",
+          target: "_blank",
+          label: "API Docs"
+        },
+        {
           
           href: "https://slack.cycle.io", 
           target: "_blank", 
