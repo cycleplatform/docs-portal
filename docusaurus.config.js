@@ -3,7 +3,7 @@ const darkCodeTheme = require("prism-react-renderer").themes.dracula;
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
-  title: "Portal Documentation",
+  title: "Cycle Documentation",
   tagline: "Cycle.io Documentation",
   url: "https://docs.cycle.io",
   baseUrl: "/",
