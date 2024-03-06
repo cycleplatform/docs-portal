@@ -9,10 +9,15 @@ Each entry in the scoped variables array will start with a variable. They are st
 
 | Field        | Type   | Required | Description                                                                                                                                                                      |
 | ------------ | ------ | :------: | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `identifier` | String |    ✅    | The variable identifier, sometimes referred to as the key.                                                                                                                       |
+| `identifier` | String |    ✅    | This is the scoped variable resource identifier.   Must be alphanumeric, dashes `-` allowed.                                                                                                                    |
 | `scope`      | Object |    ✅    | An object holding information about the container associations for the given variable.                                                                                           |
 | `access`     | Object |    ✅    | Information about how the scoped variable will be able to be accessed.                                                                                                           |
 | `source`     | Object |    ❌    | An object with the type of value, `raw` or `url` that pertains to how the environment variable value will be set or retrieved at runtime, and the details of the implementation. |
+
+
+
+
+
 
 ## Scope
 
@@ -38,9 +43,17 @@ The access object defines in it the way the scoped variable can be accessed in a
 
 | Field          | Type    | Required | Description                                                                                                          |
 | -------------- | ------- | :------: | -------------------------------------------------------------------------------------------------------------------- |
-| `env_variable` | Boolean |    ✅    | A boolean where true represents this scoped variable being available through the environment variable format.        |
+| `env_variable` | Object |    ❌    | An object that defines the environment variable's key.        |
 | `internal_api` | Object  |    ❌    | An object with an optional duration. Settings for use with [(see)internal api](/reference/environments/scoped-variables). |
 | `file`         | Object  |    ❌    | Configuration options for the [(see) file](/reference/environments/scoped-variables) type.                                |
+
+## Environment Variable
+
+
+| Field          | Type    | Required | Description                                                                                                          |
+| -------------- | ------- | :------: | -------------------------------------------------------------------------------------------------------------------- |
+| `key` | Object |    ✅     | The environment variable key to be used when accessing the environment variable type scoped variable from within the container.       |
+
 
 ### Internal API
 
@@ -53,7 +66,7 @@ The access object defines in it the way the scoped variable can be accessed in a
 | Field    | Type    | Required | Description                                                                                                  |
 | -------- | ------- | :------: | ------------------------------------------------------------------------------------------------------------ |
 | `path`   | String  |    ❌    | The path where this file should be mounted. Default is `/var/run/cycle/variables/<myVariable>`               |
-| `decode` | Boolean |    ❌    | A boolean where true represents this file has a base64 encoded text that should be decoded during retrieval. |
+| `decode` | Boolean |    ✅    | A boolean where true represents this file has a base64 encoded text that should be decoded during retrieval. |
 
 ## Source
 
