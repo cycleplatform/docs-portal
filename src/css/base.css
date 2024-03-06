@@ -17,8 +17,8 @@
   --ifm-color-primary-lightest: #83ccff;
 
   /* Infima Base Font Details */
-  --ifm-code-font-size: 95%;
-  --ifm-font-size-base: 1.2rem;
+  /* --ifm-code-font-size: 125%; */
+  --ifm-font-size-base: 17px;
 
   /* Infima Nav and Footer */
   --ifm-navbar-background-color: var(--cycle-black-accent);
@@ -54,6 +54,10 @@ html[data-theme="dark"] {
   color: var(--cycle-white);
 }
 
+body{
+  letter-spacing: 1px;
+}
+
 html[data-theme="light"] aside a.menu__link,
 html[data-theme="light"] aside a.menu__link--sublist::after {
   color: var(--cycle-black);
@@ -79,4 +83,8 @@ html[data-theme="light"] aside a.menu__link--active {
 .main-wrapper {
   display: flex;
   flex-direction: column;
+}
+
+.footer__col {
+  max-width: 20rem;
 }

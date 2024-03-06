@@ -64,24 +64,7 @@ function Feature({ Svg, title, to, className, description }) {
   );
 }
 
-// function Feature({ Svg, title, to, className, description }) {
-//   return (
-//     <div className={clsx("col col-8 col-md-8 col-lg-8")}>
-//       <div className={styles.feature}>
-//         <div className="text--center">
-//           <Svg className={styles.featureSvg} alt={title} />
-//           <h6 className={styles.featureTitle}>{title}</h6>
-//           <p className={styles.featureDescription}>{description}</p>
-//         </div>
-//         <div>
-//           <Link className={clsx("button button--secondary button--lg", className)} to={to}>
-//             {title}
-//           </Link>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
+
 
 export default function HomepageFeatures() {
   return (

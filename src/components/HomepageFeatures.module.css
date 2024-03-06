@@ -1,9 +1,8 @@
-
 .features {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr); 
-  gap: 1rem;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 2rem;
 }
 
 .feature {
@@ -13,10 +12,10 @@
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  padding: 0.5rem;
+  padding: 2rem;
   cursor: pointer;
   align-items: center;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 
 .featureButton {
@@ -25,7 +24,7 @@
   border-radius: 0.5rem;
   border-width: 1px;
   border-color: var(--cycle-blue);
-  padding: 0.5rem 0.75rem; 
+  padding: 0.5rem 0.75rem;
   background-color: var(--cycle-blue);
   color: white !important;
   text-align: center; /* Center the text inside the button */
@@ -52,7 +51,7 @@
 }
 
 .featureTitle {
-  font-size: 1rem;
+  font-size: 1.5rem;
   margin-bottom: 0.5rem;
 }
 
@@ -69,10 +68,9 @@
 
 @media screen and (max-width: 966px) {
   .features {
-    justify-content: center;
-  }
-  .feature {
-    margin: 2rem 0;
-    height: auto;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    gap: 1rem;
   }
 }
