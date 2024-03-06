@@ -20,7 +20,7 @@ function HomepageHeader() {
           </div>
           <div className={clsx("col col--5", styles.heroImageDiv)}>
             <img
-              src="imgs/cycle/company.svg"
+              src="imgs/cycle/platform.svg"
               className={styles.heroImage}
             />
           </div>
