@@ -38,6 +38,11 @@ served over the private network.
     Note left of User Container One: IP List: [10.0.11.100, 10.0.11.101]
     User Container One->>User Container Two: Request files from http://10.0.11.100/static/file`} />
 
+
+:::success Prefer IPv6 for Faster Speeds
+If your container to container communication feels slow and your application is not preferring IPv6, you may be encountering a situation where your discovery service purposely delays responses for IPv4 addresses by 150 ms. 
+:::
+
 ## Managing Discovery
 
 Users can manage environment services by opening the given services, service modal on environment dashboard.

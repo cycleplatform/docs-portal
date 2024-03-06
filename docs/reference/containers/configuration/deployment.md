@@ -63,10 +63,14 @@ If you want to describe an "inline script" in the command form field use `""` qu
 
 **Retries** - How many times to try the command.
 
+**Delay** - How long to wait before performing an initial health check when the instance starts. The state of the instance will be `null`` until the first check is performed (see below for more info).
+
 **Interval** - A time string between tries to wait before trying again. This accepts a string with modifiers. Example for 3 days 15 hours 10 minutes 5 seconds `3d15h10m5s`
+
+
 **Timeout** - A time string that says the amount of time to wait before the assumption the the command has failed. This accepts a string with modifiers. Example for 3 days 15 hours 10 minutes 5 seconds `3d15h10m5s`
 
-**Delay** - How long to wait before performing an initial health check when the instance starts. The state of the instance will be `null`` until the first check is performed (see below for more info).
+**Restart on Fail** - If checked, when the container enters the unhealthy state it will automatically restart.
 
 :::info Health State
 To learn more about the health state of the container instances as they respond to health checks check the [Instances API Docs](https://api-docs.cycle.io/docs/public-api/get-container-instance). Here users can expand the `data` object, then `state`, and finally `health` to get an idea of what the health states mean.
