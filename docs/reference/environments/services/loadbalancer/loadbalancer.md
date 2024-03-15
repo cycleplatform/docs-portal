@@ -1,8 +1,3 @@
----
-sidebar_label: Load Balancer
-sidebar_position: 3
----
-
 # Load Balancer
 
 Cycle provides powerful, automatic load balancing to every environment.
@@ -58,7 +53,7 @@ When traffic leaves a container (egress), that traffic is routed "out" through t
 
 ## V1 Load Balancer
 
-Configuration options for the [native load balancer (v1)](/reference/environments/services/v1).
+Configuration options for the [native load balancer (v1)](/reference/environments/services/loadbalancer/v1).
 
 ## HAProxy Load Balancer
 

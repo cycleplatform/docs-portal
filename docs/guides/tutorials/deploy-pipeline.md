@@ -52,7 +52,7 @@ For this tutorial, we'll use the deploy container form to create our container a
 
 After giving the container a name, you can leave everything else as the default settings until you get to `Image`.  In the image section choose `Recent Images` and then your newly created image from the dropdown. 
 
-In the `Network` section change `Public Network` to enable and add the port mappings.  We want to take advantage of [TLS termination at the load balancer](/reference/environments/services/loadbalancer#ssl-termination), so if your service listens on 80 you'd add the following port mappings `80:80` & `443:80`. 
+In the `Network` section change `Public Network` to enable and add the port mappings.  We want to take advantage of [TLS termination at the load balancer](/reference/environments/services/loadbalancer/#ssl-termination), so if your service listens on 80 you'd add the following port mappings `80:80` & `443:80`. 
 
 At the bottom of the page, enable the deployment using the toggle and enter a version for this deployment.  
 
