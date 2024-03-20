@@ -8,12 +8,10 @@ sidebar_position: 2
 Stages and steps are the collections of actions that make up pipelines on the Cycle platform.
 
 :::info Use Reference
-Every step has the option to be added as a **Reference**. A reference is something that can be "referred" to in later steps for this or other stages. A reference cannot be referred to until it is created.
+Most steps have the option to be added as a **Reference**. A reference is something that can be "referred" to in later steps for this or other stages. A reference cannot be referred to until it is created.
 :::
 
-:::success More Guides Coming Soon
-There will be more pipeline guides coming very soon.
-:::
+
 
 ## Steps Action List
 
@@ -44,6 +42,11 @@ The following is a full list of supported pipeline steps.
 - **Prune Environment Deployments** - prunes all deployments (including their containers) in an environment that **do not** have tags associated with them. 
 - **Start Environment Deployment** - start a deployment by version or tag for a given environment.
 - **Stop Environment Deployment** - stop a deployment by version or tag for a given environment.
+- **Wait For Environment Deployment Health Check** - a step that waits for a given environment deployment to be deemed healthy.  
+
+:::success Health Check Step
+This step looks to see if there are any containers in the deployment which have the deployment > health check configuration enabled.  If there are it waits for those containers to check in as healthy or it fails
+:::
 
 Each of these steps can be added to a stage one or more times through the editor. All steps can be referenced by an optional identifier and the results of that step can be reused in other steps.
 

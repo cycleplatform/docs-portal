@@ -22,7 +22,6 @@ CYCLE_CONTAINER_IDENTIFIER | An identifier used for this container.
 CYCLE_CONTAINER_ID | The ID of the container.
 CYCLE_COMPUTE_PROXY | The Cycle compute proxy url.
 CYCLE_ENVIRONMENT_ID | The ID of the environment this container is deployed in.
-CYCLE_FIRST_START | If this is the first time an instance starts this value will be yes, after that it will be no.
 CYCLE_INSTANCE_ID | The ID of the instance.
 CYCLE_INSTANCE_IPV6_IP | The IPv6 address of this specific instance.
 CYCLE_INSTANCE_IPV6_SUBNET | The subnet of the instance itself. If there are 5 instances this will be 1-5 depending on the instance.
@@ -31,6 +30,11 @@ CYCLE_LOCATION_ID | The location of the server that this container is deployed t
 CYCLE_PROVIDER_IDENTIFIER | An identifier that indicates the provider of the server.
 CYCLE_PROVIDER_LOCATION | The physical location of the server displayed as an abbreviation.
 CYCLE_SERVER_ID | The ID of the server this container is deployed to.
+CYCLE_DEPLOYMENT_VERSION | If the container instance is part of a deployment, this is the version of that deployment.
+CYCLE_PROVIDER_VENDOR | The provider that the container instance is currently running on. 
+CYCLE_CPU_PERIOD | A value in microseconds. 100,000 is equal to 100 milliseconds or 100% of a period. 
+CYCLE_CPU_QUOTA | A value in microseconds. 100,000 is equal to 100 milliseconds or 100% of one core.
+CYCLE_CPU_LIMITED | A value that reads yes if the container instance has limits on how much of the underlying CPU it can use or no if it is unlimited. 
 
 :::caution 
 Environment variables defined on the image cannot be removed. Cycle interprets these as critical to the way your program works. However, their values can be changed, which may be useful for things such as specific development-only settings. 
