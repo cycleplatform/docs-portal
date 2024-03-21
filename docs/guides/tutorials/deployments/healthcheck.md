@@ -104,7 +104,7 @@ Now that the health check step is in place we can be sure that the deployment is
 
 Add a new step `Update Deployment Tag Version`.  The Environment is the same one we've been using throughout this tutorial, but the deployment section now asks for both a `Tag` and a `Version`.  In previous steps there were times where it was one or the other but here we provide both. Why? Because here we are creating a new association for the tag and moving it from one version to a new version. 
 
-For the `Tag` field, if you followed my earlier example, we'll be entering `current` as the tag. The version field should be the familiar `{{deployment-versi\on}}`.  Create the step and we're almost done!
+For the `Tag` field, if you followed my earlier example, we'll be entering `current` as the tag. The version field should be the familiar `{{deployment-version}}`.  Create the step and we're almost done!
 
 ### Optional Sleep
 You can add an optional `Sleep` step here for 5-10 seconds (`5s` `10s` etc). DNS can take a few milliseconds to update at times and certain users prefer to keep the previous deployment around for a few seconds before pruning it (the next step).  So if you'd like add a sleep here, or if not move to the next step. 
