@@ -1,6 +1,6 @@
 ---
 sidebar_label: Members Management
-sidebar_position: 1
+sidebar_position: 2
 ---
 # Managing Hub Members
 
@@ -13,13 +13,17 @@ All member management is done through the members tab of the hub settings.
 ### Inviting New Members
 After navigating to the members tab of hub settings, locate the "Invite Members" box on the right hand side.
 
-1.Enter the email of the person you wish to invite.
-2. Select the role this person should have in the hub. See here for a breakdown of roles and permissions.
+
+1. Enter the email of the person you wish to invite.
+2. Select the [role](/reference/hubs/members-roles-and-permissions/) this person should have in the hub. 
 3. Click "Invite". Once your invitation has been sent, you'll receive a notification at the bottom of your screen as confirmation.
 
-:::info
-Only admins and the owner can invite new hub members. Admins cannot invite others to become admins, only the owner has this ability.
+
+:::caution Rank
+When you are creating an invite, you can only create a user with a role that is lower in [rank](/reference/hubs/members-roles-and-permissions/#rank) than the role of the user you're logged into.  Example: an admin cannot create other admins.
 :::
+
+
 
 ### Accepting an Invitation
 If you receive a Cycle invitation, you can access your invite by navigating to your account settings and clicking "Hubs".
