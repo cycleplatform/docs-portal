@@ -131,7 +131,7 @@ export const capabilities = [
   },
   {
     name: "environments-services-manage",
-    description: "User has the ability to modify environment services, such as the VPN.",
+    description: "User has the ability to modify environment services, such as the load balancer, discovery, or scheduler.",
     roles: [Role.ADMIN, Role.DEVOPS],
   },
   {
