@@ -2,8 +2,7 @@
 
 # Environments
 
-Environments are logical groupings of containers. All containers deployed inside an environment automatically have a
-private network built between them, enabling seamless communication.
+Think of environments as global VPC's that span the nodes in a given cluster.  These networks between nodes can exists next to each other but act independently and are fully isolated from each other.  Environments each have their own set of [services](#environment-services), which support functionality and help further isolate (by not being shared). 
 
 Containers deployed in environments are automatically configured to use environment private networks. For default
 environments this is an IPv6 network, while `legacy` environments also configure an IPv4 network as well.
