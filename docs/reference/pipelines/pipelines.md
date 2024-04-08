@@ -21,7 +21,7 @@ To create a new pipeline:
 * Name the pipeline and then click the Create Pipeline button on that page. 
 * Choose standard or dynamic pipeline type (can be updated later).
     * **Standard** - Statically defined pipeline (no variables).
-    * **Dynamic** - Pipeline can use dynamic [variable support](/reference/pipelines/variables)
+    * **Dynamic** - Pipeline can use dynamic [variable support](/reference/pipelines/variables/)
 
 ### Update & Delete
 While a pipeline is selected, the horizontal navigation will show a settings tab.  This tab can be used to update the name of the pipeline, see the pipeline ID, and delete the pipeline.
@@ -46,7 +46,10 @@ The create form will ask for a name and a list of IP's (optional) that are appro
 
 After creating the trigger key, the secret will be available only once, so please copy the secret into a secure place before navigating away from the page.
 
-Also, on the page, will be an example HTTP call showing how to use the trigger key.  
+Also, on the page, will be an example HTTP call showing how to use the trigger key. 
+
+### Trigger Keys with Variables
+If you're using [pipeline variables](/reference/pipelines/variables/), you'll see that there is extra data needed for each use of the key.  Make sure you're submitting the trigger with the additional variable data you've outlined in your pipeline!
 
 ### Managing Trigger Keys
 When looking at the available trigger keys, a user can click on a specific key to see the current key settings.  
