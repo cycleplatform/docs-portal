@@ -24,6 +24,45 @@ This pattern allows for maximum flexibility when crafting backup commands. Users
 It is also perfectly valid to invoke a script via the command. The script needs to write to stdout or read from stdin for the respective create & restore functions. If the script is not reachable by traversing the container's path make sure to include the absolute path to the script in the command.
 
 
+:::note Double Quotes and Variables
+Double quotes allow the usage of environment variables when the script   executes). See below for examples.
+:::
+
+### MySQL Example
+
+
+
+| Operation | Command                                              |
+|-----------|------------------------------------------------------|
+| Backup    | `"mysqldump --all-databases -u root -p$MYSQL_ROOT_PASSWORD"` |
+| Restore   | `"mysql -u root -p $MYSQL_ROOT_PASSWORD < /dev/stdin"`       |
+
+
+### PostgreSQL Example
+
+| Operation | Command                                               |
+|-----------|-------------------------------------------------------|
+| Backup    | `"PGPASSWORD=$POSTGRES_PASSWORD pg_dump  -U $POSTGRES_USER --clean -Ft $POSTGRES_DB"` |
+| Restore   | `"PASSWORD=$POSTGRES_PASSWORD pg_restore  -U $POSTGRES_USER -Ft  -d $POSTGRES_DB"`      |
+
+
+### MongoDB Example
+
+| Operation | Command                                         |
+|-----------|-------------------------------------------------|
+| Backup    | `"mongodump --archive -u $USERNAME -p $PASSWORD"` |
+| Restore   | `"mongorestore --archive -u $USERNAME -p $PASSWORD"` |
+
+
+### Tar Example
+
+| Operation | Command                               |
+|-----------|---------------------------------------|
+| Backup    | `"tar czf /dev/stdout -C /var/lib/test backup"` |
+| Restore   | `"tar xzf /dev/stdin -C /var/lib/test"`         |
+
+
+
 ## Viewing Backups
 
 To view a backup, navigate to the container that has been backed up and select the "Backups" option from the container modal navigation.
