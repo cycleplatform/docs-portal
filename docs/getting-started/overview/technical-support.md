@@ -17,4 +17,4 @@ While working through issues can be frustrating, our team loves giving a helping
 * And any attempted solutions or any information on what you've tried to solve the issue so far.
 
 
-Finally, if you've looked in this documentation for a solution to the issue and not found an answer, we'd love to know about that as well.  We're dedicated to making this resource a single source of truth for all things Cycle (along with the [API docs](https://api-docs.cycle.io))
+Finally, if you've looked in this documentation for a solution to the issue and not found an answer, we'd love to know about that as well.  We're dedicated to making this resource a single source of truth for all things Cycle (along with the [API docs](https://api.docs.cycle.io))

@@ -73,7 +73,7 @@ If you want to describe an "inline script" in the command form field use `""` qu
 **Restart on Fail** - If checked, when the container enters the unhealthy state it will automatically restart.
 
 :::info Health State
-To learn more about the health state of the container instances as they respond to health checks check the [Instances API Docs](https://api-docs.cycle.io/docs/public-api/get-container-instance). Here users can expand the `data` object, then `state`, and finally `health` to get an idea of what the health states mean.
+To learn more about the health state of the container instances as they respond to health checks check the [Instances API Docs](https://api.docs.cycle.io/tag/Containers#operation/getInstance). Here users can expand the `data` object, then `state`, and finally `health` to get an idea of what the health states mean.
 
 More advanced uses may use this information to build a healthiness probe for their instances.
 :::

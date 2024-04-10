@@ -30,7 +30,7 @@ const FeatureList = [
   },
   {
     title: "API Docs",
-    to: "https://api-docs.cycle.io",
+    to: "https://api.docs.cycle.io",
     Svg: require("../../static/svgs/duotone/book-heart.svg").default,
     className: styles.featureButton,
     description: <>Complete public and internal API documentation, powered by OpenAPI spec.</>,

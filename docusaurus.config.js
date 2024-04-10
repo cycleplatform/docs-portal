@@ -56,7 +56,7 @@ module.exports = {
           label: "Guides"
         },
         {
-          href: "https://api-docs.cycle.io",
+          href: "https://api.docs.cycle.io",
           target: "_blank",
           label: "API Docs"
         },
@@ -76,7 +76,7 @@ module.exports = {
           
         //   label: "API Docs",
         //   position: "left",
-        //   href: "https://api-docs.cycle.io"
+        //   href: "https://api.docs.cycle.io"
         // },
         // {
         //   href: "https://portal.cycle.io",
@@ -101,7 +101,7 @@ module.exports = {
             },
             {
               label: "Public API",
-              href: "https://api-docs.cycle.io",
+              href: "https://api.docs.cycle.io",
             },
             // {
             //   label: "Internal API",
