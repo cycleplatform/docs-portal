@@ -103,10 +103,14 @@ module.exports = {
               label: "Public API",
               href: "https://api.docs.cycle.io",
             },
-            // {
-            //   label: "Internal API",
-            //   href: "https://docs.cycle.io/internal-api/introduction",
-            // },
+            {
+              label: "Internal API",
+              href: "https://internal-api.docs.cycle.io",
+            },
+            {
+              label: "Scheduler API",
+              href: "https://scheduler-api.docs.cycle.io",
+            },
           ],
         },
         {

@@ -24,15 +24,14 @@
   margin: 2rem;
   display: flex;
   justify-content: center;
+  
 }
 
 .heroImageDiv {
-  display: flex;
-  align-items: start;
-  justify-content: center;
-  color: var(--cycle-white) !important;
-  height: 100%;
+  padding: 4rem;
 }
+
+
 
 .heroTitle {
   font-weight: 600;

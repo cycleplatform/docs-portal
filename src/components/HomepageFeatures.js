@@ -28,19 +28,34 @@ const FeatureList = [
       </>
     ),
   },
-  {
-    title: "API Docs",
-    to: "https://api.docs.cycle.io",
-    Svg: require("../../static/svgs/duotone/book-heart.svg").default,
-    className: styles.featureButton,
-    description: <>Complete public and internal API documentation, powered by OpenAPI spec.</>,
-  },
+  
   {
     title: "Guides", 
     to: "/guides/intro",
     Svg: require("../../static/svgs/duotone/book-open.svg").default,
     className: styles.featureButton,
     description: <>Tutorials and video guides for integrations and more advanced use cases.</>
+  },
+  {
+    title: "Public API Docs",
+    to: "https://api.docs.cycle.io",
+    Svg: require("../../static/svgs/duotone/book-heart.svg").default,
+    className: styles.featureButton,
+    description: <>Complete API documentation for public API.</>,
+  },
+  {
+    title: "Internal API Docs",
+    to: "https://internal-api.docs.cycle.io",
+    Svg: require("../../static/svgs/duotone/book-heart.svg").default,
+    className: styles.featureButton,
+    description: <>Complete API documentation for internal API.</>,
+  },
+  {
+    title: "Scheduler API Docs",
+    to: "https://scheduler-api.docs.cycle.io",
+    Svg: require("../../static/svgs/duotone/book-heart.svg").default,
+    className: styles.featureButton,
+    description: <>Complete API documentation for scheduler API.</>,
   }
 ];
 // onClick={() => (window.location.href = to)}

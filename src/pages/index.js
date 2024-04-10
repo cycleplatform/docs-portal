@@ -8,8 +8,8 @@ import clsx from "clsx";
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
   return (
-    <header className={styles.heroBanner}>
-      <div className="container">
+    <div className={styles.heroBanner}>
+      <div className="container" style={{"maxWidth": "90%"}}>
         <div className={"row"}>
           <div className={"col col--7"}>
             <h1 className={styles.heroTitle}>{siteConfig.title}</h1>
@@ -26,7 +26,7 @@ function HomepageHeader() {
           </div>
         </div>
       </div>
-    </header>
+    </div>
   );
 }
 
