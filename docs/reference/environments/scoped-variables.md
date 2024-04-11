@@ -66,18 +66,23 @@ This will be returned as a `data` object in JSON holding all environment variabl
 
 If you set a `duration` value, the value will only be accessible for the first "duration" of the container instances runtime. Resets each stop/start cycle.
 
+:::note Return Types
+Due to the nature of the internal API, certain returns, such as JSON will not be parsed ahead of time. Be prepared to parse a JSON encoded string if using the internal API alongside URL source types when JSON is the content type.  
+:::
+
 If the **File** checkbox is selected, the scoped variable will be available through a file at the following endpoint.
 
 `/var/run/cycle/variables/<myVariable>`
 
 This is facilitated by mounting a read only volume to `/var/run/cycle/variables` in the container instance. This volume is only updated upon restart of the container.
 
-If you use the `Path` option, the file will be mounted to the path given in the path.  
+If you use the `Path` option, the file will be mounted to the path given in the path.  The full path, including the name you'd like for hte file is required. 
 
 The `Decode` checkbox will automatically decode a based64 encoded file on read. 
 
 Any, all, or some of the checkboxes in the access section can be selected for a given scoped variable. If all boxes are selected, for example, a user can use any of the access methods to retrieve the value.
 
-:::note Return Types
-Due to the nature of the internal API, certain returns, such as JSON will not be parsed ahead of time. Be prepared to parse a JSON encoded string if using the internal API alongside URL source types when JSON is the content type.  
+
+:::danger Formatting Files
+If you wish to preserve the formatting of the file value, be sure to use the `blob` option.
 :::
