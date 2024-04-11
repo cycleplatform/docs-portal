@@ -38,11 +38,13 @@ The following is a full list of supported pipeline steps.
 - **Stack Build Create** - build the shell of a stack that will be used to generate the stack build.
 - **Stack Build Generate** - generate a full build of the stack.
 - **Stack Build Deploy** - deploy a given stack to an environment.
+- **Prune Stack** - remove all unused builds of  a given stack. 
 - **Update Deployment Tag Version** - updates a deployment tag from one tag to another.  
 - **Prune Environment Deployments** - prunes all deployments (including their containers) in an environment that **do not** have tags associated with them. 
 - **Start Environment Deployment** - start a deployment by version or tag for a given environment.
 - **Stop Environment Deployment** - stop a deployment by version or tag for a given environment.
 - **Wait For Environment Deployment Health Check** - a step that waits for a given environment deployment to be deemed healthy.  
+
 
 :::success Health Check Step
 This step looks to see if there are any containers in the deployment which have the deployment > health check configuration enabled.  If there are it waits for those containers to check in as healthy or it fails
