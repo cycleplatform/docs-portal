@@ -72,6 +72,10 @@ If the **File** checkbox is selected, the scoped variable will be available thro
 
 This is facilitated by mounting a read only volume to `/var/run/cycle/variables` in the container instance. This volume is only updated upon restart of the container.
 
+If you use the `Path` option, the file will be mounted to the path given in the path.  
+
+The `Decode` checkbox will automatically decode a based64 encoded file on read. 
+
 Any, all, or some of the checkboxes in the access section can be selected for a given scoped variable. If all boxes are selected, for example, a user can use any of the access methods to retrieve the value.
 
 :::note Return Types
