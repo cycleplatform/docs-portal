@@ -56,12 +56,12 @@ export const capabilities = [
   {
     name: "hubs-roles-view",
     description: "User has the ability to view roles for the hub.",
-    roles: [Role.ADMIN],
+    roles: [],
   },
   {
     name: "hubs-roles-manage",
     description: "User has the ability to create and update roles for the hub.",
-    roles: [Role.ADMIN],
+    roles: [],
   },
   {
     name: "hubs-usage-view",
