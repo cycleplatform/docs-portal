@@ -67,6 +67,10 @@ The Resource Density deployment strategy looks at the servers and deploys instan
 
 The High Availability deployment strategy will spread out the instances as much as possible across the infrastructure.
 
+#### Function
+
+The function deployment strategy is the only deployment strategy that has an impact on how the container is managed by the platform.  For more information visit the [functions](/) page. 
+
 #### Manual
 
 The manual deployment strategy give you full control over where your instances are deployed an unlocks the ability for a user to delete individual instances.

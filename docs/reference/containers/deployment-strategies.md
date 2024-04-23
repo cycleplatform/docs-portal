@@ -19,6 +19,10 @@ Cycle will deploy instances over servers with an emphasis on geographic and phys
 Requires at least 2 servers in different data centers and 2 instances minimum.
 :::
 
+### Function
+
+The function deployment strategy is the only deployment strategy that has an impact on how the container is managed by the platform.  For more information visit the [functions](/reference/containers/functions) page. 
+
 ### First Available
 
 Cycle will deploy instances to whichever server acknowledges the request first.

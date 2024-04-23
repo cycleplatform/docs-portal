@@ -15,6 +15,15 @@ Initial instances refers to the number of instances to create during the contain
 
 Get full info on deployment strategies [here](/reference/containers/deployment-strategies)
 
+## Function
+For [function](/reference/containers/functions) containers, there is additional settings available:
+
+* **Max Pool Size** - The maximum number of instances that Cycle can pre-allocate (includes auto-scaled instances).
+* **Max Shard Concurrency** - For each shard (scheduler), the maximum number of tasks it can run in parallel.
+* **Max Runtime** - The maximum amount of time a function instance can run before timing out.
+* **Max Queue Time** - The maximum amount of time Cycle will wait for an instance to be available.
+
+
 ## Constraints
 
 The constraints form has two way to tag container instances:
