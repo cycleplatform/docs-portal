@@ -1,6 +1,6 @@
 ---
 sidebar_label: Example Stack Files
-sidebar_position: 1
+sidebar_position: 2
 ---
 
 # Example Stack Files
@@ -9,9 +9,10 @@ With a single file in git repo, you can orchestrate an entire application, from 
 
 To create a stack, you'll first need to add a JSON file with the name `cycle.json` to the root of your git repository. When you import your stack into Cycle, it will read this file and generate a build, containing all images and configurations needed to deploy your application. By committing this file to your repo, it becomes version tracked, giving you a history of all changes.
 
-Check out our full reference documentation on stack files [here](/reference/stacks/reference/).
 
-An Example Stack (more complete example at very bottom of this page)
+:::danger Hand Written Stacks
+These stack examples are maintained by hand, where the stack spec and the rest of the stack documentation is auto generated off the spec. For any inconsistencies found please default to following the spec which can be validated in the playground editor.  If you do find a discrepancy please let us know via [Slack](https://slack.cycle.io)!
+:::
 
 ```json
 {
@@ -110,7 +111,9 @@ An Example Stack (more complete example at very bottom of this page)
         }
       },
       "access": {
-        "env_variable": true,
+        "env_variable": {
+          "key": "STACKONE"
+        },
         "internal_api": {},
         "file": {}
       },
@@ -131,7 +134,6 @@ An Example Stack (more complete example at very bottom of this page)
         }
       },
       "access": {
-        "env_variable": true,
         "internal_api": {
           "duration": "15m"
         },

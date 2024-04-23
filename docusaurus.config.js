@@ -12,7 +12,7 @@ module.exports = {
   favicon: "imgs/cycle/logo/logo-gear.svg",
   organizationName: "cycleplatform", // Usually your GitHub org/user name.
   projectName: "docs-portal", // Usually your repo name.
-  // themes: ["@saucelabs/theme-github-codeblock"],
+  themes: ["docusaurus-json-schema-plugin"],
   themeConfig: {
     colorMode: {
       defaultMode: "dark",

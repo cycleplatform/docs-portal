@@ -3,6 +3,29 @@
 Stacks offer a powerful way to declaratively manage multiple containers, and their deployments to the Cycle platform. Using stacks, you are able to configure every aspect of your applications ahead of time, save it to your version controlled repo, and have Cycle automate the deployment any time you make a push.
 
 
+:::success Editor Spec Linter
+The JSON schema spec has been uploaded to the [JSON Schema Store](https://www.schemastore.org/).  This means anyone using the JSON Schema Store Catalog extension can get autofill behavior in browser. 
+
+Users can also point their editor settings to the url https://raw.githubusercontent.com/cycleplatform/api-spec/main/stackspec/stackspec.json if they prefer a more manual linting implementation.
+
+Example for `.vscode/settings.json`
+
+```json 
+{
+    "json.schemas": [
+        {
+            "fileMatch": [
+                "cycle.json",
+                "cycle.yml",
+                "cycle.yaml",
+            ],
+            "url": "https://raw.githubusercontent.com/cycleplatform/api-spec/main/stackspec/stackspec.json"
+        }
+    ]
+}
+```
+
+:::
 
 
 ## Stack Builds
@@ -144,4 +167,4 @@ If the container identifier used in a stack matches with an existing container i
 There is also an option to reimage or reconfigure all containers that have a match.
 
 ### Scoped Variables 
-As stacks now support [scoped variables](/reference/stacks/reference/scoped-variables/) there will be an option during stack deploy for if the scoped variables being created will be new or will be replacing existing variables. 
+As stacks now support scoped variables there will be an option during stack deploy for if the scoped variables being created will be new or will be replacing existing variables. 
