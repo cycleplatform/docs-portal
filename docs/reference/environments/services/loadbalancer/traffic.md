@@ -52,7 +52,7 @@ With the appropriate port selected, users get a clear look at several high level
 ![load balancer router](https://static.cycle.io/portal-docs/environments/traffic-router.png)
 
 1. Destination - container destination for the request.
-2. Latency - the latency of the connection between lb <-> destination (measured by ICMP packet). 
+2. Latency - the latency of the connection between lb and destination (measured by ICMP packet). 
 3. Requests - the number of requests (total).
 4. Connections - amount of traffic transmitted / received. 
 5. Success Rate - amount of times in % that the connection was successful. 

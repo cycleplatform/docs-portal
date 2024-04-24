@@ -1,10 +1,10 @@
-FROM node:16.16-alpine3.16 as builder
+FROM node:21.5.0-alpine3.19 as builder
 RUN mkdir -p /app
 WORKDIR /app
 COPY ./package*.json ./
-RUN npm install --legacy-peer-deps
+RUN yarn install
 COPY ./ ./
-RUN npm run build
+RUN yarn build
 
 
 FROM nginx:1.20.1-alpine

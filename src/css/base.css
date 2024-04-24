@@ -37,6 +37,10 @@
   /* Infima Fonts */
   --ifm-font-family-base: "Source Sans Pro";
 
+  /* border color */
+  --ifm-alert-border-color: var(--cycle-gray)
+  --docusaurus-details-decoration-color: var(--cycle-gray)
+
 }
 
 /* Dark Mode Colors */
@@ -92,10 +96,18 @@ html[data-theme="light"] aside a.menu__link--active {
 #json-schema details.alert {
   background-color: var(--cycle-black);
   list-style: none;
+  border-color: var(--cycle-gray)
 }
 #json-schema ul {
   list-style-type: none
 }
 #json-schema li::before {
   content: none;
+}
+#json-schema > div > details > div > div {
+  border-top-color: var(--cycle-gray) !important;
+}
+
+#json-schema li > details > div > div  {
+  border-top-color: var(--cycle-gray) !important;
 }

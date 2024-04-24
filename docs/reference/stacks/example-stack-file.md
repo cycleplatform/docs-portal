@@ -11,7 +11,7 @@ To create a stack, you'll first need to add a JSON file with the name `cycle.jso
 
 
 :::danger Hand Written Stacks
-These stack examples are maintained by hand, where the stack spec and the rest of the stack documentation is auto generated off the spec. For any inconsistencies found please default to following the spec which can be validated in the playground editor.  If you do find a discrepancy please let us know via [Slack](https://slack.cycle.io)!
+These stack examples are maintained by hand, where the stack spec and the rest of the stack documentation is auto generated off the spec. If you do find a discrepancy please let us know via [Slack](https://slack.cycle.io)!
 :::
 
 ```json

@@ -3,22 +3,17 @@ sidebar_label: Stack Spec
 sidebar_position: 1
 ---
 
-import CodeBlock from '@theme/CodeBlock';
-import Schema from "../../../src/pages/schema.json";
-import JSONSchemaViewer from "@theme/JSONSchemaViewer";
-import Editor from "../../../src/pages/stack-editor.jsx" 
+
+import SchemaSpec from "../../../src/pages/stack.jsx";
+
 
 # Cycle Stack Spec
 
 Raw spec available [here](https://raw.githubusercontent.com/cycleplatform/api-spec/main/stackspec/stackspec.json).
 
 <div id="json-schema">
-    <JSONSchemaViewer schema={Schema} />
+    <SchemaSpec />
 </div>
 
 
 
-# Spec Playground
-Write a stack spec live, here in the docs.  Start with an object `{}` and then use `""` to pull up options. 
-
-<Editor />
