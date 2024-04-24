@@ -1,11 +1,16 @@
 :root {
   /* Cycle Colors */
   --cycle-blue: rgb(42, 167, 255);
-  --cycle-white: rgb(255, 255, 255);
-  --cycle-black: rgb(18, 18, 24);
-  --cycle-black-accent: rgb(31, 31, 40);
-  --cycle-gray: rgb(115, 115, 127);
-  --cycle-gray-light: rgb(243, 243, 245);
+  --cycle-white: rgb(250, 250, 253);
+  --cycle-accent-white: rgb(247, 247, 250);
+  --cycle-black: rgb(18, 18, 21);
+  --cycle-accent-black: rgb(30, 30, 33);
+  --cycle-gray: rgb(72, 72, 75);
+  --cycle-light-gray: rgb(240, 240, 243);
+  
+  --cycle-accent-blue: rgb(32, 121, 184);
+  --cycle-accent-gray: rgb(55, 55, 58);
+  --cycle-border-radius: 0.5rem;
 
   /* Infima Base Colors */
   --ifm-color-primary: #2aa7ff;
@@ -21,15 +26,15 @@
   --ifm-font-size-base: 17px;
 
   /* Infima Nav and Footer */
-  --ifm-navbar-background-color: var(--cycle-black-accent);
+  --ifm-navbar-background-color: var(--cycle-accent-black);
   --ifm-navbar-link-color: var(--cycle-white);
-  --ifm-footer-background-color: var(--cycle-black-accent);
+  --ifm-footer-background-color: var(--cycle-accent-black);
   --ifm-footer-link-color: var(--cycle-white);
   --ifm-footer-color: var(--cycle-blue);
   --ifm-menu-link-sublist-icon-filter: invert(100%) sepia(94%) saturate(17%) hue-rotate(223deg) brightness(104%) contrast(98%);
 
   /* Infima HR */
-  --ifm-hr-border-color: var(--cycle-gray-light);
+  --ifm-hr-border-color: var(--cycle-light-gray);
 
   /* Infima Admonition */
   --ifm-color-info: var(--ifm-color-primary-light);
@@ -103,6 +108,10 @@ html[data-theme="light"] aside a.menu__link--active {
 }
 #json-schema li::before {
   content: none;
+}
+
+#json-schema li {
+  border-left-color: var(--cycle-gray) !important;
 }
 #json-schema > div > details > div > div {
   border-top-color: var(--cycle-gray) !important;

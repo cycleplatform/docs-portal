@@ -7,7 +7,7 @@
 
 .feature {
   border-radius: 0.5rem;
-  background-color: var(--cycle-black-accent);
+  background-color: var(--cycle-accent-black);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -40,7 +40,7 @@
 
 .featureButtonInverted {
   margin: 0.5rem;
-  background-color: var(--cycle-black-accent);
+  background-color: var(--cycle-accent-black);
   border: 1px solid var(--cycle-blue);
   color: white !important;
 }
