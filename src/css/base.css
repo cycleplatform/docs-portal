@@ -120,3 +120,8 @@ html[data-theme="light"] aside a.menu__link--active {
 #json-schema li > details > div > div  {
   border-top-color: var(--cycle-gray) !important;
 }
+
+
+main > div.container {
+  max-width: 100%;
+}
