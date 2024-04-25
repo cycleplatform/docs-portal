@@ -44,7 +44,7 @@ The following is a full list of supported pipeline steps.
 - **Start Environment Deployment** - start a deployment by version or tag for a given environment.
 - **Stop Environment Deployment** - stop a deployment by version or tag for a given environment.
 - **Wait For Environment Deployment Health Check** - a step that waits for a given environment deployment to be deemed healthy.  
-
+- **Trigger Function Container (beta)** - fire a function container, optionally setting token and environment variables. 
 
 :::success Health Check Step
 This step looks to see if there are any containers in the deployment which have the deployment > health check configuration enabled.  If there are it waits for those containers to check in as healthy or it fails
