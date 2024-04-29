@@ -12,8 +12,8 @@ to work with different hardware configurations.
 Whether you’re looking to utilize virtual machines or bare metal, Cycle has fully abstracted away the underlying infrastructure to create one standardized path to deployment. Even more so, this integration supports applications
 compiled with both gcc (Ubuntu, CentOS, etc) and musl (Alpine), giving developers the flexibility to continue building with the technologies they’ve come to love.
 
-:::success Business Tier and Above
-GPU powered infrastrucutre is available to hubs on the business tier and above. For more information about the different tiers head over to [our pricing page](https://cycle.io/pricing) or reach out to a team member on our [Slack Channel](https://slack.cycle.io)
+:::success Startup Tier and Above
+GPU powered infrastrucutre is available to hubs on the startup tier and above. For more information about the different tiers head over to [our pricing page](https://cycle.io/pricing) or reach out to a team member on our [Slack Channel](https://slack.cycle.io)
 :::
 
 ## Deploying GPU Enabled Infrastructure.

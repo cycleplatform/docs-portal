@@ -20,6 +20,9 @@ The container lock setting can cause force delete to fail. If a user tries to de
 :::
 
 
+## Basics
+In the basics section of server settings users can find more information about the server Id and hostname. 
+
 
 ## Update Server
 
@@ -50,3 +53,19 @@ This setting is unsafe for servers in your production cluster.
 Click the Infrastructure tab on the left-hand nav. Select the server to be deleted, go to the settings tab and then enter the name of the server into the "Delete Server" form. Finally, hold the "Delete Server".
 
 The "Force Delete Server" checkbox is to be used only when a normal delete action cannot be done and the user needs to remove the server forcibly from Cycle.
+
+
+## Controls
+Controls is split into two sections:
+
+1. General - where the compute service can be restarted.
+2. Advanced - where the server or compute spawner can be restarted.  
+
+### Restart Compute
+Restarting compute will simply restart the compute process running on the node.  This restart will not interact with networks or containers running on the node.  Minimal to zero downtime impact. 
+
+### Restart Compute Spawner
+Restarting compute spawner will all containers on the node to restart and will rebuild all networks from 0 to 100%.  This restart will cause downtime for all container instances on the node. 
+
+### Restart Server
+Restarting the server will issue a restart for the given server to the service provider.  All containers on the server will be offline for a few minutes, or until the server comes back online.  

@@ -86,6 +86,15 @@ Users will notice a security graph on each environments dashboard.
 
 This graph will report any security events, scoped to the given environment, that have taken place along the time-span shown (currently 24 hours).
 
-:::success Security Reports
-To see a full list of what can be returned via the security report check out the `/security/report` endpoint in the API Docs [here](https://api.docs.cycle.io/tag/Security#operation/getSecurityReport) and expand the data object.
-:::
+### Incident Types
+Incidents are broken down into 4 major fields:
+
+1. Risk - the risk level of the security incident (`info`, `low`, `medium`, `high`, `critical`).
+2. Surface - the vector of attack (`network`, `service`, `fs`, `api`).
+3. Event - how the platform handled the event (`suggestion`, `notice`, `prevention`, `detection`, `reaction`).
+4. Attack - the type of attack detected (`none`, `auth-failure`, `brute-force`, `exploit-vulnerability`, `social-engineer`, `service -interruption`, `access-elevation`).
+
+
+
+
+
