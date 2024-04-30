@@ -105,14 +105,16 @@ The application is meant to be run as a stateless set, so restarting the contain
   "version": "1.0",
   "scoped_variables": [
     {
-      "identifier": "CRYPT",
+      "identifier": "encrypted",
       "scope": {
         "containers": {
           "global": true
         }
       },
       "access": {
-        "env_variable": true,
+        "env_variable": {
+          "key": "ENCRYPTED"
+        },
         "internal_api": {},
         "file": {}
       },
