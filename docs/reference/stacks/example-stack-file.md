@@ -10,62 +10,87 @@ With a single file in git repo, you can orchestrate an entire application, from 
 To create a stack, you'll first need to add a JSON file with the name `cycle.json` to the root of your git repository. When you import your stack into Cycle, it will read this file and generate a build, containing all images and configurations needed to deploy your application. By committing this file to your repo, it becomes version tracked, giving you a history of all changes.
 
 
-:::danger Hand Written Stacks
+:::info Hand Written Stacks
 These stack examples are maintained by hand, where the stack spec and the rest of the stack documentation is auto generated off the spec. If you do find a discrepancy please let us know via [Slack](https://slack.cycle.io)!
 :::
 
+## Example Stack 
+We've prepared this [repo](https://github.com/cycleplatform/stack-demo/tree/main) with a demonstration stack file.  
+
+The repo has a README with some information on how to use the services.  
+
+The stack defines two services: 
+
+1. A node api that serves a few endpoints related to a todo application.
+2. A Redis service that acts as the data store.
+
+The application is meant to be run as a stateless set, so restarting the containers will reset the data on the Redis volume. 
+
 ```json
 {
-  "version": "1.0",
-  "containers": {
-    "demo": {
-      "name": "demo",
-      "image": {
-        "name": "simplews",
-        "origin": {
-          "type": "docker-file",
-          "details": {
-            "context_dir": "/",
-            "build_file": "/Dockerfile"
-          }
-        }
-      },
-      "config": {
-        "network": {
-          "public": "enable",
-          "hostname": "simplews",
-          "ports": ["80:80"]
-        },
-        "deploy": {
-          "instances": 1
-        }
-      }
+    "version": "1.0", 
+    "about": {
+        "description": "A demonstration stack with a simple CRUD API connected to redis.", 
+        "version": "1.0.0"
     },
-    "reach": {
-      "name": "reach",
-      "image": {
-        "name": "simplews-external",
-        "origin": {
-          "type": "docker-file",
-          "details": {
-            "url": "https://github.com/demouser/demofile.git"
-          },
-          "context_dir": "/",
-          "build_file": "/Dockerfile"
-        }
-      },
-      "config": {
-        "network": {
-          "public": "enable",
-          "hostname": "simplews",
-          "ports": ["80:80"]
+    "containers": {
+        "api": {
+            "name": "api",
+            "stateful": false,
+            "image": {
+                "name": "api",
+                "origin": {
+                    "type": "docker-file",
+                    "details": {
+                        "build_file": "/Dockerfile",
+                        "context_dir": "/"
+                    }
+                }
+            },
+            "config": {
+                "network": {
+                    "hostname": "api",
+                    "ports": ["80:5000", "443:5000"],
+                    "public": "enable"
+                },
+                "deploy": {
+                    "instances": 1,
+                    "strategy": "first-available",
+                    "health_check": {
+                        "command": "./health-check.sh",
+                        "delay": "15s",
+                        "interval": "15s",
+                        "retries": 3,
+                        "restart": true,
+                        "timeout": "30s"
+                    }
+                }
+            }
         },
-        "deploy": {
-          "instances": 1
+        "redis": {
+            "name": "redis",
+            "stateful": false,
+            "image": {
+                "name": "redis",
+                "origin": {
+                    "type": "docker-hub", 
+                    "details": {
+                        "target": "redis:latest"
+                    }
+                }
+            },
+            "config": {
+                "network": {
+                    "hostname": "redis",
+                    "ports": ["6379:6379"],
+                    "public": "disable"
+                },
+                "deploy": {
+                    "instances": 1
+                }
+            }
         }
-      }
     }
-  }
 }
 ```
 
