@@ -161,10 +161,19 @@ If the container identifier used in a stack matches 0 times with existing contai
 
 If the container identifier used in a stack matches with an existing container identifier for a selected environment, the container will show up under the **Existing Containers** section along with reimage and reconfigure checkboxes.
 
-- **reimage** - reimage the existing image with the image from the stack build.
+- **reimage** - replace the container's existing image with the new image from the stack build.
 - **reconfigure** - reconfigure the container's configuration settings with the settings from the stack build.
 
 There is also an option to reimage or reconfigure all containers that have a match.
 
 ### Scoped Variables 
-As stacks now support scoped variables there will be an option during stack deploy for if the scoped variables being created will be new or will be replacing existing variables. 
+Each stack deployment defines how it will handle adding or updating scoped variables.  The two options for doing this are:
+
+1. Add New - where any scoped variable's not found in the target environment, that are defined on the stack, will be added. 
+2. Replace Existing - where any scoped variable defined in the stack that match a scoped variable defined in the environment will be updated to how that scoped variable is defined in the stack.  
+
+The "matching" occurs based on the scoped variable `identifier`.  
+
+:::info
+Replace existing for scoped variables via stack deployment will not replace a variable if the scoped variable's value is an empty string.
+:::

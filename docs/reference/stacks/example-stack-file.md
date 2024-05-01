@@ -245,13 +245,6 @@ The application is meant to be run as a stateless set, so restarting the contain
 {
   "version": "1.0",
   "services": {
-    "vpn": {
-      "auth": {
-        "cycle_accounts": true,
-        "vpn_accounts": true
-      },
-      "allow_internet": true
-    },
     "discovery": {
       "service": {
         "high_availability": true,
@@ -500,6 +493,34 @@ The application is meant to be run as a stateless set, so restarting the contain
           }
         }
       }
+    },
+    "scheduler": {
+      "config": {
+        "access_keys": [
+          { "ips": [], "name": "somekey", "secret": "supersecretkeyphrase" }
+        ],
+        "public": false
+      },
+      "service": {
+        "auto_update": true,
+        "enable": true,
+        "high_availability": true
+      }
+    },
+    "vpn": {
+        "config": {
+            "allow_internet": true,
+            "auth": {
+                "cycle_accounts": true,
+                "vpn_accounts": true,
+                "webhook": "https://someendpoint.com/auth"
+            }
+        },
+        "service": {
+            "enable": true,
+            "auto_update": true,
+            "high_availability": false
+        }
     }
   },
   "containers": {}

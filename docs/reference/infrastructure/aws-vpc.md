@@ -19,4 +19,4 @@ The main `routing table` is associated with the local and internet gateway (pref
 
 The main reason that Cycle creates and manages this VPC for you is to facilitate the seamless experience through the platform.  Once you've created your keys and connected AWS to Cycle, there will be very few times that you'll need to approach this VPC and make any changes.
 
-However, certain users who wish to run fully managed database services like RDS should visit [this guide](/guides/tutorials/aurora-db).
+However, certain users who wish to run fully managed database services like RDS should visit [this guide](/guides/video/aws-peering).
