@@ -31,3 +31,6 @@ The config tab in the management modal will allow users to set up access keys fo
 ## Scheduler High Availability 
 While other services can be set to be highly available, the scheduler achieves this by allowing a user to manually increase / decrease then number of instances along with their location and then shards each instance.  Those shards represent a range of preallocated function containers. 
 
+:::caution
+In the event of adding or removing scheduler instances, a restart must be issued to the load balancer **IF** the load balancer is the entrypoint for the function claim/spawn.
+:::

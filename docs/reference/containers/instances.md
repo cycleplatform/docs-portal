@@ -1,6 +1,6 @@
 ---
 sidebar_label: Instances
-sidebar_position: 4
+sidebar_position: 1
 ---
 
 # Container Instances

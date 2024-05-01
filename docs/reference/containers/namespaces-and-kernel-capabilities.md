@@ -1,6 +1,6 @@
 ---
 sidebar_label: Namespaces and Kernel Capabilities
-sidebar_position: 1
+sidebar_position: 100
 ---
 
 
