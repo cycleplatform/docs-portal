@@ -16,7 +16,7 @@ module.exports = {
   themeConfig: {
     colorMode: {
       defaultMode: "dark",
-      disableSwitch: true,
+      disableSwitch: false,
     },
     image: "https://cycle.io/global/resources/images/og.png",
     algolia: {
@@ -33,39 +33,38 @@ module.exports = {
       logo: {
         alt: "Cycle Logo",
         src: "imgs/cycle/logo/logo-white.svg",
-        href: "https://docs.cycle.io/",
-        target: "_self"
+        href: "/",
+        target: "_self",
       },
       items: [
         {
           type: "doc",
-          docId: "getting-started/overview/overview", 
-          position: "left", 
-          label: "Getting Started"
-        }, 
+          docId: "getting-started/overview/overview",
+          position: "left",
+          label: "Getting Started",
+        },
         {
-          type: "doc", 
-          docId: "reference/intro", 
-          position: "left", 
-          label: "Reference"
-        }, 
+          type: "doc",
+          docId: "reference/intro",
+          position: "left",
+          label: "Reference",
+        },
         {
           type: "doc",
           docId: "guides/intro",
-          position: "left", 
-          label: "Guides"
+          position: "left",
+          label: "Guides",
         },
         {
           href: "https://api.docs.cycle.io",
           target: "_blank",
-          label: "API Docs"
+          label: "API Docs",
         },
         {
-          
-          href: "https://slack.cycle.io", 
-          target: "_blank", 
-          label: "Community"
-        }
+          href: "https://slack.cycle.io",
+          target: "_blank",
+          label: "Community",
+        },
         // {
         //   type: "doc",
         //   docId: "intro",
@@ -73,7 +72,7 @@ module.exports = {
         //   label: "Portal Docs",
         // },
         // {
-          
+
         //   label: "API Docs",
         //   position: "left",
         //   href: "https://api.docs.cycle.io"
@@ -172,11 +171,17 @@ module.exports = {
           // Please change this to your repo.
           editUrl: "https://github.com/cycleplatform/docs-portal/tree/main",
           // routeBasePath removes the /docs slug from the url
-          routeBasePath: "/"
+          routeBasePath: "/",
         },
 
         theme: {
-          customCss: [require.resolve("./src/css/fa-styles/all.css"), require.resolve("./src/css/base.css"), require.resolve("./src/css/lists.css"), require.resolve("./src/css/code.css"), require.resolve("./src/css/fonts.css")],
+          customCss: [
+            require.resolve("./src/css/fa-styles/all.css"),
+            require.resolve("./src/css/base.css"),
+            require.resolve("./src/css/lists.css"),
+            require.resolve("./src/css/code.css"),
+            require.resolve("./src/css/fonts.css"),
+          ],
         },
       },
     ],
