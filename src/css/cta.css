@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .cta-button {
+    @apply text-sm inline-block bg-transparent/60 text-cycle-white self-center border border-cycle-blue-accent/80 rounded-lg py-2 px-3 m-2 transition-colors ease-in-out duration-300 cursor-pointer;
+  }
+
+  .cta-button:hover {
+    @apply border-cycle-blue text-cycle-white bg-transparent/80;
+  }
+
+  .cta-button i {
+    @apply hover:text-cycle-black;
+  }
+
+  .cta-button.pulse {
+    @apply animate-pulse;
+  }
+
+  .cta-button.secondary {
+    @apply bg-cycle-white border-cycle-blue hover:text-cycle-black text-cycle-blue;
+  }
+
+  .cta-button.primary {
+    @apply bg-cycle-blue border-cycle-blue hover:text-cycle-black;
+  }
+
+  p + .cta-button {
+    @apply mt-2;
+  }
+}

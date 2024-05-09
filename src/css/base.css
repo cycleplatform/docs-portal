@@ -1,189 +1,184 @@
-:root {
-  /* Cycle Colors */
-  --cycle-blue: rgb(42, 167, 255);
-  --cycle-white: rgb(250, 250, 253);
-  --cycle-accent-white: rgb(247, 247, 250);
-  --cycle-black: rgb(18, 18, 21);
-  --cycle-accent-black: rgb(30, 30, 33);
-  --cycle-gray: rgb(72, 72, 75);
-  --cycle-light-gray: rgb(240, 240, 243);
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+  :root {
+    /* Cycle Colors */
+    --cycle-blue: rgb(42, 167, 255);
+    --cycle-white: rgb(250, 250, 253);
+    --cycle-accent-white: rgb(247, 247, 250);
+    --cycle-black: rgb(18, 18, 21);
+    --cycle-accent-black: rgb(30, 30, 33);
+    --cycle-gray: rgb(72, 72, 75);
+    --cycle-light-gray: rgb(240, 240, 243);
+    
+    --cycle-accent-blue: rgb(32, 121, 184);
+    --cycle-accent-gray: rgb(55, 55, 58);
+    --cycle-border-radius: 0.5rem;
   
-  --cycle-accent-blue: rgb(32, 121, 184);
-  --cycle-accent-gray: rgb(55, 55, 58);
-  --cycle-border-radius: 0.5rem;
+    /* Infima Base Colors */
+    --ifm-color-primary: #2aa7ff;
+    --ifm-color-primary-dark: #0c9bff;
+    --ifm-color-primary-darker: #0094fc;
+    --ifm-color-primary-darkest: #007ad0;
+    --ifm-color-primary-light: #48b3ff;
+    --ifm-color-primary-lighter: #57b9ff;
+    --ifm-color-primary-lightest: #83ccff;
+  
+    /* Infima Base Font Details */
+    /* --ifm-code-font-size: 125%; */
+    --ifm-font-size-base: 16px;
+  
+  
+    /* Infima Nav and Footer */
+    --ifm-navbar-background-color: var(--cycle-accent-black);
+    --ifm-navbar-link-color: var(--cycle-white);
+    --ifm-footer-background-color: var(--cycle-accent-black);
+    --ifm-footer-link-color: var(--cycle-white);
+    --ifm-footer-color: var(--cycle-blue);
+    --ifm-menu-link-sublist-icon-filter: invert(100%) sepia(94%) saturate(17%) hue-rotate(223deg) brightness(104%) contrast(98%);
+  
+    /* Infima HR */
+    --ifm-hr-border-color: var(--cycle-light-gray);
+  
+    /* Infima Admonition */
+    --ifm-color-info: var(--ifm-color-primary-light);
+  
+    /* Infima Fonts */
+    --ifm-font-family-base: "Source Sans Pro";
+  
+    /* border color */
+    --ifm-alert-border-color: var(--cycle-gray)
+    --docusaurus-details-decoration-color: var(--cycle-gray)
+  
+  }
 
-  /* Infima Base Colors */
-  --ifm-color-primary: #2aa7ff;
-  --ifm-color-primary-dark: #0c9bff;
-  --ifm-color-primary-darker: #0094fc;
-  --ifm-color-primary-darkest: #007ad0;
-  --ifm-color-primary-light: #48b3ff;
-  --ifm-color-primary-lighter: #57b9ff;
-  --ifm-color-primary-lightest: #83ccff;
+  /* Dark Mode Colors */
+  html[data-theme="dark"] .docusaurus-highlight-code-line {
+    background-color: var(--cycle-black);
+  }
 
-  /* Infima Base Font Details */
-  /* --ifm-code-font-size: 125%; */
-  --ifm-font-size-base: 16px;
+  .breadcrumbs__link {
+    @apply text-cycle-gray ;
+  }
 
+  html[data-theme="dark"] .breadcrumbs__link {
+    @apply text-cycle-gray-light ;
+  }
+  
+  main {
+    @apply bg-white text-cycle-black 
+  }
 
-  /* Infima Nav and Footer */
-  --ifm-navbar-background-color: var(--cycle-accent-black);
-  --ifm-navbar-link-color: var(--cycle-white);
-  --ifm-footer-background-color: var(--cycle-accent-black);
-  --ifm-footer-link-color: var(--cycle-white);
-  --ifm-footer-color: var(--cycle-blue);
-  --ifm-menu-link-sublist-icon-filter: invert(100%) sepia(94%) saturate(17%) hue-rotate(223deg) brightness(104%) contrast(98%);
+  html[data-theme="dark"] main {
+    @apply bg-cycle-black text-white
+  }
 
-  /* Infima HR */
-  --ifm-hr-border-color: var(--cycle-light-gray);
+  .pagination-nav__link {
+    @apply bg-white text-cycle-gray 
+  }
 
-  /* Infima Admonition */
-  --ifm-color-info: var(--ifm-color-primary-light);
+  html[data-theme="dark"] .pagination-nav__link {
+    @apply bg-cycle-gray-accent text-white
+  }
+  a.navbar__link {
+    @apply font-semibold flex items-center
+  }
+  
+  .navbar__toggle,
+  .menu__link,
+  .menu__link--sublist::after {
+    color: var(--cycle-white);
+  }
+  
+  html[data-theme="light"] aside a.menu__link,
+  html[data-theme="light"] aside a.menu__link--sublist::after {
+    --ifm-menu-link-sublist-icon-filter: none;
+  }
+  
+  
+  html[data-theme="light"] .menu {
+    @apply bg-cycle-black-accent !text-white
+  }
+  
+  html[data-theme="light"] aside a.menu__link--active {
+    @apply text-cycle-blue
+  }
+  
+  .menu__link--active {
+    @apply text-cycle-blue
+  }
+  
+  .menu__link:hover {
+    color: var(--ifm-color-primary-lighter);
+  }
+  
+  .markdown hr {
+    margin: 50px 0;
+  }
+  
+  .main-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .heroBanner_src-pages-index-module{
+    @apply !mb-0
+  }
+  
+ 
+  div[title="Expand sidebar"],
+  button[title="Collapse sidebar"] {
+    @apply bg-cycle-black-accent text-white border-none;
+  }
+  div[title="Expand sidebar"]:hover,
+  button[title="Collapse sidebar"]:hover {
+    @apply bg-cycle-gray-accent text-white;
+  }
 
-  /* Infima Fonts */
-  --ifm-font-family-base: "Source Sans Pro";
+  main > .container > .row > .col:first-child {
+    @apply px-[3rem]
+  }
 
-  /* border color */
-  --ifm-alert-border-color: var(--cycle-gray)
-  --docusaurus-details-decoration-color: var(--cycle-gray)
-
-}
-
-/* Dark Mode Colors */
-html[data-theme="dark"] .docusaurus-highlight-code-line {
-  background-color: var(--cycle-black);
-}
-
-html[data-theme="dark"] {
-  background-color: var(--cycle-black);
-}
-a.navbar__link {
-  font-weight: 600;
-
-}
-
-.navbar__toggle,
-.menu__link,
-.menu__link--sublist::after {
-  color: var(--cycle-white);
-}
-
-html[data-theme="light"] aside a.menu__link,
-html[data-theme="light"] aside a.menu__link--sublist::after {
-
-  --ifm-menu-link-sublist-icon-filter: none;
-}
-
-
-html[data-theme="light"] .menu {
-  background-color: var(--cycle-accent-black);
-  color: var(--cycle-whtie) !important;
-}
-
-html[data-theme="light"] aside a.menu__link--active {
-  color: var(--cycle-blue);
-}
-
-.menu__link--active {
-  color: var(--cycle-blue);
-}
-
-.menu__link:hover {
-  color: var(--ifm-color-primary-lighter);
-}
-
-.markdown hr {
-  margin: 50px 0;
-}
-
-.main-wrapper {
-  display: flex;
-  flex-direction: column;
-}
-
-.heroBanner_src-pages-index-module{
-  margin-bottom: 0rem !important;
-}
-
-.heroSubtitle_src-pages-index-module {
-  font-size: 1.2rem !important; /* 16px */
-  line-height: 1.5rem !important; /* 24px */
-}
-.featureDescription_src-components-HomepageFeatures-module {
-  font-size: 1.2rem !important; /* 16px */
-  line-height: 1.5rem !important; /* 24px */
-}
-
-div[title="Expand sidebar"],
-button[title="Collapse sidebar"] {
-  background-color: var(--cycle-accent-black);
-  color: white;
-  border-width: 0px;
-}
-
-div[title="Expand sidebar"]:hover,
-button[title="Collapse sidebar"]:hover {
-  background-color: var(--cycle-accent-gray) !important;
-  color: white;
-}
-.col {
-  padding: 0 3rem ;
-}
-
-.col--3 {
-  padding-left: 0rem;
-}
-
-.footer__col {
-  max-width: 20rem;
-}
-
-.footer__title {
-  font-weight: 700;
-    line-height: 1.5;
-    margin-bottom: .5rem;
-    font-size: 1.25rem;
-    color: var(--cycle-white)
-}
-
-.footer__link-item {
-  font-weight: normal;
-  display: block;
-  line-height: 1.8;
-  font-size: 1rem
-}
-
-.footer__copyright {
-  font-size: .75rem
-}
-
-#json-schema details.alert {
-  background-color: var(--cycle-white);
-  list-style: none;
-  border-color: var(--cycle-gray)
-}
-html[data-theme="dark"] #json-schema details.alert {
-  background-color: var(--cycle-black);
-}
-#json-schema ul {
-  list-style-type: none
-}
-#json-schema li::before {
-  content: none;
-}
-
-#json-schema li {
-  border-left-color: var(--cycle-gray) !important;
-}
-#json-schema > div > details > div > div {
-  border-top-color: var(--cycle-gray) !important;
-}
-
-#json-schema li > details > div > div  {
-  border-top-color: var(--cycle-gray) !important;
-}
+  main > .container > .row > .col:nth-of-type(2) {
+    @apply pl-0
+  }
+ 
+  .footer__title {
+    @apply font-bold mb-2 text-lg text-white;
+  }
+  
+  .footer__link-item {
+    @apply flex items-center font-normal leading-[1.8rem] text-[1rem];
+  }
+  
+  .footer__copyright {
+    @apply text-[0.7rem]
+  }
+  
+  #json-schema details.alert {
+    @apply bg-cycle-white list-none border-cycle-gray;
+  }
+  html[data-theme="dark"] #json-schema details.alert {
+    @apply bg-cycle-black
+  }
+  #json-schema ul {
+    @apply list-none
+  }
+  #json-schema li::before {
+    @apply content-none
+  }
+  #json-schema li {
+    @apply !border-l-cycle-gray
+  }
+  #json-schema > div > details > div > div {
+    @apply !border-t-cycle-gray
+  }
+  #json-schema li > details > div > div  {
+    @apply !border-t-cycle-gray
+  }
+  main > div.container {
+      @apply max-w-full
+  }
 
 
-main > div.container {
-  max-width: 100%;
-}

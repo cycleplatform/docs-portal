@@ -1,86 +1,77 @@
-@font-face {
-  font-family: "Source Sans Pro";
-  src: url("/static/fonts/ssp-regular.ttf") format("truetype"),
-    url("/static/fonts/ssp-bold.ttf") format("truetype"),
-    url("/static/fonts/ssp-black.ttf") format("truetype");
-  font-weight: normal bold 800;
-  font-style: normal;
-  font-display: block;
-  letter-spacing: 1px;
-  text-rendering: optimizeLegibility;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-* {
-  letter-spacing: 1px;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-}
+@layer components {
+  @font-face {
+    font-family: "Source Sans Pro";
+    src: url("/static/fonts/ssp-regular.ttf") format("truetype"),
+      url("/static/fonts/ssp-bold.ttf") format("truetype"),
+      url("/static/fonts/ssp-black.ttf") format("truetype");
+  }
 
-p {
-  margin-bottom: 1rem;
-  font-size: 1rem; /* 16px */
-  line-height: 1.5rem; /* 24px */
-}
-a {
-  text-decoration-line: none !important;
-  font-weight: 600;
-}
+  html {
+    @apply text-body;
+  }
+  @screen lg {
+    html {
+      @apply text-body-lg;
+    }
+  }
 
-a:hover {
-  color: var(--cycle-accent-blue);
-}
-h1 {
-  font-weight: 800;
-  font-size: 3.75rem;
-  line-height: 1.5;
-  margin-bottom: 1rem;
-}
+  body {
+    @apply bg-cycle-black-accent text-cycle-gray-light;
+  }
 
-h2 {
-  font-weight: 700;
-  font-size: 2.25rem; /* 36px */
-  line-height: 1.4rem; /* 40px */
-  margin-bottom: 0.75rem;
-}
+  p {
+    @apply mb-4 text-base;
+  }
 
-h3 {
-  font-weight: 700;
-  font-size: 1.875rem; /* 30px */
-  line-height: 1.45rem; /* 36px */
-  margin-bottom: 0.5rem;
-}
+  * {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    letter-spacing: 1px;
+  }
 
-h4 {
-  font-weight: 700;
-  font-size: 1.5rem; /* 24px */
-  line-height: 1.5rem; /* 32px */
-  margin-bottom: 0.5rem;
-}
-h5 {
-  font-weight: 700;
-  font-size: 1.25rem; /* 20px */
-  line-height: 1.5rem; /* 28px */
-  margin-bottom: 0.5rem;
-}
-h6 {
-  font-weight: 700;
-  font-size: 1.125rem; /* 18px */
-  line-height: 1.5rem; /* 28px */
-  margin-bottom: 0.5rem;
-}
+  a {
+    @apply text-cycle-blue cursor-pointer !no-underline hover:text-cycle-blue-accent font-semibold;
+  }
 
-/*@font-face {*/
-/*    font-family: Source Sans Pro;*/
-/*    src: url('/static/fonts/ssp-bold.ttf') format("truetype");*/
-/*    font-weight: 700;*/
-/*    font-style: bold; // this doesnt exist and is an invalid setting*/
-/*    font-display: block;*/
-/*}*/
+  h1 {
+    @apply font-extrabold text-6xl mb-4;
+  }
 
-/*@font-face {*/
-/*    font-family: Source Sans Pro;*/
-/*    src: url('/static/fonts/ssp-black.ttf') format("truetype");*/
-/*    font-weight: 800;*/
-/*    font-style: bold;*/
-/*    font-display: block;*/
-/*}*/
+  h2 {
+    @apply font-bold text-4xl mb-3;
+  }
+
+  h3 {
+    @apply font-bold text-3xl mb-2;
+  }
+
+  h4 {
+    @apply font-bold text-2xl mb-2;
+  }
+
+  h5 {
+    @apply font-bold text-xl mb-2;
+  }
+
+  h6 {
+    @apply font-bold text-lg mb-2;
+  }
+
+  i {
+    @apply text-cycle-blue font-bold px-1;
+  }
+
+  @layer base {
+    .border-color {
+      @apply border-cycle-gray;
+    }
+  }
+
+  nav a {
+    @apply text-cycle-white hover:text-cycle-blue;
+  }
+}

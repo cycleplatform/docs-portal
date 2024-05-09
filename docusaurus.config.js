@@ -1,3 +1,4 @@
+import tailwindPlugin from "./plugins/tailwind-config.cjs";
 const lightCodeTheme = require("prism-react-renderer").themes.github;
 const darkCodeTheme = require("prism-react-renderer").themes.dracula;
 
@@ -13,9 +14,10 @@ module.exports = {
   organizationName: "cycleplatform", // Usually your GitHub org/user name.
   projectName: "docs-portal", // Usually your repo name.
   themes: ["docusaurus-json-schema-plugin"],
+  plugins: [tailwindPlugin],
   themeConfig: {
     colorMode: {
-      defaultMode: "dark",
+      defaultMode: "light",
       disableSwitch: false,
     },
     image: "https://cycle.io/global/resources/images/og.png",
@@ -181,6 +183,7 @@ module.exports = {
             require.resolve("./src/css/lists.css"),
             require.resolve("./src/css/code.css"),
             require.resolve("./src/css/fonts.css"),
+            require.resolve("./src/css/cta.css"),
           ],
         },
       },

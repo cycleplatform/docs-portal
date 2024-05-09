@@ -1,6 +1,10 @@
-.docusaurus-highlight-code-line {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .docusaurus-highlight-code-line {
+    @apply block;
     background-color: rgba(0, 0, 0, 0.1);
-    display: block;
-    /*margin: 0 calc(-1 * var(--ifm-pre-padding));*/
-    /*padding: 0 var(--ifm-pre-padding);*/
+  }
 }
