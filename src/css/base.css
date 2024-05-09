@@ -55,7 +55,7 @@
 
   /* Dark Mode Colors */
   html[data-theme="dark"] .docusaurus-highlight-code-line {
-    background-color: var(--cycle-black);
+    @apply bg-cycle-black
   }
 
   .breadcrumbs__link {
@@ -88,7 +88,7 @@
   .navbar__toggle,
   .menu__link,
   .menu__link--sublist::after {
-    color: var(--cycle-white);
+    @apply text-cycle-white
   }
   
   html[data-theme="light"] aside a.menu__link,
@@ -110,16 +110,15 @@
   }
   
   .menu__link:hover {
-    color: var(--ifm-color-primary-lighter);
+    @apply text-cycle-blue-accent
   }
   
   .markdown hr {
-    margin: 50px 0;
+    @apply mx-[50px]
   }
   
   .main-wrapper {
-    display: flex;
-    flex-direction: column;
+    @apply flex flex-col;
   }
   
   .heroBanner_src-pages-index-module{
