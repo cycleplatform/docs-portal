@@ -49,9 +49,15 @@ Users can manage environment services by opening the given services, service mod
 
 ![environment dashboard services](https://static.cycle.io/portal-docs/environments/services-summary.png)
 
-For discovery, there is currently no telemetry information. However, users can interact with the instances panel and high availability settings on the dashboard.
+Within the discovery modal there are several settings that can be applied.
 
 ![discovery modal dashboard](https://static.cycle.io/portal-docs/environments/discovery-modal.png)
+
+**High Availability** - mark the discovery service for high availability, Cycle will attempt to create 3 instances of discovery spread between the available infrastructure based on geographic distance and provider. 
+
+**Auto Update** - automatically restart and update this service when an update goes out from Cycle. 
+
+**Empty Set Delay** - a setting between 0 and 1 second. Users that would like to purposely delay an empty DNS response so that populated responses would arrive first can use this setting to do so.  
 
 ## Forcing Random IP Order From Discovery
 
@@ -65,3 +71,11 @@ In regards to traffic and the services that facilitate ingress and egress.
 When traffic comes in from public internet it will always hit the load balancer. These load balancers have a dedicated IP per load balancer and that information is available on the environment dashboard.
 
 When traffic leaves a container (egress), that traffic is routed "out" through the servers host IP. You can find a given servers host IP by going to the server dashboard.
+
+
+## Config 
+The DNS config page allows users to set custom domain resolution settings for their discovery service.  The domain is any domain you wish to set a custom resolution record for and the IPv4 / IPv6 inputs is the list of addresses to send when discovery resolves that domain.  
+
+:::caution
+The `Update Host Resolutions` button must be used when adding and removing entries to the custom host resolver list.
+:::
