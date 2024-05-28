@@ -67,7 +67,7 @@ function Feature({ Svg, title, to, className, description }) {
           <Svg className="h-[24px] mb-2 w-[31px] fill-cycle-blue" alt={title} />
           <h6 className="text-2xl mb-2">{title}</h6>
         </div>
-        <p className="mb-2 text-[1.2rem] leading-[1.5rem]">{description}</p>
+        <p className="mb-2 text-[1.2rem] leading-[1.5]">{description}</p>
       </div>
       <div>
         <Link className={"cta-button primary"} to={to}>

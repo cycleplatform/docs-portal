@@ -14,7 +14,7 @@ function HomepageHeader() {
     >
       <div className="container max-w-[90%]">
         <div className={"flex h-full"}>
-          <div className={"w-full"}>
+          <div className={"w-full mb-16"}>
             <h1 className={"font-semibold text-[3rem] mb-0"}>
               {siteConfig.title}
             </h1>
@@ -27,7 +27,7 @@ function HomepageHeader() {
             <HomepageFeatures />
           </div>
           <div
-            className={clsx("p-16 w-2/3 xl:flex hidden h-full items-center")}
+            className={clsx("p-16 w-1/3 xl:flex hidden h-full items-center")}
           >
             <img src="imgs/cycle/platform.svg" />
           </div>
