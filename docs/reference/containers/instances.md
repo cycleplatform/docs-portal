@@ -46,9 +46,9 @@ Each instance currently reports 4 different graphs in the portal:
 
 **RAM Usage** - Shows both kernel memory (purple) and RAM consumption (blue) for this instance, in megabytes.
 
-** Network Traffic (Public) ** - Shows the transmitted and received bytes (tx, rx) for the instance over the `eth-pub` interface.
+**Network Traffic (Public)** - Shows the transmitted and received bytes (tx, rx) for the instance over the `eth-pub` interface.
 
-** Network Traffic (Private) ** - Shows the transmitted and received bytes (tx, rx) for the instance over the `eth-priv` interface.
+**Network Traffic (Private)** - Shows the transmitted and received bytes (tx, rx) for the instance over the `eth-priv` interface.
 
 ### Stream Or Report
 
