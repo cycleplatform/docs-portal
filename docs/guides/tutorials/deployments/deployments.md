@@ -6,4 +6,4 @@ These tutorials will run through different ways you can construct pipelines and 
 
 
 * [Use Deployment Health Check](/guides/tutorials/deployments/healthcheck)
-* [Get Webhook Using Two Tags](/guides/tutorials/deployments/get-webhook-two-tags)
+* [Get Webhook](/guides/tutorials/deployments/get-webhook-two-tags)

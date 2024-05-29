@@ -96,21 +96,20 @@ The tag option exists here in case a user wishes to start the environment deploy
 Once the deployment is started, we'll focus on setting up a step that will wait for that deployments health check to pass before moving on to update the deployment tags to our new deployment. Add a new step and select `Wait for Environment Deployment Health Check`.  Add the environment, version (using the variable), and optionally you can add a duration (the default is 5m and is fine for this tutorials pipeline). 
 
 :::success Health Check
-If you inspect the stack in the companion repo for this tutorial, you'll notice a script called `health_check.sh` that is configured in the `cycle.json` file to run as the health check for the container.  The important thing to notice here is we need to send Cycle a `0` code on success and a non-0 code for failure.
+If you inspect the stack in the [companion repo](https://github.com/cycleplatform/display-deployment-version-demo) for this tutorial, you'll notice a script called `health_check.sh` that is configured in the `cycle.json` file to run as the health check for the container.  The important thing to notice here is we need to send Cycle a `0` code on success and a non-0 code for failure.
 :::
 
+With the health check step in place we can be sure that the deployment is healthy, if this step is passed the next thing we want to do is update the tag so that it points to the new deployment version. However, in this guide we're going to set up an additional step that will allow us to roll things back very quickly if we need to.  
 
-Now that the health check step is in place we can be sure that the deployment is healthy, if this step is passed the next thing we want to do is update the tag so that it points to the new deployment version.  
+Add a new step `Update Deployment Tag Version`.  Here the environment is the same one we've been using throughout this tutorial.  In the deployment section we'll set up two tags, the `Existing Tag` and the `New Tag`.  We know from earlier in the guide that there is one existing tag named `current`.  We can use this existing tag to target the deployment that already exists.  Enter the value `current` in the `Existing Tag` field. For the `New Tag` field enter the tag `previous`.  What we're able to accomplish here is tagging the existing deployment so that we always have the previous deployment around in case we need to role back.  This will also allow us to later use the prune functionality on this environment cleaning up any untagged deployments. 
 
-Add a new step `Update Deployment Tag Version`.  The Environment is the same one we've been using throughout this tutorial, but the deployment section now asks for both a `Tag` and a `Version`.  In previous steps there were times where it was one or the other but here we provide both. Why? Because here we are creating a new association for the tag and moving it from one version to a new version. 
+Next we'll add another `Update Deployment Tag Version` step.  The environment here is again the same.  The `Deployment Type` needs to be set to `Version` which will change the field next to it to `Existing Version`.  Because we've already deployed the new version we can target the `{{deployment-version}}` pipeline variable here.  The next field `New Tag` will be `current`.  
 
-For the `Tag` field, if you followed my earlier example, we'll be entering `current` as the tag. The version field should be the familiar `{{deployment-version}}`.  Create the step and we're almost done!
+Now we have 2 existing deployments, one deployment marked `previous` which represents the previously deployed code and one deployment marked `current` which represents the newest code.  This is a great pattern because its now possible to roll back to the previous deployment by simply updating the tag.  
 
-### Optional Sleep
-You can add an optional `Sleep` step here for 5-10 seconds (`5s` `10s` etc). DNS can take a few milliseconds to update at times and certain users prefer to keep the previous deployment around for a few seconds before pruning it (the next step).  So if you'd like add a sleep here, or if not move to the next step. 
 
 ## Cleanup Step 
-The final step is `Prune Environment Deployments`.  This step will take an environment (the same one we've been working with ) and when its run, all deployments in that environment that **do not have a tag** will be deleted.
+The final step is `Prune Environment Deployments`.  This step will take an environment (the same one we've been working with ) and when its run, all deployments in that environment that **do not have a tag** will be deleted.  
 
 
 ## Next Steps

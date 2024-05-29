@@ -93,7 +93,8 @@
   
   html[data-theme="light"] aside a.menu__link,
   html[data-theme="light"] aside a.menu__link--sublist::after {
-    --ifm-menu-link-sublist-icon-filter: none;
+    /* --ifm-menu-link-sublist-icon-filter: none; */
+    --ifm-menu-link-sublist-icon-filter: invert(100%) sepia(94%) saturate(17%) hue-rotate(223deg) brightness(104%) contrast(98%);
   }
   
   

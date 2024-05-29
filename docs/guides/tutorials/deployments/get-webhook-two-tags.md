@@ -1,5 +1,5 @@
 ---
-sidebar_label: Get Webhook Using Two Tags
+sidebar_label: Get Webhook
 sidebar_position: 10
 ---
 
@@ -107,17 +107,16 @@ Fill in the bottom of the form the same as the first container we created EXCEPT
 ![step 2](https://static.cycle.io/guides/get-webhook-deployment/step-2.png)
 
 ### Deploy Steps
-The next step in this pipeline is `Start Container`. This step has a single field, `Target` which should use `From` to select the container we just created. 
+The next step in this pipeline is `Start Environment Deployment`. This step takes our `{{environment}}` variable and the `{{version}}`
 
-Next, we want to update the first deployment tag to point to the new deployment/container.  To do this we'll add a `Update Deployment Tag Version` step. 
+The `Start Environment Deployment` step takes care of starting the deployment containers so we can now move on to updating the first deployment tag to point to the new deployment/container.  To do this we'll add a `Update Deployment Tag Version` step. 
 
 There are only 3 fields in this step and we want to use variables for each one of them.  For `Environment` use the `Resource` type with `{{environment}}`.  Using the same variable here as before allows us to make sure that the same environment is used across all places this variable is set.  The `Tag` field should be set to a variable, I used `{{test-tag}}` and the `New Version` field to `{{version}}` again aligning version around the variable `{{version}}`.
 
-![Update Deployment Tag Version Step](https://static.cycle.io/guides/get-webhook-deployment/update-deployment-step.png)
 
 After the deployment tag version is updated, we'll add a `Sleep` step.  This step will give the container a few moments to get up and running as well as eliminate the chance that the next step (Get Webhook) will hit the wrong resource.  Set this step to `30s`. 
 
-With the new container started and the first tag set to be moved, we want to be sure the container comes online and is able to respond to a request before moving our `current` tag to it.  The next step we'll use will let us verify this.  Create a `Get Webhook` step.  For the `URL` field, set the URL to the URL of the linked record you associated with the `test` tag in the earlier step.  Open the `Advanced Options` section and check the boxes next to `Retry On` and `Not` in the second row.  Then enter the HTTP code `200` in the codes array.  
+With the new deployment started and the first tag set to be moved, we want to be sure the container comes online and is able to respond to a request before moving our `current` tag to it.  The next step we'll use will let us verify this.  Create a `Get Webhook` step.  For the `URL` field, set the URL to the URL of the linked record you associated with the `test` tag in the earlier step.  Open the `Advanced Options` section and check the boxes next to `Retry On` and `Not` in the second row.  Then enter the HTTP code `200` in the codes array.  
 
 This setting will tell Cycle, please retry this get webhook on any code that is not `200` from the URL. 
 
@@ -126,8 +125,15 @@ Set the `Interval` to `20s` (twenty seconds) and `Max Attempts` to `5`.  This wi
 
 ![Get Webhook Step](https://static.cycle.io/guides/get-webhook-deployment/get-webhook.png)
 
+#### Updating The Final Tags
+At this point we've verified that the new deployment is responding to the HTTP calls the way we expect and we're ready to move over the `current` tag.  However, we also want to keep the previous deployment around in case we need to roll back.  Let's take a look at how we can finish this up.
 
-For the final step in this stage, create another step using `Update Deployment Tag Version`.  Use then `{{environment}}` variable for environment and the `{{version}}` variable for version.  For tag, I'm using `{{current-tag}}` to signify that I'm moving the second tag to this version.
+
+Add a new step `Update Deployment Tag Version`.  Here the environment is the same one we've been using throughout this tutorial.  In the deployment section we'll set up two tags, the `Existing Tag` and the `New Tag`.  We know from earlier in the guide that there is one existing tag named `current`.  We can use this existing tag to target the deployment that already exists.  Enter the value `current` in the `Existing Tag` field. For the `New Tag` field enter the tag `previous`.  What we're able to accomplish here is tagging the existing deployment so that we always have the previous deployment around in case we need to role back.  This will also allow us to later use the prune functionality on this environment cleaning up any untagged deployments. 
+
+Next we'll add another `Update Deployment Tag Version` step.  The environment here is again the same.  The `Deployment Type` needs to be set to `Version` which will change the field next to it to `Existing Version`.  Because we've already deployed the new version we can target the `{{version}}` pipeline variable here.  The next field `New Tag` will be `current`.  
+
+Now we have 2 existing deployments, one deployment marked `previous` which represents the previously deployed code and one deployment marked `current` which represents the newest code.  This is a great pattern because its now possible to roll back to the previous deployment by simply updating the tag. 
 
 
 ### Cleanup Steps
