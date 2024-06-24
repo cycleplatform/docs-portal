@@ -18,6 +18,17 @@ To open and manage the load balancer configuration modal, click on the `Manage` 
 - Load Balancer Telemetry is a column of graphs showing telemetry information about the traffic, connections, requests, and disconnects.
 - Under the settings tile, users can see the current configuration for the IPv4 and IPv6 settings of this environments load balancers, the load balancer type, and high availability settings.
 
+### Changing Load Balancer Settings
+To switch the load balancer type between HAProxy and V1 interact with the `Type` dropdown and select the one to be used.  The `Public IPv4` and `Public IPv6` options will configure this environments load balancer to acquire and listen on IPv4, IPv6, or both.  
+
+The `High Availability` setting will create a second load balancer for this environment automatically.  Users can add additional instances manually through the `instances` page, or through the API. 
+
+`Auto Update` allows the user opt for automatically restarting their load balancer if a platform update goes out that requires a load balancer update in order to sync changes.  This box is unchecked by default. 
+
+:::info
+The public IPv4 and IPv6 check boxes are set by default to both be "on".  However, if a user was to open the load balancer modal before a load balancer instance exists, they would notice that neither are checked and the load balancer has no type.  This is intended, as the platform cannot know ahead of time what these options might be if there is no instance.
+:::
+
 :::caution IPv6 Only
 Setting a the load balancer(s) to IPv6 only, means that the user is confident that all public requests to environment applications will support IPv6 networks. For more information on this topic, reach out to us via [Slack](https://slack.cycle.io).  
 :::

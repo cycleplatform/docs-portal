@@ -21,7 +21,7 @@ There are two main ways to invoke a function container:
 2. Use the [scheduler API](https://scheduler-api.docs.cycle.io). 
 
 
-Using the domain connected to a container will automatically make all the calls to the scheduler from the load balancer. 
+HTTP initiated functions require the [V1 Load Balancer](/reference/environments/services/loadbalancer/v1) to be configured for the environment.  The V1 load balancer is able to automatically interact with the scheduler to claim, spawn, and release function instances per request to the endpoint.
 
 ## Function Configuration
 Function containers have their own [configuration options](/reference/containers/configuration/deployment#function) in the container configuration section. 
