@@ -7,25 +7,47 @@ import CreateEnvironment from "../../../src/pages/environments/_create-environme
 
 # Managing Environments
 
+
 ## Environment Create
 
 <CreateEnvironment />
 
 ## Environment Settings
 
-When on the environment dashboard, a user can click on the **Settings** tab via the horizontal navigation links to bring up the environment settings page. This page has options to change the settings for the name, description, and add/remove the environment as a favorite.
+When on the environment dashboard, a user can click on the **Settings** tab via the horizontal navigation links to bring up the environment settings page. This page is broken down into a few specific subsections.
 
-### Environment Name
-
+### Update Environment
 **Name** - The name of the environment as shown on the Environment select screen and displayed in the breadcrumb at the top of the screen.
-
-### Environment Description
 
 **Description** - A description of the containers or applications deployed to the environment.
 
-### Environment Favorite
-
 **Favorite** - A checkbox where checked means the environment is set to favorite and will show up at the top of the Environments select screen, with a <i class="fa fa-star fastar-yellow"  src="static/svgs/solid/star.svg"></i>.
+
+**Identifier** - used by the platform, API, and pipelines to help locate this resource. 
+
+### Monitoring Tier
+
+:::success Coming Soon
+Advanced monitoring coming soon to the platform!
+:::
+
+### Environment Info 
+
+**ID** - the environment ID. 
+
+**Identifier** - the environment identifier. 
+
+### Network Details 
+
+**VXLan Tag** - the VXLan tag thats added to each packet, which helps identify the network. 
+
+**Subnet** - the subnet ID. 
+
+**Legacy Mode** - if this says "enabled" then [legacy mode](/reference/environments/) is enabled for this environment. 
+
+### Access Controls 
+Access controls for the environment - see [Access Controls](/)
+
 
 ### Delete Environment
 

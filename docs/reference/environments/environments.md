@@ -27,11 +27,12 @@ hostname. Containers obtain both a private IPv4 and IPv6 address, where the form
 
 Breaking down this image, a user can see several very important pieces of information on the environment dashboard.
 
-1. The horizontal navigation allows for quickly switching between configuration and menus within the environment, such
+* The horizontal navigation allows for quickly switching between configuration and menus within the environment, such
    as VPN or Load balancer configuration tabs and containers dashboard.
-2. The global start & stop button which acts on all containers in an environment
-3. Service container modal access, which allows the user access to container specific information about the current
-   environments service containers.
+*  The global start & stop button which acts on all containers in an environment
+* Service container modal access, which allows the user access to container specific information about the current environments service containers.
+* Events summary shows all environment level events.
+
 
 ## Environment Services
 

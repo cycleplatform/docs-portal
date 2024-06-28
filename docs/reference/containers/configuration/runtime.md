@@ -47,9 +47,17 @@ Use `" "` 's to wrap arg entries. For example a path that is `/bin/sh` could hav
 
 **Workdir** - define the full path to be used when setting the containers working directory.
 
+## Devices 
+
+**Shared Host Memory Size** - this section allows the user to override the default shared memory at /dev/shm.  
+
+Values can be entered in the following format: `number` `size`.
+
+Example: `200M`, `1G`
+
 ## SECCOMP
 
-Currently, [seccomp](https://man7.org/linux/man-pages/man2/seccomp.2.html) is enabled on containers by default. To disable SECCOMP, a user must go to the contianer config > runtime setttings and select the disable checkbox.
+Currently, [seccomp](https://man7.org/linux/man-pages/man2/seccomp.2.html) is enabled on containers by default. To disable SECCOMP, a user must go to the container config > runtime settings and select the disable checkbox.
 
 ## Host
 

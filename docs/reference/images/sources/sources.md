@@ -15,12 +15,16 @@ There are currently 4 types of image sources supported.
 3. **[Docker File](/reference/images/sources/dockerfile-source)** - create an image source from a repositiory hosted on any git solution (private or public) by adding a Dockerfile to your repo and telling Cycle where its located.
 4. **[OCI Registry](/reference/images/sources/oci-registry)** - create an image source from an existing OCI registry.  With additional ECR flavor specific support built in for advanced auth mechanics.
 
+Additionally, users can set [access controls](/reference/hubs/access-controls) for the image source during create.
+
 
 ### Managing Sources
 
 Easily manage sources by clicking on the **Images** tab in the main navigation and then clicking on any individual source. Then choose the **settings** tab from the horizontal navigation.
 
-From settings a user can make updates to the name, description, and repo data - including the repo url and auth type.
+From settings a user can make updates to the name, description, and image data (based on the type).
+
+Under the `Access Controls` section the user can set image source [access controls](/reference/hubs/access-controls). 
 
 :::warning
 Choosing to delete a source is irreversible.

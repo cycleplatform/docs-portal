@@ -44,6 +44,9 @@ A stack is a reusable asset that when triggered creates builds. There are two wa
 1. Pasting a raw stack into the Cycle portal
 2. Importing from a git repo
 
+### Access Controls
+Regardless of if the user picks git repo or directly uploads a file, [access controls](/reference/hubs/access-controls)
+
 ### Importing A Raw Stack File
 
 The raw stack file option is a convenience method of creating a stack. It would be advised to use the git repo method listed next for production deployments.
@@ -141,6 +144,8 @@ The stack's ID is also noted on the settings page.
 :::
 
 From the settings page a user can update the URL, branch, ref, auth, and name values. The update stack button must be used to confirm the changes.
+
+Each stack has it's own [access controls](/reference/hubs/access-controls) that can be set on this page as well. 
 
 to delete a stack, enter the stack name in the delete form and click **Delete Stack**.
 

@@ -23,7 +23,9 @@ To create a network:
 
 1. Select to the Networks tab from the left side navigation and click Create Network.
 2. Fill in a name and select which cluster you would like to make this network available on.
-3. Add up to 5 environments to the network.
+3. Add up to 8 environments to the network.
+
+Users can also set [access controls](/reference/hubs/access-controls) during network create. 
 
 ## Manage Networks
 
@@ -32,6 +34,8 @@ To create a network:
   Navigate to the network dashboard by clicking Networks on the left side menu. Then click on the network to be updated.
 
 Click **Update Network** to save the changes.
+
+Network's have individual [access controls](/reference/hubs/access-controls) which can also be configured on this page. 
 
 To delete the network, type the name of the network into the delete form field and hold the delete button until it completes.
 

@@ -23,8 +23,16 @@ To create a new pipeline:
     * **Standard** - Statically defined pipeline (no variables).
     * **Dynamic** - Pipeline can use dynamic [variable support](/reference/pipelines/variables/)
 
-### Update & Delete
-While a pipeline is selected, the horizontal navigation will show a settings tab.  This tab can be used to update the name of the pipeline, see the pipeline ID, and delete the pipeline.
+Users can optionally define [access controls](/reference/hubs/access-controls) during pipeline create. 
+
+### Pipeline Settings
+While a pipeline is selected, the horizontal navigation will show a settings tab.  
+
+On this page a user can quickly update the name or identifier for the pipeline.  The `dynamic` checkbox can also be checked/unchecked.  This setting is what allows/dis-allows a pipeline from using [pipeline variables](/reference/pipelines/variables/). 
+
+This page also allows the user to set the [access controls](/reference/hubs/access-controls) for the pipeline. 
+
+To delete the pipeline, use the delete pipeline form and submit. 
 
 ### Editing
 Also, while a pipeline is selected, the **Editor** tab allows the user to interact with stages and steps.

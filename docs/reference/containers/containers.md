@@ -7,13 +7,21 @@ Containers are a way to package together your application along with it's depend
 
 The containers dashboard shows all containers for an environment and information about the state they are in.
 
-![containers dashboard](https://static.cycle.io/portal-docs/containers/container-dashboard.png)
+![containers dashboard](https://static.cycle.io/portal-docs/containers/containers-dashboard.png)
 
 1. The containers tab is available once a user has entered any environment, by means of the horizontal navigation.
 2. Most information on this page is obvious, but these icons represent the state setting for the container row. The gears represent stateless, while the server represents stateful.
 3. Filter the containers shown by their state.
 
 By clicking on the name of any given container a modal will open showing a new full menu for the given container. We call this initial page you'll land on, the container dashboard.
+
+![container dashboard](https://static.cycle.io/portal-docs/containers/container-dash.png)
+
+The container dashboard is a central point of view for high level container information.  Users will see private and public network settings, including a helpful network graph.  Below that an instances graph shows the state and number of instances for the container. 
+
+In the `Image` section of this page, users can find helpful information about the container image this container is using. 
+
+The `Events` graph outlines important events that are specifically relevant to this container, and below that a full activity log for the container is present. 
 
 Other menus available in this modal are:
 

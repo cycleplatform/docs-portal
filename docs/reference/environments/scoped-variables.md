@@ -36,9 +36,18 @@ There are 4 options next to the raw type's source value.
 
 ### Scope
 
-Scoped variables can be applied to all containers in an environment or specifically to a mutable list of containers.
+Scoped variables can be applied to all containers in an environment or specifically to a mutable list of containers or container identifiers.
 
-The **Global** checkbox being checked signifies that every container in the environment should inherit the variable, while a user that wishes to only apply the variable to specific containers can use the **Containers** dropdown menu.
+The **Global** checkbox being checked signifies that every container in the environment should inherit the variable.
+
+Selecting options from the **Existing Containers** dropdown will allow the user to associate the scoped variable with a single __existing__ container.
+
+The **Container Identifiers** form field allows for the user to enter container identifier(s) that may or may not match an existing container.  This is really useful for associating a scoped variable with containers that will be part of deployments.  
+
+#### Example - Container Identifiers
+A user has a deployment that always has three containers: `api`, `worker`, `frontend`.  The `api` container needs access to a scoped variable, but future versions of that api container don't exist yet.  
+
+Using the `container identifiers` option, the user sets the scope to `api` because the container identifier for the api container is always api in this case.  The future versions of the api container in the deployment will have access to the scoped variable because the container identifier scope setting has a match for the container identifier.
 
 ### Access
 
@@ -76,7 +85,7 @@ If the **File** checkbox is selected, the scoped variable will be available thro
 
 This is facilitated by mounting a read only volume to `/var/run/cycle/variables` in the container instance. This volume is only updated upon restart of the container.
 
-If you use the `Path` option, the file will be mounted to the path given in the path.  The full path, including the name you'd like for hte file is required. 
+If you use the `Path` option, the file will be mounted to the path given in the path.  The full path, including the name you'd like for the file is required. If the directories leading to the file do not exist on the container they will be created.  
 
 The `Decode` checkbox will automatically decode a based64 encoded file on read. 
 

@@ -14,6 +14,7 @@ To create a DNS zone on Cycle:
 2. Click Create Zone in the top right corner.
 3. Enter your domain in the Origintype field.
 4. Select Hosted or Non-Hosted for your zone type.
+5. Optionally set the [access controls](/reference/hubs/access-controls) for the zone. 
 
 ### Verifying a Zone
 
@@ -31,14 +32,18 @@ If you create a Non-Hosted zone you will not have the option to "Verify" your zo
 
 
 
-### Updating and Deleting Zones
-To update your DNS zone from Hosted to Non-Hosted or vice versa, do the following:
+### DNS Zone Settings
+Navigate to the DNS zone setting page:
 
 1. Click DNS in the nav menu on the left hand side.
 2. Select the zone you want to modify from the list.
 3. Click the Settings tab underneath the zone name at the top.
-4. Use the Zone Type drop down to select your updated zone type.
-5. Save your choice by clicking Update Zone.
+
+In the general settings area, the origin of the DNS zone cannot be changed after the zone has been created, thus this field is permanently disabled. The `Zone Type` can be updated using the dropdown here as well.  Either setting changed required the user submit the change via `Update Zone` button. 
+
+In access controls, the user can set this DNZ zones [access controls](/reference/hubs/access-controls).
+
+
 
 To delete a DNS Zone, locate the delete form on the right-hand side. Enter the root domain of the zone into the box, and click "Delete Zone".
 
