@@ -59,6 +59,8 @@ Within the discovery modal there are several settings that can be applied.
 
 **Empty Set Delay** - a setting between 0 and 1 second. Users that would like to purposely delay an empty DNS response so that populated responses would arrive first can use this setting to do so.  
 
+**Recent Lookups** - all DNS lookups made through the discovery service within the last 24 hours.  
+
 ## Forcing Random IP Order From Discovery
 
 When discovery returns a list of IP's after a DNS lookup the list is sorted by proximity to the requesting instance. If
