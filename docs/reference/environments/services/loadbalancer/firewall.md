@@ -64,31 +64,4 @@ The currently supported operators are:
     ]
   }
 ]
-
-
-
-### Example Firewall Config
-
-
-<!-- using javascript to get syntax highlighting -->
-```javascript
-[
-  {
-    "description": "This is a rule",
-    "skip": false,
-    "type": "deny",
-    "conditions": [
-      {
-        "type": "ip-match",
-        "operator": "==",
-        "value": "50.234.222.10"
-      },
-      {
-        "type": "ip-match",
-        "operator": "==",
-        "value": "2600:6b4a:223f:93cf:84a1:4afd:9221:8988"
-      }
-    ]
-  }
-]
 ```
