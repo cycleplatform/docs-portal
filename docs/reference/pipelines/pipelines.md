@@ -25,6 +25,9 @@ To create a new pipeline:
 
 Users can optionally define [access controls](/reference/hubs/access-controls) during pipeline create. 
 
+#### Clone
+Users can now use the `Clone` button to create a copy of an existing pipeline. 
+
 ### Pipeline Settings
 While a pipeline is selected, the horizontal navigation will show a settings tab.  
 

@@ -61,4 +61,4 @@ Without specifically defining environment level ACL's, Cycle checks back to the 
 | Cluster     | x    | x      | x      | Can view/make change to cluster + any environments (and their children resources) that have NO ACLs (but can modify ACLs for non-ACL envs) |
 | Cluster     | x    | -      | x      | Can view/make changes cluster + any environments (and their children resources) that have NO ACLs + add new ACLs |
 | Cluster     | -    | -      | -      | Can view cluster + any envs in cluster (that don't have their own ACLs) + can delete cluster + can manage ACL for cluster but cannot edit environments/containers/instances UNLESS the environment itself has an ACL which the user does have modify on |
-| Cluster     | x    | -      | x      |                                                                                                                 |
+
