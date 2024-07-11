@@ -40,7 +40,7 @@ The following example show's both a normal use case (`frontend-source-id`) and a
 }
 ```
 
-What you'll notice is that the `{{varaiable}}` will be injected into the stack file exactly how its defined in the stack. So for the `frontend-source-id`, it needed to be wrapped in a string (as its a string value), whereas the config is just json and thus does not need anything. 
+What you'll notice is that the `{{variable}}` will be injected into the stack file exactly how its defined in the stack. So for the `frontend-source-id`, it needed to be wrapped in a string (as its a string value), whereas the config is just json and thus does not need anything. 
 
 On the portal variable defaults lives under the `variables` tab. 
 
