@@ -50,13 +50,16 @@ While Cycle will provide a special set of environment variables, there are also 
 * User Defined Environment Variables (Container Config)
 * User Defined Scoped Variables
 
+:::success Functions
+Function containers have a special environment variable that can be injected on each claim / release sequence. 
+:::
 
 <Mermaid chart={`
 classDiagram
-    Instance <-- Cycle_Environment_Variables
     Instance <-- Image_Environment_Variables
-    Instance <-- User_Environment_Variables 
     Instance <-- User_Scoped_Variables
+    Instance <-- User_Environment_Variables 
+    Instance <-- Cycle_Environment_Variables
     Instance: +Cycle Environment Variables
     Instance: +Image Environment Variables
     Instance: +User Environment Variables
@@ -91,10 +94,19 @@ In most cases, a user would not want to do this - however it is possible to do s
 
 <Mermaid chart={`
 stateDiagram
-direction LR
-[empty] --> Cycle_EVs 
-Cycle_EVs --> Plus_Image_EVs 
-Plus_Image_EVs --> Plus_User_EVs
-Plus_User_EVs --> Plus_User_SVs 
-Plus_User_SVs --> All_Env_Vars 
+  direction LR
+  state "Empty" as EMPTY
+  state "Image Defined Variables" as IDV
+  state "Scoped Environment Variables" as SEV
+  state "Container Environment Variables (config)" as CEV
+  state "Function Runtime Variables" as FRV
+  state "Cycle Global Environment Variables" as CGEV
+  
+  EMPTY --> IDV
+  IDV --> SEV
+  SEV --> CEV
+  CEV --> FRV
+  FRV --> CGEV
+
+
 `}/>
