@@ -28,7 +28,7 @@ Each `Rule` is comprised of 4 fields
 | conditions  | An array of conditions that must be met for the rule to apply. Each condition contains:          |
 |             | - **type**: The type of match to perform (e.g., `"ip-match"`).                                   |
 |             | - **operator**: The comparison operator to use (e.g., `"=="`).                                   |
-|             | - **value**: The value to compare against (e.g., an IP address).                                 |
+|             | - **value**: The value to compare against (e.g., an IP address).  For IP addresses, both addresses and CIDR's are supported.                                |
 
 #### Supported Types
 The currently supported types are:
@@ -42,7 +42,31 @@ The currently supported operators are:
 * `!=`
 
 
-### Example Firewall Config
+### Example Firewall Configs
+
+```javascript
+[
+  {
+    "description": "allow all traffic",
+    "skip": false,
+    "type": "allow",
+    "conditions": [
+      {
+        "type": "ip-match",
+        "operator": "==",
+        "value": "0.0.0.0/0"
+      },
+      {
+        "type": "ip-match",
+        "operator": "==",
+        "value": "::/0"
+      }
+    ]
+  }
+]
+```
+
+
 
 ```javascript
 [
