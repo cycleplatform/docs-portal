@@ -63,7 +63,7 @@ module.exports = {
           label: "API Docs",
         },
         {
-          href: "https://slack.cycle.io",
+          href: "https://cycle.io/community",
           target: "_blank",
           label: "Community",
         },
