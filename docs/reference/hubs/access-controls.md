@@ -19,13 +19,13 @@ Access controls define if the user or API key has access to the resource they're
 ## Managing Access 
 Access controls can be applied the the following resource types:
 
-1. [Environments](/reference/environments/)
-2. [Image Sources](/reference/images/sources/)
+1. [Environments](/reference/environments)
+2. [Image Sources](/reference/images/sources)
 3. [Stacks](/reference/stacks/)
-4. [Pipelines](/reference/pipelines/)
+4. [Pipelines](/reference/pipelines)
 5. [Clusters](/reference/infrastructure/clusters)
-6. [DNS Zone](/reference/DNS/zones/)
-7. [Networks](/reference/networks/)
+6. [DNS Zone](/reference/DNS/zones)
+7. [Networks](/reference/networks)
 
 Each resource can have either `no ACLs` or some ACLs.  
 
