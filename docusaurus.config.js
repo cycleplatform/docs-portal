@@ -11,6 +11,7 @@ module.exports = {
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "imgs/cycle/logo/logo-gear.svg",
+  trailingSlash: false, 
   organizationName: "cycleplatform", // Usually your GitHub org/user name.
   projectName: "docs-portal", // Usually your repo name.
   themes: ["docusaurus-json-schema-plugin"],
