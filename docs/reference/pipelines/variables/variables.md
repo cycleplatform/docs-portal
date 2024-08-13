@@ -37,6 +37,15 @@ In the portal pipeline editor, users will notice the `</>` icon on steps that al
 ![variable support](https://static.cycle.io/portal-docs/pipelines/variable-support-icon.png)
 
 
+### Magic Variables
+There are currently 4 magic variables which automatically contrive their value on pipeline run:
+
+1. Date - `{{date}}` - `2024-08-13`
+2. Date-time - `{{date-time}}` - `2024-08-13 16:57:24`
+3. Time - `{{time}}` - `16:57:24`
+4. Time RFC - `{{time-rfc3339}}` - `2024-08-13T16:57:24Z`
+
+
 ### Fluid Identifiers
 A fluid identifier on Cycle is one or more identifiers, in a text format, that allow the user to identify resources in as specific of terms as they see fit.  
 
