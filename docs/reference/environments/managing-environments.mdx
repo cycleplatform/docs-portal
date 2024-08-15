@@ -62,3 +62,16 @@ Deleting an environment will delete the environment and all associated container
 - VXLAN Tag - The vxlan tag added to each packet to help identify the network.
 - Subnet - The subnet ID.
 - Legacy Mode - Whether the environment is set to legacy mode or not.
+
+## Exporting Environments
+
+Users can now "export" the environment to a stack file.  By default the environment export will include:
+
+1. Service containers such as load balancer, discovery, scheduler, and VPN. 
+2. All containers not in deployments. 
+3. Scoped variables from the environment. 
+
+Using the `Include Deployments` option, a user can add deployments tot the export.  These deployments must have [tags](/reference/environments/deployments/tags) in order to show up in the dropdown. 
+
+### Resolve Origins 
+By default the export for the stack file will use the cycle-source image origin type.  For compatibility between hubs, users can use the resolve origins checkbox, which will input the entire image origin. 
